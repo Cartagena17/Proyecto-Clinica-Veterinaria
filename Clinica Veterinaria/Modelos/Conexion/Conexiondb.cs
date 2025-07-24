@@ -10,7 +10,7 @@ namespace Modelos.Conexion
     public class Conexiondb
     {
 
-        private static string servidor = "DESKTOP-62V4DOU\\SQLEXPRESS";
+        private static string servidor = "LAB03-DS-EQ25\\SQLEXPRESS";
         private static string database = "PTC";
 
 

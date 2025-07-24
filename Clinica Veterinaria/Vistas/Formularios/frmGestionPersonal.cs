@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelos.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,27 @@ namespace Vistas.Formularios
 
         private void frmGestionPersonal_Load(object sender, EventArgs e)
         {
+            MostrarPropietarios();
+        }
 
+        private void btnAgregarPersonal_Click(object sender, EventArgs e)
+        {
+            Personal per = new Personal();
+            per.PersonalID = int.Parse(txtGestionPersonal_Nombre.Text);
+            per.NombrePers = txtGestionPersonal_Nombre.Text;
+            per.ApellidoPers = txtGestionPersonal_Apellido.Text;
+            per.Rol = txtGestionPersonal_Rol.Text;
+            per.TelefonoPers = txtGestionPersonal_Telefono.Text;
+            per.EmailPers = txtGestionPersonal_Email.Text;
+
+            per.InsertarPersonal();
+            MostrarPropietarios();
+        }
+
+        private void MostrarPropietarios()
+        {
+            dgvPersonal.DataSource = null;
+            dgvPersonal.DataSource = Personal.CargarPersonal();
         }
     }
 }

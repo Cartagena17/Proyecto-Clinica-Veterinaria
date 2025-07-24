@@ -24,7 +24,7 @@ namespace Vistas.Formularios
              
             dashboard.Show();
 
-           this.Hide();
+           this.Close();
             
         }
     }

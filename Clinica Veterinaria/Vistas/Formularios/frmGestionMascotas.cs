@@ -37,12 +37,13 @@ namespace Vistas.Formularios
 
             pac.InsertarPacientes();
             Pacientes.CargarPacientes();
+            MostrarPacientes();
 
         }
 
         private void frmGestionMascotas_Load(object sender, EventArgs e)
         {
-           
+            MostrarPacientes();
         }
 
         private void MostrarPacientes()
