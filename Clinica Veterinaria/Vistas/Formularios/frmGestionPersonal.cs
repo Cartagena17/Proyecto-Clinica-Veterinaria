@@ -16,5 +16,10 @@ namespace Vistas.Formularios
         {
             InitializeComponent();
         }
+
+        private void frmGestionPersonal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

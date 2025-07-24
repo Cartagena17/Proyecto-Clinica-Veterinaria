@@ -30,6 +30,10 @@
         {
             this.lblGestionPropietarios = new System.Windows.Forms.Label();
             this.pnlGestionMascota = new System.Windows.Forms.Panel();
+            this.btnVerMascotas = new System.Windows.Forms.Button();
+            this.btnActualizarInfoMascota = new System.Windows.Forms.Button();
+            this.btnEliminarMascota = new System.Windows.Forms.Button();
+            this.btnRegistrarMascota = new System.Windows.Forms.Button();
             this.txtGestionMascota_Color = new System.Windows.Forms.TextBox();
             this.txtGestionMascota_Sexo = new System.Windows.Forms.TextBox();
             this.txtGestionMascota_Peso = new System.Windows.Forms.TextBox();
@@ -46,11 +50,9 @@
             this.lblGestionMascotas_Especie = new System.Windows.Forms.Label();
             this.lblGestionMascotas_NombreProp = new System.Windows.Forms.Label();
             this.lblGestionMascotas_Nombre = new System.Windows.Forms.Label();
-            this.btnRegistrarMascota = new System.Windows.Forms.Button();
-            this.btnEliminarMascota = new System.Windows.Forms.Button();
-            this.btnActualizarInfoMascota = new System.Windows.Forms.Button();
-            this.btnVerMascotas = new System.Windows.Forms.Button();
+            this.dgvMascotas = new System.Windows.Forms.DataGridView();
             this.pnlGestionMascota.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGestionPropietarios
@@ -88,6 +90,43 @@
             this.pnlGestionMascota.Name = "pnlGestionMascota";
             this.pnlGestionMascota.Size = new System.Drawing.Size(723, 316);
             this.pnlGestionMascota.TabIndex = 9;
+            // 
+            // btnVerMascotas
+            // 
+            this.btnVerMascotas.Location = new System.Drawing.Point(491, 267);
+            this.btnVerMascotas.Name = "btnVerMascotas";
+            this.btnVerMascotas.Size = new System.Drawing.Size(75, 23);
+            this.btnVerMascotas.TabIndex = 19;
+            this.btnVerMascotas.Text = "Ver Mascotas";
+            this.btnVerMascotas.UseVisualStyleBackColor = true;
+            // 
+            // btnActualizarInfoMascota
+            // 
+            this.btnActualizarInfoMascota.Location = new System.Drawing.Point(340, 254);
+            this.btnActualizarInfoMascota.Name = "btnActualizarInfoMascota";
+            this.btnActualizarInfoMascota.Size = new System.Drawing.Size(96, 46);
+            this.btnActualizarInfoMascota.TabIndex = 18;
+            this.btnActualizarInfoMascota.Text = "Actualizar Informacion";
+            this.btnActualizarInfoMascota.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarMascota
+            // 
+            this.btnEliminarMascota.Location = new System.Drawing.Point(193, 254);
+            this.btnEliminarMascota.Name = "btnEliminarMascota";
+            this.btnEliminarMascota.Size = new System.Drawing.Size(91, 46);
+            this.btnEliminarMascota.TabIndex = 17;
+            this.btnEliminarMascota.Text = "Eliminar Mascota";
+            this.btnEliminarMascota.UseVisualStyleBackColor = true;
+            // 
+            // btnRegistrarMascota
+            // 
+            this.btnRegistrarMascota.Location = new System.Drawing.Point(35, 254);
+            this.btnRegistrarMascota.Name = "btnRegistrarMascota";
+            this.btnRegistrarMascota.Size = new System.Drawing.Size(100, 46);
+            this.btnRegistrarMascota.TabIndex = 16;
+            this.btnRegistrarMascota.Text = "Registrar Mascota";
+            this.btnRegistrarMascota.UseVisualStyleBackColor = true;
+            this.btnRegistrarMascota.Click += new System.EventHandler(this.btnRegistrarMascota_Click);
             // 
             // txtGestionMascota_Color
             // 
@@ -219,53 +258,30 @@
             this.lblGestionMascotas_Nombre.TabIndex = 0;
             this.lblGestionMascotas_Nombre.Text = "Nombre Mascota:";
             // 
-            // btnRegistrarMascota
+            // dgvMascotas
             // 
-            this.btnRegistrarMascota.Location = new System.Drawing.Point(35, 254);
-            this.btnRegistrarMascota.Name = "btnRegistrarMascota";
-            this.btnRegistrarMascota.Size = new System.Drawing.Size(100, 46);
-            this.btnRegistrarMascota.TabIndex = 16;
-            this.btnRegistrarMascota.Text = "Registrar Mascota";
-            this.btnRegistrarMascota.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminarMascota
-            // 
-            this.btnEliminarMascota.Location = new System.Drawing.Point(193, 254);
-            this.btnEliminarMascota.Name = "btnEliminarMascota";
-            this.btnEliminarMascota.Size = new System.Drawing.Size(91, 46);
-            this.btnEliminarMascota.TabIndex = 17;
-            this.btnEliminarMascota.Text = "Eliminar Mascota";
-            this.btnEliminarMascota.UseVisualStyleBackColor = true;
-            // 
-            // btnActualizarInfoMascota
-            // 
-            this.btnActualizarInfoMascota.Location = new System.Drawing.Point(340, 254);
-            this.btnActualizarInfoMascota.Name = "btnActualizarInfoMascota";
-            this.btnActualizarInfoMascota.Size = new System.Drawing.Size(96, 46);
-            this.btnActualizarInfoMascota.TabIndex = 18;
-            this.btnActualizarInfoMascota.Text = "Actualizar Informacion";
-            this.btnActualizarInfoMascota.UseVisualStyleBackColor = true;
-            // 
-            // btnVerMascotas
-            // 
-            this.btnVerMascotas.Location = new System.Drawing.Point(491, 267);
-            this.btnVerMascotas.Name = "btnVerMascotas";
-            this.btnVerMascotas.Size = new System.Drawing.Size(75, 23);
-            this.btnVerMascotas.TabIndex = 19;
-            this.btnVerMascotas.Text = "Ver Mascotas";
-            this.btnVerMascotas.UseVisualStyleBackColor = true;
+            this.dgvMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMascotas.Location = new System.Drawing.Point(43, 423);
+            this.dgvMascotas.Name = "dgvMascotas";
+            this.dgvMascotas.RowHeadersWidth = 51;
+            this.dgvMascotas.RowTemplate.Height = 24;
+            this.dgvMascotas.Size = new System.Drawing.Size(987, 324);
+            this.dgvMascotas.TabIndex = 10;
             // 
             // frmGestionMascotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1120, 759);
+            this.Controls.Add(this.dgvMascotas);
             this.Controls.Add(this.lblGestionPropietarios);
             this.Controls.Add(this.pnlGestionMascota);
             this.Name = "frmGestionMascotas";
             this.Text = "frmGestionMascotas";
+            this.Load += new System.EventHandler(this.frmGestionMascotas_Load);
             this.pnlGestionMascota.ResumeLayout(false);
             this.pnlGestionMascota.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,5 +311,6 @@
         private System.Windows.Forms.Button btnRegistrarMascota;
         private System.Windows.Forms.Button btnActualizarInfoMascota;
         private System.Windows.Forms.Button btnVerMascotas;
+        private System.Windows.Forms.DataGridView dgvMascotas;
     }
 }

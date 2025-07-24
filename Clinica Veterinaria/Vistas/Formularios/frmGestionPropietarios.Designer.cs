@@ -30,6 +30,10 @@
         {
             this.lblGestionPropietarios = new System.Windows.Forms.Label();
             this.pnlGestionPropietario = new System.Windows.Forms.Panel();
+            this.btnVerPropietarios = new System.Windows.Forms.Button();
+            this.btnActualizarInfoPropietario = new System.Windows.Forms.Button();
+            this.btnEliminarPropietario = new System.Windows.Forms.Button();
+            this.btnRegistrarPropietario = new System.Windows.Forms.Button();
             this.txtGestionPropietario_Email = new System.Windows.Forms.TextBox();
             this.txtGestionPropietario_Direccion = new System.Windows.Forms.TextBox();
             this.txtGestionPropietario_Telefono = new System.Windows.Forms.TextBox();
@@ -38,11 +42,9 @@
             this.lblGestionPropietario_Direccion = new System.Windows.Forms.Label();
             this.lblGestionPropietario_Telefono = new System.Windows.Forms.Label();
             this.lblGestionPropietario_Nombre = new System.Windows.Forms.Label();
-            this.btnRegistrarPropietario = new System.Windows.Forms.Button();
-            this.btnEliminarPropietario = new System.Windows.Forms.Button();
-            this.btnActualizarInfoPropietario = new System.Windows.Forms.Button();
-            this.btnVerPropietarios = new System.Windows.Forms.Button();
+            this.dgvPropietarios = new System.Windows.Forms.DataGridView();
             this.pnlGestionPropietario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPropietarios)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGestionPropietarios
@@ -72,6 +74,44 @@
             this.pnlGestionPropietario.Name = "pnlGestionPropietario";
             this.pnlGestionPropietario.Size = new System.Drawing.Size(412, 281);
             this.pnlGestionPropietario.TabIndex = 1;
+            // 
+            // btnVerPropietarios
+            // 
+            this.btnVerPropietarios.Location = new System.Drawing.Point(315, 205);
+            this.btnVerPropietarios.Name = "btnVerPropietarios";
+            this.btnVerPropietarios.Size = new System.Drawing.Size(85, 48);
+            this.btnVerPropietarios.TabIndex = 11;
+            this.btnVerPropietarios.Text = "Ver Propietarios";
+            this.btnVerPropietarios.UseVisualStyleBackColor = true;
+            this.btnVerPropietarios.Click += new System.EventHandler(this.btnVerPropietarios_Click);
+            // 
+            // btnActualizarInfoPropietario
+            // 
+            this.btnActualizarInfoPropietario.Location = new System.Drawing.Point(212, 205);
+            this.btnActualizarInfoPropietario.Name = "btnActualizarInfoPropietario";
+            this.btnActualizarInfoPropietario.Size = new System.Drawing.Size(85, 48);
+            this.btnActualizarInfoPropietario.TabIndex = 10;
+            this.btnActualizarInfoPropietario.Text = "Actualizar Informacion";
+            this.btnActualizarInfoPropietario.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarPropietario
+            // 
+            this.btnEliminarPropietario.Location = new System.Drawing.Point(121, 206);
+            this.btnEliminarPropietario.Name = "btnEliminarPropietario";
+            this.btnEliminarPropietario.Size = new System.Drawing.Size(85, 47);
+            this.btnEliminarPropietario.TabIndex = 9;
+            this.btnEliminarPropietario.Text = "Eliminar Propietario";
+            this.btnEliminarPropietario.UseVisualStyleBackColor = true;
+            // 
+            // btnRegistrarPropietario
+            // 
+            this.btnRegistrarPropietario.Location = new System.Drawing.Point(15, 206);
+            this.btnRegistrarPropietario.Name = "btnRegistrarPropietario";
+            this.btnRegistrarPropietario.Size = new System.Drawing.Size(84, 47);
+            this.btnRegistrarPropietario.TabIndex = 8;
+            this.btnRegistrarPropietario.Text = "Registrar Propietario";
+            this.btnRegistrarPropietario.UseVisualStyleBackColor = true;
+            this.btnRegistrarPropietario.Click += new System.EventHandler(this.btnRegistrarPropietario_Click);
             // 
             // txtGestionPropietario_Email
             // 
@@ -137,53 +177,30 @@
             this.lblGestionPropietario_Nombre.TabIndex = 0;
             this.lblGestionPropietario_Nombre.Text = "Nombre del propietario:";
             // 
-            // btnRegistrarPropietario
+            // dgvPropietarios
             // 
-            this.btnRegistrarPropietario.Location = new System.Drawing.Point(15, 206);
-            this.btnRegistrarPropietario.Name = "btnRegistrarPropietario";
-            this.btnRegistrarPropietario.Size = new System.Drawing.Size(84, 47);
-            this.btnRegistrarPropietario.TabIndex = 8;
-            this.btnRegistrarPropietario.Text = "Registrar Propietario";
-            this.btnRegistrarPropietario.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminarPropietario
-            // 
-            this.btnEliminarPropietario.Location = new System.Drawing.Point(121, 206);
-            this.btnEliminarPropietario.Name = "btnEliminarPropietario";
-            this.btnEliminarPropietario.Size = new System.Drawing.Size(85, 47);
-            this.btnEliminarPropietario.TabIndex = 9;
-            this.btnEliminarPropietario.Text = "Eliminar Propietario";
-            this.btnEliminarPropietario.UseVisualStyleBackColor = true;
-            // 
-            // btnActualizarInfoPropietario
-            // 
-            this.btnActualizarInfoPropietario.Location = new System.Drawing.Point(212, 205);
-            this.btnActualizarInfoPropietario.Name = "btnActualizarInfoPropietario";
-            this.btnActualizarInfoPropietario.Size = new System.Drawing.Size(85, 48);
-            this.btnActualizarInfoPropietario.TabIndex = 10;
-            this.btnActualizarInfoPropietario.Text = "Actualizar Informacion";
-            this.btnActualizarInfoPropietario.UseVisualStyleBackColor = true;
-            // 
-            // btnVerPropietarios
-            // 
-            this.btnVerPropietarios.Location = new System.Drawing.Point(315, 205);
-            this.btnVerPropietarios.Name = "btnVerPropietarios";
-            this.btnVerPropietarios.Size = new System.Drawing.Size(85, 48);
-            this.btnVerPropietarios.TabIndex = 11;
-            this.btnVerPropietarios.Text = "Ver Propietarios";
-            this.btnVerPropietarios.UseVisualStyleBackColor = true;
+            this.dgvPropietarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPropietarios.Location = new System.Drawing.Point(99, 389);
+            this.dgvPropietarios.Name = "dgvPropietarios";
+            this.dgvPropietarios.RowHeadersWidth = 51;
+            this.dgvPropietarios.RowTemplate.Height = 24;
+            this.dgvPropietarios.Size = new System.Drawing.Size(768, 314);
+            this.dgvPropietarios.TabIndex = 2;
             // 
             // frmGestionPropietarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 633);
+            this.Controls.Add(this.dgvPropietarios);
             this.Controls.Add(this.pnlGestionPropietario);
             this.Controls.Add(this.lblGestionPropietarios);
             this.Name = "frmGestionPropietarios";
             this.Text = "frmGestionPropietarios";
+            this.Load += new System.EventHandler(this.frmGestionPropietarios_Load);
             this.pnlGestionPropietario.ResumeLayout(false);
             this.pnlGestionPropietario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPropietarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +222,6 @@
         private System.Windows.Forms.Button btnActualizarInfoPropietario;
         private System.Windows.Forms.Button btnEliminarPropietario;
         private System.Windows.Forms.Button btnRegistrarPropietario;
+        private System.Windows.Forms.DataGridView dgvPropietarios;
     }
 }

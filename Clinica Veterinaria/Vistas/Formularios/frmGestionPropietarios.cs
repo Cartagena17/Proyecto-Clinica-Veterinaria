@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modelos.Conexion;
+using Modelos.Entidades;
 
 namespace Vistas.Formularios
 {
@@ -15,6 +18,58 @@ namespace Vistas.Formularios
         public frmGestionPropietarios()
         {
             InitializeComponent();
+        }
+
+        private void btnRegistrarPropietario_Click(object sender, EventArgs e)
+        {
+            Propietarios p = new Propietarios();
+            p.NombreProp1 = txtGestionPropietario_Nombre.Text;
+            p.TelefonoProp1 = txtGestionPropietario_Telefono.Text;
+            p.DireccionProp1 = txtGestionPropietario_Direccion.Text;
+            p.EmailProp1 = txtGestionPropietario_Email.Text;
+             
+            p.InsertarPropietarios();
+            Propietarios.CargarPropietarios();
+        }
+
+        private void frmGestionPropietarios_Load(object sender, EventArgs e)
+        {
+            MostarPropietarios();
+        }
+        private void MostarPropietarios()
+        {
+            dgvPropietarios.DataSource = null;
+            dgvPropietarios.DataSource = Propietarios.CargarPropietarios();
+        }
+
+        private void btnVerPropietarios_Click(object sender, EventArgs e)
+        {
+            string nombreProp = string.IsNullOrWhiteSpace(txtGestionPropietario_Nombre.Text) ? null : txtGestionPropietario_Nombre.Text.Trim();
+            string telefonoProp = string.IsNullOrWhiteSpace(txtGestionPropietario_Telefono.Text) ? null : txtGestionPropietario_Telefono.Text.Trim();
+            string DireccionProp = string.IsNullOrWhiteSpace(txtGestionPropietario_Direccion.Text) ? null : txtGestionPropietario_Direccion.Text.Trim();
+            string EmailProp = string.IsNullOrWhiteSpace(txtGestionPropietario_Email.Text) ? null : txtGestionPropietario_Email.Text.Trim();
+
+            using (SqlConnection conexion = Conexiondb.conectar())
+            {
+                string query = @"SELECT * FROM Propietarios
+                         WHERE (@nombreProp IS NULL OR NombreProp LIKE '%' + @NombreProp + '%')
+                         AND (@telefonoProp IS NULL OR TelefonoProp LIKE '%' + @TelefonoProp + '%')
+                         AND (@direccionProp IS NULL OR DireccionProp LIKE '%' + @DireccionProp + '%')
+                          AND (@emailProp IS NULL OR emailProp LIKE '%' + @EmailProp + '%')";
+                
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@nombreProp", (object)nombreProp ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@telefonoProp", (object)telefonoProp ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@direccionProp", (object)DireccionProp ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@emailprop", (object)EmailProp ?? DBNull.Value);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable tabla = new DataTable();
+
+                adapter.Fill(tabla);
+
+                dgvPropietarios.DataSource = tabla;
+            }
         }
     }
 }

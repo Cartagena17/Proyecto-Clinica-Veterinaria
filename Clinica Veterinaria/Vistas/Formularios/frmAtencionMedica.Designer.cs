@@ -30,28 +30,30 @@
         {
             this.lblConsultaMedica = new System.Windows.Forms.Label();
             this.pnlConsultaMedica = new System.Windows.Forms.Panel();
-            this.lblAtencionMedica_NombrePac = new System.Windows.Forms.Label();
-            this.lblAtencionMedica_NombrePers = new System.Windows.Forms.Label();
-            this.lblAtencionMedica_CitaID = new System.Windows.Forms.Label();
-            this.lblAtencionMedica_Fecha = new System.Windows.Forms.Label();
-            this.lblAtencionMedica_Sintomas = new System.Windows.Forms.Label();
-            this.lblAtencionMedica_Diagnostico = new System.Windows.Forms.Label();
-            this.lblAtencionMedica_Tratamiento = new System.Windows.Forms.Label();
-            this.lblAtencionMedica_Observaciones = new System.Windows.Forms.Label();
-            this.lblAtencionMedica_Peso = new System.Windows.Forms.Label();
-            this.lblAtencionMedica_Temperatura = new System.Windows.Forms.Label();
-            this.txtAtencionMedica_NombrePac = new System.Windows.Forms.TextBox();
-            this.txtAtencionMedica_NombrePers = new System.Windows.Forms.TextBox();
-            this.txtAtencionMedica_CitaID = new System.Windows.Forms.TextBox();
-            this.txtAtencionMedica_Peso = new System.Windows.Forms.TextBox();
-            this.txtAtencionMedica_Temperatura = new System.Windows.Forms.TextBox();
-            this.txtAtencionMedica_Sintomas = new System.Windows.Forms.TextBox();
-            this.txtAtencionMedica_Observaciones = new System.Windows.Forms.TextBox();
-            this.txtAtencionMedica_Diagnostico = new System.Windows.Forms.TextBox();
-            this.txtAtencionMedica_Tratamiento = new System.Windows.Forms.TextBox();
-            this.dtpAtencionMedica_Fecha = new System.Windows.Forms.DateTimePicker();
             this.btnRegistrarConsultaMedica = new System.Windows.Forms.Button();
+            this.dtpAtencionMedica_Fecha = new System.Windows.Forms.DateTimePicker();
+            this.txtAtencionMedica_Tratamiento = new System.Windows.Forms.TextBox();
+            this.txtAtencionMedica_Diagnostico = new System.Windows.Forms.TextBox();
+            this.txtAtencionMedica_Observaciones = new System.Windows.Forms.TextBox();
+            this.txtAtencionMedica_Sintomas = new System.Windows.Forms.TextBox();
+            this.txtAtencionMedica_Temperatura = new System.Windows.Forms.TextBox();
+            this.txtAtencionMedica_Peso = new System.Windows.Forms.TextBox();
+            this.txtAtencionMedica_CitaID = new System.Windows.Forms.TextBox();
+            this.txtAtencionMedica_NombrePers = new System.Windows.Forms.TextBox();
+            this.txtAtencionMedica_NombrePac = new System.Windows.Forms.TextBox();
+            this.lblAtencionMedica_Temperatura = new System.Windows.Forms.Label();
+            this.lblAtencionMedica_Peso = new System.Windows.Forms.Label();
+            this.lblAtencionMedica_Observaciones = new System.Windows.Forms.Label();
+            this.lblAtencionMedica_Tratamiento = new System.Windows.Forms.Label();
+            this.lblAtencionMedica_Diagnostico = new System.Windows.Forms.Label();
+            this.lblAtencionMedica_Sintomas = new System.Windows.Forms.Label();
+            this.lblAtencionMedica_Fecha = new System.Windows.Forms.Label();
+            this.lblAtencionMedica_CitaID = new System.Windows.Forms.Label();
+            this.lblAtencionMedica_NombrePers = new System.Windows.Forms.Label();
+            this.lblAtencionMedica_NombrePac = new System.Windows.Forms.Label();
+            this.dgvConsultasMedicas = new System.Windows.Forms.DataGridView();
             this.pnlConsultaMedica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultasMedicas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblConsultaMedica
@@ -91,87 +93,86 @@
             this.pnlConsultaMedica.Size = new System.Drawing.Size(803, 322);
             this.pnlConsultaMedica.TabIndex = 1;
             // 
-            // lblAtencionMedica_NombrePac
+            // btnRegistrarConsultaMedica
             // 
-            this.lblAtencionMedica_NombrePac.AutoSize = true;
-            this.lblAtencionMedica_NombrePac.Location = new System.Drawing.Point(69, 47);
-            this.lblAtencionMedica_NombrePac.Name = "lblAtencionMedica_NombrePac";
-            this.lblAtencionMedica_NombrePac.Size = new System.Drawing.Size(137, 16);
-            this.lblAtencionMedica_NombrePac.TabIndex = 0;
-            this.lblAtencionMedica_NombrePac.Text = "Nombre del Paciente:";
-            this.lblAtencionMedica_NombrePac.Click += new System.EventHandler(this.label1_Click);
+            this.btnRegistrarConsultaMedica.Location = new System.Drawing.Point(62, 233);
+            this.btnRegistrarConsultaMedica.Name = "btnRegistrarConsultaMedica";
+            this.btnRegistrarConsultaMedica.Size = new System.Drawing.Size(134, 44);
+            this.btnRegistrarConsultaMedica.TabIndex = 20;
+            this.btnRegistrarConsultaMedica.Text = "Registrar Consulta Medica";
+            this.btnRegistrarConsultaMedica.UseVisualStyleBackColor = true;
+            this.btnRegistrarConsultaMedica.Click += new System.EventHandler(this.btnRegistrarConsultaMedica_Click);
             // 
-            // lblAtencionMedica_NombrePers
+            // dtpAtencionMedica_Fecha
             // 
-            this.lblAtencionMedica_NombrePers.AutoSize = true;
-            this.lblAtencionMedica_NombrePers.Location = new System.Drawing.Point(69, 82);
-            this.lblAtencionMedica_NombrePers.Name = "lblAtencionMedica_NombrePers";
-            this.lblAtencionMedica_NombrePers.Size = new System.Drawing.Size(127, 16);
-            this.lblAtencionMedica_NombrePers.TabIndex = 1;
-            this.lblAtencionMedica_NombrePers.Text = "Nombre Veterinario:";
+            this.dtpAtencionMedica_Fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpAtencionMedica_Fecha.Location = new System.Drawing.Point(178, 157);
+            this.dtpAtencionMedica_Fecha.Name = "dtpAtencionMedica_Fecha";
+            this.dtpAtencionMedica_Fecha.Size = new System.Drawing.Size(114, 22);
+            this.dtpAtencionMedica_Fecha.TabIndex = 19;
             // 
-            // lblAtencionMedica_CitaID
+            // txtAtencionMedica_Tratamiento
             // 
-            this.lblAtencionMedica_CitaID.AutoSize = true;
-            this.lblAtencionMedica_CitaID.Location = new System.Drawing.Point(69, 119);
-            this.lblAtencionMedica_CitaID.Name = "lblAtencionMedica_CitaID";
-            this.lblAtencionMedica_CitaID.Size = new System.Drawing.Size(113, 16);
-            this.lblAtencionMedica_CitaID.TabIndex = 2;
-            this.lblAtencionMedica_CitaID.Text = "Codigo de la Cita:";
+            this.txtAtencionMedica_Tratamiento.Location = new System.Drawing.Point(498, 233);
+            this.txtAtencionMedica_Tratamiento.Name = "txtAtencionMedica_Tratamiento";
+            this.txtAtencionMedica_Tratamiento.Size = new System.Drawing.Size(100, 22);
+            this.txtAtencionMedica_Tratamiento.TabIndex = 18;
             // 
-            // lblAtencionMedica_Fecha
+            // txtAtencionMedica_Diagnostico
             // 
-            this.lblAtencionMedica_Fecha.AutoSize = true;
-            this.lblAtencionMedica_Fecha.Location = new System.Drawing.Point(69, 157);
-            this.lblAtencionMedica_Fecha.Name = "lblAtencionMedica_Fecha";
-            this.lblAtencionMedica_Fecha.Size = new System.Drawing.Size(103, 16);
-            this.lblAtencionMedica_Fecha.TabIndex = 3;
-            this.lblAtencionMedica_Fecha.Text = "Fecha Consulta:";
+            this.txtAtencionMedica_Diagnostico.Location = new System.Drawing.Point(498, 192);
+            this.txtAtencionMedica_Diagnostico.Name = "txtAtencionMedica_Diagnostico";
+            this.txtAtencionMedica_Diagnostico.Size = new System.Drawing.Size(100, 22);
+            this.txtAtencionMedica_Diagnostico.TabIndex = 17;
             // 
-            // lblAtencionMedica_Sintomas
+            // txtAtencionMedica_Observaciones
             // 
-            this.lblAtencionMedica_Sintomas.AutoSize = true;
-            this.lblAtencionMedica_Sintomas.Location = new System.Drawing.Point(410, 119);
-            this.lblAtencionMedica_Sintomas.Name = "lblAtencionMedica_Sintomas";
-            this.lblAtencionMedica_Sintomas.Size = new System.Drawing.Size(66, 16);
-            this.lblAtencionMedica_Sintomas.TabIndex = 4;
-            this.lblAtencionMedica_Sintomas.Text = "Sintomas:";
+            this.txtAtencionMedica_Observaciones.Location = new System.Drawing.Point(519, 157);
+            this.txtAtencionMedica_Observaciones.Name = "txtAtencionMedica_Observaciones";
+            this.txtAtencionMedica_Observaciones.Size = new System.Drawing.Size(100, 22);
+            this.txtAtencionMedica_Observaciones.TabIndex = 16;
             // 
-            // lblAtencionMedica_Diagnostico
+            // txtAtencionMedica_Sintomas
             // 
-            this.lblAtencionMedica_Diagnostico.AutoSize = true;
-            this.lblAtencionMedica_Diagnostico.Location = new System.Drawing.Point(410, 192);
-            this.lblAtencionMedica_Diagnostico.Name = "lblAtencionMedica_Diagnostico";
-            this.lblAtencionMedica_Diagnostico.Size = new System.Drawing.Size(82, 16);
-            this.lblAtencionMedica_Diagnostico.TabIndex = 5;
-            this.lblAtencionMedica_Diagnostico.Text = "Diagnostico:";
+            this.txtAtencionMedica_Sintomas.Location = new System.Drawing.Point(483, 112);
+            this.txtAtencionMedica_Sintomas.Name = "txtAtencionMedica_Sintomas";
+            this.txtAtencionMedica_Sintomas.Size = new System.Drawing.Size(100, 22);
+            this.txtAtencionMedica_Sintomas.TabIndex = 15;
             // 
-            // lblAtencionMedica_Tratamiento
+            // txtAtencionMedica_Temperatura
             // 
-            this.lblAtencionMedica_Tratamiento.AutoSize = true;
-            this.lblAtencionMedica_Tratamiento.Location = new System.Drawing.Point(416, 233);
-            this.lblAtencionMedica_Tratamiento.Name = "lblAtencionMedica_Tratamiento";
-            this.lblAtencionMedica_Tratamiento.Size = new System.Drawing.Size(82, 16);
-            this.lblAtencionMedica_Tratamiento.TabIndex = 6;
-            this.lblAtencionMedica_Tratamiento.Text = "Tratamiento:";
+            this.txtAtencionMedica_Temperatura.Location = new System.Drawing.Point(505, 81);
+            this.txtAtencionMedica_Temperatura.Name = "txtAtencionMedica_Temperatura";
+            this.txtAtencionMedica_Temperatura.Size = new System.Drawing.Size(100, 22);
+            this.txtAtencionMedica_Temperatura.TabIndex = 14;
             // 
-            // lblAtencionMedica_Observaciones
+            // txtAtencionMedica_Peso
             // 
-            this.lblAtencionMedica_Observaciones.AutoSize = true;
-            this.lblAtencionMedica_Observaciones.Location = new System.Drawing.Point(410, 157);
-            this.lblAtencionMedica_Observaciones.Name = "lblAtencionMedica_Observaciones";
-            this.lblAtencionMedica_Observaciones.Size = new System.Drawing.Size(102, 16);
-            this.lblAtencionMedica_Observaciones.TabIndex = 7;
-            this.lblAtencionMedica_Observaciones.Text = "Observaciones:";
+            this.txtAtencionMedica_Peso.Location = new System.Drawing.Point(498, 47);
+            this.txtAtencionMedica_Peso.Name = "txtAtencionMedica_Peso";
+            this.txtAtencionMedica_Peso.Size = new System.Drawing.Size(100, 22);
+            this.txtAtencionMedica_Peso.TabIndex = 13;
             // 
-            // lblAtencionMedica_Peso
+            // txtAtencionMedica_CitaID
             // 
-            this.lblAtencionMedica_Peso.AutoSize = true;
-            this.lblAtencionMedica_Peso.Location = new System.Drawing.Point(410, 47);
-            this.lblAtencionMedica_Peso.Name = "lblAtencionMedica_Peso";
-            this.lblAtencionMedica_Peso.Size = new System.Drawing.Size(81, 16);
-            this.lblAtencionMedica_Peso.TabIndex = 8;
-            this.lblAtencionMedica_Peso.Text = "Peso actual:";
+            this.txtAtencionMedica_CitaID.Location = new System.Drawing.Point(213, 119);
+            this.txtAtencionMedica_CitaID.Name = "txtAtencionMedica_CitaID";
+            this.txtAtencionMedica_CitaID.Size = new System.Drawing.Size(100, 22);
+            this.txtAtencionMedica_CitaID.TabIndex = 12;
+            // 
+            // txtAtencionMedica_NombrePers
+            // 
+            this.txtAtencionMedica_NombrePers.Location = new System.Drawing.Point(213, 82);
+            this.txtAtencionMedica_NombrePers.Name = "txtAtencionMedica_NombrePers";
+            this.txtAtencionMedica_NombrePers.Size = new System.Drawing.Size(100, 22);
+            this.txtAtencionMedica_NombrePers.TabIndex = 11;
+            // 
+            // txtAtencionMedica_NombrePac
+            // 
+            this.txtAtencionMedica_NombrePac.Location = new System.Drawing.Point(213, 47);
+            this.txtAtencionMedica_NombrePac.Name = "txtAtencionMedica_NombrePac";
+            this.txtAtencionMedica_NombrePac.Size = new System.Drawing.Size(100, 22);
+            this.txtAtencionMedica_NombrePac.TabIndex = 10;
             // 
             // lblAtencionMedica_Temperatura
             // 
@@ -182,97 +183,112 @@
             this.lblAtencionMedica_Temperatura.TabIndex = 9;
             this.lblAtencionMedica_Temperatura.Text = "Temperatura:";
             // 
-            // txtAtencionMedica_NombrePac
+            // lblAtencionMedica_Peso
             // 
-            this.txtAtencionMedica_NombrePac.Location = new System.Drawing.Point(213, 47);
-            this.txtAtencionMedica_NombrePac.Name = "txtAtencionMedica_NombrePac";
-            this.txtAtencionMedica_NombrePac.Size = new System.Drawing.Size(100, 22);
-            this.txtAtencionMedica_NombrePac.TabIndex = 10;
+            this.lblAtencionMedica_Peso.AutoSize = true;
+            this.lblAtencionMedica_Peso.Location = new System.Drawing.Point(410, 47);
+            this.lblAtencionMedica_Peso.Name = "lblAtencionMedica_Peso";
+            this.lblAtencionMedica_Peso.Size = new System.Drawing.Size(81, 16);
+            this.lblAtencionMedica_Peso.TabIndex = 8;
+            this.lblAtencionMedica_Peso.Text = "Peso actual:";
             // 
-            // txtAtencionMedica_NombrePers
+            // lblAtencionMedica_Observaciones
             // 
-            this.txtAtencionMedica_NombrePers.Location = new System.Drawing.Point(213, 82);
-            this.txtAtencionMedica_NombrePers.Name = "txtAtencionMedica_NombrePers";
-            this.txtAtencionMedica_NombrePers.Size = new System.Drawing.Size(100, 22);
-            this.txtAtencionMedica_NombrePers.TabIndex = 11;
+            this.lblAtencionMedica_Observaciones.AutoSize = true;
+            this.lblAtencionMedica_Observaciones.Location = new System.Drawing.Point(410, 157);
+            this.lblAtencionMedica_Observaciones.Name = "lblAtencionMedica_Observaciones";
+            this.lblAtencionMedica_Observaciones.Size = new System.Drawing.Size(102, 16);
+            this.lblAtencionMedica_Observaciones.TabIndex = 7;
+            this.lblAtencionMedica_Observaciones.Text = "Observaciones:";
             // 
-            // txtAtencionMedica_CitaID
+            // lblAtencionMedica_Tratamiento
             // 
-            this.txtAtencionMedica_CitaID.Location = new System.Drawing.Point(213, 119);
-            this.txtAtencionMedica_CitaID.Name = "txtAtencionMedica_CitaID";
-            this.txtAtencionMedica_CitaID.Size = new System.Drawing.Size(100, 22);
-            this.txtAtencionMedica_CitaID.TabIndex = 12;
+            this.lblAtencionMedica_Tratamiento.AutoSize = true;
+            this.lblAtencionMedica_Tratamiento.Location = new System.Drawing.Point(416, 233);
+            this.lblAtencionMedica_Tratamiento.Name = "lblAtencionMedica_Tratamiento";
+            this.lblAtencionMedica_Tratamiento.Size = new System.Drawing.Size(82, 16);
+            this.lblAtencionMedica_Tratamiento.TabIndex = 6;
+            this.lblAtencionMedica_Tratamiento.Text = "Tratamiento:";
             // 
-            // txtAtencionMedica_Peso
+            // lblAtencionMedica_Diagnostico
             // 
-            this.txtAtencionMedica_Peso.Location = new System.Drawing.Point(498, 47);
-            this.txtAtencionMedica_Peso.Name = "txtAtencionMedica_Peso";
-            this.txtAtencionMedica_Peso.Size = new System.Drawing.Size(100, 22);
-            this.txtAtencionMedica_Peso.TabIndex = 13;
+            this.lblAtencionMedica_Diagnostico.AutoSize = true;
+            this.lblAtencionMedica_Diagnostico.Location = new System.Drawing.Point(410, 192);
+            this.lblAtencionMedica_Diagnostico.Name = "lblAtencionMedica_Diagnostico";
+            this.lblAtencionMedica_Diagnostico.Size = new System.Drawing.Size(82, 16);
+            this.lblAtencionMedica_Diagnostico.TabIndex = 5;
+            this.lblAtencionMedica_Diagnostico.Text = "Diagnostico:";
             // 
-            // txtAtencionMedica_Temperatura
+            // lblAtencionMedica_Sintomas
             // 
-            this.txtAtencionMedica_Temperatura.Location = new System.Drawing.Point(505, 81);
-            this.txtAtencionMedica_Temperatura.Name = "txtAtencionMedica_Temperatura";
-            this.txtAtencionMedica_Temperatura.Size = new System.Drawing.Size(100, 22);
-            this.txtAtencionMedica_Temperatura.TabIndex = 14;
+            this.lblAtencionMedica_Sintomas.AutoSize = true;
+            this.lblAtencionMedica_Sintomas.Location = new System.Drawing.Point(410, 119);
+            this.lblAtencionMedica_Sintomas.Name = "lblAtencionMedica_Sintomas";
+            this.lblAtencionMedica_Sintomas.Size = new System.Drawing.Size(66, 16);
+            this.lblAtencionMedica_Sintomas.TabIndex = 4;
+            this.lblAtencionMedica_Sintomas.Text = "Sintomas:";
             // 
-            // txtAtencionMedica_Sintomas
+            // lblAtencionMedica_Fecha
             // 
-            this.txtAtencionMedica_Sintomas.Location = new System.Drawing.Point(483, 112);
-            this.txtAtencionMedica_Sintomas.Name = "txtAtencionMedica_Sintomas";
-            this.txtAtencionMedica_Sintomas.Size = new System.Drawing.Size(100, 22);
-            this.txtAtencionMedica_Sintomas.TabIndex = 15;
+            this.lblAtencionMedica_Fecha.AutoSize = true;
+            this.lblAtencionMedica_Fecha.Location = new System.Drawing.Point(69, 157);
+            this.lblAtencionMedica_Fecha.Name = "lblAtencionMedica_Fecha";
+            this.lblAtencionMedica_Fecha.Size = new System.Drawing.Size(103, 16);
+            this.lblAtencionMedica_Fecha.TabIndex = 3;
+            this.lblAtencionMedica_Fecha.Text = "Fecha Consulta:";
             // 
-            // txtAtencionMedica_Observaciones
+            // lblAtencionMedica_CitaID
             // 
-            this.txtAtencionMedica_Observaciones.Location = new System.Drawing.Point(519, 157);
-            this.txtAtencionMedica_Observaciones.Name = "txtAtencionMedica_Observaciones";
-            this.txtAtencionMedica_Observaciones.Size = new System.Drawing.Size(100, 22);
-            this.txtAtencionMedica_Observaciones.TabIndex = 16;
+            this.lblAtencionMedica_CitaID.AutoSize = true;
+            this.lblAtencionMedica_CitaID.Location = new System.Drawing.Point(69, 119);
+            this.lblAtencionMedica_CitaID.Name = "lblAtencionMedica_CitaID";
+            this.lblAtencionMedica_CitaID.Size = new System.Drawing.Size(113, 16);
+            this.lblAtencionMedica_CitaID.TabIndex = 2;
+            this.lblAtencionMedica_CitaID.Text = "Codigo de la Cita:";
             // 
-            // txtAtencionMedica_Diagnostico
+            // lblAtencionMedica_NombrePers
             // 
-            this.txtAtencionMedica_Diagnostico.Location = new System.Drawing.Point(498, 192);
-            this.txtAtencionMedica_Diagnostico.Name = "txtAtencionMedica_Diagnostico";
-            this.txtAtencionMedica_Diagnostico.Size = new System.Drawing.Size(100, 22);
-            this.txtAtencionMedica_Diagnostico.TabIndex = 17;
+            this.lblAtencionMedica_NombrePers.AutoSize = true;
+            this.lblAtencionMedica_NombrePers.Location = new System.Drawing.Point(69, 82);
+            this.lblAtencionMedica_NombrePers.Name = "lblAtencionMedica_NombrePers";
+            this.lblAtencionMedica_NombrePers.Size = new System.Drawing.Size(127, 16);
+            this.lblAtencionMedica_NombrePers.TabIndex = 1;
+            this.lblAtencionMedica_NombrePers.Text = "Nombre Veterinario:";
             // 
-            // txtAtencionMedica_Tratamiento
+            // lblAtencionMedica_NombrePac
             // 
-            this.txtAtencionMedica_Tratamiento.Location = new System.Drawing.Point(498, 233);
-            this.txtAtencionMedica_Tratamiento.Name = "txtAtencionMedica_Tratamiento";
-            this.txtAtencionMedica_Tratamiento.Size = new System.Drawing.Size(100, 22);
-            this.txtAtencionMedica_Tratamiento.TabIndex = 18;
+            this.lblAtencionMedica_NombrePac.AutoSize = true;
+            this.lblAtencionMedica_NombrePac.Location = new System.Drawing.Point(69, 47);
+            this.lblAtencionMedica_NombrePac.Name = "lblAtencionMedica_NombrePac";
+            this.lblAtencionMedica_NombrePac.Size = new System.Drawing.Size(137, 16);
+            this.lblAtencionMedica_NombrePac.TabIndex = 0;
+            this.lblAtencionMedica_NombrePac.Text = "Nombre del Paciente:";
+            this.lblAtencionMedica_NombrePac.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dtpAtencionMedica_Fecha
+            // dgvConsultasMedicas
             // 
-            this.dtpAtencionMedica_Fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAtencionMedica_Fecha.Location = new System.Drawing.Point(178, 157);
-            this.dtpAtencionMedica_Fecha.Name = "dtpAtencionMedica_Fecha";
-            this.dtpAtencionMedica_Fecha.Size = new System.Drawing.Size(114, 22);
-            this.dtpAtencionMedica_Fecha.TabIndex = 19;
-            // 
-            // btnRegistrarConsultaMedica
-            // 
-            this.btnRegistrarConsultaMedica.Location = new System.Drawing.Point(62, 233);
-            this.btnRegistrarConsultaMedica.Name = "btnRegistrarConsultaMedica";
-            this.btnRegistrarConsultaMedica.Size = new System.Drawing.Size(134, 44);
-            this.btnRegistrarConsultaMedica.TabIndex = 20;
-            this.btnRegistrarConsultaMedica.Text = "Registrar Consulta Medica";
-            this.btnRegistrarConsultaMedica.UseVisualStyleBackColor = true;
+            this.dgvConsultasMedicas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsultasMedicas.Location = new System.Drawing.Point(36, 395);
+            this.dgvConsultasMedicas.Name = "dgvConsultasMedicas";
+            this.dgvConsultasMedicas.RowHeadersWidth = 51;
+            this.dgvConsultasMedicas.RowTemplate.Height = 24;
+            this.dgvConsultasMedicas.Size = new System.Drawing.Size(1109, 338);
+            this.dgvConsultasMedicas.TabIndex = 2;
             // 
             // frmAtencionMedica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 550);
+            this.ClientSize = new System.Drawing.Size(1297, 756);
+            this.Controls.Add(this.dgvConsultasMedicas);
             this.Controls.Add(this.pnlConsultaMedica);
             this.Controls.Add(this.lblConsultaMedica);
             this.Name = "frmAtencionMedica";
             this.Text = "frmAtencionMedica";
+            this.Load += new System.EventHandler(this.frmAtencionMedica_Load);
             this.pnlConsultaMedica.ResumeLayout(false);
             this.pnlConsultaMedica.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultasMedicas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +319,6 @@
         private System.Windows.Forms.TextBox txtAtencionMedica_NombrePers;
         private System.Windows.Forms.TextBox txtAtencionMedica_NombrePac;
         private System.Windows.Forms.Button btnRegistrarConsultaMedica;
+        private System.Windows.Forms.DataGridView dgvConsultasMedicas;
     }
 }

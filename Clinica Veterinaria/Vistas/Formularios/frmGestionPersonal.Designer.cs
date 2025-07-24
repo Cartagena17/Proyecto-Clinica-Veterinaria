@@ -30,6 +30,10 @@
         {
             this.lblGestionPersonal = new System.Windows.Forms.Label();
             this.pnlGestionPersonal = new System.Windows.Forms.Panel();
+            this.btnVerPersonal = new System.Windows.Forms.Button();
+            this.btnActualizarInfoPersonal = new System.Windows.Forms.Button();
+            this.btnEliminarPersonal = new System.Windows.Forms.Button();
+            this.btnAgregarPersonal = new System.Windows.Forms.Button();
             this.txtGestionPersonal_Email = new System.Windows.Forms.TextBox();
             this.txtGestionPersonal_Telefono = new System.Windows.Forms.TextBox();
             this.txtGestionPersonal_Rol = new System.Windows.Forms.TextBox();
@@ -40,11 +44,9 @@
             this.lblGestionPersonal_Rol = new System.Windows.Forms.Label();
             this.lblGestionPersonal_Apellido = new System.Windows.Forms.Label();
             this.lblGestionPersonal_Nombre = new System.Windows.Forms.Label();
-            this.btnAgregarPersonal = new System.Windows.Forms.Button();
-            this.btnEliminarPersonal = new System.Windows.Forms.Button();
-            this.btnActualizarInfoPersonal = new System.Windows.Forms.Button();
-            this.btnVerPersonal = new System.Windows.Forms.Button();
+            this.dgvPersonal = new System.Windows.Forms.DataGridView();
             this.pnlGestionPersonal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonal)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGestionPersonal
@@ -76,6 +78,42 @@
             this.pnlGestionPersonal.Name = "pnlGestionPersonal";
             this.pnlGestionPersonal.Size = new System.Drawing.Size(631, 282);
             this.pnlGestionPersonal.TabIndex = 1;
+            // 
+            // btnVerPersonal
+            // 
+            this.btnVerPersonal.Location = new System.Drawing.Point(481, 185);
+            this.btnVerPersonal.Name = "btnVerPersonal";
+            this.btnVerPersonal.Size = new System.Drawing.Size(118, 50);
+            this.btnVerPersonal.TabIndex = 13;
+            this.btnVerPersonal.Text = "Ver Personal";
+            this.btnVerPersonal.UseVisualStyleBackColor = true;
+            // 
+            // btnActualizarInfoPersonal
+            // 
+            this.btnActualizarInfoPersonal.Location = new System.Drawing.Point(355, 187);
+            this.btnActualizarInfoPersonal.Name = "btnActualizarInfoPersonal";
+            this.btnActualizarInfoPersonal.Size = new System.Drawing.Size(106, 49);
+            this.btnActualizarInfoPersonal.TabIndex = 12;
+            this.btnActualizarInfoPersonal.Text = "Actualizar Informacion";
+            this.btnActualizarInfoPersonal.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarPersonal
+            // 
+            this.btnEliminarPersonal.Location = new System.Drawing.Point(214, 186);
+            this.btnEliminarPersonal.Name = "btnEliminarPersonal";
+            this.btnEliminarPersonal.Size = new System.Drawing.Size(114, 50);
+            this.btnEliminarPersonal.TabIndex = 11;
+            this.btnEliminarPersonal.Text = "Eliminar Personal";
+            this.btnEliminarPersonal.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarPersonal
+            // 
+            this.btnAgregarPersonal.Location = new System.Drawing.Point(92, 186);
+            this.btnAgregarPersonal.Name = "btnAgregarPersonal";
+            this.btnAgregarPersonal.Size = new System.Drawing.Size(103, 49);
+            this.btnAgregarPersonal.TabIndex = 10;
+            this.btnAgregarPersonal.Text = "Agregar Personal";
+            this.btnAgregarPersonal.UseVisualStyleBackColor = true;
             // 
             // txtGestionPersonal_Email
             // 
@@ -157,53 +195,30 @@
             this.lblGestionPersonal_Nombre.TabIndex = 0;
             this.lblGestionPersonal_Nombre.Text = "Nombre del Personal:";
             // 
-            // btnAgregarPersonal
+            // dgvPersonal
             // 
-            this.btnAgregarPersonal.Location = new System.Drawing.Point(92, 186);
-            this.btnAgregarPersonal.Name = "btnAgregarPersonal";
-            this.btnAgregarPersonal.Size = new System.Drawing.Size(103, 49);
-            this.btnAgregarPersonal.TabIndex = 10;
-            this.btnAgregarPersonal.Text = "Agregar Personal";
-            this.btnAgregarPersonal.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminarPersonal
-            // 
-            this.btnEliminarPersonal.Location = new System.Drawing.Point(214, 186);
-            this.btnEliminarPersonal.Name = "btnEliminarPersonal";
-            this.btnEliminarPersonal.Size = new System.Drawing.Size(114, 50);
-            this.btnEliminarPersonal.TabIndex = 11;
-            this.btnEliminarPersonal.Text = "Eliminar Personal";
-            this.btnEliminarPersonal.UseVisualStyleBackColor = true;
-            // 
-            // btnActualizarInfoPersonal
-            // 
-            this.btnActualizarInfoPersonal.Location = new System.Drawing.Point(355, 187);
-            this.btnActualizarInfoPersonal.Name = "btnActualizarInfoPersonal";
-            this.btnActualizarInfoPersonal.Size = new System.Drawing.Size(106, 49);
-            this.btnActualizarInfoPersonal.TabIndex = 12;
-            this.btnActualizarInfoPersonal.Text = "Actualizar Informacion";
-            this.btnActualizarInfoPersonal.UseVisualStyleBackColor = true;
-            // 
-            // btnVerPersonal
-            // 
-            this.btnVerPersonal.Location = new System.Drawing.Point(481, 185);
-            this.btnVerPersonal.Name = "btnVerPersonal";
-            this.btnVerPersonal.Size = new System.Drawing.Size(118, 50);
-            this.btnVerPersonal.TabIndex = 13;
-            this.btnVerPersonal.Text = "Ver Personal";
-            this.btnVerPersonal.UseVisualStyleBackColor = true;
+            this.dgvPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPersonal.Location = new System.Drawing.Point(78, 382);
+            this.dgvPersonal.Name = "dgvPersonal";
+            this.dgvPersonal.RowHeadersWidth = 51;
+            this.dgvPersonal.RowTemplate.Height = 24;
+            this.dgvPersonal.Size = new System.Drawing.Size(858, 302);
+            this.dgvPersonal.TabIndex = 2;
             // 
             // frmGestionPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1108, 712);
+            this.Controls.Add(this.dgvPersonal);
             this.Controls.Add(this.pnlGestionPersonal);
             this.Controls.Add(this.lblGestionPersonal);
             this.Name = "frmGestionPersonal";
             this.Text = "frmGestionPersonal";
+            this.Load += new System.EventHandler(this.frmGestionPersonal_Load);
             this.pnlGestionPersonal.ResumeLayout(false);
             this.pnlGestionPersonal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +242,6 @@
         private System.Windows.Forms.Button btnActualizarInfoPersonal;
         private System.Windows.Forms.Button btnEliminarPersonal;
         private System.Windows.Forms.Button btnAgregarPersonal;
+        private System.Windows.Forms.DataGridView dgvPersonal;
     }
 }

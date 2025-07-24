@@ -70,5 +70,10 @@ namespace Vistas.Formularios
         {
             AbrirForm(new frmFacturacion());
         }
+
+        private void btnVolverDashboard_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

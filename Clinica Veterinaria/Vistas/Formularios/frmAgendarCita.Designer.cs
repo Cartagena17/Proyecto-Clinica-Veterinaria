@@ -30,6 +30,7 @@
         {
             this.lblAgendarCitas = new System.Windows.Forms.Label();
             this.pnlAgendarCitas = new System.Windows.Forms.Panel();
+            this.btnAgendarCita = new System.Windows.Forms.Button();
             this.txtAgendarCita_Motivo = new System.Windows.Forms.TextBox();
             this.txtAgendarCita_Hora = new System.Windows.Forms.TextBox();
             this.dtpAgendarCita_Fecha = new System.Windows.Forms.DateTimePicker();
@@ -42,8 +43,9 @@
             this.lblAgendarCita_Propietario = new System.Windows.Forms.Label();
             this.lblAgendarCita_Paciente = new System.Windows.Forms.Label();
             this.lblAgendarCita_Veterinario = new System.Windows.Forms.Label();
-            this.btnAgendarCita = new System.Windows.Forms.Button();
+            this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.pnlAgendarCitas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAgendarCitas
@@ -75,6 +77,16 @@
             this.pnlAgendarCitas.Name = "pnlAgendarCitas";
             this.pnlAgendarCitas.Size = new System.Drawing.Size(382, 297);
             this.pnlAgendarCitas.TabIndex = 1;
+            // 
+            // btnAgendarCita
+            // 
+            this.btnAgendarCita.Location = new System.Drawing.Point(105, 231);
+            this.btnAgendarCita.Name = "btnAgendarCita";
+            this.btnAgendarCita.Size = new System.Drawing.Size(147, 44);
+            this.btnAgendarCita.TabIndex = 25;
+            this.btnAgendarCita.Text = "Agendar Cita";
+            this.btnAgendarCita.UseVisualStyleBackColor = true;
+            this.btnAgendarCita.Click += new System.EventHandler(this.btnAgendarCita_Click);
             // 
             // txtAgendarCita_Motivo
             // 
@@ -174,20 +186,22 @@
             this.lblAgendarCita_Veterinario.TabIndex = 13;
             this.lblAgendarCita_Veterinario.Text = "Nombre del Veterinario";
             // 
-            // btnAgendarCita
+            // dgvCitas
             // 
-            this.btnAgendarCita.Location = new System.Drawing.Point(105, 231);
-            this.btnAgendarCita.Name = "btnAgendarCita";
-            this.btnAgendarCita.Size = new System.Drawing.Size(147, 44);
-            this.btnAgendarCita.TabIndex = 25;
-            this.btnAgendarCita.Text = "Agendar Cita";
-            this.btnAgendarCita.UseVisualStyleBackColor = true;
+            this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas.Location = new System.Drawing.Point(132, 397);
+            this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.RowHeadersWidth = 51;
+            this.dgvCitas.RowTemplate.Height = 24;
+            this.dgvCitas.Size = new System.Drawing.Size(650, 203);
+            this.dgvCitas.TabIndex = 2;
             // 
             // frmAgendarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(974, 583);
+            this.Controls.Add(this.dgvCitas);
             this.Controls.Add(this.pnlAgendarCitas);
             this.Controls.Add(this.lblAgendarCitas);
             this.Name = "frmAgendarCita";
@@ -195,6 +209,7 @@
             this.Load += new System.EventHandler(this.frmAgendarCita_Load);
             this.pnlAgendarCitas.ResumeLayout(false);
             this.pnlAgendarCitas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,5 +232,6 @@
         private System.Windows.Forms.Label lblAgendarCita_Paciente;
         private System.Windows.Forms.Label lblAgendarCita_Veterinario;
         private System.Windows.Forms.Button btnAgendarCita;
+        private System.Windows.Forms.DataGridView dgvCitas;
     }
 }
