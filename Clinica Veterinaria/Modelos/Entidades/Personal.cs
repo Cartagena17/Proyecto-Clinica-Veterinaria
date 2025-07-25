@@ -11,7 +11,6 @@ namespace Modelos.Entidades
 {
     public class Personal
     {
-        private int personalID;
         private string nombrePers;
         private string apellidoPers;
         private string rol;
@@ -24,7 +23,6 @@ namespace Modelos.Entidades
         public string Rol { get => rol; set => rol = value; }
         public string TelefonoPers { get => telefonoPers; set => telefonoPers = value; }
         public string EmailPers { get => emailPers; set => emailPers = value; }
-        public int PersonalID { get => personalID; set => personalID = value; }
 
         public bool InsertarPersonal()
         {

@@ -51,9 +51,9 @@
             // lblAgendarCitas
             // 
             this.lblAgendarCitas.AutoSize = true;
-            this.lblAgendarCitas.Location = new System.Drawing.Point(315, 29);
+            this.lblAgendarCitas.Location = new System.Drawing.Point(354, 29);
             this.lblAgendarCitas.Name = "lblAgendarCitas";
-            this.lblAgendarCitas.Size = new System.Drawing.Size(95, 16);
+            this.lblAgendarCitas.Size = new System.Drawing.Size(109, 16);
             this.lblAgendarCitas.TabIndex = 0;
             this.lblAgendarCitas.Text = " Agendar Citas";
             this.lblAgendarCitas.Click += new System.EventHandler(this.label1_Click);
@@ -73,16 +73,16 @@
             this.pnlAgendarCitas.Controls.Add(this.lblAgendarCita_Propietario);
             this.pnlAgendarCitas.Controls.Add(this.lblAgendarCita_Paciente);
             this.pnlAgendarCitas.Controls.Add(this.lblAgendarCita_Veterinario);
-            this.pnlAgendarCitas.Location = new System.Drawing.Point(155, 71);
+            this.pnlAgendarCitas.Location = new System.Drawing.Point(174, 71);
             this.pnlAgendarCitas.Name = "pnlAgendarCitas";
-            this.pnlAgendarCitas.Size = new System.Drawing.Size(382, 297);
+            this.pnlAgendarCitas.Size = new System.Drawing.Size(430, 297);
             this.pnlAgendarCitas.TabIndex = 1;
             // 
             // btnAgendarCita
             // 
-            this.btnAgendarCita.Location = new System.Drawing.Point(105, 231);
+            this.btnAgendarCita.Location = new System.Drawing.Point(118, 231);
             this.btnAgendarCita.Name = "btnAgendarCita";
-            this.btnAgendarCita.Size = new System.Drawing.Size(147, 44);
+            this.btnAgendarCita.Size = new System.Drawing.Size(165, 44);
             this.btnAgendarCita.TabIndex = 25;
             this.btnAgendarCita.Text = "Agendar Cita";
             this.btnAgendarCita.UseVisualStyleBackColor = true;
@@ -90,46 +90,46 @@
             // 
             // txtAgendarCita_Motivo
             // 
-            this.txtAgendarCita_Motivo.Location = new System.Drawing.Point(158, 163);
+            this.txtAgendarCita_Motivo.Location = new System.Drawing.Point(178, 163);
             this.txtAgendarCita_Motivo.Multiline = true;
             this.txtAgendarCita_Motivo.Name = "txtAgendarCita_Motivo";
-            this.txtAgendarCita_Motivo.Size = new System.Drawing.Size(174, 22);
+            this.txtAgendarCita_Motivo.Size = new System.Drawing.Size(195, 22);
             this.txtAgendarCita_Motivo.TabIndex = 24;
             // 
             // txtAgendarCita_Hora
             // 
-            this.txtAgendarCita_Hora.Location = new System.Drawing.Point(158, 134);
+            this.txtAgendarCita_Hora.Location = new System.Drawing.Point(178, 134);
             this.txtAgendarCita_Hora.Name = "txtAgendarCita_Hora";
-            this.txtAgendarCita_Hora.Size = new System.Drawing.Size(174, 22);
+            this.txtAgendarCita_Hora.Size = new System.Drawing.Size(195, 22);
             this.txtAgendarCita_Hora.TabIndex = 23;
             // 
             // dtpAgendarCita_Fecha
             // 
             this.dtpAgendarCita_Fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAgendarCita_Fecha.Location = new System.Drawing.Point(158, 109);
+            this.dtpAgendarCita_Fecha.Location = new System.Drawing.Point(178, 109);
             this.dtpAgendarCita_Fecha.Name = "dtpAgendarCita_Fecha";
-            this.dtpAgendarCita_Fecha.Size = new System.Drawing.Size(200, 22);
+            this.dtpAgendarCita_Fecha.Size = new System.Drawing.Size(224, 22);
             this.dtpAgendarCita_Fecha.TabIndex = 22;
             // 
             // txtAgendarCita_Veterinario
             // 
-            this.txtAgendarCita_Veterinario.Location = new System.Drawing.Point(158, 80);
+            this.txtAgendarCita_Veterinario.Location = new System.Drawing.Point(178, 80);
             this.txtAgendarCita_Veterinario.Name = "txtAgendarCita_Veterinario";
-            this.txtAgendarCita_Veterinario.Size = new System.Drawing.Size(174, 22);
+            this.txtAgendarCita_Veterinario.Size = new System.Drawing.Size(195, 22);
             this.txtAgendarCita_Veterinario.TabIndex = 21;
             // 
             // txtAgendarCita_Paciente
             // 
-            this.txtAgendarCita_Paciente.Location = new System.Drawing.Point(158, 52);
+            this.txtAgendarCita_Paciente.Location = new System.Drawing.Point(178, 52);
             this.txtAgendarCita_Paciente.Name = "txtAgendarCita_Paciente";
-            this.txtAgendarCita_Paciente.Size = new System.Drawing.Size(174, 22);
+            this.txtAgendarCita_Paciente.Size = new System.Drawing.Size(195, 22);
             this.txtAgendarCita_Paciente.TabIndex = 20;
             // 
             // txtAgendarCita_Propietario
             // 
-            this.txtAgendarCita_Propietario.Location = new System.Drawing.Point(158, 23);
+            this.txtAgendarCita_Propietario.Location = new System.Drawing.Point(178, 23);
             this.txtAgendarCita_Propietario.Name = "txtAgendarCita_Propietario";
-            this.txtAgendarCita_Propietario.Size = new System.Drawing.Size(174, 22);
+            this.txtAgendarCita_Propietario.Size = new System.Drawing.Size(195, 22);
             this.txtAgendarCita_Propietario.TabIndex = 19;
             // 
             // lblAgendarCita_Hora
@@ -137,7 +137,7 @@
             this.lblAgendarCita_Hora.AutoSize = true;
             this.lblAgendarCita_Hora.Location = new System.Drawing.Point(1, 134);
             this.lblAgendarCita_Hora.Name = "lblAgendarCita_Hora";
-            this.lblAgendarCita_Hora.Size = new System.Drawing.Size(99, 16);
+            this.lblAgendarCita_Hora.Size = new System.Drawing.Size(115, 16);
             this.lblAgendarCita_Hora.TabIndex = 18;
             this.lblAgendarCita_Hora.Text = "Hora de la Cita:";
             // 
@@ -146,7 +146,7 @@
             this.lblAgendarCita_Fecha.AutoSize = true;
             this.lblAgendarCita_Fecha.Location = new System.Drawing.Point(1, 108);
             this.lblAgendarCita_Fecha.Name = "lblAgendarCita_Fecha";
-            this.lblAgendarCita_Fecha.Size = new System.Drawing.Size(107, 16);
+            this.lblAgendarCita_Fecha.Size = new System.Drawing.Size(124, 16);
             this.lblAgendarCita_Fecha.TabIndex = 17;
             this.lblAgendarCita_Fecha.Text = "Fecha de la Cita:";
             // 
@@ -155,7 +155,7 @@
             this.lblAgendarCita_Motivo.AutoSize = true;
             this.lblAgendarCita_Motivo.Location = new System.Drawing.Point(1, 163);
             this.lblAgendarCita_Motivo.Name = "lblAgendarCita_Motivo";
-            this.lblAgendarCita_Motivo.Size = new System.Drawing.Size(47, 16);
+            this.lblAgendarCita_Motivo.Size = new System.Drawing.Size(53, 16);
             this.lblAgendarCita_Motivo.TabIndex = 16;
             this.lblAgendarCita_Motivo.Text = "Motivo";
             // 
@@ -164,46 +164,48 @@
             this.lblAgendarCita_Propietario.AutoSize = true;
             this.lblAgendarCita_Propietario.Location = new System.Drawing.Point(1, 23);
             this.lblAgendarCita_Propietario.Name = "lblAgendarCita_Propietario";
-            this.lblAgendarCita_Propietario.Size = new System.Drawing.Size(150, 16);
+            this.lblAgendarCita_Propietario.Size = new System.Drawing.Size(142, 16);
             this.lblAgendarCita_Propietario.TabIndex = 15;
-            this.lblAgendarCita_Propietario.Text = "Nombre del Propietario:";
+            this.lblAgendarCita_Propietario.Text = "Codigo Propietario:";
             // 
             // lblAgendarCita_Paciente
             // 
             this.lblAgendarCita_Paciente.AutoSize = true;
             this.lblAgendarCita_Paciente.Location = new System.Drawing.Point(1, 52);
             this.lblAgendarCita_Paciente.Name = "lblAgendarCita_Paciente";
-            this.lblAgendarCita_Paciente.Size = new System.Drawing.Size(137, 16);
+            this.lblAgendarCita_Paciente.Size = new System.Drawing.Size(126, 16);
             this.lblAgendarCita_Paciente.TabIndex = 14;
-            this.lblAgendarCita_Paciente.Text = "Nombre del Paciente:";
+            this.lblAgendarCita_Paciente.Text = "Codigo Paciente:";
             // 
             // lblAgendarCita_Veterinario
             // 
             this.lblAgendarCita_Veterinario.AutoSize = true;
+            this.lblAgendarCita_Veterinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAgendarCita_Veterinario.Location = new System.Drawing.Point(1, 80);
             this.lblAgendarCita_Veterinario.Name = "lblAgendarCita_Veterinario";
-            this.lblAgendarCita_Veterinario.Size = new System.Drawing.Size(146, 16);
+            this.lblAgendarCita_Veterinario.Size = new System.Drawing.Size(141, 16);
             this.lblAgendarCita_Veterinario.TabIndex = 13;
-            this.lblAgendarCita_Veterinario.Text = "Nombre del Veterinario";
+            this.lblAgendarCita_Veterinario.Text = "Codigo Veterinario:";
             // 
             // dgvCitas
             // 
             this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCitas.Location = new System.Drawing.Point(132, 397);
+            this.dgvCitas.Location = new System.Drawing.Point(148, 397);
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.RowHeadersWidth = 51;
             this.dgvCitas.RowTemplate.Height = 24;
-            this.dgvCitas.Size = new System.Drawing.Size(650, 203);
+            this.dgvCitas.Size = new System.Drawing.Size(942, 203);
             this.dgvCitas.TabIndex = 2;
             // 
             // frmAgendarCita
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 583);
+            this.ClientSize = new System.Drawing.Size(1096, 583);
             this.Controls.Add(this.dgvCitas);
             this.Controls.Add(this.pnlAgendarCitas);
             this.Controls.Add(this.lblAgendarCitas);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmAgendarCita";
             this.Text = "frmAgendarCita";
             this.Load += new System.EventHandler(this.frmAgendarCita_Load);

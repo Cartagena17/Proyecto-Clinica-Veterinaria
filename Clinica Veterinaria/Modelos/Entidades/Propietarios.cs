@@ -11,13 +11,11 @@ namespace Modelos.Entidades
 {
     public class Propietarios
     {
-        private int PropietarioID;
         private string NombreProp;
         private string TelefonoProp;
         private string DireccionProp;
         private string EmailProp;
 
-        public int PropietarioID1 { get => PropietarioID; set => PropietarioID = value; }
         public string NombreProp1 { get => NombreProp; set => NombreProp = value; }
         public string TelefonoProp1 { get => TelefonoProp; set => TelefonoProp = value; }
         public string DireccionProp1 { get => DireccionProp; set => DireccionProp = value; }

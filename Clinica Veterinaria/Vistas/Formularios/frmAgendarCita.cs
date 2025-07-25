@@ -40,6 +40,7 @@ namespace Vistas.Formularios
 
             c.InsertarCita();
             Citas.CargarCitas();
+            MostrarCitas();
 
            
         }

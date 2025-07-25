@@ -53,5 +53,10 @@ namespace Vistas.Formularios
         {
             MostarConsultasMedicas();
         }
+
+        private void txtAtencionMedica_NombrePac_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

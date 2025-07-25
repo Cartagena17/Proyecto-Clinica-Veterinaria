@@ -32,6 +32,7 @@
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlMenuPrincipal = new System.Windows.Forms.Panel();
+            this.btnVolverDashboard = new System.Windows.Forms.Button();
             this.btnDashboard_Facturacion = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnDashboard_GestionPersonal = new System.Windows.Forms.Button();
@@ -40,10 +41,14 @@
             this.btnDashboard_GestionMedica = new System.Windows.Forms.Button();
             this.btnDashboard_GestionCitas = new System.Windows.Forms.Button();
             this.pnlCentral = new System.Windows.Forms.Panel();
-            this.btnVolverDashboard = new System.Windows.Forms.Button();
+            this.dgvCitasPendientes = new System.Windows.Forms.DataGridView();
+            this.lblCitas = new System.Windows.Forms.Label();
+            this.btnMostrarCitasPendientes = new System.Windows.Forms.Button();
             this.pnlBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMenuPrincipal.SuspendLayout();
+            this.pnlCentral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitasPendientes)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBarraTitulo
@@ -53,7 +58,7 @@
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
-            this.pnlBarraTitulo.Size = new System.Drawing.Size(1208, 100);
+            this.pnlBarraTitulo.Size = new System.Drawing.Size(1431, 100);
             this.pnlBarraTitulo.TabIndex = 0;
             // 
             // pictureBox1
@@ -83,8 +88,19 @@
             this.pnlMenuPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenuPrincipal.Location = new System.Drawing.Point(0, 100);
             this.pnlMenuPrincipal.Name = "pnlMenuPrincipal";
-            this.pnlMenuPrincipal.Size = new System.Drawing.Size(297, 585);
+            this.pnlMenuPrincipal.Size = new System.Drawing.Size(297, 734);
             this.pnlMenuPrincipal.TabIndex = 0;
+            // 
+            // btnVolverDashboard
+            // 
+            this.btnVolverDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVolverDashboard.Location = new System.Drawing.Point(0, 365);
+            this.btnVolverDashboard.Name = "btnVolverDashboard";
+            this.btnVolverDashboard.Size = new System.Drawing.Size(276, 46);
+            this.btnVolverDashboard.TabIndex = 0;
+            this.btnVolverDashboard.Text = "Volver al Menu Principal";
+            this.btnVolverDashboard.UseVisualStyleBackColor = true;
+            this.btnVolverDashboard.Click += new System.EventHandler(this.btnVolverDashboard_Click);
             // 
             // btnDashboard_Facturacion
             // 
@@ -165,38 +181,65 @@
             // 
             // pnlCentral
             // 
+            this.pnlCentral.Controls.Add(this.btnMostrarCitasPendientes);
+            this.pnlCentral.Controls.Add(this.lblCitas);
+            this.pnlCentral.Controls.Add(this.dgvCitasPendientes);
             this.pnlCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCentral.Location = new System.Drawing.Point(297, 100);
             this.pnlCentral.Name = "pnlCentral";
-            this.pnlCentral.Size = new System.Drawing.Size(911, 585);
+            this.pnlCentral.Size = new System.Drawing.Size(1134, 734);
             this.pnlCentral.TabIndex = 1;
+            this.pnlCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCentral_Paint);
             // 
-            // btnVolverDashboard
+            // dgvCitasPendientes
             // 
-            this.btnVolverDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVolverDashboard.Location = new System.Drawing.Point(0, 365);
-            this.btnVolverDashboard.Name = "btnVolverDashboard";
-            this.btnVolverDashboard.Size = new System.Drawing.Size(276, 46);
-            this.btnVolverDashboard.TabIndex = 0;
-            this.btnVolverDashboard.Text = "Volver al Menu Principal";
-            this.btnVolverDashboard.UseVisualStyleBackColor = true;
-            this.btnVolverDashboard.Click += new System.EventHandler(this.btnVolverDashboard_Click);
+            this.dgvCitasPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitasPendientes.Location = new System.Drawing.Point(31, 165);
+            this.dgvCitasPendientes.Name = "dgvCitasPendientes";
+            this.dgvCitasPendientes.RowHeadersWidth = 51;
+            this.dgvCitasPendientes.RowTemplate.Height = 24;
+            this.dgvCitasPendientes.Size = new System.Drawing.Size(853, 276);
+            this.dgvCitasPendientes.TabIndex = 0;
+            // 
+            // lblCitas
+            // 
+            this.lblCitas.AutoSize = true;
+            this.lblCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCitas.Location = new System.Drawing.Point(26, 113);
+            this.lblCitas.Name = "lblCitas";
+            this.lblCitas.Size = new System.Drawing.Size(209, 29);
+            this.lblCitas.TabIndex = 1;
+            this.lblCitas.Text = "Citas pendientes";
+            // 
+            // btnMostrarCitasPendientes
+            // 
+            this.btnMostrarCitasPendientes.Location = new System.Drawing.Point(257, 119);
+            this.btnMostrarCitasPendientes.Name = "btnMostrarCitasPendientes";
+            this.btnMostrarCitasPendientes.Size = new System.Drawing.Size(188, 23);
+            this.btnMostrarCitasPendientes.TabIndex = 2;
+            this.btnMostrarCitasPendientes.Text = "Mostrar Citas Pendientes";
+            this.btnMostrarCitasPendientes.UseVisualStyleBackColor = true;
+            this.btnMostrarCitasPendientes.Click += new System.EventHandler(this.btnMostrarCitasPendientes_Click);
             // 
             // frmDashboardPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1208, 685);
+            this.ClientSize = new System.Drawing.Size(1431, 834);
             this.Controls.Add(this.pnlCentral);
             this.Controls.Add(this.pnlMenuPrincipal);
             this.Controls.Add(this.pnlBarraTitulo);
             this.Name = "frmDashboardPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDashboardPrincipal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMenuPrincipal.ResumeLayout(false);
+            this.pnlCentral.ResumeLayout(false);
+            this.pnlCentral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitasPendientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -216,5 +259,8 @@
         private System.Windows.Forms.Button btnDashboard_Facturacion;
         private System.Windows.Forms.Panel pnlCentral;
         private System.Windows.Forms.Button btnVolverDashboard;
+        private System.Windows.Forms.Label lblCitas;
+        private System.Windows.Forms.DataGridView dgvCitasPendientes;
+        private System.Windows.Forms.Button btnMostrarCitasPendientes;
     }
 }

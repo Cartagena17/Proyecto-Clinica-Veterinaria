@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modelos.Entidades;
 
 namespace Vistas.Formularios
 {
     public partial class frmDashboardPrincipal : Form
     {
+
+       
+
+
         public frmDashboardPrincipal()
         {
             InitializeComponent();
@@ -73,7 +79,35 @@ namespace Vistas.Formularios
 
         private void btnVolverDashboard_Click(object sender, EventArgs e)
         {
+            frmDashboardPrincipal dashboard = new frmDashboardPrincipal();
+            dashboard.Show();
             
+
+           
+        }
+
+       
+
+        private void pnlCentral_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void frmDashboardPrincipal_load(object sender, PaintEventArgs e)
+        {
+            
+            MostrarCitasPendientes();
+        }
+
+        private void MostrarCitasPendientes()
+        {
+            dgvCitasPendientes.DataSource = null;
+            dgvCitasPendientes.DataSource = Citas.CargarCitas();
+        }
+
+        private void btnMostrarCitasPendientes_Click(object sender, EventArgs e)
+        {
+            Citas.CargarCitas();
+            MostrarCitasPendientes();
         }
     }
 }

@@ -173,6 +173,7 @@
             this.txtAtencionMedica_NombrePac.Name = "txtAtencionMedica_NombrePac";
             this.txtAtencionMedica_NombrePac.Size = new System.Drawing.Size(100, 22);
             this.txtAtencionMedica_NombrePac.TabIndex = 10;
+            this.txtAtencionMedica_NombrePac.TextChanged += new System.EventHandler(this.txtAtencionMedica_NombrePac_TextChanged);
             // 
             // lblAtencionMedica_Temperatura
             // 
@@ -251,18 +252,18 @@
             this.lblAtencionMedica_NombrePers.AutoSize = true;
             this.lblAtencionMedica_NombrePers.Location = new System.Drawing.Point(69, 82);
             this.lblAtencionMedica_NombrePers.Name = "lblAtencionMedica_NombrePers";
-            this.lblAtencionMedica_NombrePers.Size = new System.Drawing.Size(127, 16);
+            this.lblAtencionMedica_NombrePers.Size = new System.Drawing.Size(144, 16);
             this.lblAtencionMedica_NombrePers.TabIndex = 1;
-            this.lblAtencionMedica_NombrePers.Text = "Nombre Veterinario:";
+            this.lblAtencionMedica_NombrePers.Text = "Codigo del Veterinario:";
             // 
             // lblAtencionMedica_NombrePac
             // 
             this.lblAtencionMedica_NombrePac.AutoSize = true;
             this.lblAtencionMedica_NombrePac.Location = new System.Drawing.Point(69, 47);
             this.lblAtencionMedica_NombrePac.Name = "lblAtencionMedica_NombrePac";
-            this.lblAtencionMedica_NombrePac.Size = new System.Drawing.Size(137, 16);
+            this.lblAtencionMedica_NombrePac.Size = new System.Drawing.Size(129, 16);
             this.lblAtencionMedica_NombrePac.TabIndex = 0;
-            this.lblAtencionMedica_NombrePac.Text = "Nombre del Paciente:";
+            this.lblAtencionMedica_NombrePac.Text = "Codigo del Paciente";
             this.lblAtencionMedica_NombrePac.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgvConsultasMedicas

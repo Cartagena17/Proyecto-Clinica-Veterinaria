@@ -25,10 +25,10 @@ namespace Vistas.Formularios
             SqlConnection con = Conexiondb.conectar();
             string usuario = txtUsuario.Text;
             string contraseña = txtContraseña.Text;
-            string comando = "select *from usuario where nombre_Usuario = @usuario and clave = @clave;";
+            string comando = "select *from Usuarios where usuario = @usuario and contraseña = @contraseña;";
             SqlCommand cmd = new SqlCommand(comando, con);
             cmd.Parameters.AddWithValue("@usuario", usuario);
-            cmd.Parameters.AddWithValue("@clave", contraseña);
+            cmd.Parameters.AddWithValue("@contraseña", contraseña);
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
@@ -37,7 +37,7 @@ namespace Vistas.Formularios
 
                 dashboard.Show();
 
-                this.Close();
+                this.Hide();
             }
             else
             {

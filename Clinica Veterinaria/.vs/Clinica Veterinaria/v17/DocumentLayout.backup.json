@@ -1,22 +1,94 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Estudiante\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\",
+  "WorkspaceRootPath": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\estudiante\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmincio-sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmdashboardprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmdashboardprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmdashboardprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmdashboardprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmincio-sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmincio-sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\estudiante\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmincio-sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmincio-sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmagendarcita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmagendarcita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|c:\\users\\estudiante\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\modelos\\entidades\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmagendarcita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmagendarcita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmatencionmedica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmatencionmedica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmgestionmascotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmgestionmascotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmgestionpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmgestionpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmgestionpropietarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmgestionpropietarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmfacturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmfacturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmatencionmedica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmatencionmedica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\modelos\\entidades\\citas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|solutionrelative:modelos\\entidades\\citas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\modelos\\entidades\\consultasmedicas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|solutionrelative:modelos\\entidades\\consultasmedicas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\modelos\\entidades\\pacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|solutionrelative:modelos\\entidades\\pacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\modelos\\entidades\\personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|solutionrelative:modelos\\entidades\\personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\modelos\\entidades\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|solutionrelative:modelos\\entidades\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|C:\\Users\\Estudiante\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\modelos\\entidades\\propietarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\modelos\\entidades\\propietarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|solutionrelative:modelos\\entidades\\propietarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmgestionmascotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmgestionmascotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmgestionpropietarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmgestionpropietarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\formularios\\frmgestionpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmgestionpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\modelos\\conexion\\conexiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|solutionrelative:modelos\\conexion\\conexiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\vistas\\formularios\\frmincio-sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\formularios\\frmincio-sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,54 +98,229 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmDashboardPrincipal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmDashboardPrincipal.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmDashboardPrincipal.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmDashboardPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Vistas\\Formularios\\frmDashboardPrincipal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T05:34:32.709Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmAgendarCita.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmAgendarCita.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmAgendarCita.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmAgendarCita.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Vistas\\Formularios\\frmAgendarCita.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T05:47:22.158Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frmDashboardPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmDashboardPrincipal.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmDashboardPrincipal.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmDashboardPrincipal.cs",
+              "RelativeToolTip": "Vistas\\Formularios\\frmDashboardPrincipal.cs",
+              "ViewState": "AgIAAEkAAACAYmZmZuYiwFgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T05:34:37.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmAgendarCita.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmAgendarCita.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmAgendarCita.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmAgendarCita.cs",
+              "RelativeToolTip": "Vistas\\Formularios\\frmAgendarCita.cs",
+              "ViewState": "AgIAABAAAAAAeWZmZmYCwCoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T05:41:17.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "frmIncio-Sesion.cs",
-              "DocumentMoniker": "C:\\Users\\Estudiante\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmIncio-Sesion.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmIncio-Sesion.cs",
               "RelativeDocumentMoniker": "Vistas\\Formularios\\frmIncio-Sesion.cs",
-              "ToolTip": "C:\\Users\\Estudiante\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmIncio-Sesion.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmIncio-Sesion.cs",
               "RelativeToolTip": "Vistas\\Formularios\\frmIncio-Sesion.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAlwBcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAYwCMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-24T17:57:19.736Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmIncio-Sesion.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Estudiante\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmIncio-Sesion.cs",
-              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmIncio-Sesion.cs",
-              "ToolTip": "C:\\Users\\Estudiante\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmIncio-Sesion.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Vistas\\Formularios\\frmIncio-Sesion.cs [Dise\u00F1o]",
+              "DocumentIndex": 5,
+              "Title": "frmAtencionMedica.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmAtencionMedica.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmAtencionMedica.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmAtencionMedica.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Vistas\\Formularios\\frmAtencionMedica.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T17:57:17.938Z",
+              "WhenOpened": "2025-07-25T06:04:01.479Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
+              "Title": "frmGestionMascotas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmGestionMascotas.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmGestionMascotas.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmGestionMascotas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Vistas\\Formularios\\frmGestionMascotas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T05:58:32.024Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmGestionPersonal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmGestionPersonal.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmGestionPersonal.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmGestionPersonal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Vistas\\Formularios\\frmGestionPersonal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T05:55:34.607Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmGestionPropietarios.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmGestionPropietarios.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmGestionPropietarios.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmGestionPropietarios.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Vistas\\Formularios\\frmGestionPropietarios.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T04:57:25.94Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmFacturacion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmFacturacion.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmFacturacion.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmFacturacion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Vistas\\Formularios\\frmFacturacion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T06:05:05.319Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmAtencionMedica.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmAtencionMedica.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmAtencionMedica.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmAtencionMedica.cs",
+              "RelativeToolTip": "Vistas\\Formularios\\frmAtencionMedica.cs",
+              "ViewState": "AgIAABIAAACAzszMzMwjwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T06:04:08.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ConsultasMedicas.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\ConsultasMedicas.cs",
+              "RelativeDocumentMoniker": "Modelos\\Entidades\\ConsultasMedicas.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\ConsultasMedicas.cs",
+              "RelativeToolTip": "Modelos\\Entidades\\ConsultasMedicas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T06:00:05.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "frmGestionMascotas.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmGestionMascotas.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmGestionMascotas.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmGestionMascotas.cs",
+              "RelativeToolTip": "Vistas\\Formularios\\frmGestionMascotas.cs",
+              "ViewState": "AgIAAAUAAABA0czMzMwnwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T05:58:23.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Pacientes.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Pacientes.cs",
+              "RelativeDocumentMoniker": "Modelos\\Entidades\\Pacientes.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Pacientes.cs",
+              "RelativeToolTip": "Modelos\\Entidades\\Pacientes.cs",
+              "ViewState": "AgIAABUAAADAcGZmZmYcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T05:58:06.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Propietarios.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Propietarios.cs",
+              "RelativeDocumentMoniker": "Modelos\\Entidades\\Propietarios.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Propietarios.cs",
+              "RelativeToolTip": "Modelos\\Entidades\\Propietarios.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T06:53:15.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Citas.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Citas.cs",
+              "RelativeDocumentMoniker": "Modelos\\Entidades\\Citas.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Citas.cs",
+              "RelativeToolTip": "Modelos\\Entidades\\Citas.cs",
+              "ViewState": "AgIAABsAAAAAmJmZmZnZvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T05:40:30.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Personal.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Personal.cs",
+              "RelativeDocumentMoniker": "Modelos\\Entidades\\Personal.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Personal.cs",
+              "RelativeToolTip": "Modelos\\Entidades\\Personal.cs",
+              "ViewState": "AgIAAAcAAACgMzMzMzMbwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T05:55:01.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Usuarios.cs",
-              "DocumentMoniker": "C:\\Users\\Estudiante\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Usuarios.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Usuarios.cs",
               "RelativeDocumentMoniker": "Modelos\\Entidades\\Usuarios.cs",
-              "ToolTip": "C:\\Users\\Estudiante\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Usuarios.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Usuarios.cs",
               "RelativeToolTip": "Modelos\\Entidades\\Usuarios.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -82,16 +329,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Propietarios.cs",
-              "DocumentMoniker": "C:\\Users\\Estudiante\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Propietarios.cs",
-              "RelativeDocumentMoniker": "Modelos\\Entidades\\Propietarios.cs",
-              "ToolTip": "C:\\Users\\Estudiante\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Entidades\\Propietarios.cs",
-              "RelativeToolTip": "Modelos\\Entidades\\Propietarios.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAmwDgAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "frmGestionPropietarios.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmGestionPropietarios.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmGestionPropietarios.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmGestionPropietarios.cs",
+              "RelativeToolTip": "Vistas\\Formularios\\frmGestionPropietarios.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T06:53:15.241Z",
+              "WhenOpened": "2025-07-25T05:57:54.794Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "frmGestionPersonal.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmGestionPersonal.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmGestionPersonal.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmGestionPersonal.cs",
+              "RelativeToolTip": "Vistas\\Formularios\\frmGestionPersonal.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAtwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T05:52:15.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Conexiondb.cs",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Conexion\\Conexiondb.cs",
+              "RelativeDocumentMoniker": "Modelos\\Conexion\\Conexiondb.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\Conexion\\Conexiondb.cs",
+              "RelativeToolTip": "Modelos\\Conexion\\Conexiondb.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAtwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T02:41:36.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "frmIncio-Sesion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmIncio-Sesion.cs",
+              "RelativeDocumentMoniker": "Vistas\\Formularios\\frmIncio-Sesion.cs",
+              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\Formularios\\frmIncio-Sesion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Vistas\\Formularios\\frmIncio-Sesion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T17:57:17.938Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

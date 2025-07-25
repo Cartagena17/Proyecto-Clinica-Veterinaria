@@ -20,13 +20,12 @@ namespace Vistas.Formularios
 
         private void frmGestionPersonal_Load(object sender, EventArgs e)
         {
-            MostrarPropietarios();
+            MostrarPersonal();
         }
 
         private void btnAgregarPersonal_Click(object sender, EventArgs e)
         {
             Personal per = new Personal();
-            per.PersonalID = int.Parse(txtGestionPersonal_Nombre.Text);
             per.NombrePers = txtGestionPersonal_Nombre.Text;
             per.ApellidoPers = txtGestionPersonal_Apellido.Text;
             per.Rol = txtGestionPersonal_Rol.Text;
@@ -34,10 +33,10 @@ namespace Vistas.Formularios
             per.EmailPers = txtGestionPersonal_Email.Text;
 
             per.InsertarPersonal();
-            MostrarPropietarios();
+            MostrarPersonal();
         }
 
-        private void MostrarPropietarios()
+        private void MostrarPersonal()
         {
             dgvPersonal.DataSource = null;
             dgvPersonal.DataSource = Personal.CargarPersonal();
