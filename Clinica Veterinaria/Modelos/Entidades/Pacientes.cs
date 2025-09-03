@@ -13,8 +13,7 @@ namespace Modelos.Entidades
 {
     public class Pacientes
     {
-
-        private int propietarioID;
+        private int pacienteID;
         private string nombrePac;
         private string especiePac;
         private string razaPac;
@@ -23,7 +22,6 @@ namespace Modelos.Entidades
         private string sexoPac;
         private string colorPac;
 
-        public int PropietarioID { get => propietarioID; set => propietarioID = value; }
         public string NombrePac { get => nombrePac; set => nombrePac = value; }
         public string EspeciePac { get => especiePac; set => especiePac = value; }
         public string RazaPac { get => razaPac; set => razaPac = value; }
@@ -32,18 +30,18 @@ namespace Modelos.Entidades
         public string SexoPac { get => sexoPac; set => sexoPac = value; }
         public string ColorPac { get => colorPac; set => colorPac = value; }
         public DateTime NacimientoPac { get => nacimientoPac; set => nacimientoPac = value; }
+        public int PacienteID { get => pacienteID; set => pacienteID = value; }
 
         public bool InsertarPacientes()
         {
 
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "INSERT INTO Pacientes (PropietarioID, NombrePac, EspeciePac, RazaPac, NacimientoPac, PesoPac, SexoPac, ColorPac) " +
-                "VALUES (@PropietarioID, @nombrePac, @especiePac, @razaPac, @nacimientoPac, @pesoPac, @sexoPac, @colorPac)";
+            string comando = "INSERT INTO Pacientes ( NombrePac, EspeciePac, RazaPac, NacimientoPac, PesoPac, SexoPac, ColorPac) " +
+                "VALUES ( @nombrePac, @especiePac, @razaPac, @nacimientoPac, @pesoPac, @sexoPac, @colorPac)";
 
             SqlCommand cmd = new SqlCommand(comando, conexion);
 
-            cmd.Parameters.AddWithValue("@propietarioID", propietarioID);
             cmd.Parameters.AddWithValue("@nombrePac",nombrePac);
             cmd.Parameters.AddWithValue("@especiePac",especiePac);
             cmd.Parameters.AddWithValue("@razaPac",razaPac);
@@ -67,7 +65,7 @@ namespace Modelos.Entidades
         {
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "select *from Pacientes;";
+            string comando = "select *from CargarPacientes;";
 
             SqlDataAdapter ad = new SqlDataAdapter(comando,conexion);
 
@@ -75,9 +73,61 @@ namespace Modelos.Entidades
             ad.Fill(dt);
             return dt;
         }
-            
-        
-        
-        
+
+        public bool EliminarPaciente(int id)
+        {
+            SqlConnection conexion = Conexiondb.conectar();
+
+            string comando = "DELETE FROM Pacientes WHERE pacienteID=@paciente;";
+
+            SqlCommand cmd = new SqlCommand(comando, conexion);
+
+            cmd.Parameters.AddWithValue("@pacienteID", id);
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public bool ActualizarPaciente()
+        {
+            SqlConnection conexion = Conexiondb.conectar();
+
+            string comando = "UPDATE Pacientes SET " +
+                             "NombrePac = @NombrePac, " +
+                             "EspeciePac = @EspeciePac, " +
+                             "RazaPac = @RazaPac, " +
+                             "NacimientoPac = @NacimientoPac, " +
+                             "PesoPac = @PesoPac, " +
+                             "SexoPac = @SexoPac, " +
+                             "ColorPac = @ColorPac " +
+                             "WHERE PacienteID = @PacienteID;";
+
+            SqlCommand cmd = new SqlCommand(comando, conexion);
+
+            cmd.Parameters.AddWithValue("@NombrePac", NombrePac);
+            cmd.Parameters.AddWithValue("@EspeciePac", EspeciePac);
+            cmd.Parameters.AddWithValue("@RazaPac", RazaPac);
+            cmd.Parameters.AddWithValue("@NacimientoPac", NacimientoPac);
+            cmd.Parameters.AddWithValue("@PesoPac", PesoPac);
+            cmd.Parameters.AddWithValue("@SexoPac", SexoPac);
+            cmd.Parameters.AddWithValue("@ColorPac", ColorPac);
+            cmd.Parameters.AddWithValue("@PacienteID", PacienteID);
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

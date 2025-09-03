@@ -26,7 +26,6 @@ namespace Vistas.Formularios
         private void btnRegistrarMascota_Click(object sender, EventArgs e)
         {
             Pacientes pac = new Pacientes();
-            pac.PropietarioID = int.Parse(txtGestionMascota_Prop.Text);
             pac.NombrePac = txtGestionMascota_Nombre.Text;
             pac.RazaPac = txtGestionMascota_Raza.Text;
             pac.ColorPac = txtGestionMascota_Color.Text;
@@ -50,6 +49,57 @@ namespace Vistas.Formularios
         {
             dgvMascotas.DataSource = null;
             dgvMascotas.DataSource = Pacientes.CargarPacientes();
+        }
+
+        private void btnEliminarMascota_Click(object sender, EventArgs e)
+        {
+
+            int id = int.Parse(dgvMascotas.CurrentRow.Cells[0].Value.ToString());
+            Pacientes p = new Pacientes();
+            if (p.EliminarPaciente(id) == true)
+            {
+                MessageBox.Show("El registro se ah borrado con exito");
+                MostrarPacientes();
+            }
+            else
+            {
+                MessageBox.Show("Se ah producido un ERROR");
+            }
+        }
+
+            private void btnActualizarInfoMascota_Click(object sender, EventArgs e)
+        {
+            Pacientes pac = new Pacientes();
+            pac.NombrePac = txtGestionMascota_Nombre.Text;
+            pac.EspeciePac = txtGestionMascota_Especie.Text;
+            pac.RazaPac = txtGestionMascota_Raza.Text;
+            pac.NacimientoPac = dtpGestionMascota_Nacimiento.Value;
+            pac.PesoPac = txtGestionMascota_Peso.Text;
+            pac.SexoPac = txtGestionMascota_Sexo.Text;
+            pac.ColorPac = txtGestionMascota_Color.Text;
+            pac.PacienteID = int.Parse(dgvMascotas.CurrentRow.Cells[0].Value.ToString());
+
+            if (pac.ActualizarPaciente() == true)
+            {
+                MessageBox.Show("El registro se ha actualizado con exito");
+                MostrarPacientes();
+            }
+            else
+            {
+                MessageBox.Show("Ha ocurrido un ERROR");
+            }
+        }
+        
+
+        private void dgvMascotas_DoubleClick(object sender, EventArgs e)
+        {
+            txtGestionMascota_Nombre.Text = dgvMascotas.CurrentRow.Cells[1].Value.ToString();
+            txtGestionMascota_Especie.Text = dgvMascotas.CurrentRow.Cells[2].Value.ToString();
+            txtGestionMascota_Raza.Text = dgvMascotas.CurrentRow.Cells[3].Value.ToString();
+            dtpGestionMascota_Nacimiento.Value = Convert.ToDateTime(dgvMascotas.CurrentRow.Cells[4].Value);
+            txtGestionMascota_Peso.Text = dgvMascotas.CurrentRow.Cells[5].Value.ToString();
+            txtGestionMascota_Sexo.Text = dgvMascotas.CurrentRow.Cells[6].Value.ToString();
+            txtGestionMascota_Color.Text = dgvMascotas.CurrentRow.Cells[7].Value.ToString();
         }
     }
 }

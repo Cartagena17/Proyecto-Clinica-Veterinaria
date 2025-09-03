@@ -36,12 +36,10 @@
             this.btnAgregarPersonal = new System.Windows.Forms.Button();
             this.txtGestionPersonal_Email = new System.Windows.Forms.TextBox();
             this.txtGestionPersonal_Telefono = new System.Windows.Forms.TextBox();
-            this.txtGestionPersonal_Rol = new System.Windows.Forms.TextBox();
             this.txtGestionPersonal_Apellido = new System.Windows.Forms.TextBox();
             this.txtGestionPersonal_Nombre = new System.Windows.Forms.TextBox();
             this.lblGestionPersonal_Email = new System.Windows.Forms.Label();
             this.lblGestionPersonal_Telefono = new System.Windows.Forms.Label();
-            this.lblGestionPersonal_Rol = new System.Windows.Forms.Label();
             this.lblGestionPersonal_Apellido = new System.Windows.Forms.Label();
             this.lblGestionPersonal_Nombre = new System.Windows.Forms.Label();
             this.dgvPersonal = new System.Windows.Forms.DataGridView();
@@ -52,10 +50,9 @@
             // lblGestionPersonal
             // 
             this.lblGestionPersonal.AutoSize = true;
-            this.lblGestionPersonal.Location = new System.Drawing.Point(240, 21);
-            this.lblGestionPersonal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGestionPersonal.Location = new System.Drawing.Point(320, 26);
             this.lblGestionPersonal.Name = "lblGestionPersonal";
-            this.lblGestionPersonal.Size = new System.Drawing.Size(104, 13);
+            this.lblGestionPersonal.Size = new System.Drawing.Size(132, 16);
             this.lblGestionPersonal.TabIndex = 0;
             this.lblGestionPersonal.Text = "Gestion del Personal";
             // 
@@ -67,56 +64,56 @@
             this.pnlGestionPersonal.Controls.Add(this.btnAgregarPersonal);
             this.pnlGestionPersonal.Controls.Add(this.txtGestionPersonal_Email);
             this.pnlGestionPersonal.Controls.Add(this.txtGestionPersonal_Telefono);
-            this.pnlGestionPersonal.Controls.Add(this.txtGestionPersonal_Rol);
             this.pnlGestionPersonal.Controls.Add(this.txtGestionPersonal_Apellido);
             this.pnlGestionPersonal.Controls.Add(this.txtGestionPersonal_Nombre);
             this.pnlGestionPersonal.Controls.Add(this.lblGestionPersonal_Email);
             this.pnlGestionPersonal.Controls.Add(this.lblGestionPersonal_Telefono);
-            this.pnlGestionPersonal.Controls.Add(this.lblGestionPersonal_Rol);
             this.pnlGestionPersonal.Controls.Add(this.lblGestionPersonal_Apellido);
             this.pnlGestionPersonal.Controls.Add(this.lblGestionPersonal_Nombre);
-            this.pnlGestionPersonal.Location = new System.Drawing.Point(58, 67);
-            this.pnlGestionPersonal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlGestionPersonal.Location = new System.Drawing.Point(77, 82);
+            this.pnlGestionPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlGestionPersonal.Name = "pnlGestionPersonal";
-            this.pnlGestionPersonal.Size = new System.Drawing.Size(473, 229);
+            this.pnlGestionPersonal.Size = new System.Drawing.Size(631, 282);
             this.pnlGestionPersonal.TabIndex = 1;
             // 
             // btnVerPersonal
             // 
-            this.btnVerPersonal.Location = new System.Drawing.Point(361, 150);
-            this.btnVerPersonal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVerPersonal.Location = new System.Drawing.Point(481, 185);
+            this.btnVerPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVerPersonal.Name = "btnVerPersonal";
-            this.btnVerPersonal.Size = new System.Drawing.Size(88, 41);
+            this.btnVerPersonal.Size = new System.Drawing.Size(117, 50);
             this.btnVerPersonal.TabIndex = 13;
             this.btnVerPersonal.Text = "Ver Personal";
             this.btnVerPersonal.UseVisualStyleBackColor = true;
             // 
             // btnActualizarInfoPersonal
             // 
-            this.btnActualizarInfoPersonal.Location = new System.Drawing.Point(266, 152);
-            this.btnActualizarInfoPersonal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizarInfoPersonal.Location = new System.Drawing.Point(355, 187);
+            this.btnActualizarInfoPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnActualizarInfoPersonal.Name = "btnActualizarInfoPersonal";
-            this.btnActualizarInfoPersonal.Size = new System.Drawing.Size(80, 40);
+            this.btnActualizarInfoPersonal.Size = new System.Drawing.Size(107, 49);
             this.btnActualizarInfoPersonal.TabIndex = 12;
             this.btnActualizarInfoPersonal.Text = "Actualizar Informacion";
             this.btnActualizarInfoPersonal.UseVisualStyleBackColor = true;
+            this.btnActualizarInfoPersonal.Click += new System.EventHandler(this.btnActualizarInfoPersonal_Click);
             // 
             // btnEliminarPersonal
             // 
-            this.btnEliminarPersonal.Location = new System.Drawing.Point(160, 151);
-            this.btnEliminarPersonal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarPersonal.Location = new System.Drawing.Point(213, 186);
+            this.btnEliminarPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarPersonal.Name = "btnEliminarPersonal";
-            this.btnEliminarPersonal.Size = new System.Drawing.Size(86, 41);
+            this.btnEliminarPersonal.Size = new System.Drawing.Size(115, 50);
             this.btnEliminarPersonal.TabIndex = 11;
             this.btnEliminarPersonal.Text = "Eliminar Personal";
             this.btnEliminarPersonal.UseVisualStyleBackColor = true;
+            this.btnEliminarPersonal.Click += new System.EventHandler(this.btnEliminarPersonal_Click);
             // 
             // btnAgregarPersonal
             // 
-            this.btnAgregarPersonal.Location = new System.Drawing.Point(69, 151);
-            this.btnAgregarPersonal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarPersonal.Location = new System.Drawing.Point(92, 186);
+            this.btnAgregarPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarPersonal.Name = "btnAgregarPersonal";
-            this.btnAgregarPersonal.Size = new System.Drawing.Size(77, 40);
+            this.btnAgregarPersonal.Size = new System.Drawing.Size(103, 49);
             this.btnAgregarPersonal.TabIndex = 10;
             this.btnAgregarPersonal.Text = "Agregar Personal";
             this.btnAgregarPersonal.UseVisualStyleBackColor = true;
@@ -124,114 +121,93 @@
             // 
             // txtGestionPersonal_Email
             // 
-            this.txtGestionPersonal_Email.Location = new System.Drawing.Point(326, 59);
-            this.txtGestionPersonal_Email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGestionPersonal_Email.Location = new System.Drawing.Point(435, 73);
+            this.txtGestionPersonal_Email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGestionPersonal_Email.Name = "txtGestionPersonal_Email";
-            this.txtGestionPersonal_Email.Size = new System.Drawing.Size(125, 20);
+            this.txtGestionPersonal_Email.Size = new System.Drawing.Size(165, 22);
             this.txtGestionPersonal_Email.TabIndex = 9;
             // 
             // txtGestionPersonal_Telefono
             // 
-            this.txtGestionPersonal_Telefono.Location = new System.Drawing.Point(326, 15);
-            this.txtGestionPersonal_Telefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGestionPersonal_Telefono.Location = new System.Drawing.Point(435, 18);
+            this.txtGestionPersonal_Telefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGestionPersonal_Telefono.Name = "txtGestionPersonal_Telefono";
-            this.txtGestionPersonal_Telefono.Size = new System.Drawing.Size(125, 20);
+            this.txtGestionPersonal_Telefono.Size = new System.Drawing.Size(165, 22);
             this.txtGestionPersonal_Telefono.TabIndex = 8;
-            // 
-            // txtGestionPersonal_Rol
-            // 
-            this.txtGestionPersonal_Rol.Location = new System.Drawing.Point(109, 106);
-            this.txtGestionPersonal_Rol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtGestionPersonal_Rol.Name = "txtGestionPersonal_Rol";
-            this.txtGestionPersonal_Rol.Size = new System.Drawing.Size(120, 20);
-            this.txtGestionPersonal_Rol.TabIndex = 7;
             // 
             // txtGestionPersonal_Apellido
             // 
-            this.txtGestionPersonal_Apellido.Location = new System.Drawing.Point(130, 59);
-            this.txtGestionPersonal_Apellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGestionPersonal_Apellido.Location = new System.Drawing.Point(173, 73);
+            this.txtGestionPersonal_Apellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGestionPersonal_Apellido.Name = "txtGestionPersonal_Apellido";
-            this.txtGestionPersonal_Apellido.Size = new System.Drawing.Size(116, 20);
+            this.txtGestionPersonal_Apellido.Size = new System.Drawing.Size(153, 22);
             this.txtGestionPersonal_Apellido.TabIndex = 6;
             // 
             // txtGestionPersonal_Nombre
             // 
-            this.txtGestionPersonal_Nombre.Location = new System.Drawing.Point(130, 18);
-            this.txtGestionPersonal_Nombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGestionPersonal_Nombre.Location = new System.Drawing.Point(173, 22);
+            this.txtGestionPersonal_Nombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGestionPersonal_Nombre.Name = "txtGestionPersonal_Nombre";
-            this.txtGestionPersonal_Nombre.Size = new System.Drawing.Size(116, 20);
+            this.txtGestionPersonal_Nombre.Size = new System.Drawing.Size(153, 22);
             this.txtGestionPersonal_Nombre.TabIndex = 5;
             // 
             // lblGestionPersonal_Email
             // 
             this.lblGestionPersonal_Email.AutoSize = true;
-            this.lblGestionPersonal_Email.Location = new System.Drawing.Point(288, 64);
-            this.lblGestionPersonal_Email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGestionPersonal_Email.Location = new System.Drawing.Point(384, 79);
             this.lblGestionPersonal_Email.Name = "lblGestionPersonal_Email";
-            this.lblGestionPersonal_Email.Size = new System.Drawing.Size(35, 13);
+            this.lblGestionPersonal_Email.Size = new System.Drawing.Size(44, 16);
             this.lblGestionPersonal_Email.TabIndex = 4;
             this.lblGestionPersonal_Email.Text = "Email:";
             // 
             // lblGestionPersonal_Telefono
             // 
             this.lblGestionPersonal_Telefono.AutoSize = true;
-            this.lblGestionPersonal_Telefono.Location = new System.Drawing.Point(273, 18);
-            this.lblGestionPersonal_Telefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGestionPersonal_Telefono.Location = new System.Drawing.Point(364, 22);
             this.lblGestionPersonal_Telefono.Name = "lblGestionPersonal_Telefono";
-            this.lblGestionPersonal_Telefono.Size = new System.Drawing.Size(52, 13);
+            this.lblGestionPersonal_Telefono.Size = new System.Drawing.Size(64, 16);
             this.lblGestionPersonal_Telefono.TabIndex = 3;
             this.lblGestionPersonal_Telefono.Text = "Telefono:";
-            // 
-            // lblGestionPersonal_Rol
-            // 
-            this.lblGestionPersonal_Rol.AutoSize = true;
-            this.lblGestionPersonal_Rol.Location = new System.Drawing.Point(22, 106);
-            this.lblGestionPersonal_Rol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblGestionPersonal_Rol.Name = "lblGestionPersonal_Rol";
-            this.lblGestionPersonal_Rol.Size = new System.Drawing.Size(87, 13);
-            this.lblGestionPersonal_Rol.TabIndex = 2;
-            this.lblGestionPersonal_Rol.Text = "Rol del Personal:";
             // 
             // lblGestionPersonal_Apellido
             // 
             this.lblGestionPersonal_Apellido.AutoSize = true;
-            this.lblGestionPersonal_Apellido.Location = new System.Drawing.Point(22, 59);
-            this.lblGestionPersonal_Apellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGestionPersonal_Apellido.Location = new System.Drawing.Point(29, 73);
             this.lblGestionPersonal_Apellido.Name = "lblGestionPersonal_Apellido";
-            this.lblGestionPersonal_Apellido.Size = new System.Drawing.Size(108, 13);
+            this.lblGestionPersonal_Apellido.Size = new System.Drawing.Size(139, 16);
             this.lblGestionPersonal_Apellido.TabIndex = 1;
             this.lblGestionPersonal_Apellido.Text = "Apellido del Personal:";
             // 
             // lblGestionPersonal_Nombre
             // 
             this.lblGestionPersonal_Nombre.AutoSize = true;
-            this.lblGestionPersonal_Nombre.Location = new System.Drawing.Point(22, 18);
-            this.lblGestionPersonal_Nombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGestionPersonal_Nombre.Location = new System.Drawing.Point(29, 22);
             this.lblGestionPersonal_Nombre.Name = "lblGestionPersonal_Nombre";
-            this.lblGestionPersonal_Nombre.Size = new System.Drawing.Size(108, 13);
+            this.lblGestionPersonal_Nombre.Size = new System.Drawing.Size(138, 16);
             this.lblGestionPersonal_Nombre.TabIndex = 0;
             this.lblGestionPersonal_Nombre.Text = "Nombre del Personal:";
             // 
             // dgvPersonal
             // 
             this.dgvPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonal.Location = new System.Drawing.Point(58, 310);
-            this.dgvPersonal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPersonal.Location = new System.Drawing.Point(77, 382);
+            this.dgvPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPersonal.Name = "dgvPersonal";
             this.dgvPersonal.RowHeadersWidth = 51;
             this.dgvPersonal.RowTemplate.Height = 24;
-            this.dgvPersonal.Size = new System.Drawing.Size(644, 245);
+            this.dgvPersonal.Size = new System.Drawing.Size(859, 302);
             this.dgvPersonal.TabIndex = 2;
+            this.dgvPersonal.DoubleClick += new System.EventHandler(this.dgvPersonal_DoubleClick);
             // 
             // frmGestionPersonal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 578);
+            this.ClientSize = new System.Drawing.Size(1108, 711);
             this.Controls.Add(this.dgvPersonal);
             this.Controls.Add(this.pnlGestionPersonal);
             this.Controls.Add(this.lblGestionPersonal);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmGestionPersonal";
             this.Text = "frmGestionPersonal";
             this.Load += new System.EventHandler(this.frmGestionPersonal_Load);
@@ -249,12 +225,10 @@
         private System.Windows.Forms.Panel pnlGestionPersonal;
         private System.Windows.Forms.Label lblGestionPersonal_Email;
         private System.Windows.Forms.Label lblGestionPersonal_Telefono;
-        private System.Windows.Forms.Label lblGestionPersonal_Rol;
         private System.Windows.Forms.Label lblGestionPersonal_Apellido;
         private System.Windows.Forms.Label lblGestionPersonal_Nombre;
         private System.Windows.Forms.TextBox txtGestionPersonal_Email;
         private System.Windows.Forms.TextBox txtGestionPersonal_Telefono;
-        private System.Windows.Forms.TextBox txtGestionPersonal_Rol;
         private System.Windows.Forms.TextBox txtGestionPersonal_Apellido;
         private System.Windows.Forms.TextBox txtGestionPersonal_Nombre;
         private System.Windows.Forms.Button btnVerPersonal;

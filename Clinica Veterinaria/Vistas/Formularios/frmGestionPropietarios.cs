@@ -71,5 +71,52 @@ namespace Vistas.Formularios
                 dgvPropietarios.DataSource = tabla;
             }
         }
+
+        private void btnEliminarPropietario_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dgvPropietarios.CurrentRow.Cells[0].Value.ToString());
+            Propietarios p = new Propietarios();
+            if (p.EliminarPropietario(id) == true)
+            {
+                MessageBox.Show("El registro se ah borrado con exito");
+                MostarPropietarios();
+            }
+            else
+            {
+                MessageBox.Show("Se ah producido un ERROR");
+            }
+
+        }
+
+        private void btnActualizarInfoPropietario_Click(object sender, EventArgs e)
+        {
+            Propietarios p = new Propietarios();
+            p.NombreProp1 = txtGestionPropietario_Nombre.Text;
+            p.TelefonoProp1 = txtGestionPropietario_Telefono.Text;
+            p.DireccionProp1 = txtGestionPropietario_Direccion.Text;
+            p.EmailProp1 = txtGestionPropietario_Email.Text;
+            p.Id = int.Parse(dgvPropietarios.CurrentRow.Cells[0].Value.ToString());
+
+            if (p.ActualizarPropietario() == true)
+            {
+                MessageBox.Show("El registro se ah actualizado con exito");
+                MostarPropietarios();
+            }
+            else
+            {
+                MessageBox.Show("ah ocurrido un ERROR");
+            }
+        }
+
+        private void dgvPropietarios_DoubleClick(object sender, EventArgs e)
+        {
+            txtGestionPropietario_Nombre.Text = dgvPropietarios.CurrentRow.Cells[1].Value.ToString();
+            txtGestionPropietario_Telefono.Text=dgvPropietarios.CurrentRow.Cells[2].Value.ToString();
+            txtGestionPropietario_Direccion.Text = dgvPropietarios.CurrentRow.Cells[3].Value.ToString();
+            txtGestionPropietario_Email.Text = dgvPropietarios.CurrentRow.Cells[4].Value.ToString();
+
+
+
+        }
     }
 }

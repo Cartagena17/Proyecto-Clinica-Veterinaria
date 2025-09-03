@@ -93,6 +93,7 @@
             this.btnActualizarInfoPropietario.TabIndex = 10;
             this.btnActualizarInfoPropietario.Text = "Actualizar Informacion";
             this.btnActualizarInfoPropietario.UseVisualStyleBackColor = true;
+            this.btnActualizarInfoPropietario.Click += new System.EventHandler(this.btnActualizarInfoPropietario_Click);
             // 
             // btnEliminarPropietario
             // 
@@ -102,6 +103,7 @@
             this.btnEliminarPropietario.TabIndex = 9;
             this.btnEliminarPropietario.Text = "Eliminar Propietario";
             this.btnEliminarPropietario.UseVisualStyleBackColor = true;
+            this.btnEliminarPropietario.Click += new System.EventHandler(this.btnEliminarPropietario_Click);
             // 
             // btnRegistrarPropietario
             // 
@@ -186,6 +188,7 @@
             this.dgvPropietarios.RowTemplate.Height = 24;
             this.dgvPropietarios.Size = new System.Drawing.Size(768, 314);
             this.dgvPropietarios.TabIndex = 2;
+            this.dgvPropietarios.DoubleClick += new System.EventHandler(this.dgvPropietarios_DoubleClick);
             // 
             // frmGestionPropietarios
             // 

@@ -39,7 +39,6 @@
             this.txtGestionMascota_Peso = new System.Windows.Forms.TextBox();
             this.txtGestionMascota_Raza = new System.Windows.Forms.TextBox();
             this.txtGestionMascota_Especie = new System.Windows.Forms.TextBox();
-            this.txtGestionMascota_Prop = new System.Windows.Forms.TextBox();
             this.txtGestionMascota_Nombre = new System.Windows.Forms.TextBox();
             this.dtpGestionMascota_Nacimiento = new System.Windows.Forms.DateTimePicker();
             this.lblGestionMascota_Color = new System.Windows.Forms.Label();
@@ -48,7 +47,6 @@
             this.lblGestionMascota_Nacimiento = new System.Windows.Forms.Label();
             this.lblGestionMascota_Raza = new System.Windows.Forms.Label();
             this.lblGestionMascotas_Especie = new System.Windows.Forms.Label();
-            this.lblGestionMascotas_NombreProp = new System.Windows.Forms.Label();
             this.lblGestionMascotas_Nombre = new System.Windows.Forms.Label();
             this.dgvMascotas = new System.Windows.Forms.DataGridView();
             this.pnlGestionMascota.SuspendLayout();
@@ -75,7 +73,6 @@
             this.pnlGestionMascota.Controls.Add(this.txtGestionMascota_Peso);
             this.pnlGestionMascota.Controls.Add(this.txtGestionMascota_Raza);
             this.pnlGestionMascota.Controls.Add(this.txtGestionMascota_Especie);
-            this.pnlGestionMascota.Controls.Add(this.txtGestionMascota_Prop);
             this.pnlGestionMascota.Controls.Add(this.txtGestionMascota_Nombre);
             this.pnlGestionMascota.Controls.Add(this.dtpGestionMascota_Nacimiento);
             this.pnlGestionMascota.Controls.Add(this.lblGestionMascota_Color);
@@ -84,7 +81,6 @@
             this.pnlGestionMascota.Controls.Add(this.lblGestionMascota_Nacimiento);
             this.pnlGestionMascota.Controls.Add(this.lblGestionMascota_Raza);
             this.pnlGestionMascota.Controls.Add(this.lblGestionMascotas_Especie);
-            this.pnlGestionMascota.Controls.Add(this.lblGestionMascotas_NombreProp);
             this.pnlGestionMascota.Controls.Add(this.lblGestionMascotas_Nombre);
             this.pnlGestionMascota.Location = new System.Drawing.Point(48, 100);
             this.pnlGestionMascota.Name = "pnlGestionMascota";
@@ -108,6 +104,7 @@
             this.btnActualizarInfoMascota.TabIndex = 18;
             this.btnActualizarInfoMascota.Text = "Actualizar Informacion";
             this.btnActualizarInfoMascota.UseVisualStyleBackColor = true;
+            this.btnActualizarInfoMascota.Click += new System.EventHandler(this.btnActualizarInfoMascota_Click);
             // 
             // btnEliminarMascota
             // 
@@ -117,6 +114,7 @@
             this.btnEliminarMascota.TabIndex = 17;
             this.btnEliminarMascota.Text = "Eliminar Mascota";
             this.btnEliminarMascota.UseVisualStyleBackColor = true;
+            this.btnEliminarMascota.Click += new System.EventHandler(this.btnEliminarMascota_Click);
             // 
             // btnRegistrarMascota
             // 
@@ -162,13 +160,6 @@
             this.txtGestionMascota_Especie.Name = "txtGestionMascota_Especie";
             this.txtGestionMascota_Especie.Size = new System.Drawing.Size(196, 22);
             this.txtGestionMascota_Especie.TabIndex = 11;
-            // 
-            // txtGestionMascota_Prop
-            // 
-            this.txtGestionMascota_Prop.Location = new System.Drawing.Point(155, 64);
-            this.txtGestionMascota_Prop.Name = "txtGestionMascota_Prop";
-            this.txtGestionMascota_Prop.Size = new System.Drawing.Size(196, 22);
-            this.txtGestionMascota_Prop.TabIndex = 10;
             // 
             // txtGestionMascota_Nombre
             // 
@@ -239,16 +230,6 @@
             this.lblGestionMascotas_Especie.TabIndex = 2;
             this.lblGestionMascotas_Especie.Text = "Especie:";
             // 
-            // lblGestionMascotas_NombreProp
-            // 
-            this.lblGestionMascotas_NombreProp.AutoSize = true;
-            this.lblGestionMascotas_NombreProp.Location = new System.Drawing.Point(8, 67);
-            this.lblGestionMascotas_NombreProp.Name = "lblGestionMascotas_NombreProp";
-            this.lblGestionMascotas_NombreProp.Size = new System.Drawing.Size(142, 16);
-            this.lblGestionMascotas_NombreProp.TabIndex = 1;
-            this.lblGestionMascotas_NombreProp.Text = "Codigo Propietario:";
-            this.lblGestionMascotas_NombreProp.Click += new System.EventHandler(this.label2_Click);
-            // 
             // lblGestionMascotas_Nombre
             // 
             this.lblGestionMascotas_Nombre.AutoSize = true;
@@ -267,6 +248,7 @@
             this.dgvMascotas.RowTemplate.Height = 24;
             this.dgvMascotas.Size = new System.Drawing.Size(1112, 324);
             this.dgvMascotas.TabIndex = 10;
+            this.dgvMascotas.DoubleClick += new System.EventHandler(this.dgvMascotas_DoubleClick);
             // 
             // frmGestionMascotas
             // 
@@ -297,7 +279,6 @@
         private System.Windows.Forms.TextBox txtGestionMascota_Peso;
         private System.Windows.Forms.TextBox txtGestionMascota_Raza;
         private System.Windows.Forms.TextBox txtGestionMascota_Especie;
-        private System.Windows.Forms.TextBox txtGestionMascota_Prop;
         private System.Windows.Forms.TextBox txtGestionMascota_Nombre;
         private System.Windows.Forms.DateTimePicker dtpGestionMascota_Nacimiento;
         private System.Windows.Forms.Label lblGestionMascota_Color;
@@ -306,7 +287,6 @@
         private System.Windows.Forms.Label lblGestionMascota_Nacimiento;
         private System.Windows.Forms.Label lblGestionMascota_Raza;
         private System.Windows.Forms.Label lblGestionMascotas_Especie;
-        private System.Windows.Forms.Label lblGestionMascotas_NombreProp;
         private System.Windows.Forms.Label lblGestionMascotas_Nombre;
         private System.Windows.Forms.Button btnEliminarMascota;
         private System.Windows.Forms.Button btnRegistrarMascota;

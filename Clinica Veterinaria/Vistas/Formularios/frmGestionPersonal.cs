@@ -28,7 +28,6 @@ namespace Vistas.Formularios
             Personal per = new Personal();
             per.NombrePers = txtGestionPersonal_Nombre.Text;
             per.ApellidoPers = txtGestionPersonal_Apellido.Text;
-            per.Rol = txtGestionPersonal_Rol.Text;
             per.TelefonoPers = txtGestionPersonal_Telefono.Text;
             per.EmailPers = txtGestionPersonal_Email.Text;
 
@@ -41,5 +40,57 @@ namespace Vistas.Formularios
             dgvPersonal.DataSource = null;
             dgvPersonal.DataSource = Personal.CargarPersonal();
         }
+
+        private void btnEliminarPersonal_Click(object sender, EventArgs e)
+        {
+
+            int id = int.Parse(dgvPersonal.CurrentRow.Cells[0].Value.ToString());
+            Personal p = new Personal();
+            if (p.EliminarPersonal(id) == true)
+            {
+                MessageBox.Show("El registro se ah borrado con exito");
+                MostrarPersonal();
+            }
+            else
+            {
+                MessageBox.Show("Se ah producido un ERROR");
+            }
+
+        }
+
+        private void btnActualizarInfoPersonal_Click(object sender, EventArgs e)
+        {
+            Personal p = new Personal();
+            p.NombrePers=txtGestionPersonal_Nombre.Text;
+            p.ApellidoPers=txtGestionPersonal_Apellido.Text;
+            p.EmailPers=txtGestionPersonal_Email.Text;
+            p.TelefonoPers=txtGestionPersonal_Telefono.Text;
+            p.PersonalID = int.Parse(dgvPersonal.CurrentRow.Cells[0].Value.ToString());
+           
+
+
+
+
+            if (p.ActualizarPersonal() == true)
+            {
+                MessageBox.Show("El registro se ah actualizado con exito");
+                MostrarPersonal();
+            }
+            else
+            {
+                MessageBox.Show("ah ocurrido un ERROR");
+            }
+        }
+
+
+        private void dgvPersonal_DoubleClick(object sender, EventArgs e)
+        {
+
+            txtGestionPersonal_Nombre.Text = dgvPersonal.CurrentRow.Cells[1].Value.ToString();
+            txtGestionPersonal_Apellido.Text = dgvPersonal.CurrentRow.Cells[2].Value.ToString();
+            txtGestionPersonal_Telefono.Text = dgvPersonal.CurrentRow.Cells[3].Value.ToString();
+            txtGestionPersonal_Email.Text = dgvPersonal.CurrentRow.Cells[4].Value.ToString();
+        }
     }
 }
+    
