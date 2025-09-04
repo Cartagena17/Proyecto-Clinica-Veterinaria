@@ -27,8 +27,6 @@ namespace Vistas.Formularios
         {
             ConsultasMedicas CM = new ConsultasMedicas();
             CM.CitaID1 = int.Parse(txtAtencionMedica_CitaID.Text);
-            CM.PersonalID1 = int.Parse(txtAtencionMedica_NombrePers.Text);
-            CM.PacienteID1 = int.Parse(txtAtencionMedica_NombrePac.Text);
             CM.Temperatura = txtAtencionMedica_Temperatura.Text;
             CM.FechaConsulta1 = dtpAtencionMedica_Fecha.Value;
             CM.PesoActual = txtAtencionMedica_Peso.Text;
@@ -39,7 +37,7 @@ namespace Vistas.Formularios
 
             CM.InsertarConsultasMedicas();
             ConsultasMedicas.CargarConsultasMedicas();
-           
+
 
         }
 
@@ -54,8 +52,57 @@ namespace Vistas.Formularios
             MostarConsultasMedicas();
         }
 
-        private void txtAtencionMedica_NombrePac_TextChanged(object sender, EventArgs e)
+        private void btnEliminarConsultaMedica_Click(object sender, EventArgs e)
         {
+            ConsultasMedicas CM = new ConsultasMedicas();
+            CM.CitaID1 = int.Parse(dgvConsultasMedicas.CurrentRow.Cells[0].Value.ToString());
+
+            if (CM.EliminarConsultasMedicas() == true)
+            {
+                MessageBox.Show("Consulta médica eliminada correctamente.");
+                MostarConsultasMedicas();
+            }
+            else
+            {
+                MessageBox.Show("Ah ocurrido un ERROR");
+            }
+        }
+
+        private void btnActualizarConsultaMedica_Click(object sender, EventArgs e)
+        {
+
+            ConsultasMedicas CM = new ConsultasMedicas();
+            CM.CitaID1 = int.Parse(dgvConsultasMedicas.CurrentRow.Cells[0].Value.ToString());
+            CM.Temperatura = txtAtencionMedica_Temperatura.Text;
+            CM.FechaConsulta1 = dtpAtencionMedica_Fecha.Value;
+            CM.PesoActual = txtAtencionMedica_Peso.Text;
+            CM.Sintomas1 = txtAtencionMedica_Sintomas.Text;
+            CM.Observaciones = txtAtencionMedica_Observaciones.Text;
+            CM.Tratamiento = txtAtencionMedica_Tratamiento.Text;
+            CM.Diagnostico = txtAtencionMedica_Diagnostico.Text;
+
+            if (CM.ActualizarConsultasMedicas() == true)
+            {
+                MessageBox.Show("Consulta médica actualizada correctamente.");
+                MostarConsultasMedicas();
+            }
+            else
+            {
+                MessageBox.Show("Ah ocurrido un ERROR");
+            }
+        }
+
+        private void dgvConsultasMedicas_DoubleClick(object sender, EventArgs e)
+        {
+
+            txtAtencionMedica_CitaID.Text = dgvConsultasMedicas.CurrentRow.Cells[1].Value.ToString();
+            dtpAtencionMedica_Fecha.Value = Convert.ToDateTime(dgvConsultasMedicas.CurrentRow.Cells[5].Value);
+            txtAtencionMedica_Sintomas.Text = dgvConsultasMedicas.CurrentRow.Cells[6].Value.ToString();
+            txtAtencionMedica_Diagnostico.Text = dgvConsultasMedicas.CurrentRow.Cells[7].Value.ToString();
+            txtAtencionMedica_Tratamiento.Text = dgvConsultasMedicas.CurrentRow.Cells[8].Value.ToString();
+            txtAtencionMedica_Observaciones.Text = dgvConsultasMedicas.CurrentRow.Cells[9].Value.ToString();
+            txtAtencionMedica_Peso.Text = dgvConsultasMedicas.CurrentRow.Cells[10].Value.ToString();
+            txtAtencionMedica_Temperatura.Text = dgvConsultasMedicas.CurrentRow.Cells[11].Value.ToString();
 
         }
     }

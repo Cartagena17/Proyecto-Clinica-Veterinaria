@@ -11,9 +11,7 @@ namespace Modelos.Entidades
 {
     public class ConsultasMedicas
     {
-        
-        private int PacienteID;
-        private int PersonalID;
+
         private int CitaID;
         private DateTime FechaConsulta;
         private string Sintomas;
@@ -23,8 +21,7 @@ namespace Modelos.Entidades
         private string pesoActual;
         private string temperatura;
 
-        public int PacienteID1 { get => PacienteID; set => PacienteID = value; }
-        public int PersonalID1 { get => PersonalID; set => PersonalID = value; }
+
         public int CitaID1 { get => CitaID; set => CitaID = value; }
         public DateTime FechaConsulta1 { get => FechaConsulta; set => FechaConsulta = value; }
         public string Sintomas1 { get => Sintomas; set => Sintomas = value; }
@@ -38,21 +35,19 @@ namespace Modelos.Entidades
         {
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "INSERT INTO ConsultasMedicas (PacienteID, PersonalID, CitaID, FechaConsulta, Sintomas, Diagnostico, Tratamiento, Observaciones, PesoActual, Temperatura) " +
+            string comando = "INSERT INTO ConsultasMedicas (CitaID, FechaConsulta, Sintomas, Diagnostico, Tratamiento, Observaciones, PesoActual, Temperatura) " +
                 "VALUES(@PacienteID, @PersonalID, @CitaID, @FechaConsulta, @Sintomas, @Diagnostico, @Tratamiento, @Observaciones, @PesoActual,@Temperatura)";
 
             SqlCommand cmd = new SqlCommand(comando, conexion);
 
-             cmd.Parameters.AddWithValue("@PacienteID", PacienteID);
-            cmd.Parameters.AddWithValue("@PersonalID",PersonalID);
-            cmd.Parameters.AddWithValue("@CitaID",CitaID);
-            cmd.Parameters.AddWithValue("@FechaConsulta",FechaConsulta);
-            cmd.Parameters.AddWithValue("@Sintomas",Sintomas);
-            cmd.Parameters.AddWithValue("@Diagnostico",diagnostico);
-            cmd.Parameters.AddWithValue("@Tratamiento",tratamiento);
-            cmd.Parameters.AddWithValue("@Observaciones",observaciones);
-            cmd.Parameters.AddWithValue("@PesoActual",pesoActual);
-            cmd.Parameters.AddWithValue("@Temperatura",temperatura);
+            cmd.Parameters.AddWithValue("@CitaID", CitaID);
+            cmd.Parameters.AddWithValue("@FechaConsulta", FechaConsulta);
+            cmd.Parameters.AddWithValue("@Sintomas", Sintomas);
+            cmd.Parameters.AddWithValue("@Diagnostico", diagnostico);
+            cmd.Parameters.AddWithValue("@Tratamiento", tratamiento);
+            cmd.Parameters.AddWithValue("@Observaciones", observaciones);
+            cmd.Parameters.AddWithValue("@PesoActual", pesoActual);
+            cmd.Parameters.AddWithValue("@Temperatura", temperatura);
 
             if (cmd.ExecuteNonQuery() > 0)
             {
@@ -69,7 +64,7 @@ namespace Modelos.Entidades
         {
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "select *from ConsultasMedicas;";
+            string comando = "select *from CargarConsultasMedicas";
 
             SqlDataAdapter ad = new SqlDataAdapter(comando, conexion);
 
@@ -79,6 +74,61 @@ namespace Modelos.Entidades
             return dt;
 
         }
+
+        public bool ActualizarConsultasMedicas()
+        {
+            SqlConnection conexion = Conexiondb.conectar();
+
+            string comando = "UPDATE ConsultasMedicas SET " +
+                             "FechaConsulta = @FechaConsulta, " +
+                             "Sintomas = @Sintomas, " +
+                             "Diagnostico = @Diagnostico, " +
+                             "Tratamiento = @Tratamiento, " +
+                             "Observaciones = @Observaciones, " +
+                             "PesoActual = @PesoActual, " +
+                             "Temperatura = @Temperatura " +
+                             "WHERE CitaID = @CitaID";
+
+            SqlCommand cmd = new SqlCommand(comando, conexion);
+
+            cmd.Parameters.AddWithValue("@CitaID", CitaID);
+            cmd.Parameters.AddWithValue("@FechaConsulta", FechaConsulta);
+            cmd.Parameters.AddWithValue("@Sintomas", Sintomas);
+            cmd.Parameters.AddWithValue("@Diagnostico", diagnostico);
+            cmd.Parameters.AddWithValue("@Tratamiento", tratamiento);
+            cmd.Parameters.AddWithValue("@Observaciones", observaciones);
+            cmd.Parameters.AddWithValue("@PesoActual", pesoActual);
+            cmd.Parameters.AddWithValue("@Temperatura", temperatura);
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool EliminarConsultasMedicas()
+        {
+            SqlConnection conexion = Conexiondb.conectar();
+
+            string comando = "DELETE FROM ConsultasMedicas WHERE CitaID = @CitaID";
+
+            SqlCommand cmd = new SqlCommand(comando, conexion);
+            cmd.Parameters.AddWithValue("@CitaID", CitaID);
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
 
 

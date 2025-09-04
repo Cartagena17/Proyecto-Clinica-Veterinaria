@@ -6,12 +6,13 @@ go
 
 create table Rol(
 rolID int primary key identity (1000,1),
-nombreRol varchar (50	))
+nombreRol varchar (50) not null)
 
 create table Usuarios (
-usuarioID int primary key identity (1000,1),
+usuarioID int primary key ident ity (1000,1),
 usuario varchar (50) not null,
 contraseña varchar (50) not null);
+
 
 create table Propietarios (
 PropietarioID int identity (1,1) primary key,
@@ -113,21 +114,22 @@ FechaCita date not null,
 HoraCita varchar (20) not null,
 MotivoCita varchar (100) not null,
 NotasCita Varchar (100)
-)
+);
+
 
 create table ConsultasMedicas (
-ConsultaID int identity (1,1) primary key,
-PacienteID int constraint fk_PacienteID foreign key (PacienteID) references Pacientes(PacienteID) on delete cascade ,
-PersonalID int constraint fk_personalID_Consultas foreign key (PersonalID) references Personal(PersonalID) on delete cascade ,
-CitaID int foreign key (CitaID) references Citas(CitaID) ,
-FechaConsulta date not null,
-Sintomas varchar (100) not null,
-Diagnostico varchar (60) not null,
-Tratamiento varchar (100) not null,
-Observaciones varchar (100) not null,
-PesoActual varchar (20) not null,
-Temperatura varchar (20)not null
-)
+    ConsultaID int identity (1,1) primary key,
+    CitaID int constraint fk_citaID_Consultas 
+        foreign key (CitaID) references Citas(CitaID) on delete cascade,
+    FechaConsulta date not null,
+    Sintomas varchar(100) not null,
+    Diagnostico varchar(60) not null,
+    Tratamiento varchar(100) not null,
+    Observaciones varchar(100) not null,
+    PesoActual decimal(6,2) not null,
+    Temperatura decimal(4,1) not null
+);
+
 
 create table MedicamentosAdministrados (
 MedicamentoAdminID int identity (1,1) primary key,
@@ -327,38 +329,31 @@ INSERT INTO VacunasAplicadas (PacienteID, VacunaID, PersonalID, FechaAplicacion,
 (15, 15, 15, '2025-07-15', '2 ml', 'L015', '2026-01-15');
 
 INSERT INTO Citas (PacienteID, PropietarioID, PersonalID, FechaCita, HoraCita, MotivoCita, NotasCita) VALUES
-(1, 1, 1, '2025-07-01', '10:00 AM', 'Chequeo', 'Paciente saludable'),
-(2, 2, 2, '2025-07-02', '11:00 AM', 'Vacuna anual', 'Aplicación sin complicaciones'),
-(3, 3, 3, '2025-07-03', '09:30 AM', 'Dolor de oído', 'Se agita al tocarle la oreja'),
-(4, 4, 4, '2025-07-04', '10:30 AM', 'Limpieza dental', 'Dentadura sin sarro'),
-(5, 5, 5, '2025-07-05', '02:00 PM', 'Revisión general', 'Buen estado físico'),
-(6, 6, 6, '2025-07-06', '03:00 PM', 'Desparasitación', 'Peso adecuado'),
-(7, 7, 7, '2025-07-07', '12:00 PM', 'Consulta por vómitos', 'Se recomienda dieta blanda'),
-(8, 8, 8, '2025-07-08', '01:00 PM', 'Dolor de estómago', 'Posible infección'),
-(9, 9, 9, '2025-07-09', '11:30 AM', 'Corte de uñas', 'Cooperativo'),
-(10, 10, 10, '2025-07-10', '04:00 PM', 'Vacuna de refuerzo', 'Sin reacciones'),
-(11, 11, 11, '2025-07-11', '05:00 PM', 'Chequeo post cirugía', 'Recuperación exitosa'),
-(12, 12, 12, '2025-07-12', '09:00 AM', 'Evaluación nutricional', 'Se recomienda cambio de alimento'),
-(13, 13, 13, '2025-07-13', '08:00 AM', 'Revisión por diarrea', 'Dieta especial por 3 días'),
-(14, 14, 14, '2025-07-14', '07:30 AM', 'Aplicación microchip', 'Todo en orden'),
-(15, 15, 15, '2025-07-15', '10:00 AM', 'Molestia ocular', 'Ojos irritados, prescripción de gotas');
+( 2, '2025-07-01', '10:00 AM', 'Chequeo', 'Paciente saludable'),
+(4, '2025-07-02', '11:00 AM', 'Vacuna anual', 'Aplicación sin complicaciones'),
+(5, '2025-07-03', '09:30 AM', 'Dolor de oído', 'Se agita al tocarle la oreja'),
+(6, '2025-07-04', '10:30 AM', 'Limpieza dental', 'Dentadura sin sarro'),
+(7, '2025-07-05', '02:00 PM', 'Revisión general', 'Buen estado físico'),
+(8, '2025-07-06', '03:00 PM', 'Desparasitación', 'Peso adecuado'),
+(9, '2025-07-07', '12:00 PM', 'Consulta por vómitos', 'Se recomienda dieta blanda'),
+(10, '2025-07-08', '01:00 PM', 'Dolor de estómago', 'Posible infección'),
+(11, '2025-07-09', '11:30 AM', 'Corte de uñas', 'Cooperativo'),
+(12, '2025-07-10', '04:00 PM', 'Vacuna de refuerzo', 'Sin reacciones'),
+(14, '2025-07-11', '05:00 PM', 'Chequeo post cirugía', 'Recuperación exitosa');
 
-INSERT INTO ConsultasMedicas (PacienteID, PersonalID, CitaID, FechaConsulta, Sintomas, Diagnostico, Tratamiento, Observaciones, PesoActual, Temperatura) VALUES
-(1, 1, 1, '2025-07-01', 'Ninguno', 'Salud estable', 'Vitaminas', 'Activo', '8.5', '38.2'),
-(2, 2, 2, '2025-07-02', 'Sin síntomas', 'Vacuna aplicada', 'Control anual', 'Cooperativo', '4.2', '38.0'),
-(3, 3, 3, '2025-07-03', 'Irritación', 'Otitis leve', 'Antibiótico', 'Revisión en 7 días', '22.4', '37.9'),
-(4, 4, 4, '2025-07-04', 'Mal aliento', 'Acumulación de sarro', 'Limpieza dental', 'Usó anestesia', '3.8', '38.1'),
-(5, 5, 5, '2025-07-05', 'Ninguno', 'Salud estable', 'Vitaminas', 'Ninguna complicación', '28.0', '38.5'),
-(6, 6, 6, '2025-07-06', 'Leve pérdida de apetito', 'Parásitos internos', 'Desparasitación', 'Repetir en 3 semanas', '3.9', '38.3'),
-(7, 7, 7, '2025-07-07', 'Vómito y debilidad', 'Gastritis leve', 'Antiácido', 'Dieta blanda recomendada', '2.5', '38.6'),
-(8, 8, 8, '2025-07-08', 'Dolor abdominal', 'Posible infección', 'Antibiótico', 'Monitorear por 5 días', '1.1', '38.0'),
-(9, 9, 9, '2025-07-09', 'Sin síntomas', 'Solo grooming', 'Sin medicamentos', 'Paciente tranquilo', '0.3', '39.2'),
-(10, 10, 10, '2025-07-10', 'Sin síntomas', 'Refuerzo aplicado', 'Observación 24h', 'Sin complicaciones', '5.6', '38.1'),
-(11, 11, 11, '2025-07-11', 'Cicatrización', 'Postquirúrgico estable', 'Cuidados locales', 'Sin infección', '10.5', '38.3'),
-(12, 12, 12, '2025-07-12', 'Bajo peso', 'Desnutrición leve', 'Suplementos', 'Cambio de alimento', '26.5', '37.8'),
-(13, 13, 13, '2025-07-13', 'Diarrea', 'Infección intestinal', 'Antibióticos y dieta especial', 'Revisión en 5 días', '0.8', '39.0'),
-(14, 14, 14, '2025-07-14', 'Ninguno', 'Microchip aplicado', 'Observación por 48h', 'Todo en orden', '3.0', '38.0'),
-(15, 15, 15, '2025-07-15', 'Irritación ocular', 'Conjuntivitis', 'Gotas oftálmicas', 'Evitar exposición al polvo', '18.5', '38.4');
+INSERT INTO ConsultasMedicas (CitaID, FechaConsulta, Sintomas, Diagnostico, Tratamiento, Observaciones, PesoActual, Temperatura) VALUES
+(2, '2025-07-01', 'Ninguno', 'Salud estable', 'Vitaminas', 'Activo', '8.5', '38.2'),
+(4, '2025-07-02', 'Sin síntomas', 'Vacuna aplicada', 'Control anual', 'Cooperativo', '4.2', '38.0'),
+(5, '2025-07-03', 'Irritación', 'Otitis leve', 'Antibiótico', 'Revisión en 7 días', '22.4', '37.9'),
+(6, '2025-07-04', 'Mal aliento', 'Acumulación de sarro', 'Limpieza dental', 'Usó anestesia', '3.8', '38.1'),
+(7, '2025-07-05', 'Ninguno', 'Salud estable', 'Vitaminas', 'Ninguna complicación', '28.0', '38.5'),
+(8, '2025-07-06', 'Leve pérdida de apetito', 'Parásitos internos', 'Desparasitación', 'Repetir en 3 semanas', '3.9', '38.3'),
+(9, '2025-07-07', 'Vómito y debilidad', 'Gastritis leve', 'Antiácido', 'Dieta blanda recomendada', '2.5', '38.6'),
+(10, '2025-07-08', 'Dolor abdominal', 'Posible infección', 'Antibiótico', 'Monitorear por 5 días', '1.1', '38.0'),
+(11, '2025-07-09', 'Sin síntomas', 'Solo grooming', 'Sin medicamentos', 'Paciente tranquilo', '0.3', '39.2'),
+(12, '2025-07-10', 'Sin síntomas', 'Refuerzo aplicado', 'Observación 24h', 'Sin complicaciones', '5.6', '38.1'),
+(14, '2025-07-11', 'Cicatrización', 'Postquirúrgico estable', 'Cuidados locales', 'Sin infección', '10.5', '38.3');
+
 
 INSERT INTO MedicamentosAdministrados (ConsultaID, MedicamentoID, FechaAdministracion, Dosis, ViaAdministracion, CantidadUtilizada) VALUES
 (1, 1, '2025-07-01', '1 tableta', 'Oral', '1'),
@@ -399,3 +394,39 @@ DROP COLUMN rol;
 create view CargarPacientes as
 select pacienteId,nombrePac,especiepac,razapac,nacimientopac,pesopac,sexopac,colorpac from Pacientes
 select *from CargarPacientes
+
+
+create view CargarCitas as
+SELECT CitaID,NombrePac,NombreProp,NombrePers,FechaCita,HoraCita,MotivoCita,NotasCita
+FROM Citas c
+INNER JOIN Pacientes p ON c.PacienteID = p.PacienteID
+INNER JOIN Propietarios pr ON c.PropietarioID = pr.PropietarioID
+INNER JOIN Personal pe ON c.PersonalID = pe.PersonalID;
+
+select *from CargarCitas
+
+create view CargarConsultasMedicas as
+SELECT 
+    CM.ConsultaID,
+    C.CitaID,
+    P.NombrePac,
+    PR.NombreProp,
+    PE.NombrePers,
+    CM.FechaConsulta,
+    CM.Sintomas,
+    CM.Diagnostico,
+    CM.Tratamiento,
+    CM.Observaciones,
+    CM.PesoActual,
+    CM.Temperatura
+FROM ConsultasMedicas CM
+INNER JOIN Citas C ON CM.CitaID = C.CitaID
+INNER JOIN Pacientes P ON C.PacienteID = P.PacienteID
+INNER JOIN Propietarios PR ON C.PropietarioID = PR.PropietarioID
+INNER JOIN Personal PE ON C.PersonalID = PE.PersonalID
+
+select *from CargarConsultasMedicas
+
+
+
+delete from ConsultasMedicas where ConsultaID=10    

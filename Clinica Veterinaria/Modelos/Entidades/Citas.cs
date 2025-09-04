@@ -11,25 +11,29 @@ namespace Modelos.Entidades
 {
     public class Citas
     {
-        private int PacientID;
-        private int PropietarioID;
-        private int PersonalID;
-        private DateTime FechaCita;
-        private string HoraCita;
-        private string MotivoCita;
+        private int citaID;
+        private int pacientID;
+        private int propietarioID;
+        private int personalID;
+        private DateTime fechaCita;
+        private string horaCita;
+        private string motivoCita;
+        private string notasCita;
 
-        public int PacientID1 { get => PacientID; set => PacientID = value; }
-        public int PropietarioID1 { get => PropietarioID; set => PropietarioID = value; }
-        public int PersonalID1 { get => PersonalID; set => PersonalID = value; }
-        public DateTime FechaCita1 { get => FechaCita; set => FechaCita = value; }
-        public string HoraCita1 { get => HoraCita; set => HoraCita = value; }
-        public string MotivoCita1 { get => MotivoCita; set => MotivoCita = value; }
+        public int PacientID { get => pacientID; set => pacientID = value; }
+        public int PropietarioID { get => propietarioID; set => propietarioID = value; }
+        public int PersonalID { get => personalID; set => personalID = value; }
+        public DateTime FechaCita { get => fechaCita; set => fechaCita = value; }
+        public string HoraCita { get => horaCita; set => horaCita = value; }
+        public string MotivoCita { get => motivoCita; set => motivoCita = value; }
+        public string NotasCita { get => notasCita; set => notasCita = value; }
+        public int CitaID { get => citaID; set => citaID = value; }
 
         public static DataTable CargarCitas()
         {
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "select *from Citas;";
+            string comando = "select *from CargarCitas;";
 
             SqlDataAdapter ad = new SqlDataAdapter(comando, conexion);
 
@@ -47,19 +51,21 @@ namespace Modelos.Entidades
         {
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "INSERT INTO Citas (PacienteID, PropietarioID, PersonalID, FechaCita, HoraCita, MotivoCita) " +
-                "VALUES(@PacienteID, @PropietarioID, @PersonalID, @FechaCita, @HoraCita, @MotivoCita);";
+            string comando = "INSERT INTO Citas (CitaID,PacienteID, PropietarioID, PersonalID, FechaCita, HoraCita, MotivoCita,NotasCita) " +
+                "VALUES(@CitaID,@PacienteID, @PropietarioID, @PersonalID, @FechaCita, @HoraCita, @MotivoCita,@NotasCita);";
 
             SqlCommand cmd = new SqlCommand(comando, conexion);
 
+            cmd.Parameters.AddWithValue("CitaID", CitaID);
             cmd.Parameters.AddWithValue("PacienteID", PacientID);
             cmd.Parameters.AddWithValue("PropietarioID", PropietarioID);
             cmd.Parameters.AddWithValue("PersonalID", PersonalID);
             cmd.Parameters.AddWithValue("FechaCita", FechaCita);
             cmd.Parameters.AddWithValue("HoraCita", HoraCita);
             cmd.Parameters.AddWithValue("MotivoCita", MotivoCita);
+            cmd.Parameters.AddWithValue("NotasCita", NotasCita);
 
-            if (cmd.ExecuteNonQuery() >0)
+            if (cmd.ExecuteNonQuery() > 0)
             {
                 return true;
             }
@@ -69,6 +75,51 @@ namespace Modelos.Entidades
             }
 
 
+        }
+
+        public bool ActualizarCita()
+        {
+            SqlConnection con = Conexiondb.conectar();
+            string comando = @"UPDATE Citas
+                         SET FechaCita = @FechaCita,
+                             HoraCita = @HoraCita,
+                             MotivoCita = @MotivoCita,
+                             NotasCita = @NotasCita
+                         WHERE CitaID = @CitaID";
+
+            SqlCommand cmd = new SqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@FechaCita", FechaCita);
+            cmd.Parameters.AddWithValue("@HoraCita", HoraCita);
+            cmd.Parameters.AddWithValue("@MotivoCita", MotivoCita);
+            cmd.Parameters.AddWithValue("@NotasCita", NotasCita);
+            cmd.Parameters.AddWithValue("@CitaID", CitaID);
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool EliminarCita()
+        {
+            SqlConnection con = Conexiondb.conectar();
+
+            string comando = "DELETE FROM Citas WHERE CitaID = @CitaID";
+
+            SqlCommand cmd = new SqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@CitaID", CitaID);
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 

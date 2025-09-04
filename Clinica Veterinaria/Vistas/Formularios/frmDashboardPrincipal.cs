@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelos.Entidades;
 
@@ -15,7 +7,7 @@ namespace Vistas.Formularios
     public partial class frmDashboardPrincipal : Form
     {
 
-       
+
 
 
         public frmDashboardPrincipal()
@@ -81,12 +73,12 @@ namespace Vistas.Formularios
         {
             frmDashboardPrincipal dashboard = new frmDashboardPrincipal();
             dashboard.Show();
-            
 
-           
+
+
         }
 
-       
+
 
         private void pnlCentral_Paint(object sender, PaintEventArgs e)
         {
@@ -94,7 +86,7 @@ namespace Vistas.Formularios
         }
         private void frmDashboardPrincipal_load(object sender, PaintEventArgs e)
         {
-            
+
             MostrarCitasPendientes();
         }
 
@@ -108,6 +100,11 @@ namespace Vistas.Formularios
         {
             Citas.CargarCitas();
             MostrarCitasPendientes();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -50,14 +50,17 @@
             // lblGestionPersonal
             // 
             this.lblGestionPersonal.AutoSize = true;
-            this.lblGestionPersonal.Location = new System.Drawing.Point(320, 26);
+            this.lblGestionPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
+            this.lblGestionPersonal.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionPersonal.Location = new System.Drawing.Point(384, 9);
             this.lblGestionPersonal.Name = "lblGestionPersonal";
-            this.lblGestionPersonal.Size = new System.Drawing.Size(132, 16);
+            this.lblGestionPersonal.Size = new System.Drawing.Size(314, 38);
             this.lblGestionPersonal.TabIndex = 0;
             this.lblGestionPersonal.Text = "Gestion del Personal";
             // 
             // pnlGestionPersonal
             // 
+            this.pnlGestionPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
             this.pnlGestionPersonal.Controls.Add(this.btnVerPersonal);
             this.pnlGestionPersonal.Controls.Add(this.btnActualizarInfoPersonal);
             this.pnlGestionPersonal.Controls.Add(this.btnEliminarPersonal);
@@ -70,144 +73,146 @@
             this.pnlGestionPersonal.Controls.Add(this.lblGestionPersonal_Telefono);
             this.pnlGestionPersonal.Controls.Add(this.lblGestionPersonal_Apellido);
             this.pnlGestionPersonal.Controls.Add(this.lblGestionPersonal_Nombre);
-            this.pnlGestionPersonal.Location = new System.Drawing.Point(77, 82);
-            this.pnlGestionPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlGestionPersonal.Location = new System.Drawing.Point(87, 41);
             this.pnlGestionPersonal.Name = "pnlGestionPersonal";
-            this.pnlGestionPersonal.Size = new System.Drawing.Size(631, 282);
+            this.pnlGestionPersonal.Size = new System.Drawing.Size(846, 335);
             this.pnlGestionPersonal.TabIndex = 1;
             // 
             // btnVerPersonal
             // 
-            this.btnVerPersonal.Location = new System.Drawing.Point(481, 185);
-            this.btnVerPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVerPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
+            this.btnVerPersonal.FlatAppearance.BorderSize = 0;
+            this.btnVerPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerPersonal.Location = new System.Drawing.Point(460, 232);
             this.btnVerPersonal.Name = "btnVerPersonal";
-            this.btnVerPersonal.Size = new System.Drawing.Size(117, 50);
+            this.btnVerPersonal.Size = new System.Drawing.Size(132, 60);
             this.btnVerPersonal.TabIndex = 13;
             this.btnVerPersonal.Text = "Ver Personal";
-            this.btnVerPersonal.UseVisualStyleBackColor = true;
+            this.btnVerPersonal.UseVisualStyleBackColor = false;
             // 
             // btnActualizarInfoPersonal
             // 
-            this.btnActualizarInfoPersonal.Location = new System.Drawing.Point(355, 187);
-            this.btnActualizarInfoPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnActualizarInfoPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
+            this.btnActualizarInfoPersonal.FlatAppearance.BorderSize = 0;
+            this.btnActualizarInfoPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarInfoPersonal.Location = new System.Drawing.Point(320, 232);
             this.btnActualizarInfoPersonal.Name = "btnActualizarInfoPersonal";
-            this.btnActualizarInfoPersonal.Size = new System.Drawing.Size(107, 49);
+            this.btnActualizarInfoPersonal.Size = new System.Drawing.Size(141, 60);
             this.btnActualizarInfoPersonal.TabIndex = 12;
             this.btnActualizarInfoPersonal.Text = "Actualizar Informacion";
-            this.btnActualizarInfoPersonal.UseVisualStyleBackColor = true;
+            this.btnActualizarInfoPersonal.UseVisualStyleBackColor = false;
             this.btnActualizarInfoPersonal.Click += new System.EventHandler(this.btnActualizarInfoPersonal_Click);
             // 
             // btnEliminarPersonal
             // 
-            this.btnEliminarPersonal.Location = new System.Drawing.Point(213, 186);
-            this.btnEliminarPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
+            this.btnEliminarPersonal.FlatAppearance.BorderSize = 0;
+            this.btnEliminarPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarPersonal.Location = new System.Drawing.Point(194, 232);
             this.btnEliminarPersonal.Name = "btnEliminarPersonal";
-            this.btnEliminarPersonal.Size = new System.Drawing.Size(115, 50);
+            this.btnEliminarPersonal.Size = new System.Drawing.Size(129, 60);
             this.btnEliminarPersonal.TabIndex = 11;
             this.btnEliminarPersonal.Text = "Eliminar Personal";
-            this.btnEliminarPersonal.UseVisualStyleBackColor = true;
+            this.btnEliminarPersonal.UseVisualStyleBackColor = false;
             this.btnEliminarPersonal.Click += new System.EventHandler(this.btnEliminarPersonal_Click);
             // 
             // btnAgregarPersonal
             // 
-            this.btnAgregarPersonal.Location = new System.Drawing.Point(92, 186);
-            this.btnAgregarPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
+            this.btnAgregarPersonal.FlatAppearance.BorderSize = 0;
+            this.btnAgregarPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarPersonal.Location = new System.Drawing.Point(61, 232);
             this.btnAgregarPersonal.Name = "btnAgregarPersonal";
-            this.btnAgregarPersonal.Size = new System.Drawing.Size(103, 49);
+            this.btnAgregarPersonal.Size = new System.Drawing.Size(137, 60);
             this.btnAgregarPersonal.TabIndex = 10;
             this.btnAgregarPersonal.Text = "Agregar Personal";
-            this.btnAgregarPersonal.UseVisualStyleBackColor = true;
+            this.btnAgregarPersonal.UseVisualStyleBackColor = false;
             this.btnAgregarPersonal.Click += new System.EventHandler(this.btnAgregarPersonal_Click);
             // 
             // txtGestionPersonal_Email
             // 
-            this.txtGestionPersonal_Email.Location = new System.Drawing.Point(435, 73);
-            this.txtGestionPersonal_Email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGestionPersonal_Email.Location = new System.Drawing.Point(516, 86);
             this.txtGestionPersonal_Email.Name = "txtGestionPersonal_Email";
-            this.txtGestionPersonal_Email.Size = new System.Drawing.Size(165, 22);
+            this.txtGestionPersonal_Email.Size = new System.Drawing.Size(256, 32);
             this.txtGestionPersonal_Email.TabIndex = 9;
             // 
             // txtGestionPersonal_Telefono
             // 
-            this.txtGestionPersonal_Telefono.Location = new System.Drawing.Point(435, 18);
-            this.txtGestionPersonal_Telefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGestionPersonal_Telefono.Location = new System.Drawing.Point(516, 23);
             this.txtGestionPersonal_Telefono.Name = "txtGestionPersonal_Telefono";
-            this.txtGestionPersonal_Telefono.Size = new System.Drawing.Size(165, 22);
+            this.txtGestionPersonal_Telefono.Size = new System.Drawing.Size(256, 32);
             this.txtGestionPersonal_Telefono.TabIndex = 8;
             // 
             // txtGestionPersonal_Apellido
             // 
-            this.txtGestionPersonal_Apellido.Location = new System.Drawing.Point(173, 73);
-            this.txtGestionPersonal_Apellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGestionPersonal_Apellido.Location = new System.Drawing.Point(195, 86);
             this.txtGestionPersonal_Apellido.Name = "txtGestionPersonal_Apellido";
-            this.txtGestionPersonal_Apellido.Size = new System.Drawing.Size(153, 22);
+            this.txtGestionPersonal_Apellido.Size = new System.Drawing.Size(194, 32);
             this.txtGestionPersonal_Apellido.TabIndex = 6;
             // 
             // txtGestionPersonal_Nombre
             // 
-            this.txtGestionPersonal_Nombre.Location = new System.Drawing.Point(173, 22);
-            this.txtGestionPersonal_Nombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGestionPersonal_Nombre.Location = new System.Drawing.Point(195, 26);
             this.txtGestionPersonal_Nombre.Name = "txtGestionPersonal_Nombre";
-            this.txtGestionPersonal_Nombre.Size = new System.Drawing.Size(153, 22);
+            this.txtGestionPersonal_Nombre.Size = new System.Drawing.Size(194, 32);
             this.txtGestionPersonal_Nombre.TabIndex = 5;
             // 
             // lblGestionPersonal_Email
             // 
             this.lblGestionPersonal_Email.AutoSize = true;
-            this.lblGestionPersonal_Email.Location = new System.Drawing.Point(384, 79);
+            this.lblGestionPersonal_Email.Location = new System.Drawing.Point(432, 94);
             this.lblGestionPersonal_Email.Name = "lblGestionPersonal_Email";
-            this.lblGestionPersonal_Email.Size = new System.Drawing.Size(44, 16);
+            this.lblGestionPersonal_Email.Size = new System.Drawing.Size(65, 24);
             this.lblGestionPersonal_Email.TabIndex = 4;
             this.lblGestionPersonal_Email.Text = "Email:";
             // 
             // lblGestionPersonal_Telefono
             // 
             this.lblGestionPersonal_Telefono.AutoSize = true;
-            this.lblGestionPersonal_Telefono.Location = new System.Drawing.Point(364, 22);
+            this.lblGestionPersonal_Telefono.Location = new System.Drawing.Point(432, 31);
             this.lblGestionPersonal_Telefono.Name = "lblGestionPersonal_Telefono";
-            this.lblGestionPersonal_Telefono.Size = new System.Drawing.Size(64, 16);
+            this.lblGestionPersonal_Telefono.Size = new System.Drawing.Size(96, 24);
             this.lblGestionPersonal_Telefono.TabIndex = 3;
             this.lblGestionPersonal_Telefono.Text = "Telefono:";
             // 
             // lblGestionPersonal_Apellido
             // 
             this.lblGestionPersonal_Apellido.AutoSize = true;
-            this.lblGestionPersonal_Apellido.Location = new System.Drawing.Point(29, 73);
+            this.lblGestionPersonal_Apellido.Location = new System.Drawing.Point(21, 94);
             this.lblGestionPersonal_Apellido.Name = "lblGestionPersonal_Apellido";
-            this.lblGestionPersonal_Apellido.Size = new System.Drawing.Size(139, 16);
+            this.lblGestionPersonal_Apellido.Size = new System.Drawing.Size(209, 24);
             this.lblGestionPersonal_Apellido.TabIndex = 1;
             this.lblGestionPersonal_Apellido.Text = "Apellido del Personal:";
             // 
             // lblGestionPersonal_Nombre
             // 
             this.lblGestionPersonal_Nombre.AutoSize = true;
-            this.lblGestionPersonal_Nombre.Location = new System.Drawing.Point(29, 22);
+            this.lblGestionPersonal_Nombre.Location = new System.Drawing.Point(21, 31);
             this.lblGestionPersonal_Nombre.Name = "lblGestionPersonal_Nombre";
-            this.lblGestionPersonal_Nombre.Size = new System.Drawing.Size(138, 16);
+            this.lblGestionPersonal_Nombre.Size = new System.Drawing.Size(210, 24);
             this.lblGestionPersonal_Nombre.TabIndex = 0;
             this.lblGestionPersonal_Nombre.Text = "Nombre del Personal:";
             // 
             // dgvPersonal
             // 
             this.dgvPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonal.Location = new System.Drawing.Point(77, 382);
-            this.dgvPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvPersonal.Location = new System.Drawing.Point(72, 382);
             this.dgvPersonal.Name = "dgvPersonal";
             this.dgvPersonal.RowHeadersWidth = 51;
             this.dgvPersonal.RowTemplate.Height = 24;
-            this.dgvPersonal.Size = new System.Drawing.Size(859, 302);
+            this.dgvPersonal.Size = new System.Drawing.Size(1092, 299);
             this.dgvPersonal.TabIndex = 2;
             this.dgvPersonal.DoubleClick += new System.EventHandler(this.dgvPersonal_DoubleClick);
             // 
             // frmGestionPersonal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 711);
+            this.ClientSize = new System.Drawing.Size(1246, 845);
             this.Controls.Add(this.dgvPersonal);
             this.Controls.Add(this.pnlGestionPersonal);
             this.Controls.Add(this.lblGestionPersonal);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Font = new System.Drawing.Font("Microsoft JhengHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmGestionPersonal";
             this.Text = "frmGestionPersonal";
             this.Load += new System.EventHandler(this.frmGestionPersonal_Load);
