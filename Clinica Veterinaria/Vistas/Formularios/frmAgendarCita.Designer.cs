@@ -30,6 +30,8 @@
         {
             this.lblAgendarCitas = new System.Windows.Forms.Label();
             this.pnlAgendarCitas = new System.Windows.Forms.Panel();
+            this.txtAgendarCita_Propietario = new System.Windows.Forms.TextBox();
+            this.txtAgendarCita_Paciente = new System.Windows.Forms.TextBox();
             this.txtAgendarCitas_Notas = new System.Windows.Forms.TextBox();
             this.lblNotas = new System.Windows.Forms.Label();
             this.btnVerCita = new System.Windows.Forms.Button();
@@ -47,8 +49,6 @@
             this.lblAgendarCita_Paciente = new System.Windows.Forms.Label();
             this.lblAgendarCita_Veterinario = new System.Windows.Forms.Label();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.cbAgendarCita_Propietario = new System.Windows.Forms.ComboBox();
-            this.cbAgendarCita_Paciente = new System.Windows.Forms.ComboBox();
             this.pnlAgendarCitas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
@@ -68,8 +68,8 @@
             // pnlAgendarCitas
             // 
             this.pnlAgendarCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
-            this.pnlAgendarCitas.Controls.Add(this.cbAgendarCita_Paciente);
-            this.pnlAgendarCitas.Controls.Add(this.cbAgendarCita_Propietario);
+            this.pnlAgendarCitas.Controls.Add(this.txtAgendarCita_Propietario);
+            this.pnlAgendarCitas.Controls.Add(this.txtAgendarCita_Paciente);
             this.pnlAgendarCitas.Controls.Add(this.txtAgendarCitas_Notas);
             this.pnlAgendarCitas.Controls.Add(this.lblNotas);
             this.pnlAgendarCitas.Controls.Add(this.btnVerCita);
@@ -91,6 +91,21 @@
             this.pnlAgendarCitas.Name = "pnlAgendarCitas";
             this.pnlAgendarCitas.Size = new System.Drawing.Size(1018, 389);
             this.pnlAgendarCitas.TabIndex = 1;
+            // 
+            // txtAgendarCita_Propietario
+            // 
+            this.txtAgendarCita_Propietario.Location = new System.Drawing.Point(317, 46);
+            this.txtAgendarCita_Propietario.Name = "txtAgendarCita_Propietario";
+            this.txtAgendarCita_Propietario.Size = new System.Drawing.Size(350, 34);
+            this.txtAgendarCita_Propietario.TabIndex = 32;
+            this.txtAgendarCita_Propietario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAgendarCita_Propietario_KeyPress);
+            // 
+            // txtAgendarCita_Paciente
+            // 
+            this.txtAgendarCita_Paciente.Location = new System.Drawing.Point(317, 89);
+            this.txtAgendarCita_Paciente.Name = "txtAgendarCita_Paciente";
+            this.txtAgendarCita_Paciente.Size = new System.Drawing.Size(350, 34);
+            this.txtAgendarCita_Paciente.TabIndex = 31;
             // 
             // txtAgendarCitas_Notas
             // 
@@ -121,6 +136,7 @@
             this.btnVerCita.TabIndex = 28;
             this.btnVerCita.Text = "Ver Cita";
             this.btnVerCita.UseVisualStyleBackColor = false;
+            this.btnVerCita.Click += new System.EventHandler(this.btnVerCita_Click);
             // 
             // btnEliminarCIta
             // 
@@ -175,6 +191,7 @@
             this.txtAgendarCita_Hora.Name = "txtAgendarCita_Hora";
             this.txtAgendarCita_Hora.Size = new System.Drawing.Size(350, 34);
             this.txtAgendarCita_Hora.TabIndex = 23;
+            this.txtAgendarCita_Hora.TextChanged += new System.EventHandler(this.txtAgendarCita_Hora_TextChanged);
             // 
             // dtpAgendarCita_Fecha
             // 
@@ -221,7 +238,7 @@
             // lblAgendarCita_Propietario
             // 
             this.lblAgendarCita_Propietario.AutoSize = true;
-            this.lblAgendarCita_Propietario.Location = new System.Drawing.Point(30, 44);
+            this.lblAgendarCita_Propietario.Location = new System.Drawing.Point(30, 49);
             this.lblAgendarCita_Propietario.Name = "lblAgendarCita_Propietario";
             this.lblAgendarCita_Propietario.Size = new System.Drawing.Size(203, 25);
             this.lblAgendarCita_Propietario.TabIndex = 15;
@@ -230,7 +247,7 @@
             // lblAgendarCita_Paciente
             // 
             this.lblAgendarCita_Paciente.AutoSize = true;
-            this.lblAgendarCita_Paciente.Location = new System.Drawing.Point(30, 87);
+            this.lblAgendarCita_Paciente.Location = new System.Drawing.Point(39, 89);
             this.lblAgendarCita_Paciente.Name = "lblAgendarCita_Paciente";
             this.lblAgendarCita_Paciente.Size = new System.Drawing.Size(176, 25);
             this.lblAgendarCita_Paciente.TabIndex = 14;
@@ -256,22 +273,6 @@
             this.dgvCitas.Size = new System.Drawing.Size(895, 261);
             this.dgvCitas.TabIndex = 2;
             this.dgvCitas.DoubleClick += new System.EventHandler(this.dgvCitas_DoubleClick);
-            // 
-            // cbAgendarCita_Propietario
-            // 
-            this.cbAgendarCita_Propietario.FormattingEnabled = true;
-            this.cbAgendarCita_Propietario.Location = new System.Drawing.Point(317, 41);
-            this.cbAgendarCita_Propietario.Name = "cbAgendarCita_Propietario";
-            this.cbAgendarCita_Propietario.Size = new System.Drawing.Size(350, 33);
-            this.cbAgendarCita_Propietario.TabIndex = 31;
-            // 
-            // cbAgendarCita_Paciente
-            // 
-            this.cbAgendarCita_Paciente.FormattingEnabled = true;
-            this.cbAgendarCita_Paciente.Location = new System.Drawing.Point(317, 87);
-            this.cbAgendarCita_Paciente.Name = "cbAgendarCita_Paciente";
-            this.cbAgendarCita_Paciente.Size = new System.Drawing.Size(350, 33);
-            this.cbAgendarCita_Paciente.TabIndex = 32;
             // 
             // frmAgendarCita
             // 
@@ -314,7 +315,7 @@
         private System.Windows.Forms.Button btnActualizarCita;
         private System.Windows.Forms.TextBox txtAgendarCitas_Notas;
         private System.Windows.Forms.Label lblNotas;
-        private System.Windows.Forms.ComboBox cbAgendarCita_Paciente;
-        private System.Windows.Forms.ComboBox cbAgendarCita_Propietario;
+        private System.Windows.Forms.TextBox txtAgendarCita_Propietario;
+        private System.Windows.Forms.TextBox txtAgendarCita_Paciente;
     }
 }

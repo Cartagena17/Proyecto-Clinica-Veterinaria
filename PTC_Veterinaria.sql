@@ -396,14 +396,14 @@ select pacienteId,nombrePac,especiepac,razapac,nacimientopac,pesopac,sexopac,col
 select *from CargarPacientes
 
 
-create view CargarCitas as
-SELECT CitaID,NombrePac,NombreProp,NombrePers,FechaCita,HoraCita,MotivoCita,NotasCita
+create view CargarCitas2 as
+SELECT CitaID,NombreProp,NombrePac,NombrePers,FechaCita,HoraCita,MotivoCita,NotasCita
 FROM Citas c
 INNER JOIN Pacientes p ON c.PacienteID = p.PacienteID
 INNER JOIN Propietarios pr ON c.PropietarioID = pr.PropietarioID
 INNER JOIN Personal pe ON c.PersonalID = pe.PersonalID;
 
-select *from CargarCitas
+select *from CargarCitas2
 
 create view CargarConsultasMedicas as
 SELECT 

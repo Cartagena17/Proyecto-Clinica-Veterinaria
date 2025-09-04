@@ -78,7 +78,7 @@ namespace Modelos.Entidades
         {
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "DELETE FROM Pacientes WHERE pacienteID=@paciente;";
+            string comando = "DELETE FROM Pacientes WHERE pacienteID=@pacienteID;";
 
             SqlCommand cmd = new SqlCommand(comando, conexion);
 

@@ -59,15 +59,6 @@ namespace Vistas.Formularios
             AbrirForm(new frmGestionPropietarios());
         }
 
-        private void btnInventario_Click(object sender, EventArgs e)
-        {
-            AbrirForm(new frmInventario());
-        }
-
-        private void btnDashboard_Facturacion_Click(object sender, EventArgs e)
-        {
-            AbrirForm(new frmFacturacion());
-        }
 
         private void btnVolverDashboard_Click(object sender, EventArgs e)
         {

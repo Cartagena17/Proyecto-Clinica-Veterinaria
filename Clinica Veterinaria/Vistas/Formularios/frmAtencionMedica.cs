@@ -25,6 +25,41 @@ namespace Vistas.Formularios
 
         private void btnRegistrarConsultaMedica_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtAtencionMedica_CitaID.Text) || !int.TryParse(txtAtencionMedica_CitaID.Text, out int citaID))
+            {
+                MessageBox.Show("Debe ingresar un ID de cita válido (número entero).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtAtencionMedica_Temperatura.Text) || !double.TryParse(txtAtencionMedica_Temperatura.Text, out double temperatura))
+            {
+                MessageBox.Show("Debe ingresar una temperatura válida (número).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtAtencionMedica_Peso.Text) || !double.TryParse(txtAtencionMedica_Peso.Text, out double peso))
+            {
+                MessageBox.Show("Debe ingresar un peso válido (número).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtAtencionMedica_Sintomas.Text))
+            {
+                MessageBox.Show("Debe ingresar los síntomas del paciente.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtAtencionMedica_Diagnostico.Text))
+            {
+                MessageBox.Show("Debe ingresar un diagnóstico.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtAtencionMedica_Tratamiento.Text))
+            {
+                MessageBox.Show("Debe ingresar un tratamiento.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             ConsultasMedicas CM = new ConsultasMedicas();
             CM.CitaID1 = int.Parse(txtAtencionMedica_CitaID.Text);
             CM.Temperatura = txtAtencionMedica_Temperatura.Text;
@@ -70,6 +105,41 @@ namespace Vistas.Formularios
 
         private void btnActualizarConsultaMedica_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtAtencionMedica_CitaID.Text) || !int.TryParse(txtAtencionMedica_CitaID.Text, out int citaID))
+            {
+                MessageBox.Show("Debe ingresar un ID de cita válido (número entero).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtAtencionMedica_Temperatura.Text) || !double.TryParse(txtAtencionMedica_Temperatura.Text, out double temperatura))
+            {
+                MessageBox.Show("Debe ingresar una temperatura válida (número).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtAtencionMedica_Peso.Text) || !double.TryParse(txtAtencionMedica_Peso.Text, out double peso))
+            {
+                MessageBox.Show("Debe ingresar un peso válido (número).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtAtencionMedica_Sintomas.Text))
+            {
+                MessageBox.Show("Debe ingresar los síntomas del paciente.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtAtencionMedica_Diagnostico.Text))
+            {
+                MessageBox.Show("Debe ingresar un diagnóstico.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtAtencionMedica_Tratamiento.Text))
+            {
+                MessageBox.Show("Debe ingresar un tratamiento.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             ConsultasMedicas CM = new ConsultasMedicas();
             CM.CitaID1 = int.Parse(dgvConsultasMedicas.CurrentRow.Cells[0].Value.ToString());

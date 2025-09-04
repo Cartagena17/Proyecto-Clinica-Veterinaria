@@ -25,6 +25,14 @@ namespace Vistas.Formularios
 
         private void btnAgregarPersonal_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtGestionPersonal_Nombre.Text) ||
+            string.IsNullOrWhiteSpace(txtGestionPersonal_Apellido.Text) ||
+            string.IsNullOrWhiteSpace(txtGestionPersonal_Telefono.Text) ||
+            string.IsNullOrWhiteSpace(txtGestionPersonal_Email.Text))
+            {
+                MessageBox.Show("Por favor complete todos los campos antes de registrar.");
+                return;
+            }
             Personal per = new Personal();
             per.NombrePers = txtGestionPersonal_Nombre.Text;
             per.ApellidoPers = txtGestionPersonal_Apellido.Text;
@@ -43,7 +51,11 @@ namespace Vistas.Formularios
 
         private void btnEliminarPersonal_Click(object sender, EventArgs e)
         {
-
+            if (dgvPersonal.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un registro para eliminar.");
+                return;
+            }
             int id = int.Parse(dgvPersonal.CurrentRow.Cells[0].Value.ToString());
             Personal p = new Personal();
             if (p.EliminarPersonal(id) == true)
@@ -60,6 +72,20 @@ namespace Vistas.Formularios
 
         private void btnActualizarInfoPersonal_Click(object sender, EventArgs e)
         {
+            if (dgvPersonal.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un registro para actualizar.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtGestionPersonal_Nombre.Text) ||
+                string.IsNullOrWhiteSpace(txtGestionPersonal_Apellido.Text) ||
+                string.IsNullOrWhiteSpace(txtGestionPersonal_Telefono.Text) ||
+                string.IsNullOrWhiteSpace(txtGestionPersonal_Email.Text))
+            {
+                MessageBox.Show("Por favor complete todos los campos antes de actualizar.");
+                return;
+            }
             Personal p = new Personal();
             p.NombrePers=txtGestionPersonal_Nombre.Text;
             p.ApellidoPers=txtGestionPersonal_Apellido.Text;

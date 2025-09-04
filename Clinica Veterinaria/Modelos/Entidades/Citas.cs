@@ -33,7 +33,7 @@ namespace Modelos.Entidades
         {
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "select *from CargarCitas;";
+            string comando = "select *from CargarCitas2;";
 
             SqlDataAdapter ad = new SqlDataAdapter(comando, conexion);
 
@@ -51,19 +51,20 @@ namespace Modelos.Entidades
         {
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "INSERT INTO Citas (CitaID,PacienteID, PropietarioID, PersonalID, FechaCita, HoraCita, MotivoCita,NotasCita) " +
-                "VALUES(@CitaID,@PacienteID, @PropietarioID, @PersonalID, @FechaCita, @HoraCita, @MotivoCita,@NotasCita);";
+            string comando = "INSERT INTO Citas ( PropietarioID,PacienteID, PersonalID, FechaCita, HoraCita, MotivoCita,NotasCita) " +
+                "VALUES( @PropietarioID,@PacienteID, @PersonalID, @FechaCita, @HoraCita, @MotivoCita,@NotasCita);";
 
             SqlCommand cmd = new SqlCommand(comando, conexion);
 
-            cmd.Parameters.AddWithValue("CitaID", CitaID);
             cmd.Parameters.AddWithValue("PacienteID", PacientID);
             cmd.Parameters.AddWithValue("PropietarioID", PropietarioID);
             cmd.Parameters.AddWithValue("PersonalID", PersonalID);
             cmd.Parameters.AddWithValue("FechaCita", FechaCita);
             cmd.Parameters.AddWithValue("HoraCita", HoraCita);
             cmd.Parameters.AddWithValue("MotivoCita", MotivoCita);
-            cmd.Parameters.AddWithValue("NotasCita", NotasCita);
+            //cmd.Parameters.AddWithValue("NotasCita", NotasCita);
+            cmd.Parameters.AddWithValue("@NotasCita", NotasCita);
+
 
             if (cmd.ExecuteNonQuery() > 0)
             {
