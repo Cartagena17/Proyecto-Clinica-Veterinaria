@@ -111,6 +111,42 @@ namespace Modelos.Entidades
             }
         }
 
+        public string NombreCompleto => $"{nombrePers} {apellidoPers}";
+
+        public override string ToString()
+        {
+            return NombreCompleto;
+        }
+
+        public static List<Personal> CargarPersonalCB()
+        {
+            List<Personal> ListaPersonal = new List<Personal>();
+
+            try
+            {
+                SqlConnection con = Conexiondb.conectar();
+
+                string comando = "select personalid, nombrepers, apellidopers from Personal;";
+                SqlCommand cmd = new SqlCommand(comando, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ListaPersonal.Add(new Personal
+                    {
+                        PersonalID = reader.GetInt32(0),
+                        NombrePers = reader.GetString(1),
+                        ApellidoPers=reader.GetString(2)
+
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al cargar personal: {ex.Message}");
+            }
+            return ListaPersonal;
+        }
 
     }
 }

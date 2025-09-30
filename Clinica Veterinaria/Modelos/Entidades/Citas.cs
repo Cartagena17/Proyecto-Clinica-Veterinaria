@@ -12,7 +12,7 @@ namespace Modelos.Entidades
     public class Citas
     {
         private int citaID;
-        private int pacientID;
+        private int pacienteID;
         private int propietarioID;
         private int personalID;
         private DateTime fechaCita;
@@ -20,7 +20,7 @@ namespace Modelos.Entidades
         private string motivoCita;
         private string notasCita;
 
-        public int PacientID { get => pacientID; set => pacientID = value; }
+        public int PacienteID { get => pacienteID; set => pacienteID = value; }
         public int PropietarioID { get => propietarioID; set => propietarioID = value; }
         public int PersonalID { get => personalID; set => personalID = value; }
         public DateTime FechaCita { get => fechaCita; set => fechaCita = value; }
@@ -56,7 +56,7 @@ namespace Modelos.Entidades
 
             SqlCommand cmd = new SqlCommand(comando, conexion);
 
-            cmd.Parameters.AddWithValue("PacienteID", PacientID);
+            cmd.Parameters.AddWithValue("PacienteID", PacienteID);
             cmd.Parameters.AddWithValue("PropietarioID", PropietarioID);
             cmd.Parameters.AddWithValue("PersonalID", PersonalID);
             cmd.Parameters.AddWithValue("FechaCita", FechaCita);
@@ -123,6 +123,32 @@ namespace Modelos.Entidades
             }
         }
 
+        //public void CargarNombresEnComboBox()
+        //{
+        //    SqlConnection con = Conexiondb.conectar();
 
+        //    string query = "SELECT Nombre FROM Personas";
+
+        //    try
+        //    {
+        //        con.Open();
+        //        SqlCommand command = new SqlCommand(query, con);
+        //        SqlDataReader reader = command.ExecuteReader();
+
+        //        comboBoxNombres.Items.Clear(); // Limpia antes de cargar
+
+        //        while (reader.Read())
+        //        {
+        //            comboBoxNombres.Items.Add(reader["Nombre"].ToString());
+        //        }
+
+        //        reader.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error al cargar nombres: " + ex.Message);
+        //    }
+
+        //}
     }
 }

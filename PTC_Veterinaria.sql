@@ -392,9 +392,10 @@ ALTER TABLE Personal
 DROP COLUMN rol;	
 
 create view CargarPacientes as
-select pacienteId,nombrePac,especiepac,razapac,nacimientopac,pesopac,sexopac,colorpac from Pacientes
+select pacienteId AS #,nombrePac,especiepac,razapac,nacimientopac,pesopac,sexopac,colorpac,nombreProp from Pacientes
+inner join Propietarios on Propietarios.PropietarioID=Pacientes.PropietarioID
 select *from CargarPacientes
-
+drop view CargarPacientes
 
 create view CargarCitas2 as
 SELECT CitaID,NombreProp,NombrePac,NombrePers,FechaCita,HoraCita,MotivoCita,NotasCita
@@ -407,17 +408,17 @@ select *from CargarCitas2
 
 create view CargarConsultasMedicas as
 SELECT 
-    CM.ConsultaID,
-    C.CitaID,
-    P.NombrePac,
-    PR.NombreProp,
-    PE.NombrePers,
-    CM.FechaConsulta,
+    CM.ConsultaID AS #,
+    C.CitaID AS CodigoCita,
+    P.NombrePac AS Nombre_Paciente,
+    PR.NombreProp AS Nombre_Propietario,
+    PE.NombrePers AS Nombre_Personal,
+    CM.FechaConsulta AS Fecha_Consulta,
     CM.Sintomas,
     CM.Diagnostico,
     CM.Tratamiento,
     CM.Observaciones,
-    CM.PesoActual,
+    CM.PesoActual AS Peso_Actual,
     CM.Temperatura
 FROM ConsultasMedicas CM
 INNER JOIN Citas C ON CM.CitaID = C.CitaID
@@ -427,6 +428,25 @@ INNER JOIN Personal PE ON C.PersonalID = PE.PersonalID
 
 select *from CargarConsultasMedicas
 
-
+drop view CargarConsultasMedicas
 
 delete from ConsultasMedicas where ConsultaID=10    
+
+select *from Pacientes
+
+select PacienteID, NombrePac, RazaPac from Pacientes where PropietarioID = 2
+
+select propietarioid,NombreProp from Propietarios
+
+select personalid, nombrepers, apellidopers from Personal
+
+
+SELECT COLUMN_NAME, DATA_TYPE, IS_NULLABLE
+FROM INFORMATION_SCHEMA.COLUMNS 
+WHERE TABLE_NAME = 'Pacientes'
+ORDER BY ORDINAL_POSITION;
+
+SELECT COLUMN_NAME, DATA_TYPE 
+FROM INFORMATION_SCHEMA.COLUMNS 
+WHERE TABLE_NAME = 'Propietarios'
+ORDER BY ORDINAL_POSITION;

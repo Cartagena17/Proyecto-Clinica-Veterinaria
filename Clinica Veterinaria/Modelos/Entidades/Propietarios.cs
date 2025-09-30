@@ -65,6 +65,56 @@ namespace Modelos.Entidades
 
         }
 
+
+
+        public override string ToString()
+        {
+            return NombreProp1;
+        }
+        public static List<Propietarios> CargarPropietariosCB()
+        {
+            List<Propietarios> ListaPropietarios = new List<Propietarios>();
+
+            try
+            {
+                SqlConnection con = Conexiondb.conectar();
+
+                string comando = "select propietarioid, NombreProp from Propietarios;";
+                SqlCommand cmd = new SqlCommand(comando, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ListaPropietarios.Add(new Propietarios
+                    {
+                        Id = reader.GetInt32(0),
+                        NombreProp1 = reader.GetString(1)
+
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al cargar propietario: {ex.Message}");
+            }
+            return ListaPropietarios;
+        }
+
+        //public static DataTable CargarCBPropietarios()
+        //{
+        //    SqlConnection conexion = Conexiondb.conectar();
+
+        //    string comando = "select NombreProp from Propietarios;";
+
+        //    SqlDataAdapter ad = new SqlDataAdapter(comando, conexion);
+
+        //    DataTable dt = new DataTable();
+        //    ad.Fill(dt);
+
+        //    return dt;
+
+        //}
+
         public bool ActualizarPropietario()
         {
             SqlConnection conexion = Conexiondb.conectar();

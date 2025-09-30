@@ -30,8 +30,10 @@
         {
             this.lblAgendarCitas = new System.Windows.Forms.Label();
             this.pnlAgendarCitas = new System.Windows.Forms.Panel();
-            this.txtAgendarCita_Propietario = new System.Windows.Forms.TextBox();
-            this.txtAgendarCita_Paciente = new System.Windows.Forms.TextBox();
+            this.btnLimpiarCamposCitas = new System.Windows.Forms.Button();
+            this.cmbVeterinario = new System.Windows.Forms.ComboBox();
+            this.cmbPaciente = new System.Windows.Forms.ComboBox();
+            this.cmbPropietario = new System.Windows.Forms.ComboBox();
             this.txtAgendarCitas_Notas = new System.Windows.Forms.TextBox();
             this.lblNotas = new System.Windows.Forms.Label();
             this.btnVerCita = new System.Windows.Forms.Button();
@@ -41,7 +43,6 @@
             this.txtAgendarCita_Motivo = new System.Windows.Forms.TextBox();
             this.txtAgendarCita_Hora = new System.Windows.Forms.TextBox();
             this.dtpAgendarCita_Fecha = new System.Windows.Forms.DateTimePicker();
-            this.txtAgendarCita_Veterinario = new System.Windows.Forms.TextBox();
             this.lblAgendarCita_Hora = new System.Windows.Forms.Label();
             this.lblAgendarCita_Fecha = new System.Windows.Forms.Label();
             this.lblAgendarCita_Motivo = new System.Windows.Forms.Label();
@@ -68,8 +69,10 @@
             // pnlAgendarCitas
             // 
             this.pnlAgendarCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
-            this.pnlAgendarCitas.Controls.Add(this.txtAgendarCita_Propietario);
-            this.pnlAgendarCitas.Controls.Add(this.txtAgendarCita_Paciente);
+            this.pnlAgendarCitas.Controls.Add(this.btnLimpiarCamposCitas);
+            this.pnlAgendarCitas.Controls.Add(this.cmbVeterinario);
+            this.pnlAgendarCitas.Controls.Add(this.cmbPaciente);
+            this.pnlAgendarCitas.Controls.Add(this.cmbPropietario);
             this.pnlAgendarCitas.Controls.Add(this.txtAgendarCitas_Notas);
             this.pnlAgendarCitas.Controls.Add(this.lblNotas);
             this.pnlAgendarCitas.Controls.Add(this.btnVerCita);
@@ -79,7 +82,6 @@
             this.pnlAgendarCitas.Controls.Add(this.txtAgendarCita_Motivo);
             this.pnlAgendarCitas.Controls.Add(this.txtAgendarCita_Hora);
             this.pnlAgendarCitas.Controls.Add(this.dtpAgendarCita_Fecha);
-            this.pnlAgendarCitas.Controls.Add(this.txtAgendarCita_Veterinario);
             this.pnlAgendarCitas.Controls.Add(this.lblAgendarCita_Hora);
             this.pnlAgendarCitas.Controls.Add(this.lblAgendarCita_Fecha);
             this.pnlAgendarCitas.Controls.Add(this.lblAgendarCita_Motivo);
@@ -92,20 +94,46 @@
             this.pnlAgendarCitas.Size = new System.Drawing.Size(1018, 389);
             this.pnlAgendarCitas.TabIndex = 1;
             // 
-            // txtAgendarCita_Propietario
+            // btnLimpiarCamposCitas
             // 
-            this.txtAgendarCita_Propietario.Location = new System.Drawing.Point(317, 46);
-            this.txtAgendarCita_Propietario.Name = "txtAgendarCita_Propietario";
-            this.txtAgendarCita_Propietario.Size = new System.Drawing.Size(350, 34);
-            this.txtAgendarCita_Propietario.TabIndex = 32;
-            this.txtAgendarCita_Propietario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAgendarCita_Propietario_KeyPress);
+            this.btnLimpiarCamposCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
+            this.btnLimpiarCamposCitas.FlatAppearance.BorderSize = 0;
+            this.btnLimpiarCamposCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarCamposCitas.Location = new System.Drawing.Point(829, 305);
+            this.btnLimpiarCamposCitas.Name = "btnLimpiarCamposCitas";
+            this.btnLimpiarCamposCitas.Size = new System.Drawing.Size(189, 58);
+            this.btnLimpiarCamposCitas.TabIndex = 34;
+            this.btnLimpiarCamposCitas.Text = "Limpiar campos";
+            this.btnLimpiarCamposCitas.UseVisualStyleBackColor = false;
+            this.btnLimpiarCamposCitas.Click += new System.EventHandler(this.btnLimpiarCamposCitas_Click);
             // 
-            // txtAgendarCita_Paciente
+            // cmbVeterinario
             // 
-            this.txtAgendarCita_Paciente.Location = new System.Drawing.Point(317, 89);
-            this.txtAgendarCita_Paciente.Name = "txtAgendarCita_Paciente";
-            this.txtAgendarCita_Paciente.Size = new System.Drawing.Size(350, 34);
-            this.txtAgendarCita_Paciente.TabIndex = 31;
+            this.cmbVeterinario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVeterinario.FormattingEnabled = true;
+            this.cmbVeterinario.Location = new System.Drawing.Point(348, 129);
+            this.cmbVeterinario.Name = "cmbVeterinario";
+            this.cmbVeterinario.Size = new System.Drawing.Size(275, 33);
+            this.cmbVeterinario.TabIndex = 33;
+            // 
+            // cmbPaciente
+            // 
+            this.cmbPaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPaciente.FormattingEnabled = true;
+            this.cmbPaciente.Location = new System.Drawing.Point(348, 86);
+            this.cmbPaciente.Name = "cmbPaciente";
+            this.cmbPaciente.Size = new System.Drawing.Size(263, 33);
+            this.cmbPaciente.TabIndex = 32;
+            // 
+            // cmbPropietario
+            // 
+            this.cmbPropietario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPropietario.FormattingEnabled = true;
+            this.cmbPropietario.Location = new System.Drawing.Point(348, 41);
+            this.cmbPropietario.Name = "cmbPropietario";
+            this.cmbPropietario.Size = new System.Drawing.Size(275, 33);
+            this.cmbPropietario.TabIndex = 31;
+            this.cmbPropietario.SelectedIndexChanged += new System.EventHandler(this.cmbPropietario_SelectedIndexChanged_1);
             // 
             // txtAgendarCitas_Notas
             // 
@@ -201,13 +229,6 @@
             this.dtpAgendarCita_Fecha.Size = new System.Drawing.Size(350, 34);
             this.dtpAgendarCita_Fecha.TabIndex = 22;
             // 
-            // txtAgendarCita_Veterinario
-            // 
-            this.txtAgendarCita_Veterinario.Location = new System.Drawing.Point(317, 126);
-            this.txtAgendarCita_Veterinario.Name = "txtAgendarCita_Veterinario";
-            this.txtAgendarCita_Veterinario.Size = new System.Drawing.Size(350, 34);
-            this.txtAgendarCita_Veterinario.TabIndex = 21;
-            // 
             // lblAgendarCita_Hora
             // 
             this.lblAgendarCita_Hora.AutoSize = true;
@@ -240,18 +261,18 @@
             this.lblAgendarCita_Propietario.AutoSize = true;
             this.lblAgendarCita_Propietario.Location = new System.Drawing.Point(30, 49);
             this.lblAgendarCita_Propietario.Name = "lblAgendarCita_Propietario";
-            this.lblAgendarCita_Propietario.Size = new System.Drawing.Size(203, 25);
+            this.lblAgendarCita_Propietario.Size = new System.Drawing.Size(257, 25);
             this.lblAgendarCita_Propietario.TabIndex = 15;
-            this.lblAgendarCita_Propietario.Text = "Codigo Propietario:";
+            this.lblAgendarCita_Propietario.Text = "Selecciona el Propietario:";
             // 
             // lblAgendarCita_Paciente
             // 
             this.lblAgendarCita_Paciente.AutoSize = true;
             this.lblAgendarCita_Paciente.Location = new System.Drawing.Point(39, 89);
             this.lblAgendarCita_Paciente.Name = "lblAgendarCita_Paciente";
-            this.lblAgendarCita_Paciente.Size = new System.Drawing.Size(176, 25);
+            this.lblAgendarCita_Paciente.Size = new System.Drawing.Size(230, 25);
             this.lblAgendarCita_Paciente.TabIndex = 14;
-            this.lblAgendarCita_Paciente.Text = "Codigo Paciente:";
+            this.lblAgendarCita_Paciente.Text = "Selecciona el Paciente:";
             // 
             // lblAgendarCita_Veterinario
             // 
@@ -259,9 +280,9 @@
             this.lblAgendarCita_Veterinario.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAgendarCita_Veterinario.Location = new System.Drawing.Point(30, 129);
             this.lblAgendarCita_Veterinario.Name = "lblAgendarCita_Veterinario";
-            this.lblAgendarCita_Veterinario.Size = new System.Drawing.Size(202, 25);
+            this.lblAgendarCita_Veterinario.Size = new System.Drawing.Size(262, 25);
             this.lblAgendarCita_Veterinario.TabIndex = 13;
-            this.lblAgendarCita_Veterinario.Text = "Codigo Veterinario:";
+            this.lblAgendarCita_Veterinario.Text = "Selecciona un veterinario:";
             // 
             // dgvCitas
             // 
@@ -301,7 +322,6 @@
         private System.Windows.Forms.TextBox txtAgendarCita_Motivo;
         private System.Windows.Forms.TextBox txtAgendarCita_Hora;
         private System.Windows.Forms.DateTimePicker dtpAgendarCita_Fecha;
-        private System.Windows.Forms.TextBox txtAgendarCita_Veterinario;
         private System.Windows.Forms.Label lblAgendarCita_Hora;
         private System.Windows.Forms.Label lblAgendarCita_Fecha;
         private System.Windows.Forms.Label lblAgendarCita_Motivo;
@@ -315,7 +335,9 @@
         private System.Windows.Forms.Button btnActualizarCita;
         private System.Windows.Forms.TextBox txtAgendarCitas_Notas;
         private System.Windows.Forms.Label lblNotas;
-        private System.Windows.Forms.TextBox txtAgendarCita_Propietario;
-        private System.Windows.Forms.TextBox txtAgendarCita_Paciente;
+        private System.Windows.Forms.ComboBox cmbVeterinario;
+        private System.Windows.Forms.ComboBox cmbPaciente;
+        private System.Windows.Forms.ComboBox cmbPropietario;
+        private System.Windows.Forms.Button btnLimpiarCamposCitas;
     }
 }

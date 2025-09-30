@@ -35,7 +35,6 @@
             this.btnEliminarMascota = new System.Windows.Forms.Button();
             this.btnRegistrarMascota = new System.Windows.Forms.Button();
             this.txtGestionMascota_Color = new System.Windows.Forms.TextBox();
-            this.txtGestionMascota_Sexo = new System.Windows.Forms.TextBox();
             this.txtGestionMascota_Peso = new System.Windows.Forms.TextBox();
             this.txtGestionMascota_Raza = new System.Windows.Forms.TextBox();
             this.txtGestionMascota_Especie = new System.Windows.Forms.TextBox();
@@ -49,6 +48,10 @@
             this.lblGestionMascotas_Especie = new System.Windows.Forms.Label();
             this.lblGestionMascotas_Nombre = new System.Windows.Forms.Label();
             this.dgvMascotas = new System.Windows.Forms.DataGridView();
+            this.cmbPropietario = new System.Windows.Forms.ComboBox();
+            this.rbMacho = new System.Windows.Forms.RadioButton();
+            this.rbHembra = new System.Windows.Forms.RadioButton();
+            this.lblInfoPropietario = new System.Windows.Forms.Label();
             this.pnlGestionMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).BeginInit();
             this.SuspendLayout();
@@ -67,12 +70,15 @@
             // pnlGestionMascota
             // 
             this.pnlGestionMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
+            this.pnlGestionMascota.Controls.Add(this.lblInfoPropietario);
+            this.pnlGestionMascota.Controls.Add(this.rbHembra);
+            this.pnlGestionMascota.Controls.Add(this.rbMacho);
+            this.pnlGestionMascota.Controls.Add(this.cmbPropietario);
             this.pnlGestionMascota.Controls.Add(this.btnVerMascotas);
             this.pnlGestionMascota.Controls.Add(this.btnActualizarInfoMascota);
             this.pnlGestionMascota.Controls.Add(this.btnEliminarMascota);
             this.pnlGestionMascota.Controls.Add(this.btnRegistrarMascota);
             this.pnlGestionMascota.Controls.Add(this.txtGestionMascota_Color);
-            this.pnlGestionMascota.Controls.Add(this.txtGestionMascota_Sexo);
             this.pnlGestionMascota.Controls.Add(this.txtGestionMascota_Peso);
             this.pnlGestionMascota.Controls.Add(this.txtGestionMascota_Raza);
             this.pnlGestionMascota.Controls.Add(this.txtGestionMascota_Especie);
@@ -154,14 +160,6 @@
             this.txtGestionMascota_Color.Name = "txtGestionMascota_Color";
             this.txtGestionMascota_Color.Size = new System.Drawing.Size(209, 33);
             this.txtGestionMascota_Color.TabIndex = 15;
-            // 
-            // txtGestionMascota_Sexo
-            // 
-            this.txtGestionMascota_Sexo.Location = new System.Drawing.Point(631, 139);
-            this.txtGestionMascota_Sexo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtGestionMascota_Sexo.Name = "txtGestionMascota_Sexo";
-            this.txtGestionMascota_Sexo.Size = new System.Drawing.Size(209, 33);
-            this.txtGestionMascota_Sexo.TabIndex = 14;
             // 
             // txtGestionMascota_Peso
             // 
@@ -279,6 +277,47 @@
             this.dgvMascotas.TabIndex = 10;
             this.dgvMascotas.DoubleClick += new System.EventHandler(this.dgvMascotas_DoubleClick);
             // 
+            // cmbPropietario
+            // 
+            this.cmbPropietario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPropietario.FormattingEnabled = true;
+            this.cmbPropietario.Location = new System.Drawing.Point(177, 207);
+            this.cmbPropietario.Name = "cmbPropietario";
+            this.cmbPropietario.Size = new System.Drawing.Size(223, 33);
+            this.cmbPropietario.TabIndex = 20;
+            // 
+            // rbMacho
+            // 
+            this.rbMacho.AutoSize = true;
+            this.rbMacho.Location = new System.Drawing.Point(636, 123);
+            this.rbMacho.Name = "rbMacho";
+            this.rbMacho.Size = new System.Drawing.Size(100, 29);
+            this.rbMacho.TabIndex = 21;
+            this.rbMacho.TabStop = true;
+            this.rbMacho.Text = "Macho";
+            this.rbMacho.UseVisualStyleBackColor = true;
+            // 
+            // rbHembra
+            // 
+            this.rbHembra.AutoSize = true;
+            this.rbHembra.Location = new System.Drawing.Point(636, 158);
+            this.rbHembra.Name = "rbHembra";
+            this.rbHembra.Size = new System.Drawing.Size(111, 29);
+            this.rbHembra.TabIndex = 22;
+            this.rbHembra.TabStop = true;
+            this.rbHembra.Text = "Hembra";
+            this.rbHembra.UseVisualStyleBackColor = true;
+            // 
+            // lblInfoPropietario
+            // 
+            this.lblInfoPropietario.AutoSize = true;
+            this.lblInfoPropietario.Location = new System.Drawing.Point(3, 243);
+            this.lblInfoPropietario.Name = "lblInfoPropietario";
+            this.lblInfoPropietario.Size = new System.Drawing.Size(532, 25);
+            this.lblInfoPropietario.TabIndex = 23;
+            this.lblInfoPropietario.Text = "Propietario. No se puede modificar en actualizaciones";
+            this.lblInfoPropietario.Visible = false;
+            // 
             // frmGestionMascotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -305,7 +344,6 @@
         private System.Windows.Forms.Label lblGestionPropietarios;
         private System.Windows.Forms.Panel pnlGestionMascota;
         private System.Windows.Forms.TextBox txtGestionMascota_Color;
-        private System.Windows.Forms.TextBox txtGestionMascota_Sexo;
         private System.Windows.Forms.TextBox txtGestionMascota_Peso;
         private System.Windows.Forms.TextBox txtGestionMascota_Raza;
         private System.Windows.Forms.TextBox txtGestionMascota_Especie;
@@ -323,5 +361,9 @@
         private System.Windows.Forms.Button btnActualizarInfoMascota;
         private System.Windows.Forms.Button btnVerMascotas;
         private System.Windows.Forms.DataGridView dgvMascotas;
+        private System.Windows.Forms.ComboBox cmbPropietario;
+        private System.Windows.Forms.RadioButton rbHembra;
+        private System.Windows.Forms.RadioButton rbMacho;
+        private System.Windows.Forms.Label lblInfoPropietario;
     }
 }
