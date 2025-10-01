@@ -30,7 +30,11 @@
         {
             this.lblGestionPropietarios = new System.Windows.Forms.Label();
             this.pnlGestionMascota = new System.Windows.Forms.Panel();
-            this.btnVerMascotas = new System.Windows.Forms.Button();
+            this.lblInfoPropietario = new System.Windows.Forms.Label();
+            this.rbHembra = new System.Windows.Forms.RadioButton();
+            this.rbMacho = new System.Windows.Forms.RadioButton();
+            this.cmbPropietario = new System.Windows.Forms.ComboBox();
+            this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.btnActualizarInfoMascota = new System.Windows.Forms.Button();
             this.btnEliminarMascota = new System.Windows.Forms.Button();
             this.btnRegistrarMascota = new System.Windows.Forms.Button();
@@ -48,10 +52,6 @@
             this.lblGestionMascotas_Especie = new System.Windows.Forms.Label();
             this.lblGestionMascotas_Nombre = new System.Windows.Forms.Label();
             this.dgvMascotas = new System.Windows.Forms.DataGridView();
-            this.cmbPropietario = new System.Windows.Forms.ComboBox();
-            this.rbMacho = new System.Windows.Forms.RadioButton();
-            this.rbHembra = new System.Windows.Forms.RadioButton();
-            this.lblInfoPropietario = new System.Windows.Forms.Label();
             this.pnlGestionMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +74,7 @@
             this.pnlGestionMascota.Controls.Add(this.rbHembra);
             this.pnlGestionMascota.Controls.Add(this.rbMacho);
             this.pnlGestionMascota.Controls.Add(this.cmbPropietario);
-            this.pnlGestionMascota.Controls.Add(this.btnVerMascotas);
+            this.pnlGestionMascota.Controls.Add(this.btnLimpiarCampos);
             this.pnlGestionMascota.Controls.Add(this.btnActualizarInfoMascota);
             this.pnlGestionMascota.Controls.Add(this.btnEliminarMascota);
             this.pnlGestionMascota.Controls.Add(this.btnRegistrarMascota);
@@ -98,28 +98,70 @@
             this.pnlGestionMascota.Size = new System.Drawing.Size(976, 364);
             this.pnlGestionMascota.TabIndex = 9;
             // 
-            // btnVerMascotas
+            // lblInfoPropietario
             // 
-            this.btnVerMascotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
-            this.btnVerMascotas.FlatAppearance.BorderSize = 0;
-            this.btnVerMascotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerMascotas.Location = new System.Drawing.Point(447, 266);
-            this.btnVerMascotas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnVerMascotas.Name = "btnVerMascotas";
-            this.btnVerMascotas.Size = new System.Drawing.Size(103, 60);
-            this.btnVerMascotas.TabIndex = 19;
-            this.btnVerMascotas.Text = "Ver Mascotas";
-            this.btnVerMascotas.UseVisualStyleBackColor = false;
+            this.lblInfoPropietario.AutoSize = true;
+            this.lblInfoPropietario.Location = new System.Drawing.Point(3, 243);
+            this.lblInfoPropietario.Name = "lblInfoPropietario";
+            this.lblInfoPropietario.Size = new System.Drawing.Size(532, 25);
+            this.lblInfoPropietario.TabIndex = 23;
+            this.lblInfoPropietario.Text = "Propietario. No se puede modificar en actualizaciones";
+            this.lblInfoPropietario.Visible = false;
+            // 
+            // rbHembra
+            // 
+            this.rbHembra.AutoSize = true;
+            this.rbHembra.Location = new System.Drawing.Point(636, 158);
+            this.rbHembra.Name = "rbHembra";
+            this.rbHembra.Size = new System.Drawing.Size(111, 29);
+            this.rbHembra.TabIndex = 22;
+            this.rbHembra.TabStop = true;
+            this.rbHembra.Text = "Hembra";
+            this.rbHembra.UseVisualStyleBackColor = true;
+            // 
+            // rbMacho
+            // 
+            this.rbMacho.AutoSize = true;
+            this.rbMacho.Location = new System.Drawing.Point(636, 123);
+            this.rbMacho.Name = "rbMacho";
+            this.rbMacho.Size = new System.Drawing.Size(100, 29);
+            this.rbMacho.TabIndex = 21;
+            this.rbMacho.TabStop = true;
+            this.rbMacho.Text = "Macho";
+            this.rbMacho.UseVisualStyleBackColor = true;
+            // 
+            // cmbPropietario
+            // 
+            this.cmbPropietario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPropietario.FormattingEnabled = true;
+            this.cmbPropietario.Location = new System.Drawing.Point(177, 207);
+            this.cmbPropietario.Name = "cmbPropietario";
+            this.cmbPropietario.Size = new System.Drawing.Size(223, 33);
+            this.cmbPropietario.TabIndex = 20;
+            // 
+            // btnLimpiarCampos
+            // 
+            this.btnLimpiarCampos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
+            this.btnLimpiarCampos.FlatAppearance.BorderSize = 0;
+            this.btnLimpiarCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(487, 286);
+            this.btnLimpiarCampos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(103, 60);
+            this.btnLimpiarCampos.TabIndex = 19;
+            this.btnLimpiarCampos.Text = "Limpiar Campos";
+            this.btnLimpiarCampos.UseVisualStyleBackColor = false;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
             // 
             // btnActualizarInfoMascota
             // 
             this.btnActualizarInfoMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnActualizarInfoMascota.FlatAppearance.BorderSize = 0;
             this.btnActualizarInfoMascota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarInfoMascota.Location = new System.Drawing.Point(327, 266);
+            this.btnActualizarInfoMascota.Location = new System.Drawing.Point(337, 286);
             this.btnActualizarInfoMascota.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnActualizarInfoMascota.Name = "btnActualizarInfoMascota";
-            this.btnActualizarInfoMascota.Size = new System.Drawing.Size(123, 60);
+            this.btnActualizarInfoMascota.Size = new System.Drawing.Size(144, 60);
             this.btnActualizarInfoMascota.TabIndex = 18;
             this.btnActualizarInfoMascota.Text = "Actualizar Informacion";
             this.btnActualizarInfoMascota.UseVisualStyleBackColor = false;
@@ -130,7 +172,7 @@
             this.btnEliminarMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnEliminarMascota.FlatAppearance.BorderSize = 0;
             this.btnEliminarMascota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarMascota.Location = new System.Drawing.Point(214, 266);
+            this.btnEliminarMascota.Location = new System.Drawing.Point(214, 286);
             this.btnEliminarMascota.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEliminarMascota.Name = "btnEliminarMascota";
             this.btnEliminarMascota.Size = new System.Drawing.Size(117, 60);
@@ -144,7 +186,7 @@
             this.btnRegistrarMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnRegistrarMascota.FlatAppearance.BorderSize = 0;
             this.btnRegistrarMascota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarMascota.Location = new System.Drawing.Point(88, 266);
+            this.btnRegistrarMascota.Location = new System.Drawing.Point(79, 286);
             this.btnRegistrarMascota.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRegistrarMascota.Name = "btnRegistrarMascota";
             this.btnRegistrarMascota.Size = new System.Drawing.Size(129, 60);
@@ -275,48 +317,8 @@
             this.dgvMascotas.RowTemplate.Height = 24;
             this.dgvMascotas.Size = new System.Drawing.Size(1054, 213);
             this.dgvMascotas.TabIndex = 10;
+            this.dgvMascotas.SelectionChanged += new System.EventHandler(this.dgvMascotas_SelectionChanged);
             this.dgvMascotas.DoubleClick += new System.EventHandler(this.dgvMascotas_DoubleClick);
-            // 
-            // cmbPropietario
-            // 
-            this.cmbPropietario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPropietario.FormattingEnabled = true;
-            this.cmbPropietario.Location = new System.Drawing.Point(177, 207);
-            this.cmbPropietario.Name = "cmbPropietario";
-            this.cmbPropietario.Size = new System.Drawing.Size(223, 33);
-            this.cmbPropietario.TabIndex = 20;
-            // 
-            // rbMacho
-            // 
-            this.rbMacho.AutoSize = true;
-            this.rbMacho.Location = new System.Drawing.Point(636, 123);
-            this.rbMacho.Name = "rbMacho";
-            this.rbMacho.Size = new System.Drawing.Size(100, 29);
-            this.rbMacho.TabIndex = 21;
-            this.rbMacho.TabStop = true;
-            this.rbMacho.Text = "Macho";
-            this.rbMacho.UseVisualStyleBackColor = true;
-            // 
-            // rbHembra
-            // 
-            this.rbHembra.AutoSize = true;
-            this.rbHembra.Location = new System.Drawing.Point(636, 158);
-            this.rbHembra.Name = "rbHembra";
-            this.rbHembra.Size = new System.Drawing.Size(111, 29);
-            this.rbHembra.TabIndex = 22;
-            this.rbHembra.TabStop = true;
-            this.rbHembra.Text = "Hembra";
-            this.rbHembra.UseVisualStyleBackColor = true;
-            // 
-            // lblInfoPropietario
-            // 
-            this.lblInfoPropietario.AutoSize = true;
-            this.lblInfoPropietario.Location = new System.Drawing.Point(3, 243);
-            this.lblInfoPropietario.Name = "lblInfoPropietario";
-            this.lblInfoPropietario.Size = new System.Drawing.Size(532, 25);
-            this.lblInfoPropietario.TabIndex = 23;
-            this.lblInfoPropietario.Text = "Propietario. No se puede modificar en actualizaciones";
-            this.lblInfoPropietario.Visible = false;
             // 
             // frmGestionMascotas
             // 
@@ -359,7 +361,7 @@
         private System.Windows.Forms.Button btnEliminarMascota;
         private System.Windows.Forms.Button btnRegistrarMascota;
         private System.Windows.Forms.Button btnActualizarInfoMascota;
-        private System.Windows.Forms.Button btnVerMascotas;
+        private System.Windows.Forms.Button btnLimpiarCampos;
         private System.Windows.Forms.DataGridView dgvMascotas;
         private System.Windows.Forms.ComboBox cmbPropietario;
         private System.Windows.Forms.RadioButton rbHembra;

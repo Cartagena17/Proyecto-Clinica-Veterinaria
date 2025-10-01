@@ -64,7 +64,6 @@
             this.lblAgendarCitas.Size = new System.Drawing.Size(257, 43);
             this.lblAgendarCitas.TabIndex = 0;
             this.lblAgendarCitas.Text = " Agendar Citas";
-            this.lblAgendarCitas.Click += new System.EventHandler(this.label1_Click);
             // 
             // pnlAgendarCitas
             // 
@@ -164,7 +163,6 @@
             this.btnVerCita.TabIndex = 28;
             this.btnVerCita.Text = "Ver Cita";
             this.btnVerCita.UseVisualStyleBackColor = false;
-            this.btnVerCita.Click += new System.EventHandler(this.btnVerCita_Click);
             // 
             // btnEliminarCIta
             // 
@@ -219,7 +217,6 @@
             this.txtAgendarCita_Hora.Name = "txtAgendarCita_Hora";
             this.txtAgendarCita_Hora.Size = new System.Drawing.Size(350, 34);
             this.txtAgendarCita_Hora.TabIndex = 23;
-            this.txtAgendarCita_Hora.TextChanged += new System.EventHandler(this.txtAgendarCita_Hora_TextChanged);
             // 
             // dtpAgendarCita_Fecha
             // 

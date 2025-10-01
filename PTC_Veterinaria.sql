@@ -1,4 +1,4 @@
-create database PTC_Veterinaria
+Ôªøcreate database PTC_Veterinaria
 go
 Use PTC_Veterinaria
 go
@@ -11,7 +11,7 @@ nombreRol varchar (50) not null)
 create table Usuarios (
 usuarioID int primary key ident ity (1000,1),
 usuario varchar (50) not null,
-contraseÒa varchar (50) not null);
+contrase√±a varchar (50) not null);
 
 
 create table Propietarios (
@@ -116,7 +116,6 @@ MotivoCita varchar (100) not null,
 NotasCita Varchar (100)
 );
 
-
 create table ConsultasMedicas (
     ConsultaID int identity (1,1) primary key,
     CitaID int constraint fk_citaID_Consultas 
@@ -141,7 +140,7 @@ ViaAdministracion varchar (50) not null,
 CantidadUtilizada varchar (60) not null
 )
 
-INSERT INTO Usuarios (usuario,contraseÒa) VALUES
+INSERT INTO Usuarios (usuario,contrase√±a) VALUES
 ('Andrea.Gonzalez','1001'),
 ('Jorge.Ramirez','1002'),
 ('Lucia.Mendoza','1003'),
@@ -159,89 +158,89 @@ INSERT INTO Usuarios (usuario,contraseÒa) VALUES
 ('Ricardo.Delgaado','1015');
 
 INSERT INTO Propietarios (NombreProp, TelefonoProp, DireccionProp, EmailProp) VALUES
-('Carlos MartÌnez', '7777-1234', 'Calle El Progreso', 'carlos.martinez@gmail.com'),
-('MarÌa LÛpez', '7999-8888', 'Av. Roosevelt', 'maria.lopez@gmail.com'),
-('Luis Rivera', '7888-5432', 'Col. EscalÛn', 'luis.rivera@gmail.com'),
+('Carlos Mart√≠nez', '7777-1234', 'Calle El Progreso', 'carlos.martinez@gmail.com'),
+('Mar√≠a L√≥pez', '7999-8888', 'Av. Roosevelt', 'maria.lopez@gmail.com'),
+('Luis Rivera', '7888-5432', 'Col. Escal√≥n', 'luis.rivera@gmail.com'),
 ('Andrea Torres', '7654-5678', 'Santa Tecla', 'andrea.torres@hotmail.com'),
-('Pedro GÛmez', '7123-4567', 'Mejicanos', 'pedro.gomez@gmail.com'),
-('SofÌa Delgado', '7987-4561', 'Col. San Benito', 'sofia@gmail.com'),
-('Natalia JimÈnez', '7000-1234', 'Santa Tecla', 'natalia123@gmail.com'),
+('Pedro G√≥mez', '7123-4567', 'Mejicanos', 'pedro.gomez@gmail.com'),
+('Sof√≠a Delgado', '7987-4561', 'Col. San Benito', 'sofia@gmail.com'),
+('Natalia Jim√©nez', '7000-1234', 'Santa Tecla', 'natalia123@gmail.com'),
 ('Juan Carlos', '7111-5678', 'Ayutuxtepeque', 'juanxd@hotmail.com'),
-('Karla MÈndez', '7222-5678', 'Ciudad Delgado', 'karla44@gmail.com'),
-('Roberto PÈrez', '7333-9876', 'Col. Miramonte', 'roberto3313@hotmail.com'),
-('Gloria Hern·ndez', '7444-3333', 'San Jacinto', 'gloria2009@gmail.com'),
-('Esteban Castro', '7555-1111', 'Col. MÈdica', 'estebancoxd@hotmail.com'),
+('Karla M√©ndez', '7222-5678', 'Ciudad Delgado', 'karla44@gmail.com'),
+('Roberto P√©rez', '7333-9876', 'Col. Miramonte', 'roberto3313@hotmail.com'),
+('Gloria Hern√°ndez', '7444-3333', 'San Jacinto', 'gloria2009@gmail.com'),
+('Esteban Castro', '7555-1111', 'Col. M√©dica', 'estebancoxd@hotmail.com'),
 ('Carmen Aguilar', '7666-2222', 'Santa Ana', 'carmen.aguilar@gmail.com'),
 ('Daniela Varela', '7777-9090', 'San Miguel', 'daniela.varela@hotmail.com'),
-('Felipe Romero', '7888-6060', 'Col. EscalÛn', 'felipe.romero@hotmail.com');
+('Felipe Romero', '7888-6060', 'Col. Escal√≥n', 'felipe.romero@hotmail.com');
 
 INSERT INTO Pacientes (PropietarioID, NombrePac, EspeciePac, RazaPac, NacimientoPac, PesoPac, SexoPac, ColorPac, CaracteristicasPac) VALUES
 (1, 'Luna', 'Perro', 'Poodle', '2020-05-12', 8.5, 'Hembra', 'Blanco', 'Juguetona'),
-(2, 'Max', 'Gato', 'SiamÈs', '2022-09-18', 4.2, 'Macho', 'Gris', 'TÌmido'),
+(2, 'Max', 'Gato', 'Siam√©s', '2022-09-18', 4.2, 'Macho', 'Gris', 'T√≠mido'),
 (3, 'Bruno', 'Perro', 'Labrador', '2019-08-01', 22.4, 'Macho', 'Negro', 'Tranquilo'),
 (4, 'Kira', 'Gato', 'Persa', '2021-11-10', 3.8, 'Hembra', 'Blanca', 'Tranquila'),
-(5, 'Rocky', 'Perro', 'Pitbull', '2018-01-25', 28.0, 'Macho', 'CafÈ', 'Protector'),
+(5, 'Rocky', 'Perro', 'Pitbull', '2018-01-25', 28.0, 'Macho', 'Caf√©', 'Protector'),
 (6, 'Nala', 'Gato', 'Europea', '2022-03-03', 3.9, 'Hembra', 'Atigrada', 'Curiosa'),
 (7, 'Toby', 'Perro', 'Chihuahua', '2023-02-18', 2.5, 'Macho', 'Miel', 'Valiente'),
 (8, 'Milo', 'Perro', 'Pomerania', '2021-12-04', 1.9, 'Macho', 'Blanco y gris', 'Pelaje Largo'),
 (9, 'Zoe', 'Perro', 'Pomerania', '2020-06-14', 1.4, 'Hembra', 'Verde', 'Amorosa'),
-(10, 'Simba', 'Gato', 'Bengala', '2019-10-20', 5.6, 'Macho', 'Dorado', 'JuguetÛn'),
+(10, 'Simba', 'Gato', 'Bengala', '2019-10-20', 5.6, 'Macho', 'Dorado', 'Juguet√≥n'),
 (11, 'Lola', 'Perro', 'Beagle', '2020-04-11', 10.5, 'Hembra', 'Tricolor', 'Obediente'),
 (12, 'Bobby', 'Perro', 'Golden Retriever', '2017-05-07', 26.5, 'Macho', 'Dorado', 'Amoroso'),
-(13, 'Estela', 'Perro', 'Mini toy french', '2022-08-22', 5.0, 'Hembra', 'Blanco', 'TÌmida'),
+(13, 'Estela', 'Perro', 'Mini toy french', '2022-08-22', 5.0, 'Hembra', 'Blanco', 'T√≠mida'),
 (14, 'Estrella', 'Gato', 'Angora', '2023-01-15', 3.0, 'Hembra', 'Nieve', 'Pelaje largo'),
-(15, 'Manchas', 'Perro', 'D·lmata', '2018-09-30', 18.5, 'Macho', 'Blanco con negro', 'JuguetÛn');
+(15, 'Manchas', 'Perro', 'D√°lmata', '2018-09-30', 18.5, 'Macho', 'Blanco con negro', 'Juguet√≥n');
 
 INSERT INTO Personal (NombrePers, ApellidoPers, Rol, TelefonoPers, EmailPers) VALUES
-('Andrea', 'Gonz·lez', 'Veterinaria', '7888-4567', 'andrea.G@email.com'),
-('Jorge', 'RamÌrez', 'Recepcionista', '7999-1234', 'jorge.R@email.com'),
-('LucÌa', 'Mendoza', 'Veterinaria', '7222-8765', 'lucia.M@email.com'),
-('Carlos', 'Ruiz', 'Asistente TÈcnico', '7111-4567', 'carlos.R@email.com'),
-('MÛnica', 'Zelaya', 'Auxiliar', '7333-7890', 'monica.Z@email.com'),
+('Andrea', 'Gonz√°lez', 'Veterinaria', '7888-4567', 'andrea.G@email.com'),
+('Jorge', 'Ram√≠rez', 'Recepcionista', '7999-1234', 'jorge.R@email.com'),
+('Luc√≠a', 'Mendoza', 'Veterinaria', '7222-8765', 'lucia.M@email.com'),
+('Carlos', 'Ruiz', 'Asistente T√©cnico', '7111-4567', 'carlos.R@email.com'),
+('M√≥nica', 'Zelaya', 'Auxiliar', '7333-7890', 'monica.Z@email.com'),
 ('Eduardo', 'Paredes', 'Veterinario', '7001-3210', 'eduardo.P@email.com'),
-('Paola', 'MartÌnez', 'Administradora', '7654-8989', 'paola.M@email.com'),
+('Paola', 'Mart√≠nez', 'Administradora', '7654-8989', 'paola.M@email.com'),
 ('Fernando', 'Castro', 'Veterinario', '7123-4444', 'fernando.C@email.com'),
 ('Karen', 'Ortiz', 'Recepcionista', '7444-5678', 'karen.O@email.com'),
-('David', 'Morales', 'Asistente TÈcnico', '7887-3322', 'david.M@email.com'),
+('David', 'Morales', 'Asistente T√©cnico', '7887-3322', 'david.M@email.com'),
 ('Tatiana', 'Lemus', 'Veterinaria', '7555-6677', 'tatiana.L@email.com'),
-('Sergio', 'V·squez', 'Veterinario', '7666-8080', 'sergio.V@email.com'),
+('Sergio', 'V√°squez', 'Veterinario', '7666-8080', 'sergio.V@email.com'),
 ('Valeria', 'Quintanilla', 'Auxiliar', '7777-2222', 'valeria.Q@email.com'),
-('Melissa', 'LÛpez', 'Veterinaria', '7888-7777', 'melissa.L@email.com'),
+('Melissa', 'L√≥pez', 'Veterinaria', '7888-7777', 'melissa.L@email.com'),
 ('Ricardo', 'Delgado', 'Administrador', '7990-9090', 'ricardo.DD@email.com');
 
 INSERT INTO Servicios (NombreServ, DescripcionServ, PrecioServ) VALUES
-('Consulta General', 'EvaluaciÛn mÈdica b·sica', 25.00),
-('VacunaciÛn', 'AplicaciÛn de vacunas preventivas', 15.00),
-('DesparasitaciÛn', 'Tratamiento antiparasitario', 12.00),
-('CirugÌa menor', 'IntervenciÛn quir˙rgica leve', 120.00),
-('RadiografÌa', 'Imagen diagnÛstica por rayos X', 35.00),
+('Consulta General', 'Evaluaci√≥n m√©dica b√°sica', 25.00),
+('Vacunaci√≥n', 'Aplicaci√≥n de vacunas preventivas', 15.00),
+('Desparasitaci√≥n', 'Tratamiento antiparasitario', 12.00),
+('Cirug√≠a menor', 'Intervenci√≥n quir√∫rgica leve', 120.00),
+('Radiograf√≠a', 'Imagen diagn√≥stica por rayos X', 35.00),
 ('Limpieza dental', 'Higiene bucal profesional', 40.00),
-('BaÒo medicado', 'BaÒo con shampoo terapÈutico', 22.00),
-('HospitalizaciÛn', 'Internamiento temporal del paciente', 80.00),
-('Control prenatal', 'Seguimiento de gestaciÛn animal', 30.00),
-('Terapia fÌsica', 'RehabilitaciÛn muscular', 45.00),
-('Consulta especializada', 'AtenciÛn por especialista', 50.00),
-('EcografÌa', 'Imagen por ultrasonido', 38.00),
-('Microchip', 'ImplantaciÛn de identificaciÛn electrÛnica', 18.00),
+('Ba√±o medicado', 'Ba√±o con shampoo terap√©utico', 22.00),
+('Hospitalizaci√≥n', 'Internamiento temporal del paciente', 80.00),
+('Control prenatal', 'Seguimiento de gestaci√≥n animal', 30.00),
+('Terapia f√≠sica', 'Rehabilitaci√≥n muscular', 45.00),
+('Consulta especializada', 'Atenci√≥n por especialista', 50.00),
+('Ecograf√≠a', 'Imagen por ultrasonido', 38.00),
+('Microchip', 'Implantaci√≥n de identificaci√≥n electr√≥nica', 18.00),
 ('Certificado de salud', 'Documento oficial de estado sanitario', 20.00),
-('EvaluaciÛn nutricional', 'AsesorÌa sobre dieta animal', 28.00);
+('Evaluaci√≥n nutricional', 'Asesor√≠a sobre dieta animal', 28.00);
 
 INSERT INTO Medicamentos (NombreMedic, DescripcionMedic, UnidadMedida, PrecioUnitario, StockActual, StockMinimo, FechaUltimaEntrada) VALUES
-('Amoxicilina', 'AntibiÛtico oral', 'Tableta', 0.35, 500, 100, '2025-07-01'),
+('Amoxicilina', 'Antibi√≥tico oral', 'Tableta', 0.35, 500, 100, '2025-07-01'),
 ('Ibuprofeno', 'Antiinflamatorio', 'Tableta', 0.25, 300, 50, '2025-07-03'),
-('Cefalexina', 'AntibiÛtico', 'C·psula', 0.45, 400, 80, '2025-07-02'),
+('Cefalexina', 'Antibi√≥tico', 'C√°psula', 0.45, 400, 80, '2025-07-02'),
 ('Prednisolona', 'Corticoide oral', 'Tableta', 0.38, 280, 50, '2025-07-04'),
 ('Metronidazol', 'Antiparasitario', 'Tableta', 0.30, 200, 40, '2025-06-30'),
-('Enrofloxacina', 'AntibiÛtico veterinario', 'Tableta', 0.50, 250, 60, '2025-07-05'),
-('Furosemida', 'DiurÈtico', 'Tableta', 0.42, 150, 30, '2025-07-01'),
-('Doxiciclina', 'AntibiÛtico', 'Tableta', 0.33, 350, 70, '2025-07-06'),
-('Ketamina', 'AnestÈsico inyectable', 'ml', 1.20, 120, 30, '2025-07-02'),
+('Enrofloxacina', 'Antibi√≥tico veterinario', 'Tableta', 0.50, 250, 60, '2025-07-05'),
+('Furosemida', 'Diur√©tico', 'Tableta', 0.42, 150, 30, '2025-07-01'),
+('Doxiciclina', 'Antibi√≥tico', 'Tableta', 0.33, 350, 70, '2025-07-06'),
+('Ketamina', 'Anest√©sico inyectable', 'ml', 1.20, 120, 30, '2025-07-02'),
 ('Meloxicam', 'Antiinflamatorio', 'ml', 1.50, 100, 25, '2025-07-03'),
-('Tramadol', 'AnalgÈsico', 'ml', 1.80, 110, 20, '2025-07-04'),
+('Tramadol', 'Analg√©sico', 'ml', 1.80, 110, 20, '2025-07-04'),
 ('Vitamina B', 'Suplemento nutricional', 'ml', 0.90, 200, 40, '2025-07-02'),
 ('Ivermectina', 'Antiparasitario', 'ml', 0.75, 180, 35, '2025-07-03'),
-('Ranitidina', 'Protector g·strico', 'Tableta', 0.28, 260, 50, '2025-07-01'),
-('Omeprazol', 'Reductor de ·cido estomacal', 'Tableta', 0.36, 300, 60, '2025-07-05');
+('Ranitidina', 'Protector g√°strico', 'Tableta', 0.28, 260, 50, '2025-07-01'),
+('Omeprazol', 'Reductor de √°cido estomacal', 'Tableta', 0.36, 300, 60, '2025-07-05');
 
 INSERT INTO Facturas (PropietarioID, FechaFactura, MontoTotal) VALUES
 (1, '2025-07-01', 45.00),
@@ -308,7 +307,7 @@ INSERT INTO Vacunas (NombreVacuna, TipoVacuna, DosisRecomendada) VALUES
 ('Virus del Nilo', 'Virus', '1 ml anual'),
 ('Influenza canina', 'Virus', '1 ml anual'),
 ('Brucelosis', 'Bacteria', '1 ml anual'),
-('TÈtanos', 'Bacteria', '1 ml anual'),
+('T√©tanos', 'Bacteria', '1 ml anual'),
 ('Virus de la leucemia felina', 'Virus', '1 ml anual');
 
 INSERT INTO VacunasAplicadas (PacienteID, VacunaID, PersonalID, FechaAplicacion, Dosis, Lote, FechaProximoRefuerzo) VALUES
@@ -330,35 +329,35 @@ INSERT INTO VacunasAplicadas (PacienteID, VacunaID, PersonalID, FechaAplicacion,
 
 INSERT INTO Citas (PacienteID, PropietarioID, PersonalID, FechaCita, HoraCita, MotivoCita, NotasCita) VALUES
 ( 2, '2025-07-01', '10:00 AM', 'Chequeo', 'Paciente saludable'),
-(4, '2025-07-02', '11:00 AM', 'Vacuna anual', 'AplicaciÛn sin complicaciones'),
-(5, '2025-07-03', '09:30 AM', 'Dolor de oÌdo', 'Se agita al tocarle la oreja'),
+(4, '2025-07-02', '11:00 AM', 'Vacuna anual', 'Aplicaci√≥n sin complicaciones'),
+(5, '2025-07-03', '09:30 AM', 'Dolor de o√≠do', 'Se agita al tocarle la oreja'),
 (6, '2025-07-04', '10:30 AM', 'Limpieza dental', 'Dentadura sin sarro'),
-(7, '2025-07-05', '02:00 PM', 'RevisiÛn general', 'Buen estado fÌsico'),
-(8, '2025-07-06', '03:00 PM', 'DesparasitaciÛn', 'Peso adecuado'),
-(9, '2025-07-07', '12:00 PM', 'Consulta por vÛmitos', 'Se recomienda dieta blanda'),
-(10, '2025-07-08', '01:00 PM', 'Dolor de estÛmago', 'Posible infecciÛn'),
-(11, '2025-07-09', '11:30 AM', 'Corte de uÒas', 'Cooperativo'),
+(7, '2025-07-05', '02:00 PM', 'Revisi√≥n general', 'Buen estado f√≠sico'),
+(8, '2025-07-06', '03:00 PM', 'Desparasitaci√≥n', 'Peso adecuado'),
+(9, '2025-07-07', '12:00 PM', 'Consulta por v√≥mitos', 'Se recomienda dieta blanda'),
+(10, '2025-07-08', '01:00 PM', 'Dolor de est√≥mago', 'Posible infecci√≥n'),
+(11, '2025-07-09', '11:30 AM', 'Corte de u√±as', 'Cooperativo'),
 (12, '2025-07-10', '04:00 PM', 'Vacuna de refuerzo', 'Sin reacciones'),
-(14, '2025-07-11', '05:00 PM', 'Chequeo post cirugÌa', 'RecuperaciÛn exitosa');
+(14, '2025-07-11', '05:00 PM', 'Chequeo post cirug√≠a', 'Recuperaci√≥n exitosa');
 
 INSERT INTO ConsultasMedicas (CitaID, FechaConsulta, Sintomas, Diagnostico, Tratamiento, Observaciones, PesoActual, Temperatura) VALUES
 (2, '2025-07-01', 'Ninguno', 'Salud estable', 'Vitaminas', 'Activo', '8.5', '38.2'),
-(4, '2025-07-02', 'Sin sÌntomas', 'Vacuna aplicada', 'Control anual', 'Cooperativo', '4.2', '38.0'),
-(5, '2025-07-03', 'IrritaciÛn', 'Otitis leve', 'AntibiÛtico', 'RevisiÛn en 7 dÌas', '22.4', '37.9'),
-(6, '2025-07-04', 'Mal aliento', 'AcumulaciÛn de sarro', 'Limpieza dental', 'UsÛ anestesia', '3.8', '38.1'),
-(7, '2025-07-05', 'Ninguno', 'Salud estable', 'Vitaminas', 'Ninguna complicaciÛn', '28.0', '38.5'),
-(8, '2025-07-06', 'Leve pÈrdida de apetito', 'Par·sitos internos', 'DesparasitaciÛn', 'Repetir en 3 semanas', '3.9', '38.3'),
-(9, '2025-07-07', 'VÛmito y debilidad', 'Gastritis leve', 'Anti·cido', 'Dieta blanda recomendada', '2.5', '38.6'),
-(10, '2025-07-08', 'Dolor abdominal', 'Posible infecciÛn', 'AntibiÛtico', 'Monitorear por 5 dÌas', '1.1', '38.0'),
-(11, '2025-07-09', 'Sin sÌntomas', 'Solo grooming', 'Sin medicamentos', 'Paciente tranquilo', '0.3', '39.2'),
-(12, '2025-07-10', 'Sin sÌntomas', 'Refuerzo aplicado', 'ObservaciÛn 24h', 'Sin complicaciones', '5.6', '38.1'),
-(14, '2025-07-11', 'CicatrizaciÛn', 'Postquir˙rgico estable', 'Cuidados locales', 'Sin infecciÛn', '10.5', '38.3');
+(4, '2025-07-02', 'Sin s√≠ntomas', 'Vacuna aplicada', 'Control anual', 'Cooperativo', '4.2', '38.0'),
+(5, '2025-07-03', 'Irritaci√≥n', 'Otitis leve', 'Antibi√≥tico', 'Revisi√≥n en 7 d√≠as', '22.4', '37.9'),
+(6, '2025-07-04', 'Mal aliento', 'Acumulaci√≥n de sarro', 'Limpieza dental', 'Us√≥ anestesia', '3.8', '38.1'),
+(7, '2025-07-05', 'Ninguno', 'Salud estable', 'Vitaminas', 'Ninguna complicaci√≥n', '28.0', '38.5'),
+(8, '2025-07-06', 'Leve p√©rdida de apetito', 'Par√°sitos internos', 'Desparasitaci√≥n', 'Repetir en 3 semanas', '3.9', '38.3'),
+(9, '2025-07-07', 'V√≥mito y debilidad', 'Gastritis leve', 'Anti√°cido', 'Dieta blanda recomendada', '2.5', '38.6'),
+(10, '2025-07-08', 'Dolor abdominal', 'Posible infecci√≥n', 'Antibi√≥tico', 'Monitorear por 5 d√≠as', '1.1', '38.0'),
+(11, '2025-07-09', 'Sin s√≠ntomas', 'Solo grooming', 'Sin medicamentos', 'Paciente tranquilo', '0.3', '39.2'),
+(12, '2025-07-10', 'Sin s√≠ntomas', 'Refuerzo aplicado', 'Observaci√≥n 24h', 'Sin complicaciones', '5.6', '38.1'),
+(14, '2025-07-11', 'Cicatrizaci√≥n', 'Postquir√∫rgico estable', 'Cuidados locales', 'Sin infecci√≥n', '10.5', '38.3');
 
 
 INSERT INTO MedicamentosAdministrados (ConsultaID, MedicamentoID, FechaAdministracion, Dosis, ViaAdministracion, CantidadUtilizada) VALUES
 (1, 1, '2025-07-01', '1 tableta', 'Oral', '1'),
 (2, 2, '2025-07-02', '2 tabletas', 'Oral', '2'),
-(3, 3, '2025-07-03', '1 c·psula', 'Oral', '1'),
+(3, 3, '2025-07-03', '1 c√°psula', 'Oral', '1'),
 (4, 4, '2025-07-04', '1 tableta', 'Oral', '1'),
 (5, 5, '2025-07-05', '1 tableta', 'Oral', '1'),
 (6, 6, '2025-07-06', '2 tabletas', 'Oral', '2'),
@@ -390,9 +389,10 @@ select *from MedicamentosAdministrados
 
 ALTER TABLE Personal
 DROP COLUMN rol;	
-
+select *from CargarPacientes;
 create view CargarPacientes as
-select pacienteId AS #,nombrePac,especiepac,razapac,nacimientopac,pesopac,sexopac,colorpac,nombreProp from Pacientes
+select pacienteId AS #,NombrePac AS Nombre_Paciente,nombreProp AS Nombre_Propietario, especiepac AS Especie,razapac AS Raza,nacimientopac As Nacimiento,
+pesopac As Peso,sexopac as Sexo,colorpac as color from Pacientes
 inner join Propietarios on Propietarios.PropietarioID=Pacientes.PropietarioID
 select *from CargarPacientes
 drop view CargarPacientes
@@ -406,14 +406,14 @@ INNER JOIN Personal pe ON c.PersonalID = pe.PersonalID;
 
 select *from CargarCitas2
 
-create view CargarConsultasMedicas as
+create or alter view CargarConsultasMedicas as
 SELECT 
     CM.ConsultaID AS #,
     C.CitaID AS CodigoCita,
     P.NombrePac AS Nombre_Paciente,
     PR.NombreProp AS Nombre_Propietario,
     PE.NombrePers AS Nombre_Personal,
-    CM.FechaConsulta AS Fecha_Consulta,
+    C.FechaCita AS Fecha_Consulta,
     CM.Sintomas,
     CM.Diagnostico,
     CM.Tratamiento,
@@ -425,6 +425,12 @@ INNER JOIN Citas C ON CM.CitaID = C.CitaID
 INNER JOIN Pacientes P ON C.PacienteID = P.PacienteID
 INNER JOIN Propietarios PR ON C.PropietarioID = PR.PropietarioID
 INNER JOIN Personal PE ON C.PersonalID = PE.PersonalID
+
+SELECT CitaID, NombrePac, FechaConsulta, NombreProp FROM ConsultasMedicas
+inner join Pacientes on Pacientes.PacienteID=ConsultasMedicas.pac
+
+
+select *from CItas where CitaID=4
 
 select *from CargarConsultasMedicas
 
@@ -441,12 +447,41 @@ select propietarioid,NombreProp from Propietarios
 select personalid, nombrepers, apellidopers from Personal
 
 
-SELECT COLUMN_NAME, DATA_TYPE, IS_NULLABLE
-FROM INFORMATION_SCHEMA.COLUMNS 
-WHERE TABLE_NAME = 'Pacientes'
-ORDER BY ORDINAL_POSITION;
 
-SELECT COLUMN_NAME, DATA_TYPE 
-FROM INFORMATION_SCHEMA.COLUMNS 
-WHERE TABLE_NAME = 'Propietarios'
-ORDER BY ORDINAL_POSITION;
+
+
+CREATE OR ALTER VIEW CargarPacientes AS
+SELECT 
+    p.PacienteID AS '#',
+    p.NombrePac AS Nombre_Paciente,
+    pr.PropietarioID AS,                 -- üîπ Lo agregamos para uso interno
+    pr.NombreProp AS Nombre_Propietario,
+    p.EspeciePac AS Especie,
+    p.RazaPac AS Raza,
+    p.NacimientoPac AS Nacimiento,
+    p.PesoPac AS Peso,
+    p.SexoPac AS Sexo,
+    p.ColorPac AS Color
+FROM Pacientes p
+INNER JOIN Propietarios pr ON p.PropietarioID = pr.PropietarioID;
+
+
+SELECT c.CitaID, 
+                                    p.NombrePac , 
+                                    c.FechaCita, 
+                                    pr.NombreProp 
+                             FROM Citas c
+                             INNER JOIN Pacientes p ON c.PacienteID = p.PacienteID
+                             INNER JOIN Propietarios pr ON p.PropietarioID = pr.PropietarioID
+
+alter table ConsultasMedicas drop column FechaConsulta
+
+
+
+
+SELECT c.CitaId, 
+                   (p.NombrePac + ' / ' + pr.NombreProp + ' / ' + CONVERT(varchar, c.FechaCita, 103)) AS InfoCita,
+                   c.FechaCita
+            FROM Citas c
+            INNER JOIN Pacientes p ON c.PacienteID = p.PacienteID
+            INNER JOIN Propietarios pr ON c.PropietarioID = pr.PropietarioID

@@ -30,6 +30,10 @@
         {
             this.lblConsultaMedica = new System.Windows.Forms.Label();
             this.pnlConsultaMedica = new System.Windows.Forms.Panel();
+            this.btnLimpiarCampos = new System.Windows.Forms.Button();
+            this.cmbAtencionMedica_Cita = new System.Windows.Forms.ComboBox();
+            this.btnActualizarConsultaMedica = new System.Windows.Forms.Button();
+            this.btnEliminarConsultaMedica = new System.Windows.Forms.Button();
             this.btnRegistrarConsultaMedica = new System.Windows.Forms.Button();
             this.dtpAtencionMedica_Fecha = new System.Windows.Forms.DateTimePicker();
             this.txtAtencionMedica_Tratamiento = new System.Windows.Forms.TextBox();
@@ -38,7 +42,6 @@
             this.txtAtencionMedica_Sintomas = new System.Windows.Forms.TextBox();
             this.txtAtencionMedica_Temperatura = new System.Windows.Forms.TextBox();
             this.txtAtencionMedica_Peso = new System.Windows.Forms.TextBox();
-            this.txtAtencionMedica_CitaID = new System.Windows.Forms.TextBox();
             this.lblAtencionMedica_Temperatura = new System.Windows.Forms.Label();
             this.lblAtencionMedica_Peso = new System.Windows.Forms.Label();
             this.lblAtencionMedica_Observaciones = new System.Windows.Forms.Label();
@@ -48,8 +51,6 @@
             this.lblAtencionMedica_Fecha = new System.Windows.Forms.Label();
             this.lblAtencionMedica_CitaID = new System.Windows.Forms.Label();
             this.dgvConsultasMedicas = new System.Windows.Forms.DataGridView();
-            this.btnEliminarConsultaMedica = new System.Windows.Forms.Button();
-            this.btnActualizarConsultaMedica = new System.Windows.Forms.Button();
             this.pnlConsultaMedica.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultasMedicas)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +69,8 @@
             // pnlConsultaMedica
             // 
             this.pnlConsultaMedica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
+            this.pnlConsultaMedica.Controls.Add(this.btnLimpiarCampos);
+            this.pnlConsultaMedica.Controls.Add(this.cmbAtencionMedica_Cita);
             this.pnlConsultaMedica.Controls.Add(this.btnActualizarConsultaMedica);
             this.pnlConsultaMedica.Controls.Add(this.btnEliminarConsultaMedica);
             this.pnlConsultaMedica.Controls.Add(this.btnRegistrarConsultaMedica);
@@ -78,7 +81,6 @@
             this.pnlConsultaMedica.Controls.Add(this.txtAtencionMedica_Sintomas);
             this.pnlConsultaMedica.Controls.Add(this.txtAtencionMedica_Temperatura);
             this.pnlConsultaMedica.Controls.Add(this.txtAtencionMedica_Peso);
-            this.pnlConsultaMedica.Controls.Add(this.txtAtencionMedica_CitaID);
             this.pnlConsultaMedica.Controls.Add(this.lblAtencionMedica_Temperatura);
             this.pnlConsultaMedica.Controls.Add(this.lblAtencionMedica_Peso);
             this.pnlConsultaMedica.Controls.Add(this.lblAtencionMedica_Observaciones);
@@ -91,6 +93,52 @@
             this.pnlConsultaMedica.Name = "pnlConsultaMedica";
             this.pnlConsultaMedica.Size = new System.Drawing.Size(884, 339);
             this.pnlConsultaMedica.TabIndex = 1;
+            // 
+            // btnLimpiarCampos
+            // 
+            this.btnLimpiarCampos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
+            this.btnLimpiarCampos.FlatAppearance.BorderSize = 0;
+            this.btnLimpiarCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(258, 248);
+            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(218, 53);
+            this.btnLimpiarCampos.TabIndex = 25;
+            this.btnLimpiarCampos.Text = "Limpiar Campos";
+            this.btnLimpiarCampos.UseVisualStyleBackColor = false;
+            // 
+            // cmbAtencionMedica_Cita
+            // 
+            this.cmbAtencionMedica_Cita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAtencionMedica_Cita.FormattingEnabled = true;
+            this.cmbAtencionMedica_Cita.Location = new System.Drawing.Point(181, 54);
+            this.cmbAtencionMedica_Cita.Name = "cmbAtencionMedica_Cita";
+            this.cmbAtencionMedica_Cita.Size = new System.Drawing.Size(279, 32);
+            this.cmbAtencionMedica_Cita.TabIndex = 24;
+            this.cmbAtencionMedica_Cita.SelectedIndexChanged += new System.EventHandler(this.cmbAtencionMedica_Cita_SelectedIndexChanged_1);
+            // 
+            // btnActualizarConsultaMedica
+            // 
+            this.btnActualizarConsultaMedica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
+            this.btnActualizarConsultaMedica.FlatAppearance.BorderSize = 0;
+            this.btnActualizarConsultaMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarConsultaMedica.Location = new System.Drawing.Point(31, 247);
+            this.btnActualizarConsultaMedica.Name = "btnActualizarConsultaMedica";
+            this.btnActualizarConsultaMedica.Size = new System.Drawing.Size(218, 53);
+            this.btnActualizarConsultaMedica.TabIndex = 23;
+            this.btnActualizarConsultaMedica.Text = "Actualizar Consulta";
+            this.btnActualizarConsultaMedica.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminarConsultaMedica
+            // 
+            this.btnEliminarConsultaMedica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
+            this.btnEliminarConsultaMedica.FlatAppearance.BorderSize = 0;
+            this.btnEliminarConsultaMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarConsultaMedica.Location = new System.Drawing.Point(258, 182);
+            this.btnEliminarConsultaMedica.Name = "btnEliminarConsultaMedica";
+            this.btnEliminarConsultaMedica.Size = new System.Drawing.Size(218, 53);
+            this.btnEliminarConsultaMedica.TabIndex = 21;
+            this.btnEliminarConsultaMedica.Text = "Eliminar Consulta";
+            this.btnEliminarConsultaMedica.UseVisualStyleBackColor = false;
             // 
             // btnRegistrarConsultaMedica
             // 
@@ -154,13 +202,6 @@
             this.txtAtencionMedica_Peso.Name = "txtAtencionMedica_Peso";
             this.txtAtencionMedica_Peso.Size = new System.Drawing.Size(173, 32);
             this.txtAtencionMedica_Peso.TabIndex = 13;
-            // 
-            // txtAtencionMedica_CitaID
-            // 
-            this.txtAtencionMedica_CitaID.Location = new System.Drawing.Point(258, 57);
-            this.txtAtencionMedica_CitaID.Name = "txtAtencionMedica_CitaID";
-            this.txtAtencionMedica_CitaID.Size = new System.Drawing.Size(139, 32);
-            this.txtAtencionMedica_CitaID.TabIndex = 12;
             // 
             // lblAtencionMedica_Temperatura
             // 
@@ -228,11 +269,11 @@
             // lblAtencionMedica_CitaID
             // 
             this.lblAtencionMedica_CitaID.AutoSize = true;
-            this.lblAtencionMedica_CitaID.Location = new System.Drawing.Point(78, 57);
+            this.lblAtencionMedica_CitaID.Location = new System.Drawing.Point(3, 54);
             this.lblAtencionMedica_CitaID.Name = "lblAtencionMedica_CitaID";
-            this.lblAtencionMedica_CitaID.Size = new System.Drawing.Size(171, 24);
+            this.lblAtencionMedica_CitaID.Size = new System.Drawing.Size(172, 24);
             this.lblAtencionMedica_CitaID.TabIndex = 2;
-            this.lblAtencionMedica_CitaID.Text = "Codigo de la Cita:";
+            this.lblAtencionMedica_CitaID.Text = "Selecciona la cita:";
             // 
             // dgvConsultasMedicas
             // 
@@ -244,32 +285,6 @@
             this.dgvConsultasMedicas.Size = new System.Drawing.Size(1170, 222);
             this.dgvConsultasMedicas.TabIndex = 2;
             this.dgvConsultasMedicas.DoubleClick += new System.EventHandler(this.dgvConsultasMedicas_DoubleClick);
-            // 
-            // btnEliminarConsultaMedica
-            // 
-            this.btnEliminarConsultaMedica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
-            this.btnEliminarConsultaMedica.FlatAppearance.BorderSize = 0;
-            this.btnEliminarConsultaMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarConsultaMedica.Location = new System.Drawing.Point(258, 182);
-            this.btnEliminarConsultaMedica.Name = "btnEliminarConsultaMedica";
-            this.btnEliminarConsultaMedica.Size = new System.Drawing.Size(218, 53);
-            this.btnEliminarConsultaMedica.TabIndex = 21;
-            this.btnEliminarConsultaMedica.Text = "Eliminar Consulta";
-            this.btnEliminarConsultaMedica.UseVisualStyleBackColor = false;
-            this.btnEliminarConsultaMedica.Click += new System.EventHandler(this.btnEliminarConsultaMedica_Click);
-            // 
-            // btnActualizarConsultaMedica
-            // 
-            this.btnActualizarConsultaMedica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
-            this.btnActualizarConsultaMedica.FlatAppearance.BorderSize = 0;
-            this.btnActualizarConsultaMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarConsultaMedica.Location = new System.Drawing.Point(31, 247);
-            this.btnActualizarConsultaMedica.Name = "btnActualizarConsultaMedica";
-            this.btnActualizarConsultaMedica.Size = new System.Drawing.Size(218, 53);
-            this.btnActualizarConsultaMedica.TabIndex = 23;
-            this.btnActualizarConsultaMedica.Text = "Actualizar Consulta";
-            this.btnActualizarConsultaMedica.UseVisualStyleBackColor = false;
-            this.btnActualizarConsultaMedica.Click += new System.EventHandler(this.btnActualizarConsultaMedica_Click);
             // 
             // frmAtencionMedica
             // 
@@ -310,10 +325,11 @@
         private System.Windows.Forms.TextBox txtAtencionMedica_Sintomas;
         private System.Windows.Forms.TextBox txtAtencionMedica_Temperatura;
         private System.Windows.Forms.TextBox txtAtencionMedica_Peso;
-        private System.Windows.Forms.TextBox txtAtencionMedica_CitaID;
         private System.Windows.Forms.Button btnRegistrarConsultaMedica;
         private System.Windows.Forms.DataGridView dgvConsultasMedicas;
         private System.Windows.Forms.Button btnActualizarConsultaMedica;
         private System.Windows.Forms.Button btnEliminarConsultaMedica;
+        private System.Windows.Forms.ComboBox cmbAtencionMedica_Cita;
+        private System.Windows.Forms.Button btnLimpiarCampos;
     }
 }

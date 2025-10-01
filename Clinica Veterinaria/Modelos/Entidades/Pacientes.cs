@@ -18,32 +18,37 @@ namespace Modelos.Entidades
         private string especiePac;
         private string razaPac;
         private DateTime nacimientoPac;
-        private string pesoPac;
+        private decimal pesoPac;
         private string sexoPac;
         private string colorPac;
         public int PropietarioID { get; set; }
 
-
         public string NombrePac { get => nombrePac; set => nombrePac = value; }
         public string EspeciePac { get => especiePac; set => especiePac = value; }
         public string RazaPac { get => razaPac; set => razaPac = value; }
-        
-        public string PesoPac { get => pesoPac; set => pesoPac = value; }
+        public decimal PesoPac { get => pesoPac; set => pesoPac = value; }
         public string SexoPac { get => sexoPac; set => sexoPac = value; }
         public string ColorPac { get => colorPac; set => colorPac = value; }
         public DateTime NacimientoPac { get => nacimientoPac; set => nacimientoPac = value; }
         public int PacienteID { get => pacienteID; set => pacienteID = value; }
 
+        public string NombreCompleto => $"{NombrePac} ({EspeciePac})";
+
+        public override string ToString()
+        {
+            return NombreCompleto;
+        }
+
         public bool InsertarPacientes()
         {
             try
             {
-                SqlConnection conexion = Conexiondb.conectar();
-                
+                using (SqlConnection conexion = Conexiondb.conectar())
+                {
                     string query = @"INSERT INTO Pacientes 
-                                   (NombrePac, EspeciePac, RazaPac, NacimientoPac, PesoPac, SexoPac, ColorPac, PropietarioID) 
-                                   VALUES 
-                                   (@Nombre, @Especie, @Raza, @Nacimiento, @Peso, @Sexo, @Color, @PropietarioID)";
+                               (NombrePac, EspeciePac, RazaPac, NacimientoPac, PesoPac, SexoPac, ColorPac, PropietarioID) 
+                               VALUES 
+                               (@Nombre, @Especie, @Raza, @Nacimiento, @Peso, @Sexo, @Color, @PropietarioID)";
 
                     using (SqlCommand comando = new SqlCommand(query, conexion))
                     {
@@ -56,11 +61,10 @@ namespace Modelos.Entidades
                         comando.Parameters.AddWithValue("@Color", ColorPac);
                         comando.Parameters.AddWithValue("@PropietarioID", PropietarioID);
 
-                        conexion.Open();
                         int resultado = comando.ExecuteNonQuery();
                         return resultado > 0;
                     }
-                
+                }
             }
             catch (Exception ex)
             {
@@ -68,13 +72,6 @@ namespace Modelos.Entidades
             }
         }
 
-        public string NombreCompleto => $"{NombrePac} ({EspeciePac})";
-
-        public override string ToString()
-        {
-            return NombreCompleto;
-        }
-            
         public static List<Pacientes> CargarPacientesPorPropietario(int propietarioID)
         {
             List<Pacientes> listaPacientes = new List<Pacientes>();
@@ -84,24 +81,27 @@ namespace Modelos.Entidades
                 using (SqlConnection conexion = Conexiondb.conectar())
                 {
                     string comando = @"SELECT PacienteID, NombrePac, EspeciePac, RazaPac, PropietarioID 
-                              FROM Pacientes 
-                              WHERE PropietarioID = @PropietarioID 
-                              ORDER BY NombrePac";
+                          FROM Pacientes 
+                          WHERE PropietarioID = @PropietarioID 
+                          ORDER BY NombrePac";
 
-                    SqlCommand cmd = new SqlCommand(comando, conexion);
-                    cmd.Parameters.AddWithValue("@PropietarioID", propietarioID);
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
+                    using (SqlCommand cmd = new SqlCommand(comando, conexion))
                     {
-                        listaPacientes.Add(new Pacientes
+                        cmd.Parameters.AddWithValue("@PropietarioID", propietarioID);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            PacienteID = reader.GetInt32(0),
-                            NombrePac = reader.GetString(1),        // NombrePac
-                            EspeciePac = reader.GetString(2),       // EspeciePac
-                            RazaPac = reader.GetString(3),          // RazaPac
-                            PropietarioID = reader.GetInt32(4)
-                        });
+                            while (reader.Read())
+                            {
+                                listaPacientes.Add(new Pacientes
+                                {
+                                    PacienteID = reader.GetInt32(0),
+                                    NombrePac = reader.GetString(1),
+                                    EspeciePac = reader.GetString(2),
+                                    RazaPac = reader.GetString(3),
+                                    PropietarioID = reader.GetInt32(4)
+                                });
+                            }
+                        }
                     }
                 }
             }
@@ -113,38 +113,33 @@ namespace Modelos.Entidades
             return listaPacientes;
         }
 
-
-
         public static DataTable CargarPacientes()
         {
-            SqlConnection conexion = Conexiondb.conectar();
-
-            string comando = "select *from CargarPacientes;";
-
-            SqlDataAdapter ad = new SqlDataAdapter(comando,conexion);
-
-            DataTable dt = new DataTable();
-            ad.Fill(dt);
-            return dt;
+            using (SqlConnection conexion = Conexiondb.conectar())
+            {
+                string comando = "SELECT * FROM CargarPacientes;";
+                SqlDataAdapter ad = new SqlDataAdapter(comando, conexion);
+                DataTable dt = new DataTable();
+                ad.Fill(dt);
+                return dt;
+            }
         }
 
         public bool EliminarPaciente(int pacienteID)
         {
             try
             {
-                SqlConnection conexion = Conexiondb.conectar();
-                
+                using (SqlConnection conexion = Conexiondb.conectar())
+                {
                     string query = "DELETE FROM Pacientes WHERE PacienteID = @PacienteID";
 
                     using (SqlCommand comando = new SqlCommand(query, conexion))
                     {
                         comando.Parameters.AddWithValue("@PacienteID", pacienteID);
-
-                        conexion.Open();
                         int resultado = comando.ExecuteNonQuery();
                         return resultado > 0;
                     }
-                
+                }
             }
             catch (Exception ex)
             {
@@ -152,23 +147,22 @@ namespace Modelos.Entidades
             }
         }
 
-
         public bool ActualizarPaciente()
         {
             try
             {
-                SqlConnection conexion = Conexiondb.conectar();
-                
+                using (SqlConnection conexion = Conexiondb.conectar())
+                {
                     string query = @"UPDATE Pacientes SET 
-                                   NombrePac = @Nombre,
-                                   EspeciePac = @Especie,
-                                   RazaPac = @Raza,
-                                   NacimientoPac = @Nacimiento,
-                                   PesoPac = @Peso,
-                                   SexoPac = @Sexo,
-                                   ColorPac = @Color,
-                                   PropietarioID = @PropietarioID
-                                   WHERE PacienteID = @PacienteID";
+                               NombrePac = @Nombre,
+                               EspeciePac = @Especie,
+                               RazaPac = @Raza,
+                               NacimientoPac = @Nacimiento,
+                               PesoPac = @Peso,
+                               SexoPac = @Sexo,
+                               ColorPac = @Color,
+                               PropietarioID = @PropietarioID
+                               WHERE PacienteID = @PacienteID";
 
                     using (SqlCommand comando = new SqlCommand(query, conexion))
                     {
@@ -182,11 +176,10 @@ namespace Modelos.Entidades
                         comando.Parameters.AddWithValue("@Color", ColorPac);
                         comando.Parameters.AddWithValue("@PropietarioID", PropietarioID);
 
-                        conexion.Open();
                         int resultado = comando.ExecuteNonQuery();
                         return resultado > 0;
                     }
-                
+                }
             }
             catch (Exception ex)
             {

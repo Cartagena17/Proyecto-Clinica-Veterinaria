@@ -123,6 +123,24 @@ namespace Modelos.Entidades
             }
         }
 
+        public static DataTable CargarCitasCB()
+        {
+            SqlConnection conexion = Conexiondb.conectar();
+            string comando = @"
+            SELECT c.CitaId, 
+                   (p.NombrePac + ' / ' + pr.NombreProp + ' / ' + CONVERT(varchar, c.FechaCita, 103)) AS InfoCita,
+                   c.FechaCita
+            FROM Citas c
+            INNER JOIN Pacientes p ON c.PacienteID = p.PacienteID
+            INNER JOIN Propietarios pr ON c.PropietarioID = pr.PropietarioID
+        ";
+            SqlDataAdapter ad = new SqlDataAdapter(comando, conexion);
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+            return dt;
+        }
+
+
         //public void CargarNombresEnComboBox()
         //{
         //    SqlConnection con = Conexiondb.conectar();

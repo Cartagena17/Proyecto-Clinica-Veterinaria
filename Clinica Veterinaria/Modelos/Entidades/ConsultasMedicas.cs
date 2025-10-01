@@ -13,7 +13,6 @@ namespace Modelos.Entidades
     {
 
         private int CitaID;
-        private DateTime FechaConsulta;
         private string Sintomas;
         private string diagnostico;
         private string tratamiento;
@@ -23,7 +22,6 @@ namespace Modelos.Entidades
 
 
         public int CitaID1 { get => CitaID; set => CitaID = value; }
-        public DateTime FechaConsulta1 { get => FechaConsulta; set => FechaConsulta = value; }
         public string Sintomas1 { get => Sintomas; set => Sintomas = value; }
         public string Diagnostico { get => diagnostico; set => diagnostico = value; }
         public string Tratamiento { get => tratamiento; set => tratamiento = value; }
@@ -35,13 +33,12 @@ namespace Modelos.Entidades
         {
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "INSERT INTO ConsultasMedicas (CitaID, FechaConsulta, Sintomas, Diagnostico, Tratamiento, Observaciones, PesoActual, Temperatura) " +
-                "VALUES(@PacienteID, @PersonalID, @CitaID, @FechaConsulta, @Sintomas, @Diagnostico, @Tratamiento, @Observaciones, @PesoActual,@Temperatura)";
+            string comando = "INSERT INTO ConsultasMedicas (CitaID, Sintomas, Diagnostico, Tratamiento, Observaciones, PesoActual, Temperatura) " +
+                "VALUES(@PacienteID, @PersonalID, @CitaID, @Sintomas, @Diagnostico, @Tratamiento, @Observaciones, @PesoActual,@Temperatura)";
 
             SqlCommand cmd = new SqlCommand(comando, conexion);
 
             cmd.Parameters.AddWithValue("@CitaID", CitaID);
-            cmd.Parameters.AddWithValue("@FechaConsulta", FechaConsulta);
             cmd.Parameters.AddWithValue("@Sintomas", Sintomas);
             cmd.Parameters.AddWithValue("@Diagnostico", diagnostico);
             cmd.Parameters.AddWithValue("@Tratamiento", tratamiento);
@@ -59,6 +56,8 @@ namespace Modelos.Entidades
             }
 
         }
+
+        
 
         public static DataTable CargarConsultasMedicas()
         {
@@ -80,7 +79,6 @@ namespace Modelos.Entidades
             SqlConnection conexion = Conexiondb.conectar();
 
             string comando = "UPDATE ConsultasMedicas SET " +
-                             "FechaConsulta = @FechaConsulta, " +
                              "Sintomas = @Sintomas, " +
                              "Diagnostico = @Diagnostico, " +
                              "Tratamiento = @Tratamiento, " +
@@ -92,7 +90,6 @@ namespace Modelos.Entidades
             SqlCommand cmd = new SqlCommand(comando, conexion);
 
             cmd.Parameters.AddWithValue("@CitaID", CitaID);
-            cmd.Parameters.AddWithValue("@FechaConsulta", FechaConsulta);
             cmd.Parameters.AddWithValue("@Sintomas", Sintomas);
             cmd.Parameters.AddWithValue("@Diagnostico", diagnostico);
             cmd.Parameters.AddWithValue("@Tratamiento", tratamiento);
