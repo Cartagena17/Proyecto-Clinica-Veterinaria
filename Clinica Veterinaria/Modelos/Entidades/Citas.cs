@@ -63,7 +63,7 @@ namespace Modelos.Entidades
             cmd.Parameters.AddWithValue("HoraCita", HoraCita);
             cmd.Parameters.AddWithValue("MotivoCita", MotivoCita);
             //cmd.Parameters.AddWithValue("NotasCita", NotasCita);
-            cmd.Parameters.AddWithValue("@NotasCita", NotasCita);
+            cmd.Parameters.AddWithValue("NotasCita", NotasCita);
 
 
             if (cmd.ExecuteNonQuery() > 0)
@@ -126,20 +126,75 @@ namespace Modelos.Entidades
         public static DataTable CargarCitasCB()
         {
             SqlConnection conexion = Conexiondb.conectar();
-            string comando = @"
-            SELECT c.CitaId, 
-                   (p.NombrePac + ' / ' + pr.NombreProp + ' / ' + CONVERT(varchar, c.FechaCita, 103)) AS InfoCita,
+            DataTable dt = new DataTable();
+            try
+            {
+                string comando = @"
+                SELECT c.CitaID, 
+                       p.NombrePac + ' / ' + pr.NombreProp + ' / ' + CONVERT(varchar, c.FechaCita, 103) AS InfoCita,
+                    C.FechaCita
+                FROM Citas c
+                INNER JOIN Pacientes p ON c.PacienteId = p.PacienteId
+                INNER JOIN Propietarios pr ON p.PropietarioId = pr.PropietarioId
+                WHERE c.CitaID NOT IN (SELECT CitaID FROM ConsultasMedicas);
+        ";
+                SqlDataAdapter ad = new SqlDataAdapter(comando, conexion);
+                ad.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al cargar citas disponibles: " + ex.Message);
+            }
+            return dt;
+        }
+
+        public static DataTable CargarCitasCBConCitaSeleccionada(int citaID)
+        {
+            SqlConnection conexion = Conexiondb.conectar();
+            DataTable dt = new DataTable();
+            try
+            {
+                string comando = $@"
+            SELECT c.CitaID, 
+                   p.NombrePac + ' / ' + pr.NombreProp + ' / ' + CONVERT(varchar, c.FechaCita, 103) AS InfoCita,
                    c.FechaCita
             FROM Citas c
-            INNER JOIN Pacientes p ON c.PacienteID = p.PacienteID
-            INNER JOIN Propietarios pr ON c.PropietarioID = pr.PropietarioID
-        ";
-            SqlDataAdapter ad = new SqlDataAdapter(comando, conexion);
+            INNER JOIN Pacientes p ON c.PacienteId = p.PacienteId
+            INNER JOIN Propietarios pr ON p.PropietarioId = pr.PropietarioId
+            WHERE c.CitaID NOT IN (SELECT CitaID FROM ConsultasMedicas)
+               OR c.CitaID = @CitaID";
+
+                SqlDataAdapter ad = new SqlDataAdapter(comando, conexion);
+                ad.SelectCommand.Parameters.AddWithValue("@CitaID", citaID);
+                ad.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al cargar citas disponibles: " + ex.Message);
+            }
+            return dt;
+        }
+
+        public static DataTable BuscarCita(string busqueda)
+        {
+            SqlConnection con = Conexiondb.conectar();
+
+            string comando = @"
+    SELECT * FROM CargarCitas2
+    WHERE NombreProp LIKE @busqueda 
+       OR NombrePac LIKE @busqueda 
+       OR NombrePers LIKE @busqueda 
+       OR MotivoCita LIKE @busqueda 
+       OR NotasCita LIKE @busqueda";
+
+            SqlCommand cmd = new SqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
+
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             ad.Fill(dt);
             return dt;
         }
-
 
         //public void CargarNombresEnComboBox()
         //{

@@ -22,6 +22,7 @@ namespace Vistas.Formularios
 
         private void frmAgendarCita_Load(object sender, EventArgs e)
         {
+            lblBusquedaCitas1.Text = "Busca las Citas:";
             MostrarCitas();
             CargarPersonalEnComboBox();
             CargarPropietariosEnComboBox();
@@ -209,6 +210,9 @@ namespace Vistas.Formularios
             txtAgendarCitas_Notas.Clear();
             dtpAgendarCita_Fecha.Value = DateTime.Now;
 
+            txtBusquedaCitas.Clear();
+
+
             DesbloquearComboBox();
         }
 
@@ -220,6 +224,7 @@ namespace Vistas.Formularios
         {
             mensajeError = "";
 
+            // Validar selección de combobox
             if (cmbVeterinario.SelectedItem == null)
             {
                 mensajeError = "Debe seleccionar un veterinario.";
@@ -238,24 +243,55 @@ namespace Vistas.Formularios
                 return false;
             }
 
+            // Validar HoraCita
             if (string.IsNullOrWhiteSpace(txtAgendarCita_Hora.Text))
             {
                 mensajeError = "Debe ingresar la hora de la cita.";
                 return false;
             }
+            if (txtAgendarCita_Hora.Text.Length > 20)
+            {
+                mensajeError = "La hora de la cita no puede superar los 20 caracteres.";
+                return false;
+            }
 
+            // Validar MotivoCita
             if (string.IsNullOrWhiteSpace(txtAgendarCita_Motivo.Text))
             {
                 mensajeError = "Debe ingresar el motivo de la cita.";
                 return false;
             }
+            if (txtAgendarCita_Motivo.Text.Length > 100)
+            {
+                mensajeError = "El motivo de la cita no puede superar los 100 caracteres.";
+                return false;
+            }
+            if (int.TryParse(txtAgendarCita_Motivo.Text, out _))
+            {
+                mensajeError = "El motivo de la cita no puede ser solo números.";
+                return false;
+            }
 
+            // Validar NotasCita (opcional)
+            if (!string.IsNullOrWhiteSpace(txtAgendarCitas_Notas.Text) && txtAgendarCitas_Notas.Text.Length > 100)
+            {
+                mensajeError = "Las notas de la cita no pueden superar los 100 caracteres.";
+                return false;
+            }
+            if (int.TryParse(txtAgendarCitas_Notas.Text, out _))
+            {
+                mensajeError = "Las notas de la cita no pueden ser solo números.";
+                return false;
+            }
+
+            // Validar fecha
             if (dtpAgendarCita_Fecha.Value.Date < DateTime.Today)
             {
                 mensajeError = "La fecha de la cita no puede ser anterior al día de hoy.";
                 return false;
             }
 
+            // Validar IDs de los objetos seleccionados
             Personal veterinarioSeleccionado = (Personal)cmbVeterinario.SelectedItem;
             Propietarios propietarioSeleccionado = (Propietarios)cmbPropietario.SelectedItem;
             Pacientes pacienteSeleccionado = (Pacientes)cmbPaciente.SelectedItem;
@@ -447,5 +483,44 @@ namespace Vistas.Formularios
 
 
         #endregion
-    }
+
+        private void txtBusquedaCitas_TextChanged(object sender, EventArgs e)
+        {
+            BuscarCitas();
+        }
+        #region Búsqueda de Citas
+
+        private void BuscarCitas()
+        {
+            try
+            {
+                string textoBusqueda = txtBusquedaCitas.Text.Trim();
+
+                if (!string.IsNullOrEmpty(textoBusqueda))
+                {
+                    DataTable resultados = Citas.BuscarCita(textoBusqueda);
+                    dgvCitas.DataSource = resultados;
+
+                    if (resultados.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron citas con los criterios de búsqueda.",
+                                      "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    // Si está vacío, mostrar todas las citas
+                    MostrarCitas();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al buscar citas: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+            #endregion
+
+        }
 }

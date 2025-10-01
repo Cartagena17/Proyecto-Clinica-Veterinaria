@@ -477,11 +477,14 @@ SELECT c.CitaID,
 alter table ConsultasMedicas drop column FechaConsulta
 
 
+ SELECT c.CitaID, 
+                       p.NombrePac + ' / ' + pr.NombreProp + ' / ' + CONVERT(varchar, c.FechaCita, 103) AS InfoCita,
+                C.fechaCita
+                FROM Citas c
+                INNER JOIN Pacientes p ON c.PacienteId = p.PacienteId
+                INNER JOIN Propietarios pr ON p.PropietarioId = pr.PropietarioId
+                WHERE c.CitaID NOT IN (SELECT CitaID FROM ConsultasMedicas);
 
-
-SELECT c.CitaId, 
-                   (p.NombrePac + ' / ' + pr.NombreProp + ' / ' + CONVERT(varchar, c.FechaCita, 103)) AS InfoCita,
-                   c.FechaCita
-            FROM Citas c
-            INNER JOIN Pacientes p ON c.PacienteID = p.PacienteID
-            INNER JOIN Propietarios pr ON c.PropietarioID = pr.PropietarioID
+                SELECT COLUMN_NAME 
+FROM INFORMATION_SCHEMA.COLUMNS 
+WHERE TABLE_NAME = 'Pacientes'

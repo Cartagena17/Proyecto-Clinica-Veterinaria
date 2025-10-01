@@ -14,6 +14,7 @@ namespace Vistas.Formularios
 {
     public partial class frmGestionMascotas : Form
     {
+        
         private int propietarioIDActual = 0;
         private int pacienteIDSeleccionado = 0;
         private bool cargandoDatos = false;
@@ -26,6 +27,7 @@ namespace Vistas.Formularios
 
         private void frmGestionMascotas_Load(object sender, EventArgs e)
         {
+            lblBusqueda1.Text = "Busca las mascotas por\r\nNombre, Especie, Raza o Propietario:";
             MostrarPacientes();
             CargarPropietariosEnComboBox();
             rbMacho.Checked = true;
@@ -179,6 +181,29 @@ namespace Vistas.Formularios
                 lblInfoPropietario.Visible = false;
         }
 
+        private void LimpiarBusqueda()
+        {
+            // 🔹 DESCONECTAR temporalmente el evento para evitar el loop
+            txtBusqueda.TextChanged -= textBox1_TextChanged;
+
+            try
+            {
+                txtBusqueda.Clear();
+                MostrarPacientes();
+
+                if (dgvMascotas != null)
+                {
+                    dgvMascotas.ClearSelection();
+                    dgvMascotas.CurrentCell = null;
+                }
+            }
+            finally
+            {
+                // 🔹 VOLVER a conectar el evento
+                txtBusqueda.TextChanged += textBox1_TextChanged;
+            }
+        }
+
         private void MostrarPacientes()
         {
             try
@@ -281,6 +306,7 @@ namespace Vistas.Formularios
                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
                         MostrarPacientes();
                         LimpiarCampos();
+                        LimpiarBusqueda();
                     }
                     else
                     {
@@ -345,6 +371,7 @@ namespace Vistas.Formularios
                                   MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MostrarPacientes();
                     LimpiarCampos();
+                    LimpiarBusqueda();
                 }
                 else
                 {
@@ -370,6 +397,97 @@ namespace Vistas.Formularios
             CargarDatosSeleccionados();
         }
 
+        //private void CargarDatosSeleccionados()
+        //{
+        //    try
+        //    {
+        //        if (dgvMascotas.CurrentRow == null)
+        //            return;
+
+        //        DataRowView row = (DataRowView)dgvMascotas.CurrentRow.DataBoundItem;
+
+        //        // 🔹 VERIFICA PRIMERO QUÉ COLUMNAS TIENES DISPONIBLES
+        //        Console.WriteLine("Columnas disponibles:");
+        //        foreach (DataColumn col in row.DataView.Table.Columns)
+        //        {
+        //            Console.WriteLine($"- {col.ColumnName}");
+        //        }
+
+        //        // 🔹 USA LOS NOMBRES CORRECTOS DE COLUMNAS (ajusta según lo que veas arriba)
+        //        txtGestionMascota_Nombre.Text = row["NombrePac"]?.ToString() ??
+        //                                       row["Nombre_Paciente"]?.ToString() ??
+        //                                       row["NombrePaciente"]?.ToString() ?? "";
+
+        //        txtGestionMascota_Especie.Text = row["EspeciePac"]?.ToString() ??
+        //                                        row["Especie"]?.ToString() ?? "";
+
+        //        txtGestionMascota_Raza.Text = row["RazaPac"]?.ToString() ??
+        //                                     row["Raza"]?.ToString() ?? "";
+
+        //        // Fecha - maneja diferentes nombres
+        //        if (row["NacimientoPac"] != DBNull.Value)
+        //            dtpGestionMascota_Nacimiento.Value = Convert.ToDateTime(row["NacimientoPac"]);
+        //        else if (row["Nacimiento"] != DBNull.Value)
+        //            dtpGestionMascota_Nacimiento.Value = Convert.ToDateTime(row["Nacimiento"]);
+
+        //        // Peso
+        //        txtGestionMascota_Peso.Text = row["PesoPac"]?.ToString() ??
+        //                                     row["Peso"]?.ToString() ?? "";
+
+        //        // Color
+        //        txtGestionMascota_Color.Text = row["ColorPac"]?.ToString() ??
+        //                                      row["Color"]?.ToString() ?? "";
+
+        //        // Sexo
+        //        string sexo = row["SexoPac"]?.ToString() ??
+        //                     row["Sexo"]?.ToString() ?? "";
+        //        rbMacho.Checked = sexo.Equals("Macho", StringComparison.OrdinalIgnoreCase);
+        //        rbHembra.Checked = sexo.Equals("Hembra", StringComparison.OrdinalIgnoreCase);
+
+        //        // IDs - usa los nombres correctos
+        //        pacienteIDSeleccionado = Convert.ToInt32(row["PacienteID"] ?? row["pacienteid"] ?? row["#"] ?? 0);
+        //        propietarioIDActual = Convert.ToInt32(row["PropietarioID"] ?? row["PropietarioId"] ?? 0);
+
+        //        // Resto del código...
+        //        foreach (Propietarios prop in cmbPropietario.Items)
+        //        {
+        //            if (prop.Id == propietarioIDActual)
+        //            {
+        //                cmbPropietario.SelectedItem = prop;
+        //                break;
+        //            }
+        //        }
+
+        //        cmbPropietario.Enabled = false;
+
+        //        if (lblInfoPropietario != null)
+        //        {
+        //            lblInfoPropietario.Visible = true;
+        //            lblInfoPropietario.Text = "Propietario: No se puede modificar en actualizaciones";
+        //            lblInfoPropietario.ForeColor = Color.Blue;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Error al cargar datos: {ex.Message}\n\nColumnas disponibles:\n{string.Join(", ", GetColumnNames())}",
+        //                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+
+        //// Método auxiliar para ver columnas
+        //private List<string> GetColumnNames()
+        //{
+        //    List<string> columns = new List<string>();
+        //    if (dgvMascotas.DataSource != null && dgvMascotas.Rows.Count > 0)
+        //    {
+        //        foreach (DataGridViewColumn col in dgvMascotas.Columns)
+        //        {
+        //            columns.Add(col.Name);
+        //        }
+        //    }
+        //    return columns;
+        //}
+
         private void CargarDatosSeleccionados()
         {
             try
@@ -378,6 +496,13 @@ namespace Vistas.Formularios
                     return;
 
                 DataRowView row = (DataRowView)dgvMascotas.CurrentRow.DataBoundItem;
+
+
+                Console.WriteLine("Columnas disponibles:");
+                foreach (DataColumn col in row.DataView.Table.Columns)
+                {
+                    Console.WriteLine($"- {col.ColumnName}");
+                }
 
                 // Cargar datos de la mascota
                 txtGestionMascota_Nombre.Text = row["Nombre_Paciente"].ToString();
@@ -427,6 +552,45 @@ namespace Vistas.Formularios
         private void btnLimpiarCampos_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+            LimpiarBusqueda();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            // Pequeño delay para evitar búsquedas con cada tecla
+            Timer searchTimer = new Timer();
+            searchTimer.Interval = 500; // 500ms
+            searchTimer.Tick += (s, args) =>
+            {
+                searchTimer.Stop();
+
+                // 🔹 DESCONECTAR evento durante la actualización
+                dgvMascotas.SelectionChanged -= dgvMascotas_SelectionChanged;
+
+                try
+                {
+                    string texto = txtBusqueda.Text.Trim();
+                    if (string.IsNullOrEmpty(texto))
+                    {
+                        MostrarPacientes(); // Volver a mostrar todos
+                    }
+                    else
+                    {
+                        dgvMascotas.DataSource = Pacientes.BuscarCita(texto);
+                    }
+
+                    // 🔹 LIMPIAR selección y campos
+                    dgvMascotas.ClearSelection();
+                    dgvMascotas.CurrentCell = null;
+                    LimpiarCampos();
+                }
+                finally
+                {
+                    // 🔹 VOLVER a conectar el evento
+                    dgvMascotas.SelectionChanged += dgvMascotas_SelectionChanged;
+                }
+            };
+            searchTimer.Start();
         }
     }
 }

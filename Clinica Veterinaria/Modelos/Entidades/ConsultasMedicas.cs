@@ -34,7 +34,7 @@ namespace Modelos.Entidades
             SqlConnection conexion = Conexiondb.conectar();
 
             string comando = "INSERT INTO ConsultasMedicas (CitaID, Sintomas, Diagnostico, Tratamiento, Observaciones, PesoActual, Temperatura) " +
-                "VALUES(@PacienteID, @PersonalID, @CitaID, @Sintomas, @Diagnostico, @Tratamiento, @Observaciones, @PesoActual,@Temperatura)";
+                "VALUES( @CitaID, @Sintomas, @Diagnostico, @Tratamiento, @Observaciones, @PesoActual,@Temperatura)";
 
             SqlCommand cmd = new SqlCommand(comando, conexion);
 

@@ -105,6 +105,7 @@
             this.btnLimpiarCampos.TabIndex = 25;
             this.btnLimpiarCampos.Text = "Limpiar Campos";
             this.btnLimpiarCampos.UseVisualStyleBackColor = false;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click_1);
             // 
             // cmbAtencionMedica_Cita
             // 
@@ -127,6 +128,7 @@
             this.btnActualizarConsultaMedica.TabIndex = 23;
             this.btnActualizarConsultaMedica.Text = "Actualizar Consulta";
             this.btnActualizarConsultaMedica.UseVisualStyleBackColor = false;
+            this.btnActualizarConsultaMedica.Click += new System.EventHandler(this.btnActualizarConsultaMedica_Click);
             // 
             // btnEliminarConsultaMedica
             // 
@@ -139,6 +141,7 @@
             this.btnEliminarConsultaMedica.TabIndex = 21;
             this.btnEliminarConsultaMedica.Text = "Eliminar Consulta";
             this.btnEliminarConsultaMedica.UseVisualStyleBackColor = false;
+            this.btnEliminarConsultaMedica.Click += new System.EventHandler(this.btnEliminarConsultaMedica_Click);
             // 
             // btnRegistrarConsultaMedica
             // 

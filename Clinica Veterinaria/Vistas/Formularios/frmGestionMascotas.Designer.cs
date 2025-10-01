@@ -30,6 +30,7 @@
         {
             this.lblGestionPropietarios = new System.Windows.Forms.Label();
             this.pnlGestionMascota = new System.Windows.Forms.Panel();
+            this.lblPropietarioSeleccion = new System.Windows.Forms.Label();
             this.lblInfoPropietario = new System.Windows.Forms.Label();
             this.rbHembra = new System.Windows.Forms.RadioButton();
             this.rbMacho = new System.Windows.Forms.RadioButton();
@@ -52,6 +53,9 @@
             this.lblGestionMascotas_Especie = new System.Windows.Forms.Label();
             this.lblGestionMascotas_Nombre = new System.Windows.Forms.Label();
             this.dgvMascotas = new System.Windows.Forms.DataGridView();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.lblBusqueda1 = new System.Windows.Forms.Label();
             this.pnlGestionMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +74,10 @@
             // pnlGestionMascota
             // 
             this.pnlGestionMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
+            this.pnlGestionMascota.Controls.Add(this.lblBusqueda1);
+            this.pnlGestionMascota.Controls.Add(this.lblBusqueda);
+            this.pnlGestionMascota.Controls.Add(this.txtBusqueda);
+            this.pnlGestionMascota.Controls.Add(this.lblPropietarioSeleccion);
             this.pnlGestionMascota.Controls.Add(this.lblInfoPropietario);
             this.pnlGestionMascota.Controls.Add(this.rbHembra);
             this.pnlGestionMascota.Controls.Add(this.rbMacho);
@@ -97,6 +105,15 @@
             this.pnlGestionMascota.Name = "pnlGestionMascota";
             this.pnlGestionMascota.Size = new System.Drawing.Size(976, 364);
             this.pnlGestionMascota.TabIndex = 9;
+            // 
+            // lblPropietarioSeleccion
+            // 
+            this.lblPropietarioSeleccion.AutoSize = true;
+            this.lblPropietarioSeleccion.Location = new System.Drawing.Point(13, 215);
+            this.lblPropietarioSeleccion.Name = "lblPropietarioSeleccion";
+            this.lblPropietarioSeleccion.Size = new System.Drawing.Size(266, 25);
+            this.lblPropietarioSeleccion.TabIndex = 24;
+            this.lblPropietarioSeleccion.Text = "Selecciona un propietario:";
             // 
             // lblInfoPropietario
             // 
@@ -134,7 +151,7 @@
             // 
             this.cmbPropietario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPropietario.FormattingEnabled = true;
-            this.cmbPropietario.Location = new System.Drawing.Point(177, 207);
+            this.cmbPropietario.Location = new System.Drawing.Point(276, 207);
             this.cmbPropietario.Name = "cmbPropietario";
             this.cmbPropietario.Size = new System.Drawing.Size(223, 33);
             this.cmbPropietario.TabIndex = 20;
@@ -229,7 +246,7 @@
             // 
             // txtGestionMascota_Nombre
             // 
-            this.txtGestionMascota_Nombre.Location = new System.Drawing.Point(177, 26);
+            this.txtGestionMascota_Nombre.Location = new System.Drawing.Point(204, 25);
             this.txtGestionMascota_Nombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGestionMascota_Nombre.Name = "txtGestionMascota_Nombre";
             this.txtGestionMascota_Nombre.Size = new System.Drawing.Size(223, 33);
@@ -238,7 +255,7 @@
             // dtpGestionMascota_Nacimiento
             // 
             this.dtpGestionMascota_Nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpGestionMascota_Nacimiento.Location = new System.Drawing.Point(631, 27);
+            this.dtpGestionMascota_Nacimiento.Location = new System.Drawing.Point(659, 27);
             this.dtpGestionMascota_Nacimiento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpGestionMascota_Nacimiento.Name = "dtpGestionMascota_Nacimiento";
             this.dtpGestionMascota_Nacimiento.Size = new System.Drawing.Size(209, 33);
@@ -320,6 +337,30 @@
             this.dgvMascotas.SelectionChanged += new System.EventHandler(this.dgvMascotas_SelectionChanged);
             this.dgvMascotas.DoubleClick += new System.EventHandler(this.dgvMascotas_DoubleClick);
             // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(636, 301);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(337, 33);
+            this.txtBusqueda.TabIndex = 25;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Location = new System.Drawing.Point(392, 322);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(0, 25);
+            this.lblBusqueda.TabIndex = 26;
+            // 
+            // lblBusqueda1
+            // 
+            this.lblBusqueda1.AutoSize = true;
+            this.lblBusqueda1.Location = new System.Drawing.Point(636, 243);
+            this.lblBusqueda1.Name = "lblBusqueda1";
+            this.lblBusqueda1.Size = new System.Drawing.Size(0, 25);
+            this.lblBusqueda1.TabIndex = 27;
+            // 
             // frmGestionMascotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -367,5 +408,9 @@
         private System.Windows.Forms.RadioButton rbHembra;
         private System.Windows.Forms.RadioButton rbMacho;
         private System.Windows.Forms.Label lblInfoPropietario;
+        private System.Windows.Forms.Label lblPropietarioSeleccion;
+        private System.Windows.Forms.Label lblBusqueda;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Label lblBusqueda1;
     }
 }

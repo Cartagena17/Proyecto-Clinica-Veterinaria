@@ -117,7 +117,7 @@ namespace Modelos.Entidades
         {
             using (SqlConnection conexion = Conexiondb.conectar())
             {
-                string comando = "SELECT * FROM CargarPacientes;";
+                string comando = "Select *from CargarPacientes";
                 SqlDataAdapter ad = new SqlDataAdapter(comando, conexion);
                 DataTable dt = new DataTable();
                 ad.Fill(dt);
@@ -185,6 +185,26 @@ namespace Modelos.Entidades
             {
                 throw new Exception($"Error al actualizar paciente: {ex.Message}");
             }
+        }
+
+        public static DataTable BuscarCita(string busqueda)
+        {
+            SqlConnection con = Conexiondb.conectar();
+
+            string comando = @"
+              SELECT * FROM CargarPacientes
+    WHERE Nombre_Paciente LIKE @busqueda 
+       OR Especie LIKE @busqueda 
+       OR Raza LIKE @busqueda 
+       OR Nombre_Propietario LIKE @busqueda";
+
+            SqlCommand cmd = new SqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
+
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+            return dt;
         }
     }
 }
