@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Modelos;
 using Modelos.Entidades;
 
 namespace Vistas.Formularios
@@ -13,6 +14,12 @@ namespace Vistas.Formularios
         public frmDashboardPrincipal()
         {
             InitializeComponent();
+            if (Session.EsEmpleado)
+            {
+                empleadosToolStripMenuItem.Visible = false;
+                // También puedes ocultar otros menús si es necesario
+                // gestionDeUsuariosToolStripMenuItem.Visible = false;
+            }
         }
 
         private void btnDashboard_GestionPersonal_Click(object sender, EventArgs e)

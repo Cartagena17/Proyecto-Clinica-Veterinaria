@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Modelos
 {
-    internal class EmailService
+    public class EmailService
     {
         // CONFIGURACIÓN DE EMAIL
         private string smtpServer = "smtp.gmail.com";

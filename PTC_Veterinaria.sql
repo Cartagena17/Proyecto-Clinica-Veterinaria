@@ -496,3 +496,33 @@ alter table ConsultasMedicas drop column FechaConsulta
                 SELECT COLUMN_NAME 
 FROM INFORMATION_SCHEMA.COLUMNS 
 WHERE TABLE_NAME = 'Pacientes'
+
+SELECT 
+    t.name AS Tabla,
+    p.rows AS Registros
+FROM 
+    sys.tables t
+INNER JOIN 
+    sys.partitions p ON t.object_id = p.object_id
+WHERE 
+    p.index_id IN (0, 1)
+    AND p.rows > 0
+ORDER BY 
+    p.rows DESC
+
+    EXEC sp_MSforeachtable "ALTER TABLE ? NOCHECK CONSTRAINT all"
+
+    delete from propietarios
+    delete from servicios
+    delete from medicamentos
+    delete from vacunas
+    delete from pacientes
+    delete from facturas
+    delete from pagos
+    delete from detallefactura
+    delete from personal
+    delete from citas
+    delete from vacunasaplicadas
+    delete from consultasmedicas
+
+    EXEC sp_MSforeachtable "ALTER TABLE ? WITH CHECK CHECK CONSTRAINT all"

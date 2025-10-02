@@ -60,11 +60,7 @@ namespace Vistas
             }
         }
 
-        private void lnkRecuperar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var frmRecuperar = new frmRecuperarContraseña();
-            frmRecuperar.ShowDialog();
-        }
+      
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -82,6 +78,12 @@ namespace Vistas
             {
                 btnLogin_Click(sender, e);
             }
+        }
+
+        private void lnkRecuperar_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var frmRecuperar = new frmRecuperarContraseña();
+            frmRecuperar.ShowDialog();
         }
     }
 }

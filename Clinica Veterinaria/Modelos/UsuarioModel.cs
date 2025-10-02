@@ -57,7 +57,7 @@ namespace Modelos
         {
             using (var connection = Conexiondb.conectar())
             {
-                string query = @"SELECT IdUsuario, Usuario, Contraseña, Rol, Activo, IdEmpleado
+                string query = @"SELECT IdUsuario, Usuario, Contraseña, Rol, Activo, personalId
                            FROM Usuarios WHERE Usuario = @Usuario AND Activo = 1";
 
                 using (var command = new SqlCommand(query, connection))
@@ -74,7 +74,7 @@ namespace Modelos
                                 NombreUsuario = reader["Usuario"].ToString(),
                                 Rol = reader["Rol"].ToString(),
                                 Activo = (bool)reader["Activo"],
-                                IdEmpleado = reader["IdEmpleado"] as int?
+                                personalId = reader["personalId"] as int?
                             };
                         }
                     }
@@ -135,18 +135,18 @@ namespace Modelos
             }
         }
 
-        public bool CrearUsuarioEmpleado(string usuario, string contraseña, int idEmpleado)
+        public bool CrearUsuarioEmpleado(string usuario, string contraseña, int personalId)
         {
             using (var connection = Conexiondb.conectar())
             {
-                string query = @"INSERT INTO Usuarios (Usuario, Contraseña, Rol, IdEmpleado) 
-                           VALUES (@Usuario, @Contraseña, 'Empleado', @IdEmpleado)";
+                string query = @"INSERT INTO Usuarios (Usuario, Contraseña, Rol, personalId) 
+                           VALUES (@Usuario, @Contraseña, 'Personal', @IdEmpleado)";
 
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Usuario", usuario);
                     command.Parameters.AddWithValue("@Contraseña", BCrypt.Net.BCrypt.HashPassword(contraseña));
-                    command.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
+                    command.Parameters.AddWithValue("@personalId", personalId);
                     return command.ExecuteNonQuery() > 0;
                 }
             }
@@ -165,27 +165,27 @@ namespace Modelos
             }
         }
 
-        public bool EmpleadoTieneCuenta(int idEmpleado)
+        public bool EmpleadoTieneCuenta(int personalId)
         {
             using (var connection = Conexiondb.conectar())
             {
-                string query = "SELECT COUNT(*) FROM Usuarios WHERE IdEmpleado = @IdEmpleado";
+                string query = "SELECT COUNT(*) FROM Usuarios WHERE personalId = @personalId";
                 using (var command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
+                    command.Parameters.AddWithValue("@personalId", personalId);
                     return (int)command.ExecuteScalar() > 0;
                 }
             }
         }
 
-        public string ObtenerUsuarioPorEmpleado(int idEmpleado)
+        public string ObtenerUsuarioPorEmpleado(int personalId)
         {
             using (var connection = Conexiondb.conectar())
             {
-                string query = "SELECT Usuario FROM Usuarios WHERE IdEmpleado = @IdEmpleado";
+                string query = "SELECT Usuario FROM Usuarios WHERE personalId = @personalId";
                 using (var command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
+                    command.Parameters.AddWithValue("@IdEmpleado", personalId);
                     var result = command.ExecuteScalar();
                     return result?.ToString();
                 }

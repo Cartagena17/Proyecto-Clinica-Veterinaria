@@ -61,16 +61,17 @@
             // 
             this.lnkRecuperar.AutoSize = true;
             this.lnkRecuperar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.lnkRecuperar.Location = new System.Drawing.Point(44, 201);
+            this.lnkRecuperar.Location = new System.Drawing.Point(43, 242);
             this.lnkRecuperar.Name = "lnkRecuperar";
             this.lnkRecuperar.Size = new System.Drawing.Size(254, 24);
             this.lnkRecuperar.TabIndex = 10;
             this.lnkRecuperar.TabStop = true;
             this.lnkRecuperar.Text = "¿Olvidó su contraseña?";
+            this.lnkRecuperar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRecuperar_LinkClicked_1);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(103, 279);
+            this.btnCancelar.Location = new System.Drawing.Point(106, 340);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 31);
             this.btnCancelar.TabIndex = 9;
@@ -81,17 +82,17 @@
             // lblInicioSesion
             // 
             this.lblInicioSesion.AutoSize = true;
-            this.lblInicioSesion.Location = new System.Drawing.Point(43, 13);
+            this.lblInicioSesion.Location = new System.Drawing.Point(102, 27);
             this.lblInicioSesion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblInicioSesion.Name = "lblInicioSesion";
-            this.lblInicioSesion.Size = new System.Drawing.Size(225, 24);
+            this.lblInicioSesion.Size = new System.Drawing.Size(153, 24);
             this.lblInicioSesion.TabIndex = 0;
-            this.lblInicioSesion.Text = "Crear Primer usuario";
+            this.lblInicioSesion.Text = "Iniciar Sesion";
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Bookman Old Style", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(75, 236);
+            this.btnLogin.Location = new System.Drawing.Point(79, 297);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(183, 35);
@@ -103,7 +104,7 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(43, 136);
+            this.lblContraseña.Location = new System.Drawing.Point(42, 177);
             this.lblContraseña.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(128, 24);
@@ -112,7 +113,7 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(46, 165);
+            this.txtContraseña.Location = new System.Drawing.Point(37, 206);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(5);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(251, 31);
@@ -121,7 +122,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(42, 51);
+            this.lblUsuario.Location = new System.Drawing.Point(42, 91);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(88, 24);
@@ -130,7 +131,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(46, 80);
+            this.txtUsuario.Location = new System.Drawing.Point(37, 120);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(5);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(251, 31);
