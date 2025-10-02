@@ -3,11 +3,8 @@ go
 Use PTC_Veterinaria
 go
 
-drop table Usuarios
-create table Rol(
-rolID int primary key identity (1000,1),
-nombreRol varchar (50) not null)
-
+delete from usuarios
+select *from usuarios
 CREATE TABLE Usuarios (
     IdUsuario INT IDENTITY(1,1) PRIMARY KEY,
     PersonalId INT NULL,
@@ -20,6 +17,8 @@ CREATE TABLE Usuarios (
     FechaExpiracionToken DATETIME NULL,
     FOREIGN KEY (PersonalId) REFERENCES Personal(PersonalId)
 );
+
+insert into usuarios (personalid,usuario,contraseña,rol)values(18,'douglas.arauz','Dounaye','Empleado')
 
 
 create table Propietarios (
@@ -87,14 +86,18 @@ PrecioUnitorioAplicado decimal (8,2) not null,
 Subtotal decimal (8,2) not null
 )
 
-create table Personal (
-PersonalID int identity (1,1) primary key,
-NombrePers varchar (50) not null,
-ApellidoPers varchar (50)not null,
-TelefonoPers varchar (12)not null,
-EmailPers varchar (100)not null
-)
+    create table Personal (
+    PersonalID int identity (1,1) primary key,
+    NombrePers varchar (50) not null,
+    ApellidoPers varchar (50)not null,
+    TelefonoPers varchar (12)not null,
+    EmailPers varchar (100)not null
+    )
 
+insert into personal (NombrePers,ApellidoPers,TelefonoPers,EmailPers)values
+('Douglas','Cartagena','60640882','douglas.cartagena.arauz@gmail.com');
+
+select *from personal
 create table Vacunas (
 VacunaID int identity (1,1) primary key,
 NombreVacuna varchar (50) not null,
@@ -405,8 +408,8 @@ inner join Propietarios on Propietarios.PropietarioID=Pacientes.PropietarioID
 select *from CargarPacientes
 drop view CargarPacientes
 
-create view CargarCitas2 as
-SELECT CitaID,NombreProp,NombrePac,NombrePers,FechaCita,HoraCita,MotivoCita,NotasCita
+create or alter view CargarCitas2 as
+SELECT CitaID AS '#',NombreProp,NombrePac,NombrePers,FechaCita,HoraCita,MotivoCita,NotasCita
 FROM Citas c
 INNER JOIN Pacientes p ON c.PacienteID = p.PacienteID
 INNER JOIN Propietarios pr ON c.PropietarioID = pr.PropietarioID
@@ -526,3 +529,26 @@ ORDER BY
     delete from consultasmedicas
 
     EXEC sp_MSforeachtable "ALTER TABLE ? WITH CHECK CHECK CONSTRAINT all"
+
+
+
+    create view CargarPropietarios AS
+    Select propietarioId AS '#',
+    nombreprop AS Nombre,
+    TelefonoProp AS Telefono,
+    direccionprop AS Dirección,
+    Emailprop AS Correo_electrónico
+    FROM Propietarios
+
+    select *from CargarPropietarios
+
+    create view CargarPersonal AS
+    select 
+    personalid AS '#',
+    nombrepers AS Nombre,
+    apellidopers AS Apellido,
+    Telefonopers AS Telefono,
+    emailpers AS Correo_electrónico
+    from Personal
+
+    select *from CargarPersonal

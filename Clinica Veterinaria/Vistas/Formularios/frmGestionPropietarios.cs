@@ -23,44 +23,33 @@ namespace Vistas.Formularios
 
         private void btnRegistrarPropietario_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtGestionPropietario_Nombre.Text) ||
-        !Regex.IsMatch(txtGestionPropietario_Nombre.Text, @"^[a-zA-Z\s]+$"))
+            try
             {
-                MessageBox.Show("Debe ingresar un nombre válido (solo letras).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                if (!ValidarCampos()) return;
 
-            if (string.IsNullOrWhiteSpace(txtGestionPropietario_Telefono.Text) ||
-                !Regex.IsMatch(txtGestionPropietario_Telefono.Text, @"^[0-9]{8,15}$"))
+                Propietarios p = new Propietarios
+                {
+                    NombreProp1 = txtGestionPropietario_Nombre.Text.Trim(),
+                    TelefonoProp1 = txtGestionPropietario_Telefono.Text.Trim(),
+                    DireccionProp1 = txtGestionPropietario_Direccion.Text.Trim(),
+                    EmailProp1 = txtGestionPropietario_Email.Text.Trim()
+                };
+
+                if (p.InsertarPropietarios())
+                {
+                    MessageBox.Show("Propietario registrado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MostarPropietarios();
+                    LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar propietario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Debe ingresar un teléfono válido (mínimo 8 dígitos, solo números).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            if (string.IsNullOrWhiteSpace(txtGestionPropietario_Direccion.Text))
-            {
-                MessageBox.Show("Debe ingresar una dirección.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtGestionPropietario_Email.Text) ||
-                !Regex.IsMatch(txtGestionPropietario_Email.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
-            {
-                MessageBox.Show("Debe ingresar un email válido (ejemplo: correo@dominio.com).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-           
-            Propietarios p = new Propietarios();
-            p.NombreProp1 = txtGestionPropietario_Nombre.Text;
-            p.TelefonoProp1 = txtGestionPropietario_Telefono.Text;
-            p.DireccionProp1 = txtGestionPropietario_Direccion.Text;
-            p.EmailProp1 = txtGestionPropietario_Email.Text;
-             
-            p.InsertarPropietarios();
-            Propietarios.CargarPropietarios();
-            MessageBox.Show("Propietario registrado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
 
         private void frmGestionPropietarios_Load(object sender, EventArgs e)
@@ -73,96 +62,76 @@ namespace Vistas.Formularios
             dgvPropietarios.DataSource = Propietarios.CargarPropietarios();
         }
 
-        private void btnVerPropietarios_Click(object sender, EventArgs e)
-        {
-        //    string nombreProp = string.IsNullOrWhiteSpace(txtGestionPropietario_Nombre.Text) ? null : txtGestionPropietario_Nombre.Text.Trim();
-        //    string telefonoProp = string.IsNullOrWhiteSpace(txtGestionPropietario_Telefono.Text) ? null : txtGestionPropietario_Telefono.Text.Trim();
-        //    string DireccionProp = string.IsNullOrWhiteSpace(txtGestionPropietario_Direccion.Text) ? null : txtGestionPropietario_Direccion.Text.Trim();
-        //    string EmailProp = string.IsNullOrWhiteSpace(txtGestionPropietario_Email.Text) ? null : txtGestionPropietario_Email.Text.Trim();
-
-        //    using (SqlConnection conexion = Conexiondb.conectar())
-        //    {
-        //        string query = @"SELECT * FROM Propietarios
-        //                 WHERE (@nombreProp IS NULL OR NombreProp LIKE '%' + @NombreProp + '%')
-        //                 AND (@telefonoProp IS NULL O/74512R TelefonoProp LIKE '%' + @TelefonoProp + '%')
-        //                 AND (@direccionProp IS NULL OR DireccionProp LIKE '%' + @DireccionProp + '%')
-        //                  AND (@emailProp IS NULL OR emailProp LIKE '%' + @EmailProp + '%')";
-                
-        //        SqlCommand cmd = new SqlCommand(query, conexion);
-        //        cmd.Parameters.AddWithValue("@nombreProp", (object)nombreProp ?? DBNull.Value);
-        //        cmd.Parameters.AddWithValue("@telefonoProp", (object)telefonoProp ?? DBNull.Value);
-        //        cmd.Parameters.AddWithValue("@direccionProp", (object)DireccionProp ?? DBNull.Value);
-        //        cmd.Parameters.AddWithValue("@emailprop", (object)EmailProp ?? DBNull.Value);
-
-        //        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-        //        DataTable tabla = new DataTable();
-
-        //        adapter.Fill(tabla);
-
-        //        dgvPropietarios.DataSource = tabla;
-            
-        }
-
         private void btnEliminarPropietario_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(dgvPropietarios.CurrentRow.Cells[0].Value.ToString());
-            Propietarios p = new Propietarios();
-            if (p.EliminarPropietario(id) == true)
+            try
             {
-                MessageBox.Show("El registro se ah borrado con exito");
-                MostarPropietarios();
+                if (dgvPropietarios.CurrentRow == null)
+                {
+                    MessageBox.Show("Seleccione un registro para eliminar.");
+                    return;
+                }
+
+                int id = int.Parse(dgvPropietarios.CurrentRow.Cells[0].Value.ToString());
+
+                DialogResult confirm = MessageBox.Show("¿Está seguro de eliminar este propietario?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (confirm == DialogResult.No) return;
+
+                Propietarios p = new Propietarios();
+                if (p.EliminarPropietario(id))
+                {
+                    MessageBox.Show("Propietario eliminado con éxito.");
+                    MostarPropietarios();
+                    LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar propietario.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Se ah producido un ERROR");
+                MessageBox.Show($"Error: {ex.Message}");
             }
+        
 
         }
 
         private void btnActualizarInfoPropietario_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (dgvPropietarios.CurrentRow == null)
+                {
+                    MessageBox.Show("Seleccione un registro para actualizar.");
+                    return;
+                }
 
-            if (string.IsNullOrWhiteSpace(txtGestionPropietario_Nombre.Text) ||
-        !Regex.IsMatch(txtGestionPropietario_Nombre.Text, @"^[a-zA-Z\s]+$"))
-            {
-                MessageBox.Show("Debe ingresar un nombre válido (solo letras).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                if (!ValidarCampos()) return;
 
-            if (string.IsNullOrWhiteSpace(txtGestionPropietario_Telefono.Text) ||
-                !Regex.IsMatch(txtGestionPropietario_Telefono.Text, @"^[0-9]{8,15}$"))
-            {
-                MessageBox.Show("Debe ingresar un teléfono válido (mínimo 8 dígitos, solo números).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                Propietarios p = new Propietarios
+                {
+                    NombreProp1 = txtGestionPropietario_Nombre.Text.Trim(),
+                    TelefonoProp1 = txtGestionPropietario_Telefono.Text.Trim(),
+                    DireccionProp1 = txtGestionPropietario_Direccion.Text.Trim(),
+                    EmailProp1 = txtGestionPropietario_Email.Text.Trim(),
+                    Id = int.Parse(dgvPropietarios.CurrentRow.Cells[0].Value.ToString())
+                };
 
-            if (string.IsNullOrWhiteSpace(txtGestionPropietario_Direccion.Text))
-            {
-                MessageBox.Show("Debe ingresar una dirección.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (p.ActualizarPropietario())
+                {
+                    MessageBox.Show("Propietario actualizado con éxito.");
+                    MostarPropietarios();
+                    LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar propietario.");
+                }
             }
-
-            if (string.IsNullOrWhiteSpace(txtGestionPropietario_Email.Text) ||
-                !Regex.IsMatch(txtGestionPropietario_Email.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            catch (Exception ex)
             {
-                MessageBox.Show("Debe ingresar un email válido (ejemplo: correo@dominio.com).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            Propietarios p = new Propietarios();
-            p.NombreProp1 = txtGestionPropietario_Nombre.Text;
-            p.TelefonoProp1 = txtGestionPropietario_Telefono.Text;
-            p.DireccionProp1 = txtGestionPropietario_Direccion.Text;
-            p.EmailProp1 = txtGestionPropietario_Email.Text;
-            p.Id = int.Parse(dgvPropietarios.CurrentRow.Cells[0].Value.ToString());
-
-            if (p.ActualizarPropietario() == true)
-            {
-                MessageBox.Show("El registro se ah actualizado con exito");
-                MostarPropietarios();
-            }
-            else
-            {
-                MessageBox.Show("ah ocurrido un ERROR");
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -175,6 +144,61 @@ namespace Vistas.Formularios
 
 
 
+        }
+
+        private void btnLimpiarCampos_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
+        {
+            txtGestionPropietario_Nombre.Clear();
+            txtGestionPropietario_Telefono.Clear();
+            txtGestionPropietario_Direccion.Clear();
+            txtGestionPropietario_Email.Clear();
+            txtGestionPropietario_Nombre.Focus();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvPropietarios.DataSource = Propietarios.BuscarPropietarios(txtBuscar.Text.Trim());
+
+        }
+
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(txtGestionPropietario_Nombre.Text) ||
+                !Regex.IsMatch(txtGestionPropietario_Nombre.Text, @"^[a-zA-Z\s]+$") ||
+                txtGestionPropietario_Nombre.Text.Length > 100)
+            {
+                MessageBox.Show("Debe ingresar un nombre válido (solo letras, máx. 100 caracteres).");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtGestionPropietario_Telefono.Text) ||
+                !Regex.IsMatch(txtGestionPropietario_Telefono.Text, @"^[0-9]{8,20}$"))
+            {
+                MessageBox.Show("Debe ingresar un teléfono válido (8-20 dígitos numéricos).");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtGestionPropietario_Direccion.Text) ||
+                txtGestionPropietario_Direccion.Text.Length > 150)
+            {
+                MessageBox.Show("Debe ingresar una dirección (máx. 150 caracteres).");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtGestionPropietario_Email.Text) ||
+                !Regex.IsMatch(txtGestionPropietario_Email.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$") ||
+                txtGestionPropietario_Email.Text.Length > 100)
+            {
+                MessageBox.Show("Debe ingresar un email válido (máx. 100 caracteres).");
+                return false;
+            }
+
+            return true;
         }
     }
 }

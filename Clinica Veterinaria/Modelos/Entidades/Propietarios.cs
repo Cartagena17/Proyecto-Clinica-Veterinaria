@@ -7,11 +7,11 @@ using System.Data;
 using System.Data.SqlClient;
 using Modelos.Conexion;
 
-namespace Modelos.Entidades 
+namespace Modelos.Entidades
 {
     public class Propietarios
     {
-        
+
         private string NombreProp;
         private string TelefonoProp;
         private string DireccionProp;
@@ -31,14 +31,14 @@ namespace Modelos.Entidades
             string comando = "Insert into propietarios (NombreProp,TelefonoProp,DireccionProp,EmailProp)" +
                 " values(@NombreProp,@TelefonoProp,@DireccionProp,@EmailProp);";
 
-            SqlCommand cmd = new SqlCommand(comando,conexion);
+            SqlCommand cmd = new SqlCommand(comando, conexion);
 
             cmd.Parameters.AddWithValue("@NombreProp", NombreProp);
-            cmd.Parameters.AddWithValue("@TelefonoProp",TelefonoProp);
-            cmd.Parameters.AddWithValue("@DireccionProp",DireccionProp);
-            cmd.Parameters.AddWithValue("@EmailProp",EmailProp);
+            cmd.Parameters.AddWithValue("@TelefonoProp", TelefonoProp);
+            cmd.Parameters.AddWithValue("@DireccionProp", DireccionProp);
+            cmd.Parameters.AddWithValue("@EmailProp", EmailProp);
 
-            
+
             if (cmd.ExecuteNonQuery() > 0)
             {
                 return true;
@@ -54,9 +54,9 @@ namespace Modelos.Entidades
         {
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "select *from Propietarios;";
+            string comando = "select *from CargarPropietarios;";
 
-            SqlDataAdapter ad = new SqlDataAdapter(comando,conexion);
+            SqlDataAdapter ad = new SqlDataAdapter(comando, conexion);
 
             DataTable dt = new DataTable();
             ad.Fill(dt);
@@ -159,10 +159,35 @@ namespace Modelos.Entidades
             {
                 return false;
             }
-        }   
+        }
+
+        public static DataTable BuscarPropietarios(string valor)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlConnection conexion = Conexiondb.conectar())
+                {
+                    string comando = @"SELECT * FROM Propietarios 
+                               WHERE NombreProp LIKE @valor 
+                                  OR TelefonoProp LIKE @valor 
+                                  OR DireccionProp LIKE @valor 
+                                  OR EmailProp LIKE @valor";
+
+                    SqlCommand cmd = new SqlCommand(comando, conexion);
+                    cmd.Parameters.AddWithValue("@valor", "%" + valor + "%");
+
+                    SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                    ad.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar propietarios: {ex.Message}");
+            }
+            return dt;
 
 
-
-
+        }
     }
 }

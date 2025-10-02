@@ -30,7 +30,9 @@
         {
             this.lblGestionPersonal = new System.Windows.Forms.Label();
             this.pnlGestionPersonal = new System.Windows.Forms.Panel();
-            this.btnVerPersonal = new System.Windows.Forms.Button();
+            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.btnActualizarInfoPersonal = new System.Windows.Forms.Button();
             this.btnEliminarPersonal = new System.Windows.Forms.Button();
             this.btnAgregarPersonal = new System.Windows.Forms.Button();
@@ -61,7 +63,9 @@
             // pnlGestionPersonal
             // 
             this.pnlGestionPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
-            this.pnlGestionPersonal.Controls.Add(this.btnVerPersonal);
+            this.pnlGestionPersonal.Controls.Add(this.lblBusqueda);
+            this.pnlGestionPersonal.Controls.Add(this.txtBusqueda);
+            this.pnlGestionPersonal.Controls.Add(this.btnLimpiarCampos);
             this.pnlGestionPersonal.Controls.Add(this.btnActualizarInfoPersonal);
             this.pnlGestionPersonal.Controls.Add(this.btnEliminarPersonal);
             this.pnlGestionPersonal.Controls.Add(this.btnAgregarPersonal);
@@ -78,17 +82,35 @@
             this.pnlGestionPersonal.Size = new System.Drawing.Size(846, 335);
             this.pnlGestionPersonal.TabIndex = 1;
             // 
-            // btnVerPersonal
+            // lblBusqueda
             // 
-            this.btnVerPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
-            this.btnVerPersonal.FlatAppearance.BorderSize = 0;
-            this.btnVerPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerPersonal.Location = new System.Drawing.Point(460, 232);
-            this.btnVerPersonal.Name = "btnVerPersonal";
-            this.btnVerPersonal.Size = new System.Drawing.Size(132, 60);
-            this.btnVerPersonal.TabIndex = 13;
-            this.btnVerPersonal.Text = "Ver Personal";
-            this.btnVerPersonal.UseVisualStyleBackColor = false;
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Location = new System.Drawing.Point(57, 134);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(65, 24);
+            this.lblBusqueda.TabIndex = 15;
+            this.lblBusqueda.Text = "label1";
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(61, 194);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(531, 32);
+            this.txtBusqueda.TabIndex = 14;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
+            // btnLimpiarCampos
+            // 
+            this.btnLimpiarCampos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
+            this.btnLimpiarCampos.FlatAppearance.BorderSize = 0;
+            this.btnLimpiarCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(460, 232);
+            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(132, 60);
+            this.btnLimpiarCampos.TabIndex = 13;
+            this.btnLimpiarCampos.Text = "Limpiar Campos";
+            this.btnLimpiarCampos.UseVisualStyleBackColor = false;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
             // 
             // btnActualizarInfoPersonal
             // 
@@ -236,10 +258,12 @@
         private System.Windows.Forms.TextBox txtGestionPersonal_Telefono;
         private System.Windows.Forms.TextBox txtGestionPersonal_Apellido;
         private System.Windows.Forms.TextBox txtGestionPersonal_Nombre;
-        private System.Windows.Forms.Button btnVerPersonal;
+        private System.Windows.Forms.Button btnLimpiarCampos;
         private System.Windows.Forms.Button btnActualizarInfoPersonal;
         private System.Windows.Forms.Button btnEliminarPersonal;
         private System.Windows.Forms.Button btnAgregarPersonal;
         private System.Windows.Forms.DataGridView dgvPersonal;
+        private System.Windows.Forms.Label lblBusqueda;
+        private System.Windows.Forms.TextBox txtBusqueda;
     }
 }

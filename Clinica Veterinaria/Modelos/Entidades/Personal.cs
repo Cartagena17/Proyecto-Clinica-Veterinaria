@@ -28,7 +28,7 @@ namespace Modelos.Entidades
         {
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "INSERT INTO Personal (NombrePers, ApellidoPers, , TelefonoPers, EmailPers) " +
+            string comando = "INSERT INTO Personal (NombrePers, ApellidoPers,  TelefonoPers, EmailPers) " +
                 "VALUES(@NombrePers,@ApellidoPers,@TelefonoPers,@EmailPers);";
 
             SqlCommand cmd = new SqlCommand(comando, conexion);
@@ -146,6 +146,35 @@ namespace Modelos.Entidades
                 throw new Exception($"Error al cargar personal: {ex.Message}");
             }
             return ListaPersonal;
+        }
+
+        public DataTable BuscarPersonal(string valor)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlConnection con = Conexiondb.conectar())
+                {
+                    string query = "SELECT PersonalID, NombrePers, Apellidopers, Telefonopers, EmailPers " +
+                                   "FROM Personal " +
+                                   "WHERE NombrePers LIKE @valor OR ApellidoPers LIKE @valor OR TelefonoPers LIKE @valor OR EmailPers LIKE @valor";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@valor", "%" + valor + "%");
+
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al buscar personal: " + ex.Message);
+            }
+
+            return dt;
         }
 
     }

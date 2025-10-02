@@ -85,3 +85,4 @@ C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\
 C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\Debug\Vistas.frmPrimerUsuario.resources
 C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\Debug\Vistas.frmLogin.resources
 C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\Debug\Vistas.frmRecuperarContraseña.resources
+C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\Debug\Vistas.frmCrearCuenta.resources

@@ -30,7 +30,7 @@
         {
             this.lblGestionPropietarios = new System.Windows.Forms.Label();
             this.pnlGestionPropietario = new System.Windows.Forms.Panel();
-            this.btnVerPropietarios = new System.Windows.Forms.Button();
+            this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.btnActualizarInfoPropietario = new System.Windows.Forms.Button();
             this.btnEliminarPropietario = new System.Windows.Forms.Button();
             this.btnRegistrarPropietario = new System.Windows.Forms.Button();
@@ -43,6 +43,8 @@
             this.lblGestionPropietario_Telefono = new System.Windows.Forms.Label();
             this.lblGestionPropietario_Nombre = new System.Windows.Forms.Label();
             this.dgvPropietarios = new System.Windows.Forms.DataGridView();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.pnlGestionPropietario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPropietarios)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +63,9 @@
             // pnlGestionPropietario
             // 
             this.pnlGestionPropietario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
-            this.pnlGestionPropietario.Controls.Add(this.btnVerPropietarios);
+            this.pnlGestionPropietario.Controls.Add(this.txtBuscar);
+            this.pnlGestionPropietario.Controls.Add(this.lblBuscar);
+            this.pnlGestionPropietario.Controls.Add(this.btnLimpiarCampos);
             this.pnlGestionPropietario.Controls.Add(this.btnActualizarInfoPropietario);
             this.pnlGestionPropietario.Controls.Add(this.btnEliminarPropietario);
             this.pnlGestionPropietario.Controls.Add(this.btnRegistrarPropietario);
@@ -78,25 +82,25 @@
             this.pnlGestionPropietario.Size = new System.Drawing.Size(589, 333);
             this.pnlGestionPropietario.TabIndex = 1;
             // 
-            // btnVerPropietarios
+            // btnLimpiarCampos
             // 
-            this.btnVerPropietarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
-            this.btnVerPropietarios.FlatAppearance.BorderSize = 0;
-            this.btnVerPropietarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerPropietarios.Location = new System.Drawing.Point(430, 245);
-            this.btnVerPropietarios.Name = "btnVerPropietarios";
-            this.btnVerPropietarios.Size = new System.Drawing.Size(128, 56);
-            this.btnVerPropietarios.TabIndex = 11;
-            this.btnVerPropietarios.Text = "Ver Propietarios";
-            this.btnVerPropietarios.UseVisualStyleBackColor = false;
-            this.btnVerPropietarios.Click += new System.EventHandler(this.btnVerPropietarios_Click);
+            this.btnLimpiarCampos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
+            this.btnLimpiarCampos.FlatAppearance.BorderSize = 0;
+            this.btnLimpiarCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(430, 274);
+            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(128, 56);
+            this.btnLimpiarCampos.TabIndex = 11;
+            this.btnLimpiarCampos.Text = "Limpiar Campos";
+            this.btnLimpiarCampos.UseVisualStyleBackColor = false;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
             // 
             // btnActualizarInfoPropietario
             // 
             this.btnActualizarInfoPropietario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnActualizarInfoPropietario.FlatAppearance.BorderSize = 0;
             this.btnActualizarInfoPropietario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarInfoPropietario.Location = new System.Drawing.Point(283, 245);
+            this.btnActualizarInfoPropietario.Location = new System.Drawing.Point(283, 274);
             this.btnActualizarInfoPropietario.Name = "btnActualizarInfoPropietario";
             this.btnActualizarInfoPropietario.Size = new System.Drawing.Size(141, 56);
             this.btnActualizarInfoPropietario.TabIndex = 10;
@@ -109,7 +113,7 @@
             this.btnEliminarPropietario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnEliminarPropietario.FlatAppearance.BorderSize = 0;
             this.btnEliminarPropietario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarPropietario.Location = new System.Drawing.Point(148, 245);
+            this.btnEliminarPropietario.Location = new System.Drawing.Point(148, 274);
             this.btnEliminarPropietario.Name = "btnEliminarPropietario";
             this.btnEliminarPropietario.Size = new System.Drawing.Size(131, 56);
             this.btnEliminarPropietario.TabIndex = 9;
@@ -122,7 +126,7 @@
             this.btnRegistrarPropietario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnRegistrarPropietario.FlatAppearance.BorderSize = 0;
             this.btnRegistrarPropietario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarPropietario.Location = new System.Drawing.Point(17, 245);
+            this.btnRegistrarPropietario.Location = new System.Drawing.Point(17, 274);
             this.btnRegistrarPropietario.Name = "btnRegistrarPropietario";
             this.btnRegistrarPropietario.Size = new System.Drawing.Size(125, 56);
             this.btnRegistrarPropietario.TabIndex = 8;
@@ -205,6 +209,23 @@
             this.dgvPropietarios.TabIndex = 2;
             this.dgvPropietarios.DoubleClick += new System.EventHandler(this.dgvPropietarios_DoubleClick);
             // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(28, 195);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(194, 24);
+            this.lblBuscar.TabIndex = 12;
+            this.lblBuscar.Text = "Buscar Propietarios:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(32, 222);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(400, 32);
+            this.txtBuscar.TabIndex = 13;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
             // frmGestionPropietarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -237,10 +258,12 @@
         private System.Windows.Forms.Label lblGestionPropietario_Direccion;
         private System.Windows.Forms.Label lblGestionPropietario_Telefono;
         private System.Windows.Forms.Label lblGestionPropietario_Nombre;
-        private System.Windows.Forms.Button btnVerPropietarios;
+        private System.Windows.Forms.Button btnLimpiarCampos;
         private System.Windows.Forms.Button btnActualizarInfoPropietario;
         private System.Windows.Forms.Button btnEliminarPropietario;
         private System.Windows.Forms.Button btnRegistrarPropietario;
         private System.Windows.Forms.DataGridView dgvPropietarios;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label lblBuscar;
     }
 }

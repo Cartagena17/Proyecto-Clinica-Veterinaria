@@ -14,13 +14,41 @@ namespace Vistas.Formularios
         public frmDashboardPrincipal()
         {
             InitializeComponent();
-            if (Session.EsEmpleado)
-            {
-                empleadosToolStripMenuItem.Visible = false;
-                // También puedes ocultar otros menús si es necesario
-                // gestionDeUsuariosToolStripMenuItem.Visible = false;
-            }
         }
+
+        //private void ConfigurarMenuSegunRol()
+        //{
+        //    // VERIFICAR PRIMERO SI HAY USUARIO EN SESIÓN
+        //    if (Session.UsuarioActual == null)
+        //    {
+        //        MessageBox.Show("Error: No hay usuario en sesión. Cerrando aplicación...",
+        //                      "Error de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        Application.Exit();
+        //        return;
+        //    }
+
+        //    // AHORA SÍ VERIFICAR EL ROL
+        //    if (Session.EsEmpleado)
+        //    {
+        //        empleadosToolStrip.Visible = false;
+        //        // Ocultar otros menús que no deben ver los empleados
+        //        gestionUsuariosToolStrip.Visible = false;
+        //        reportesToolStrip.Visible = false; // si existe
+        //    }
+
+        //    // Mostrar información del usuario
+        //    MostrarInformacionUsuario();
+        //}
+
+        //private void MostrarInformacionUsuario()
+        //{
+        //    if (Session.UsuarioActual != null)
+        //    {
+        //        // Actualizar labels si los tienes
+        //        // lblUsuario.Text = $"Usuario: {Session.UsuarioActual.NombreUsuario}";
+        //        // lblRol.Text = $"Rol: {Session.UsuarioActual.Rol}";
+        //    }
+        //}
 
         private void btnDashboard_GestionPersonal_Click(object sender, EventArgs e)
         {
