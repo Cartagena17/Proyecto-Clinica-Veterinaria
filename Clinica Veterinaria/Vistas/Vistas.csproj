@@ -98,11 +98,23 @@
     <Compile Include="Formularios\frmGestionPropietarios.Designer.cs">
       <DependentUpon>frmGestionPropietarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmIncio-Sesion.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmIncio-Sesion.Designer.cs">
-      <DependentUpon>frmIncio-Sesion.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrimerUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrimerUsuario.Designer.cs">
+      <DependentUpon>frmPrimerUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecuperarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarContraseña.Designer.cs">
+      <DependentUpon>frmRecuperarContraseña.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,8 +136,14 @@
     <EmbeddedResource Include="Formularios\frmGestionPropietarios.resx">
       <DependentUpon>frmGestionPropietarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmIncio-Sesion.resx">
-      <DependentUpon>frmIncio-Sesion.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrimerUsuario.resx">
+      <DependentUpon>frmPrimerUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecuperarContraseña.resx">
+      <DependentUpon>frmRecuperarContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -101,7 +101,7 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Location = new System.Drawing.Point(0, 366);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
             this.btnSalir.Size = new System.Drawing.Size(283, 65);
@@ -235,7 +235,7 @@
             // 
             // btnMostrarCitasPendientes
             // 
-            this.btnMostrarCitasPendientes.Location = new System.Drawing.Point(252, 111);
+            this.btnMostrarCitasPendientes.Location = new System.Drawing.Point(241, 36);
             this.btnMostrarCitasPendientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMostrarCitasPendientes.Name = "btnMostrarCitasPendientes";
             this.btnMostrarCitasPendientes.Size = new System.Drawing.Size(199, 41);
@@ -248,7 +248,7 @@
             // 
             this.lblCitas.AutoSize = true;
             this.lblCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCitas.Location = new System.Drawing.Point(27, 113);
+            this.lblCitas.Location = new System.Drawing.Point(26, 36);
             this.lblCitas.Name = "lblCitas";
             this.lblCitas.Size = new System.Drawing.Size(209, 29);
             this.lblCitas.TabIndex = 1;
@@ -257,7 +257,7 @@
             // dgvCitasPendientes
             // 
             this.dgvCitasPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCitasPendientes.Location = new System.Drawing.Point(31, 165);
+            this.dgvCitasPendientes.Location = new System.Drawing.Point(31, 81);
             this.dgvCitasPendientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCitasPendientes.Name = "dgvCitasPendientes";
             this.dgvCitasPendientes.RowHeadersWidth = 51;

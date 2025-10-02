@@ -83,3 +83,4 @@ C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\
 C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\Debug\Vistas.csproj.Up2Date
 C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\Debug\Vistas.exe
 C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\Debug\Vistas.pdb
+C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\Debug\Vistas.frmPrimerUsuario.resources

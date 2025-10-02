@@ -3,15 +3,23 @@ go
 Use PTC_Veterinaria
 go
 
-
+drop table Usuarios
 create table Rol(
 rolID int primary key identity (1000,1),
 nombreRol varchar (50) not null)
 
-create table Usuarios (
-usuarioID int primary key ident ity (1000,1),
-usuario varchar (50) not null,
-contraseña varchar (50) not null);
+CREATE TABLE Usuarios (
+    IdUsuario INT IDENTITY(1,1) PRIMARY KEY,
+    PersonalId INT NULL,
+    Usuario NVARCHAR(50) UNIQUE NOT NULL,
+    Contraseña NVARCHAR(255) NOT NULL,
+    Rol NVARCHAR(20) NOT NULL CHECK (Rol IN ('Administrador', 'Empleado')),
+    FechaCreacion DATETIME DEFAULT GETDATE(),
+    Activo BIT DEFAULT 1,
+    TokenRecuperacion NVARCHAR(255) NULL,
+    FechaExpiracionToken DATETIME NULL,
+    FOREIGN KEY (PersonalId) REFERENCES Personal(PersonalId)
+);
 
 
 create table Propietarios (

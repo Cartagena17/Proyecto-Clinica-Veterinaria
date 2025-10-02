@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modelos;
 using Vistas.Formularios;
 
 namespace Vistas
@@ -17,7 +18,18 @@ namespace Vistas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new frmIncio_Sesion());
+
+            // ✅ NUEVA LÓGICA DE LOGIN
+            var usuarioModel = new UsuarioModel();
+
+            if (!usuarioModel.HayUsuariosRegistrados())
+            {
+                Application.Run(new frmPrimerUsuario());
+            }
+            else
+            {
+                Application.Run(new frmLogin());
+            }
         }
     }
 }
