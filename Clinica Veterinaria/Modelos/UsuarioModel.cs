@@ -11,147 +11,221 @@ namespace Modelos
 {
     public class UsuarioModel
     {
-        public bool HayUsuariosRegistrados()
-        {
-            using (var connection = Conexiondb.conectar())
+       
+        
+            public bool HayUsuariosRegistrados()
             {
-                string query = "SELECT COUNT(*) FROM Usuarios";
-                using (var command = new SqlCommand(query, connection))
+                using (var connection = Conexiondb.conectar())
                 {
-                    return (int)command.ExecuteScalar() > 0;
-                }
-            }
-        }
-
-        public bool CrearPrimerAdministrador(string usuario, string contraseña)
-        {
-            using (var connection = Conexiondb.conectar())
-            {
-                if (HayUsuariosRegistrados()) return false;
-
-                string query = @"INSERT INTO Usuarios (Usuario, Contraseña, Rol) 
-                           VALUES (@Usuario, @Contraseña, 'Administrador')";
-
-                using (var command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Usuario", usuario);
-                    command.Parameters.AddWithValue("@Contraseña", BCrypt.Net.BCrypt.HashPassword(contraseña));
-                    return command.ExecuteNonQuery() > 0;
-                }
-            }
-        }
-
-        public bool ExisteAdministrador()
-        {
-            using (var connection = Conexiondb.conectar())
-            {
-                string query = "SELECT COUNT(*) FROM Usuarios WHERE Rol = 'Administrador'";
-                using (var command = new SqlCommand(query, connection))
-                {
-                    return (int)command.ExecuteScalar() > 0;
-                }
-            }
-        }
-
-        public Usuario Autenticar(string usuario, string contraseña)
-        {
-            using (var connection = Conexiondb.conectar())
-            {
-                string query = @"SELECT IdUsuario, Usuario, Contraseña, Rol, Activo, personalId
-                           FROM Usuarios WHERE Usuario = @Usuario AND Activo = 1";
-
-                using (var command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Usuario", usuario);
-
-                    using (var reader = command.ExecuteReader())
+                    string query = "SELECT COUNT(*) FROM Usuarios";
+                    using (var command = new SqlCommand(query, connection))
                     {
-                        if (reader.Read() && BCrypt.Net.BCrypt.Verify(contraseña, reader["Contraseña"].ToString()))
-                        {
-                            return new Usuario
-                            {
-                                IdUsuario = (int)reader["IdUsuario"],
-                                NombreUsuario = reader["Usuario"].ToString(),
-                                Rol = reader["Rol"].ToString(),
-                                Activo = (bool)reader["Activo"],
-                                personalId = reader["personalId"] as int?
-                            };
-                        }
+                        return (int)command.ExecuteScalar() > 0;
                     }
                 }
             }
-            return null;
-        }
 
-        public bool CambiarContraseña(int idUsuario, string nuevaContraseña)
-        {
-            using (var connection = Conexiondb.conectar())
+            public bool CrearPrimerAdministrador(string usuario, string contraseña, int personalId, string email)
             {
-                string query = "UPDATE Usuarios SET Contraseña = @Contraseña WHERE IdUsuario = @IdUsuario";
-
-                using (var command = new SqlCommand(query, connection))
+                using (var connection = Conexiondb.conectar())
                 {
-                    command.Parameters.AddWithValue("@Contraseña", BCrypt.Net.BCrypt.HashPassword(nuevaContraseña));
-                    command.Parameters.AddWithValue("@IdUsuario", idUsuario);
-                    return command.ExecuteNonQuery() > 0;
+                    if (HayUsuariosRegistrados()) return false;
+
+                    string query = @"INSERT INTO Usuarios (Usuario, Contraseña, Rol, personalId, Email) 
+                             VALUES (@Usuario, @Contraseña, 'Administrador', @personalId, @Email)";
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Usuario", usuario);
+                        command.Parameters.AddWithValue("@Contraseña", BCrypt.Net.BCrypt.HashPassword(contraseña));
+                        command.Parameters.AddWithValue("@personalId", personalId);
+                        command.Parameters.AddWithValue("@Email", email);
+                        return command.ExecuteNonQuery() > 0;
+                    }
                 }
             }
-        }
 
-        public bool GenerarTokenRecuperacion(string email, string token)
-        {
-            using (var connection = Conexiondb.conectar())
+            public bool ExisteAdministrador()
             {
-                string query = @"UPDATE Usuarios 
-                           SET TokenRecuperacion = @Token, 
-                               FechaExpiracionToken = @FechaExpiracion
-                           WHERE Usuario = @Email";
-
-                using (var command = new SqlCommand(query, connection))
+                using (var connection = Conexiondb.conectar())
                 {
-                    command.Parameters.AddWithValue("@Token", token);
-                    command.Parameters.AddWithValue("@FechaExpiracion", DateTime.Now.AddHours(2));
-                    command.Parameters.AddWithValue("@Email", email);
-                    return command.ExecuteNonQuery() > 0;
+                    string query = "SELECT COUNT(*) FROM Usuarios WHERE Rol = 'Administrador'";
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        return (int)command.ExecuteScalar() > 0;
+                    }
                 }
             }
-        }
 
-        public bool ValidarTokenRecuperacion(string email, string token)
+            public Usuario Autenticar(string usuario, string contraseña)
+            {
+                using (var connection = Conexiondb.conectar())
+                {
+                    string query = @"SELECT IdUsuario, Usuario, Contraseña, Rol, Activo, personalId, Email
+                             FROM Usuarios WHERE Usuario = @Usuario AND Activo = 1";
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Usuario", usuario);
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            if (reader.Read() && BCrypt.Net.BCrypt.Verify(contraseña, reader["Contraseña"].ToString()))
+                            {
+                                return new Usuario
+                                {
+                                    IdUsuario = (int)reader["IdUsuario"],
+                                    NombreUsuario = reader["Usuario"].ToString(),
+                                    Rol = reader["Rol"].ToString(),
+                                    Activo = (bool)reader["Activo"],
+                                    personalId = reader["personalId"] as int?,
+                                    Email = reader["Email"].ToString()
+                                };
+                            }
+                        }
+                    }
+                }
+                return null;
+            }
+
+            public bool CambiarContraseña(int idUsuario, string nuevaContraseña)
+            {
+                using (var connection = Conexiondb.conectar())
+                {
+                    string query = "UPDATE Usuarios SET Contraseña = @Contraseña WHERE IdUsuario = @IdUsuario";
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Contraseña", BCrypt.Net.BCrypt.HashPassword(nuevaContraseña));
+                        command.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                        return command.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+
+            public bool GenerarTokenRecuperacion(string email, string token)
+            {
+                using (var connection = Conexiondb.conectar())
+                {
+                    string query = @"UPDATE Usuarios 
+                             SET TokenRecuperacion = @Token, 
+                                 FechaExpiracionToken = @FechaExpiracion
+                             WHERE Email = @Email";
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Token", token);
+                        command.Parameters.AddWithValue("@FechaExpiracion", DateTime.Now.AddHours(2));
+                        command.Parameters.AddWithValue("@Email", email);
+                        return command.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+
+            public bool ValidarTokenRecuperacion(string email, string token)
+            {
+                using (var connection = Conexiondb.conectar())
+                {
+                    string query = @"SELECT COUNT(*) FROM Usuarios 
+                             WHERE Email = @Email 
+                             AND TokenRecuperacion = @Token 
+                             AND FechaExpiracionToken > GETDATE()";
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@Token", token);
+                        return (int)command.ExecuteScalar() > 0;
+                    }
+                }
+            }
+
+            public bool CrearUsuarioEmpleado(string usuario, string contraseña, int personalId, string email)
+            {
+                using (var connection = Conexiondb.conectar())
+                {
+                    string query = @"INSERT INTO Usuarios (Usuario, Contraseña, Rol, personalId, Email) 
+                             VALUES (@Usuario, @Contraseña, 'Empleado', @personalId, @Email)";
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Usuario", usuario);
+                        command.Parameters.AddWithValue("@Contraseña", BCrypt.Net.BCrypt.HashPassword(contraseña));
+                        command.Parameters.AddWithValue("@personalId", personalId);
+                        command.Parameters.AddWithValue("@Email", email);
+                        return command.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+
+        public bool EmailExiste(string email)
         {
             using (var connection = Conexiondb.conectar())
             {
-                string query = @"SELECT COUNT(*) FROM Usuarios 
-                           WHERE Usuario = @Email 
-                           AND TokenRecuperacion = @Token 
-                           AND FechaExpiracionToken > GETDATE()";
-
+                string query = "SELECT COUNT(*) FROM Usuarios WHERE Email = @Email";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Email", email);
-                    command.Parameters.AddWithValue("@Token", token);
                     return (int)command.ExecuteScalar() > 0;
                 }
             }
         }
 
-        public bool CrearUsuarioEmpleado(string usuario, string contraseña, int personalId)
+        public int ObtenerIdUsuarioPorEmail(string email)
         {
             using (var connection = Conexiondb.conectar())
             {
-                string query = @"INSERT INTO Usuarios (Usuario, Contraseña, Rol, personalId) 
-                           VALUES (@Usuario, @Contraseña, 'Personal', @IdEmpleado)";
-
+                string query = "SELECT IdUsuario FROM Usuarios WHERE Email = @Email";
                 using (var command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Usuario", usuario);
-                    command.Parameters.AddWithValue("@Contraseña", BCrypt.Net.BCrypt.HashPassword(contraseña));
-                    command.Parameters.AddWithValue("@personalId", personalId);
-                    return command.ExecuteNonQuery() > 0;
+                    command.Parameters.AddWithValue("@Email", email);
+                    var result = command.ExecuteScalar();
+                    return result != null ? Convert.ToInt32(result) : 0;
                 }
             }
         }
 
+        public bool EmpleadoTieneCuenta(int personalId)
+            {
+                using (var connection = Conexiondb.conectar())
+                {
+                    string query = "SELECT COUNT(*) FROM Usuarios WHERE personalId = @personalId";
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@personalId", personalId);
+                        return (int)command.ExecuteScalar() > 0;
+                    }
+                }
+            }
+
+            public string ObtenerUsuarioPorEmpleado(int personalId)
+            {
+                using (var connection = Conexiondb.conectar())
+                {
+                    string query = "SELECT Usuario FROM Usuarios WHERE personalId = @personalId";
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@personalId", personalId);
+                        var result = command.ExecuteScalar();
+                        return result?.ToString();
+                    }
+                }
+            }
+
+            public string GenerarUsuarioUnico(string nombre, string apellido)
+            {
+                string usuarioBase = $"{nombre.ToLower().Substring(0, 1)}{apellido.ToLower().Replace(" ", "")}";
+                string usuario = usuarioBase;
+                int contador = 1;
+
+                while (UsuarioExiste(usuario))
+                {
+                    usuario = $"{usuarioBase}{contador}";
+                    contador++;
+                }
+
+                return usuario;
+            }
         public bool UsuarioExiste(string usuario)
         {
             using (var connection = Conexiondb.conectar())
@@ -163,48 +237,6 @@ namespace Modelos
                     return (int)command.ExecuteScalar() > 0;
                 }
             }
-        }
-
-        public bool EmpleadoTieneCuenta(int personalId)
-        {
-            using (var connection = Conexiondb.conectar())
-            {
-                string query = "SELECT COUNT(*) FROM Usuarios WHERE personalId = @personalId";
-                using (var command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@personalId", personalId);
-                    return (int)command.ExecuteScalar() > 0;
-                }
-            }
-        }
-
-        public string ObtenerUsuarioPorEmpleado(int personalId)
-        {
-            using (var connection = Conexiondb.conectar())
-            {
-                string query = "SELECT Usuario FROM Usuarios WHERE personalId = @personalId";
-                using (var command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@IdEmpleado", personalId);
-                    var result = command.ExecuteScalar();
-                    return result?.ToString();
-                }
-            }
-        }
-
-        public string GenerarUsuarioUnico(string nombre, string apellido)
-        {
-            string usuarioBase = $"{nombre.ToLower().Substring(0, 1)}{apellido.ToLower().Replace(" ", "")}";
-            string usuario = usuarioBase;
-            int contador = 1;
-
-            while (UsuarioExiste(usuario))
-            {
-                usuario = $"{usuarioBase}{contador}";
-                contador++;
-            }
-
-            return usuario;
         }
     }
 }

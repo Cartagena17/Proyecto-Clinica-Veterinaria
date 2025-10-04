@@ -25,7 +25,6 @@ namespace Vistas
 
         private void ConfigurarPanelesIniciales()
         {
-            // Solo mostrar panel de email al inicio
             pnlEmail.Visible = true;
             pnlEmail.Enabled = true;
             pnlToken.Visible = false;
@@ -47,7 +46,8 @@ namespace Vistas
                     return;
                 }
 
-                if (!usuarioModel.UsuarioExiste(email))
+                // 🔹 Validar si existe usuario con ese email
+                if (!usuarioModel.EmailExiste(email))
                 {
                     MessageBox.Show("No existe un usuario con este email.", "Error",
                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -58,7 +58,6 @@ namespace Vistas
                 Random random = new Random();
                 tokenGenerado = random.Next(100000, 999999).ToString();
 
-                // Mostrar que se está enviando
                 btnEnviarToken.Text = "Enviando...";
                 btnEnviarToken.Enabled = false;
 
@@ -66,7 +65,6 @@ namespace Vistas
                 {
                     if (await emailService.EnviarEmailRecuperacion(email, tokenGenerado))
                     {
-                        // Ocultar panel de email y mostrar panel de token
                         pnlEmail.Visible = false;
                         pnlToken.Visible = true;
                         pnlToken.Enabled = true;
@@ -107,7 +105,6 @@ namespace Vistas
 
                 if (usuarioModel.ValidarTokenRecuperacion(email, token))
                 {
-                    // Ocultar panel de token y mostrar panel de nueva contraseña
                     pnlToken.Visible = false;
                     pnlNuevaContraseña.Visible = true;
                     pnlNuevaContraseña.Enabled = true;
@@ -156,17 +153,22 @@ namespace Vistas
                     return;
                 }
 
-                // Obtener usuario para cambiar contraseña
-                var usuarioTemp = usuarioModel.Autenticar(email, "temp");
-                if (usuarioTemp != null)
+                // 🔹 Buscar usuario por email
+                int idUsuario = usuarioModel.ObtenerIdUsuarioPorEmail(email);
+                if (idUsuario > 0)
                 {
-                    if (usuarioModel.CambiarContraseña(usuarioTemp.IdUsuario, nuevaContraseña))
+                    if (usuarioModel.CambiarContraseña(idUsuario, nuevaContraseña))
                     {
                         MessageBox.Show("Contraseña cambiada exitosamente. Ahora puede iniciar sesión con su nueva contraseña.",
                                       "Éxito",
                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el usuario asociado a este email.", "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -178,7 +180,6 @@ namespace Vistas
 
         private void btnVolverEmail_Click(object sender, EventArgs e)
         {
-            // Volver al panel de email desde el panel de token
             pnlToken.Visible = false;
             pnlEmail.Visible = true;
             txtEmail.Focus();
@@ -186,7 +187,6 @@ namespace Vistas
 
         private void btnVolverToken_Click(object sender, EventArgs e)
         {
-            // Volver al panel de token desde el panel de nueva contraseña
             pnlNuevaContraseña.Visible = false;
             pnlToken.Visible = true;
             txtToken.Focus();

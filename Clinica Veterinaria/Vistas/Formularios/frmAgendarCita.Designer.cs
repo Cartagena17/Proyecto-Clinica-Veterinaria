@@ -30,6 +30,7 @@
         {
             this.lblAgendarCitas = new System.Windows.Forms.Label();
             this.pnlAgendarCitas = new System.Windows.Forms.Panel();
+            this.lblBusquedaCitas1 = new System.Windows.Forms.Label();
             this.lblBusquedaCitas = new System.Windows.Forms.Label();
             this.txtBusquedaCitas = new System.Windows.Forms.TextBox();
             this.btnLimpiarCamposCitas = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.lblAgendarCita_Paciente = new System.Windows.Forms.Label();
             this.lblAgendarCita_Veterinario = new System.Windows.Forms.Label();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.lblBusquedaCitas1 = new System.Windows.Forms.Label();
             this.pnlAgendarCitas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +97,14 @@
             this.pnlAgendarCitas.Size = new System.Drawing.Size(1018, 389);
             this.pnlAgendarCitas.TabIndex = 1;
             // 
+            // lblBusquedaCitas1
+            // 
+            this.lblBusquedaCitas1.AutoSize = true;
+            this.lblBusquedaCitas1.Location = new System.Drawing.Point(632, 211);
+            this.lblBusquedaCitas1.Name = "lblBusquedaCitas1";
+            this.lblBusquedaCitas1.Size = new System.Drawing.Size(0, 25);
+            this.lblBusquedaCitas1.TabIndex = 37;
+            // 
             // lblBusquedaCitas
             // 
             this.lblBusquedaCitas.AutoSize = true;
@@ -109,6 +117,7 @@
             // 
             this.txtBusquedaCitas.Location = new System.Drawing.Point(637, 249);
             this.txtBusquedaCitas.Name = "txtBusquedaCitas";
+            this.txtBusquedaCitas.ShortcutsEnabled = false;
             this.txtBusquedaCitas.Size = new System.Drawing.Size(378, 34);
             this.txtBusquedaCitas.TabIndex = 35;
             this.txtBusquedaCitas.TextChanged += new System.EventHandler(this.txtBusquedaCitas_TextChanged);
@@ -157,9 +166,11 @@
             // txtAgendarCitas_Notas
             // 
             this.txtAgendarCitas_Notas.Location = new System.Drawing.Point(763, 38);
+            this.txtAgendarCitas_Notas.MaxLength = 100;
             this.txtAgendarCitas_Notas.Multiline = true;
             this.txtAgendarCitas_Notas.Name = "txtAgendarCitas_Notas";
             this.txtAgendarCitas_Notas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtAgendarCitas_Notas.ShortcutsEnabled = false;
             this.txtAgendarCitas_Notas.Size = new System.Drawing.Size(252, 136);
             this.txtAgendarCitas_Notas.TabIndex = 30;
             // 
@@ -216,6 +227,7 @@
             this.txtAgendarCita_Motivo.Location = new System.Drawing.Point(119, 249);
             this.txtAgendarCita_Motivo.Multiline = true;
             this.txtAgendarCita_Motivo.Name = "txtAgendarCita_Motivo";
+            this.txtAgendarCita_Motivo.ShortcutsEnabled = false;
             this.txtAgendarCita_Motivo.Size = new System.Drawing.Size(350, 28);
             this.txtAgendarCita_Motivo.TabIndex = 24;
             // 
@@ -223,6 +235,7 @@
             // 
             this.txtAgendarCita_Hora.Location = new System.Drawing.Point(195, 208);
             this.txtAgendarCita_Hora.Name = "txtAgendarCita_Hora";
+            this.txtAgendarCita_Hora.ShortcutsEnabled = false;
             this.txtAgendarCita_Hora.Size = new System.Drawing.Size(350, 34);
             this.txtAgendarCita_Hora.TabIndex = 23;
             // 
@@ -299,14 +312,6 @@
             this.dgvCitas.Size = new System.Drawing.Size(895, 261);
             this.dgvCitas.TabIndex = 2;
             this.dgvCitas.DoubleClick += new System.EventHandler(this.dgvCitas_DoubleClick);
-            // 
-            // lblBusquedaCitas1
-            // 
-            this.lblBusquedaCitas1.AutoSize = true;
-            this.lblBusquedaCitas1.Location = new System.Drawing.Point(632, 211);
-            this.lblBusquedaCitas1.Name = "lblBusquedaCitas1";
-            this.lblBusquedaCitas1.Size = new System.Drawing.Size(0, 25);
-            this.lblBusquedaCitas1.TabIndex = 37;
             // 
             // frmAgendarCita
             // 

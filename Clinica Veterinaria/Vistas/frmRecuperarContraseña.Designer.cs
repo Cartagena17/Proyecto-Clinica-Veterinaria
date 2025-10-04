@@ -56,7 +56,6 @@
             // 
             this.pnlEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.pnlEmail.Controls.Add(this.lblRecuperarContra);
-            this.pnlEmail.Controls.Add(this.pnlToken);
             this.pnlEmail.Controls.Add(this.btnEnviarToken);
             this.pnlEmail.Controls.Add(this.lblEmail);
             this.pnlEmail.Controls.Add(this.txtEmail);
@@ -79,14 +78,13 @@
             // pnlToken
             // 
             this.pnlToken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.pnlToken.Controls.Add(this.pnlNuevaContraseña);
             this.pnlToken.Controls.Add(this.btnVolverEmail);
             this.pnlToken.Controls.Add(this.lblRecuperarContra2);
             this.pnlToken.Controls.Add(this.btnVerificarToken);
             this.pnlToken.Controls.Add(this.lblCodigo);
             this.pnlToken.Controls.Add(this.txtToken);
             this.pnlToken.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.pnlToken.Location = new System.Drawing.Point(0, 3);
+            this.pnlToken.Location = new System.Drawing.Point(72, 9);
             this.pnlToken.Name = "pnlToken";
             this.pnlToken.Size = new System.Drawing.Size(356, 435);
             this.pnlToken.TabIndex = 9;
@@ -103,7 +101,7 @@
             this.pnlNuevaContraseña.Controls.Add(this.lblNuevaContraseña);
             this.pnlNuevaContraseña.Controls.Add(this.txtNuevaContraseña);
             this.pnlNuevaContraseña.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold);
-            this.pnlNuevaContraseña.Location = new System.Drawing.Point(0, 0);
+            this.pnlNuevaContraseña.Location = new System.Drawing.Point(72, 6);
             this.pnlNuevaContraseña.Name = "pnlNuevaContraseña";
             this.pnlNuevaContraseña.Size = new System.Drawing.Size(356, 435);
             this.pnlNuevaContraseña.TabIndex = 10;
@@ -265,7 +263,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vistas.Properties.Resources.fondoLogin;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(479, 464);
+            this.ClientSize = new System.Drawing.Size(505, 529);
+            this.Controls.Add(this.pnlNuevaContraseña);
+            this.Controls.Add(this.pnlToken);
             this.Controls.Add(this.pnlEmail);
             this.Name = "frmRecuperarContraseña";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

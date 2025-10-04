@@ -17,5 +17,7 @@ namespace Modelos.Entidades
         public bool Activo { get; set; }
         public string TokenRecuperacion { get; set; }
         public DateTime? FechaExpiracionToken { get; set; }
+
+        public string Email { get; set; }
     }
 }

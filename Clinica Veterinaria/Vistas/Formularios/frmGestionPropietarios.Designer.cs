@@ -30,6 +30,8 @@
         {
             this.lblGestionPropietarios = new System.Windows.Forms.Label();
             this.pnlGestionPropietario = new System.Windows.Forms.Panel();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.lblBuscar = new System.Windows.Forms.Label();
             this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.btnActualizarInfoPropietario = new System.Windows.Forms.Button();
             this.btnEliminarPropietario = new System.Windows.Forms.Button();
@@ -43,8 +45,6 @@
             this.lblGestionPropietario_Telefono = new System.Windows.Forms.Label();
             this.lblGestionPropietario_Nombre = new System.Windows.Forms.Label();
             this.dgvPropietarios = new System.Windows.Forms.DataGridView();
-            this.lblBuscar = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.pnlGestionPropietario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPropietarios)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +81,24 @@
             this.pnlGestionPropietario.Name = "pnlGestionPropietario";
             this.pnlGestionPropietario.Size = new System.Drawing.Size(589, 333);
             this.pnlGestionPropietario.TabIndex = 1;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(32, 222);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.ShortcutsEnabled = false;
+            this.txtBuscar.Size = new System.Drawing.Size(400, 32);
+            this.txtBuscar.TabIndex = 13;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(28, 195);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(194, 24);
+            this.lblBuscar.TabIndex = 12;
+            this.lblBuscar.Text = "Buscar Propietarios:";
             // 
             // btnLimpiarCampos
             // 
@@ -138,6 +156,7 @@
             // 
             this.txtGestionPropietario_Email.Location = new System.Drawing.Point(266, 147);
             this.txtGestionPropietario_Email.Name = "txtGestionPropietario_Email";
+            this.txtGestionPropietario_Email.ShortcutsEnabled = false;
             this.txtGestionPropietario_Email.Size = new System.Drawing.Size(166, 32);
             this.txtGestionPropietario_Email.TabIndex = 7;
             // 
@@ -145,6 +164,7 @@
             // 
             this.txtGestionPropietario_Direccion.Location = new System.Drawing.Point(266, 104);
             this.txtGestionPropietario_Direccion.Name = "txtGestionPropietario_Direccion";
+            this.txtGestionPropietario_Direccion.ShortcutsEnabled = false;
             this.txtGestionPropietario_Direccion.Size = new System.Drawing.Size(166, 32);
             this.txtGestionPropietario_Direccion.TabIndex = 6;
             // 
@@ -152,6 +172,7 @@
             // 
             this.txtGestionPropietario_Telefono.Location = new System.Drawing.Point(266, 64);
             this.txtGestionPropietario_Telefono.Name = "txtGestionPropietario_Telefono";
+            this.txtGestionPropietario_Telefono.ShortcutsEnabled = false;
             this.txtGestionPropietario_Telefono.Size = new System.Drawing.Size(166, 32);
             this.txtGestionPropietario_Telefono.TabIndex = 5;
             // 
@@ -159,6 +180,7 @@
             // 
             this.txtGestionPropietario_Nombre.Location = new System.Drawing.Point(266, 25);
             this.txtGestionPropietario_Nombre.Name = "txtGestionPropietario_Nombre";
+            this.txtGestionPropietario_Nombre.ShortcutsEnabled = false;
             this.txtGestionPropietario_Nombre.Size = new System.Drawing.Size(166, 32);
             this.txtGestionPropietario_Nombre.TabIndex = 4;
             // 
@@ -208,23 +230,6 @@
             this.dgvPropietarios.Size = new System.Drawing.Size(864, 247);
             this.dgvPropietarios.TabIndex = 2;
             this.dgvPropietarios.DoubleClick += new System.EventHandler(this.dgvPropietarios_DoubleClick);
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(28, 195);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(194, 24);
-            this.lblBuscar.TabIndex = 12;
-            this.lblBuscar.Text = "Buscar Propietarios:";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(32, 222);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(400, 32);
-            this.txtBuscar.TabIndex = 13;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // frmGestionPropietarios
             // 

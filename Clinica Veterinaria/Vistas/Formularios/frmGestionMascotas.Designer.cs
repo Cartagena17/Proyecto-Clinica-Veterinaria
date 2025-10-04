@@ -30,6 +30,9 @@
         {
             this.lblGestionPropietarios = new System.Windows.Forms.Label();
             this.pnlGestionMascota = new System.Windows.Forms.Panel();
+            this.lblBusqueda1 = new System.Windows.Forms.Label();
+            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.lblPropietarioSeleccion = new System.Windows.Forms.Label();
             this.lblInfoPropietario = new System.Windows.Forms.Label();
             this.rbHembra = new System.Windows.Forms.RadioButton();
@@ -53,9 +56,6 @@
             this.lblGestionMascotas_Especie = new System.Windows.Forms.Label();
             this.lblGestionMascotas_Nombre = new System.Windows.Forms.Label();
             this.dgvMascotas = new System.Windows.Forms.DataGridView();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.lblBusqueda = new System.Windows.Forms.Label();
-            this.lblBusqueda1 = new System.Windows.Forms.Label();
             this.pnlGestionMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +105,31 @@
             this.pnlGestionMascota.Name = "pnlGestionMascota";
             this.pnlGestionMascota.Size = new System.Drawing.Size(976, 364);
             this.pnlGestionMascota.TabIndex = 9;
+            // 
+            // lblBusqueda1
+            // 
+            this.lblBusqueda1.AutoSize = true;
+            this.lblBusqueda1.Location = new System.Drawing.Point(636, 243);
+            this.lblBusqueda1.Name = "lblBusqueda1";
+            this.lblBusqueda1.Size = new System.Drawing.Size(0, 25);
+            this.lblBusqueda1.TabIndex = 27;
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Location = new System.Drawing.Point(392, 322);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(0, 25);
+            this.lblBusqueda.TabIndex = 26;
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(636, 301);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.ShortcutsEnabled = false;
+            this.txtBusqueda.Size = new System.Drawing.Size(337, 33);
+            this.txtBusqueda.TabIndex = 25;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblPropietarioSeleccion
             // 
@@ -225,6 +250,7 @@
             this.txtGestionMascota_Peso.Location = new System.Drawing.Point(631, 83);
             this.txtGestionMascota_Peso.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGestionMascota_Peso.Name = "txtGestionMascota_Peso";
+            this.txtGestionMascota_Peso.ShortcutsEnabled = false;
             this.txtGestionMascota_Peso.Size = new System.Drawing.Size(209, 33);
             this.txtGestionMascota_Peso.TabIndex = 13;
             // 
@@ -233,6 +259,7 @@
             this.txtGestionMascota_Raza.Location = new System.Drawing.Point(177, 152);
             this.txtGestionMascota_Raza.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGestionMascota_Raza.Name = "txtGestionMascota_Raza";
+            this.txtGestionMascota_Raza.ShortcutsEnabled = false;
             this.txtGestionMascota_Raza.Size = new System.Drawing.Size(223, 33);
             this.txtGestionMascota_Raza.TabIndex = 12;
             // 
@@ -241,6 +268,7 @@
             this.txtGestionMascota_Especie.Location = new System.Drawing.Point(177, 86);
             this.txtGestionMascota_Especie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGestionMascota_Especie.Name = "txtGestionMascota_Especie";
+            this.txtGestionMascota_Especie.ShortcutsEnabled = false;
             this.txtGestionMascota_Especie.Size = new System.Drawing.Size(223, 33);
             this.txtGestionMascota_Especie.TabIndex = 11;
             // 
@@ -249,6 +277,7 @@
             this.txtGestionMascota_Nombre.Location = new System.Drawing.Point(204, 25);
             this.txtGestionMascota_Nombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGestionMascota_Nombre.Name = "txtGestionMascota_Nombre";
+            this.txtGestionMascota_Nombre.ShortcutsEnabled = false;
             this.txtGestionMascota_Nombre.Size = new System.Drawing.Size(223, 33);
             this.txtGestionMascota_Nombre.TabIndex = 9;
             // 
@@ -336,30 +365,6 @@
             this.dgvMascotas.TabIndex = 10;
             this.dgvMascotas.SelectionChanged += new System.EventHandler(this.dgvMascotas_SelectionChanged);
             this.dgvMascotas.DoubleClick += new System.EventHandler(this.dgvMascotas_DoubleClick);
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Location = new System.Drawing.Point(636, 301);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(337, 33);
-            this.txtBusqueda.TabIndex = 25;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // lblBusqueda
-            // 
-            this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Location = new System.Drawing.Point(392, 322);
-            this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(0, 25);
-            this.lblBusqueda.TabIndex = 26;
-            // 
-            // lblBusqueda1
-            // 
-            this.lblBusqueda1.AutoSize = true;
-            this.lblBusqueda1.Location = new System.Drawing.Point(636, 243);
-            this.lblBusqueda1.Name = "lblBusqueda1";
-            this.lblBusqueda1.Size = new System.Drawing.Size(0, 25);
-            this.lblBusqueda1.TabIndex = 27;
             // 
             // frmGestionMascotas
             // 

@@ -95,6 +95,7 @@
             // 
             this.txtBusqueda.Location = new System.Drawing.Point(61, 194);
             this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.ShortcutsEnabled = false;
             this.txtBusqueda.Size = new System.Drawing.Size(531, 32);
             this.txtBusqueda.TabIndex = 14;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
@@ -155,6 +156,7 @@
             // 
             this.txtGestionPersonal_Email.Location = new System.Drawing.Point(516, 86);
             this.txtGestionPersonal_Email.Name = "txtGestionPersonal_Email";
+            this.txtGestionPersonal_Email.ShortcutsEnabled = false;
             this.txtGestionPersonal_Email.Size = new System.Drawing.Size(256, 32);
             this.txtGestionPersonal_Email.TabIndex = 9;
             // 
@@ -162,6 +164,7 @@
             // 
             this.txtGestionPersonal_Telefono.Location = new System.Drawing.Point(516, 23);
             this.txtGestionPersonal_Telefono.Name = "txtGestionPersonal_Telefono";
+            this.txtGestionPersonal_Telefono.ShortcutsEnabled = false;
             this.txtGestionPersonal_Telefono.Size = new System.Drawing.Size(256, 32);
             this.txtGestionPersonal_Telefono.TabIndex = 8;
             // 
@@ -169,6 +172,7 @@
             // 
             this.txtGestionPersonal_Apellido.Location = new System.Drawing.Point(195, 86);
             this.txtGestionPersonal_Apellido.Name = "txtGestionPersonal_Apellido";
+            this.txtGestionPersonal_Apellido.ShortcutsEnabled = false;
             this.txtGestionPersonal_Apellido.Size = new System.Drawing.Size(194, 32);
             this.txtGestionPersonal_Apellido.TabIndex = 6;
             // 
@@ -176,6 +180,7 @@
             // 
             this.txtGestionPersonal_Nombre.Location = new System.Drawing.Point(195, 26);
             this.txtGestionPersonal_Nombre.Name = "txtGestionPersonal_Nombre";
+            this.txtGestionPersonal_Nombre.ShortcutsEnabled = false;
             this.txtGestionPersonal_Nombre.Size = new System.Drawing.Size(194, 32);
             this.txtGestionPersonal_Nombre.TabIndex = 5;
             // 

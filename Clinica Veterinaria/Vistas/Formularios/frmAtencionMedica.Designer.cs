@@ -168,6 +168,7 @@
             // 
             this.txtAtencionMedica_Tratamiento.Location = new System.Drawing.Point(629, 269);
             this.txtAtencionMedica_Tratamiento.Name = "txtAtencionMedica_Tratamiento";
+            this.txtAtencionMedica_Tratamiento.ShortcutsEnabled = false;
             this.txtAtencionMedica_Tratamiento.Size = new System.Drawing.Size(173, 32);
             this.txtAtencionMedica_Tratamiento.TabIndex = 18;
             // 
@@ -175,6 +176,7 @@
             // 
             this.txtAtencionMedica_Diagnostico.Location = new System.Drawing.Point(629, 224);
             this.txtAtencionMedica_Diagnostico.Name = "txtAtencionMedica_Diagnostico";
+            this.txtAtencionMedica_Diagnostico.ShortcutsEnabled = false;
             this.txtAtencionMedica_Diagnostico.Size = new System.Drawing.Size(173, 32);
             this.txtAtencionMedica_Diagnostico.TabIndex = 17;
             // 
@@ -182,6 +184,7 @@
             // 
             this.txtAtencionMedica_Observaciones.Location = new System.Drawing.Point(652, 183);
             this.txtAtencionMedica_Observaciones.Name = "txtAtencionMedica_Observaciones";
+            this.txtAtencionMedica_Observaciones.ShortcutsEnabled = false;
             this.txtAtencionMedica_Observaciones.Size = new System.Drawing.Size(173, 32);
             this.txtAtencionMedica_Observaciones.TabIndex = 16;
             // 
@@ -189,6 +192,7 @@
             // 
             this.txtAtencionMedica_Sintomas.Location = new System.Drawing.Point(609, 135);
             this.txtAtencionMedica_Sintomas.Name = "txtAtencionMedica_Sintomas";
+            this.txtAtencionMedica_Sintomas.ShortcutsEnabled = false;
             this.txtAtencionMedica_Sintomas.Size = new System.Drawing.Size(173, 32);
             this.txtAtencionMedica_Sintomas.TabIndex = 15;
             // 
@@ -196,6 +200,7 @@
             // 
             this.txtAtencionMedica_Temperatura.Location = new System.Drawing.Point(609, 92);
             this.txtAtencionMedica_Temperatura.Name = "txtAtencionMedica_Temperatura";
+            this.txtAtencionMedica_Temperatura.ShortcutsEnabled = false;
             this.txtAtencionMedica_Temperatura.Size = new System.Drawing.Size(173, 32);
             this.txtAtencionMedica_Temperatura.TabIndex = 14;
             // 
@@ -203,6 +208,7 @@
             // 
             this.txtAtencionMedica_Peso.Location = new System.Drawing.Point(609, 49);
             this.txtAtencionMedica_Peso.Name = "txtAtencionMedica_Peso";
+            this.txtAtencionMedica_Peso.ShortcutsEnabled = false;
             this.txtAtencionMedica_Peso.Size = new System.Drawing.Size(173, 32);
             this.txtAtencionMedica_Peso.TabIndex = 13;
             // 
