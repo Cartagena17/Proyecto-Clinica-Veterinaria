@@ -45,6 +45,8 @@ namespace Vistas
                     string contraseña = txtContraseña.Text.Trim();
                     string confirmar = txtConfirmar.Text.Trim();
                     string email = txtEmail.Text.Trim();
+                    string contraseñaEncriptada = BCrypt.Net.BCrypt.HashPassword(contraseña);
+
 
                     if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contraseña) || string.IsNullOrWhiteSpace(email))
                     {
@@ -83,7 +85,7 @@ namespace Vistas
 
                     SqlCommand cmdInsert = new SqlCommand(queryInsert, con);
                     cmdInsert.Parameters.AddWithValue("@usuario", usuario);
-                    cmdInsert.Parameters.AddWithValue("@contrasena", contraseña);
+                    cmdInsert.Parameters.AddWithValue("@contrasena", contraseñaEncriptada);
                     cmdInsert.Parameters.AddWithValue("@rol", "Administrador"); // Primer usuario siempre Admin
                     cmdInsert.Parameters.AddWithValue("@idpersonal", idPersonal);
                     cmdInsert.Parameters.AddWithValue("@correo", email);
@@ -91,10 +93,13 @@ namespace Vistas
                     cmdInsert.ExecuteNonQuery();
 
                     MessageBox.Show("Usuario administrador creado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Cierra este formulario antes de abrir el login (para evitar que quede en segundo plano)
+                    this.Hide();
 
-                    // Abrir login y cerrar este form
-                    var frmLogin = new frmLogin();
-                    frmLogin.Show();
+                    frmLogin login = new frmLogin();
+                    login.ShowDialog();
+
+                    // Cierra completamente la instancia actual después de cerrar el login
                     this.Close();
                 }
             }
@@ -115,10 +120,16 @@ namespace Vistas
             }
         }
 
-        private void chkMostrar_CheckedChanged(object sender, EventArgs e)
+
+        private void chkMostrar_CheckedChanged_1(object sender, EventArgs e)
         {
             txtContraseña.UseSystemPasswordChar = !chkMostrar.Checked;
             txtConfirmar.UseSystemPasswordChar = !chkMostrar.Checked;
+
+        }
+
+        private void frmPrimerUsuario_Load(object sender, EventArgs e)
+        {
         }
     }
 }

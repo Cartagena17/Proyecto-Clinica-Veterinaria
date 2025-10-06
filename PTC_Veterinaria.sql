@@ -3,11 +3,18 @@ go
 Use PTC_Veterinaria
 go
 
+--Nota agregar un primer empleado si no existe
+delete from personal
+select *from personal
+insert into personal values
+('Douglas','Cartagena','60640882','douglas.cartagena.arauz@gmail.com');
 
 --Aqui podes ver si tenes usuarios
---Y su hay borrarlos para el frmPrimerUsuario
+--Y si queres borrarlos para probar el primer usuario   
 delete from usuarios
 select *from usuarios
+
+
 
 --Primera ejecucion
 create table Propietarios (
@@ -26,6 +33,12 @@ EmailProp varchar (100)not null
     TelefonoPers varchar (12)not null,
     EmailPers varchar (100)not null
     )
+ ALTER TABLE Usuarios
+ADD PersonalId INT NULL
+    CONSTRAINT FK_Usuarios_Personal
+    FOREIGN KEY (PersonalId)
+    REFERENCES Personal(PersonalId)
+    ON DELETE CASCADE;
 
 --Tercera ejecucion
 CREATE TABLE Usuarios (
@@ -41,6 +54,7 @@ CREATE TABLE Usuarios (
     FechaExpiracionToken DATETIME NULL,
     constraint FK_Usuarios_Personal
     FOREIGN KEY (PersonalId) REFERENCES Personal(PersonalId)
+    ON DELETE CASCADE
 );
 
 --Cuarta ejecucion
@@ -306,6 +320,7 @@ ORDER BY
 /*Si vas a eliminar los registros de todas las tablas primero ejecutas esto*/
     EXEC sp_MSforeachtable "ALTER TABLE ? NOCHECK CONSTRAINT all"
 --Luego esto
+    delete from personal
     delete from propietarios
     delete from servicios
     delete from medicamentos

@@ -64,17 +64,16 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Vistas.Properties.Resources.Captura_de_pantalla_2025_09_03_173131;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 32);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 69);
+            this.pictureBox1.Size = new System.Drawing.Size(211, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // pnlMenuPrincipal
             // 
-            this.pnlMenuPrincipal.AutoScroll = true;
             this.pnlMenuPrincipal.AutoScrollMargin = new System.Drawing.Size(5, 2);
             this.pnlMenuPrincipal.AutoScrollMinSize = new System.Drawing.Size(50, 1200);
             this.pnlMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
@@ -85,26 +84,24 @@
             this.pnlMenuPrincipal.Controls.Add(this.btnDashboard_GestionPropietarios);
             this.pnlMenuPrincipal.Controls.Add(this.btnDashboard_GestionMedica);
             this.pnlMenuPrincipal.Controls.Add(this.btnDashboard_GestionCitas);
-            this.pnlMenuPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenuPrincipal.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlMenuPrincipal.Location = new System.Drawing.Point(0, 100);
             this.pnlMenuPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMenuPrincipal.Name = "pnlMenuPrincipal";
-            this.pnlMenuPrincipal.Size = new System.Drawing.Size(304, 734);
+            this.pnlMenuPrincipal.Size = new System.Drawing.Size(279, 877);
             this.pnlMenuPrincipal.TabIndex = 0;
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(0, 366);
+            this.btnSalir.Location = new System.Drawing.Point(0, 808);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnSalir.Size = new System.Drawing.Size(283, 65);
+            this.btnSalir.Size = new System.Drawing.Size(283, 68);
             this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,11 +115,11 @@
             this.btnVolverDashboard.FlatAppearance.BorderSize = 0;
             this.btnVolverDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolverDashboard.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolverDashboard.Location = new System.Drawing.Point(0, 301);
+            this.btnVolverDashboard.Location = new System.Drawing.Point(0, 322);
             this.btnVolverDashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVolverDashboard.Name = "btnVolverDashboard";
             this.btnVolverDashboard.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnVolverDashboard.Size = new System.Drawing.Size(283, 65);
+            this.btnVolverDashboard.Size = new System.Drawing.Size(279, 65);
             this.btnVolverDashboard.TabIndex = 0;
             this.btnVolverDashboard.Text = "Volver al Menu Principal";
             this.btnVolverDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,11 +133,11 @@
             this.btnDashboard_GestionPersonal.FlatAppearance.BorderSize = 0;
             this.btnDashboard_GestionPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard_GestionPersonal.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard_GestionPersonal.Location = new System.Drawing.Point(0, 238);
+            this.btnDashboard_GestionPersonal.Location = new System.Drawing.Point(0, 259);
             this.btnDashboard_GestionPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDashboard_GestionPersonal.Name = "btnDashboard_GestionPersonal";
             this.btnDashboard_GestionPersonal.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnDashboard_GestionPersonal.Size = new System.Drawing.Size(283, 63);
+            this.btnDashboard_GestionPersonal.Size = new System.Drawing.Size(279, 63);
             this.btnDashboard_GestionPersonal.TabIndex = 1;
             this.btnDashboard_GestionPersonal.Text = "Gestion de Personal";
             this.btnDashboard_GestionPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -154,11 +151,11 @@
             this.btnDashboard_GestionMascotas.FlatAppearance.BorderSize = 0;
             this.btnDashboard_GestionMascotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard_GestionMascotas.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard_GestionMascotas.Location = new System.Drawing.Point(0, 180);
+            this.btnDashboard_GestionMascotas.Location = new System.Drawing.Point(0, 195);
             this.btnDashboard_GestionMascotas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDashboard_GestionMascotas.Name = "btnDashboard_GestionMascotas";
             this.btnDashboard_GestionMascotas.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnDashboard_GestionMascotas.Size = new System.Drawing.Size(283, 58);
+            this.btnDashboard_GestionMascotas.Size = new System.Drawing.Size(279, 64);
             this.btnDashboard_GestionMascotas.TabIndex = 1;
             this.btnDashboard_GestionMascotas.Text = "Gestion de Mascotas";
             this.btnDashboard_GestionMascotas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,11 +169,11 @@
             this.btnDashboard_GestionPropietarios.FlatAppearance.BorderSize = 0;
             this.btnDashboard_GestionPropietarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard_GestionPropietarios.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard_GestionPropietarios.Location = new System.Drawing.Point(0, 122);
+            this.btnDashboard_GestionPropietarios.Location = new System.Drawing.Point(0, 132);
             this.btnDashboard_GestionPropietarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDashboard_GestionPropietarios.Name = "btnDashboard_GestionPropietarios";
             this.btnDashboard_GestionPropietarios.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnDashboard_GestionPropietarios.Size = new System.Drawing.Size(283, 58);
+            this.btnDashboard_GestionPropietarios.Size = new System.Drawing.Size(279, 63);
             this.btnDashboard_GestionPropietarios.TabIndex = 2;
             this.btnDashboard_GestionPropietarios.Text = "Gestion de Propietarios";
             this.btnDashboard_GestionPropietarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -194,7 +191,7 @@
             this.btnDashboard_GestionMedica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDashboard_GestionMedica.Name = "btnDashboard_GestionMedica";
             this.btnDashboard_GestionMedica.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnDashboard_GestionMedica.Size = new System.Drawing.Size(283, 57);
+            this.btnDashboard_GestionMedica.Size = new System.Drawing.Size(279, 67);
             this.btnDashboard_GestionMedica.TabIndex = 1;
             this.btnDashboard_GestionMedica.Text = "Gestiones Medicas";
             this.btnDashboard_GestionMedica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -212,7 +209,7 @@
             this.btnDashboard_GestionCitas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDashboard_GestionCitas.Name = "btnDashboard_GestionCitas";
             this.btnDashboard_GestionCitas.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnDashboard_GestionCitas.Size = new System.Drawing.Size(283, 65);
+            this.btnDashboard_GestionCitas.Size = new System.Drawing.Size(279, 65);
             this.btnDashboard_GestionCitas.TabIndex = 1;
             this.btnDashboard_GestionCitas.Text = "Gestion de Citas";
             this.btnDashboard_GestionCitas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -221,15 +218,14 @@
             // 
             // pnlCentral
             // 
+            this.pnlCentral.Controls.Add(this.dgvCitasPendientes);
             this.pnlCentral.Controls.Add(this.btnMostrarCitasPendientes);
             this.pnlCentral.Controls.Add(this.lblCitas);
-            this.pnlCentral.Controls.Add(this.dgvCitasPendientes);
-            this.pnlCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCentral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlCentral.Location = new System.Drawing.Point(304, 100);
+            this.pnlCentral.Location = new System.Drawing.Point(278, 100);
             this.pnlCentral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlCentral.Name = "pnlCentral";
-            this.pnlCentral.Size = new System.Drawing.Size(1180, 734);
+            this.pnlCentral.Size = new System.Drawing.Size(1206, 881);
             this.pnlCentral.TabIndex = 1;
             this.pnlCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCentral_Paint);
             // 

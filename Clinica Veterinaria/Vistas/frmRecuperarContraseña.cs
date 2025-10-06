@@ -153,10 +153,15 @@ namespace Vistas
                     return;
                 }
 
-                // 🔹 Buscar usuario por email
                 int idUsuario = usuarioModel.ObtenerIdUsuarioPorEmail(email);
-                if (idUsuario > 0)
+                if (idUsuario <= 0)
                 {
+                    MessageBox.Show("No se encontró el usuario asociado a este email.", "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+               
                     if (usuarioModel.CambiarContraseña(idUsuario, nuevaContraseña))
                     {
                         MessageBox.Show("Contraseña cambiada exitosamente. Ahora puede iniciar sesión con su nueva contraseña.",
@@ -164,12 +169,7 @@ namespace Vistas
                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró el usuario asociado a este email.", "Error",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+
             }
             catch (Exception ex)
             {

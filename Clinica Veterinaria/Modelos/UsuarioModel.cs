@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Modelos.Conexion;
 using Modelos.Entidades;
+using BCrypt.Net;   
 
 namespace Modelos
 {

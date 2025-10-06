@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.chkMostrar = new System.Windows.Forms.CheckBox();
             this.txtConfirmar = new System.Windows.Forms.TextBox();
@@ -39,8 +41,6 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,22 @@
             this.panel1.Size = new System.Drawing.Size(436, 574);
             this.panel1.TabIndex = 7;
             // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(92, 112);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(71, 24);
+            this.lblEmail.TabIndex = 11;
+            this.lblEmail.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(96, 139);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(251, 31);
+            this.txtEmail.TabIndex = 10;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(3, 540);
@@ -84,6 +100,7 @@
             this.chkMostrar.TabIndex = 8;
             this.chkMostrar.Text = "Mostar contraseña";
             this.chkMostrar.UseVisualStyleBackColor = true;
+            this.chkMostrar.CheckedChanged += new System.EventHandler(this.chkMostrar_CheckedChanged_1);
             // 
             // txtConfirmar
             // 
@@ -161,22 +178,6 @@
             this.txtUsuario.Size = new System.Drawing.Size(251, 31);
             this.txtUsuario.TabIndex = 3;
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(96, 139);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(251, 31);
-            this.txtEmail.TabIndex = 10;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(92, 112);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(71, 24);
-            this.lblEmail.TabIndex = 11;
-            this.lblEmail.Text = "Email";
-            // 
             // frmPrimerUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,6 +190,7 @@
             this.Name = "frmPrimerUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrimerUsuario";
+            this.Load += new System.EventHandler(this.frmPrimerUsuario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

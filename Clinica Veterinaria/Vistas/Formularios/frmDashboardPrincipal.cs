@@ -7,6 +7,7 @@ namespace Vistas.Formularios
 {
     public partial class frmDashboardPrincipal : Form
     {
+        
 
 
 
@@ -14,6 +15,10 @@ namespace Vistas.Formularios
         public frmDashboardPrincipal()
         {
             InitializeComponent();
+            pnlMenuPrincipal.AutoScroll = false;
+
+            
+        
         }
 
         //private void ConfigurarMenuSegunRol()
@@ -131,6 +136,9 @@ namespace Vistas.Formularios
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
+            Application.Exit();
         }
+
+        
     }
 }
