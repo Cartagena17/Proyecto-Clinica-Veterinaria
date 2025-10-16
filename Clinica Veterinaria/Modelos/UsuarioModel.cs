@@ -6,15 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Modelos.Conexion;
 using Modelos.Entidades;
-using BCrypt.Net;   
+using BCrypt.Net;
 
 namespace Modelos
 {
     public class UsuarioModel
     {
+
        
-        
-            public bool HayUsuariosRegistrados()
+
+
+
+        public bool HayUsuariosRegistrados()
             {
                 using (var connection = Conexiondb.conectar())
                 {

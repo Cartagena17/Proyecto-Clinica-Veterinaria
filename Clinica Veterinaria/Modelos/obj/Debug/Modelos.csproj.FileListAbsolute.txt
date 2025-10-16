@@ -44,3 +44,4 @@ C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Modelos\bin
 C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Modelos\bin\Debug\System.Memory.xml
 C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Modelos\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Modelos\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Modelos\bin\Debug\FontAwesome.Sharp.dll

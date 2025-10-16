@@ -30,6 +30,7 @@
         {
             this.lblGestionPropietarios = new System.Windows.Forms.Label();
             this.pnlGestionMascota = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblBusqueda1 = new System.Windows.Forms.Label();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -74,6 +75,7 @@
             // pnlGestionMascota
             // 
             this.pnlGestionMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
+            this.pnlGestionMascota.Controls.Add(this.label1);
             this.pnlGestionMascota.Controls.Add(this.lblBusqueda1);
             this.pnlGestionMascota.Controls.Add(this.lblBusqueda);
             this.pnlGestionMascota.Controls.Add(this.txtBusqueda);
@@ -103,8 +105,17 @@
             this.pnlGestionMascota.Location = new System.Drawing.Point(55, 83);
             this.pnlGestionMascota.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlGestionMascota.Name = "pnlGestionMascota";
-            this.pnlGestionMascota.Size = new System.Drawing.Size(976, 364);
+            this.pnlGestionMascota.Size = new System.Drawing.Size(976, 469);
             this.pnlGestionMascota.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(74, 395);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 25);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "label1";
             // 
             // lblBusqueda1
             // 
@@ -124,10 +135,10 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(636, 301);
+            this.txtBusqueda.Location = new System.Drawing.Point(79, 423);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.ShortcutsEnabled = false;
-            this.txtBusqueda.Size = new System.Drawing.Size(337, 33);
+            this.txtBusqueda.Size = new System.Drawing.Size(385, 33);
             this.txtBusqueda.TabIndex = 25;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -186,7 +197,7 @@
             this.btnLimpiarCampos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnLimpiarCampos.FlatAppearance.BorderSize = 0;
             this.btnLimpiarCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarCampos.Location = new System.Drawing.Point(487, 286);
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(514, 304);
             this.btnLimpiarCampos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLimpiarCampos.Name = "btnLimpiarCampos";
             this.btnLimpiarCampos.Size = new System.Drawing.Size(103, 60);
@@ -200,7 +211,7 @@
             this.btnActualizarInfoMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnActualizarInfoMascota.FlatAppearance.BorderSize = 0;
             this.btnActualizarInfoMascota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarInfoMascota.Location = new System.Drawing.Point(337, 286);
+            this.btnActualizarInfoMascota.Location = new System.Drawing.Point(338, 304);
             this.btnActualizarInfoMascota.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnActualizarInfoMascota.Name = "btnActualizarInfoMascota";
             this.btnActualizarInfoMascota.Size = new System.Drawing.Size(144, 60);
@@ -214,7 +225,7 @@
             this.btnEliminarMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnEliminarMascota.FlatAppearance.BorderSize = 0;
             this.btnEliminarMascota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarMascota.Location = new System.Drawing.Point(214, 286);
+            this.btnEliminarMascota.Location = new System.Drawing.Point(192, 304);
             this.btnEliminarMascota.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEliminarMascota.Name = "btnEliminarMascota";
             this.btnEliminarMascota.Size = new System.Drawing.Size(117, 60);
@@ -228,7 +239,7 @@
             this.btnRegistrarMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnRegistrarMascota.FlatAppearance.BorderSize = 0;
             this.btnRegistrarMascota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarMascota.Location = new System.Drawing.Point(79, 286);
+            this.btnRegistrarMascota.Location = new System.Drawing.Point(34, 304);
             this.btnRegistrarMascota.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRegistrarMascota.Name = "btnRegistrarMascota";
             this.btnRegistrarMascota.Size = new System.Drawing.Size(129, 60);
@@ -355,10 +366,14 @@
             // 
             // dgvMascotas
             // 
+            this.dgvMascotas.AllowUserToAddRows = false;
+            this.dgvMascotas.AllowUserToDeleteRows = false;
+            this.dgvMascotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMascotas.Location = new System.Drawing.Point(12, 470);
+            this.dgvMascotas.Location = new System.Drawing.Point(12, 576);
             this.dgvMascotas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvMascotas.Name = "dgvMascotas";
+            this.dgvMascotas.ReadOnly = true;
             this.dgvMascotas.RowHeadersWidth = 51;
             this.dgvMascotas.RowTemplate.Height = 24;
             this.dgvMascotas.Size = new System.Drawing.Size(1054, 213);
@@ -370,7 +385,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 769);
+            this.ClientSize = new System.Drawing.Size(1078, 834);
             this.Controls.Add(this.dgvMascotas);
             this.Controls.Add(this.lblGestionPropietarios);
             this.Controls.Add(this.pnlGestionMascota);
@@ -417,5 +432,6 @@
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label lblBusqueda1;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,104 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\frmrecuperarcontrase\u00F1a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\frmrecuperarcontrase\u00F1a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\modelos\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|solutionrelative:modelos\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\frmprimerusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\frmprimerusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\vistas\\frmprimerusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BD51E3D5-A764-4B77-BFF8-5CD7EE17A0EA}|Vistas\\Vistas.csproj|solutionrelative:vistas\\frmprimerusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|c:\\users\\xc\\desktop\\proyecto-clinica-veterinaria\\clinica veterinaria\\modelos\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5C7B5D1-8511-4A9D-A9FD-668CD063D2DB}|Modelos\\Modelos.csproj|solutionrelative:modelos\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmRecuperarContrase\u00F1a.cs",
-              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\frmRecuperarContrase\u00F1a.cs",
-              "RelativeDocumentMoniker": "Vistas\\frmRecuperarContrase\u00F1a.cs",
-              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\frmRecuperarContrase\u00F1a.cs",
-              "RelativeToolTip": "Vistas\\frmRecuperarContrase\u00F1a.cs",
-              "ViewState": "AgIAAHoAAAAAIP/////vv6QAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T03:06:54.775Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmPrimerUsuario.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\frmPrimerUsuario.cs",
-              "RelativeDocumentMoniker": "Vistas\\frmPrimerUsuario.cs",
-              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\frmPrimerUsuario.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Vistas\\frmPrimerUsuario.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T03:01:41.017Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmPrimerUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\frmPrimerUsuario.cs",
-              "RelativeDocumentMoniker": "Vistas\\frmPrimerUsuario.cs",
-              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Vistas\\frmPrimerUsuario.cs",
-              "RelativeToolTip": "Vistas\\frmPrimerUsuario.cs",
-              "ViewState": "AgIAAB0AAACAAAAAAAArwDAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T02:51:13.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EmailService.cs",
-              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\EmailService.cs",
-              "RelativeDocumentMoniker": "Modelos\\EmailService.cs",
-              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\EmailService.cs",
-              "RelativeToolTip": "Modelos\\EmailService.cs",
-              "ViewState": "AgIAACwAAACAy8zMzMwvwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T02:50:45.243Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsuarioModel.cs",
-              "DocumentMoniker": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\UsuarioModel.cs",
-              "RelativeDocumentMoniker": "Modelos\\UsuarioModel.cs",
-              "ToolTip": "C:\\Users\\XC\\Desktop\\Proyecto-Clinica-Veterinaria\\Clinica Veterinaria\\Modelos\\UsuarioModel.cs",
-              "RelativeToolTip": "Modelos\\UsuarioModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T02:48:48.439Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

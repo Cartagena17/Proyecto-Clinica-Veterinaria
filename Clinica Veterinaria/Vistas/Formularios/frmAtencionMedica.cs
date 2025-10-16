@@ -20,6 +20,15 @@ namespace Vistas.Formularios
 
         private void frmAtencionMedica_Load(object sender, EventArgs e)
         {
+            dgvConsultasMedicas.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            dgvConsultasMedicas.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            dgvConsultasMedicas.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230);
+            dgvConsultasMedicas.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dgvConsultasMedicas.EnableHeadersVisualStyles = false; // para que tome el color personalizado
+
+            dgvConsultasMedicas.DefaultCellStyle.BackColor = Color.White;
+            dgvConsultasMedicas.DefaultCellStyle.ForeColor = Color.Black;   
+            dgvConsultasMedicas.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255); // filas alternas más claras
             CargarCitasComboBox();
             MostarConsultasMedicas();
         }
@@ -132,7 +141,7 @@ namespace Vistas.Formularios
                 cmbAtencionMedica_Cita.Enabled = false;
 
                 // Bloquear fecha
-                dtpAtencionMedica_Fecha.Value = Convert.ToDateTime(dgvConsultasMedicas.CurrentRow.Cells["Fecha_Consulta"].Value);
+                dtpAtencionMedica_Fecha.Value = Convert.ToDateTime(dgvConsultasMedicas.CurrentRow.Cells["Fecha"].Value);
                 dtpAtencionMedica_Fecha.Enabled = false;
 
                 // Llenar los campos de texto
@@ -140,7 +149,7 @@ namespace Vistas.Formularios
                 txtAtencionMedica_Diagnostico.Text = dgvConsultasMedicas.CurrentRow.Cells["Diagnostico"].Value.ToString();
                 txtAtencionMedica_Tratamiento.Text = dgvConsultasMedicas.CurrentRow.Cells["Tratamiento"].Value.ToString();
                 txtAtencionMedica_Observaciones.Text = dgvConsultasMedicas.CurrentRow.Cells["Observaciones"].Value.ToString();
-                txtAtencionMedica_Peso.Text = dgvConsultasMedicas.CurrentRow.Cells["Peso_Actual"].Value.ToString();
+                txtAtencionMedica_Peso.Text = dgvConsultasMedicas.CurrentRow.Cells["Peso"].Value.ToString();
                 txtAtencionMedica_Temperatura.Text = dgvConsultasMedicas.CurrentRow.Cells["Temperatura"].Value.ToString();
             }
         }
@@ -326,5 +335,9 @@ namespace Vistas.Formularios
             return true;
         }
 
+        private void dgvConsultasMedicas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

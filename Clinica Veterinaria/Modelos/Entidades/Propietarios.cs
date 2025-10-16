@@ -168,11 +168,11 @@ namespace Modelos.Entidades
             {
                 using (SqlConnection conexion = Conexiondb.conectar())
                 {
-                    string comando = @"SELECT * FROM Propietarios 
-                               WHERE NombreProp LIKE @valor 
-                                  OR TelefonoProp LIKE @valor 
-                                  OR DireccionProp LIKE @valor 
-                                  OR EmailProp LIKE @valor";
+                    string comando = @"SELECT #, Nombre, Telefono, Dirección, Correo_electrónico FROM CargarPropietarios 
+                               WHERE Nombre  LIKE @valor 
+                                  OR Telefono LIKE @valor 
+                                  OR Dirección LIKE @valor 
+                                  OR Correo_electrónico LIKE @valor";
 
                     SqlCommand cmd = new SqlCommand(comando, conexion);
                     cmd.Parameters.AddWithValue("@valor", "%" + valor + "%");

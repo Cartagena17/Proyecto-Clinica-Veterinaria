@@ -20,7 +20,17 @@ namespace Vistas.Formularios
 
         private void frmGestionPersonal_Load(object sender, EventArgs e)
         {
-            lblBusqueda.Text = "Busca el personal mediante:\rNombre, Apellido, Telefono o Email";
+            dgvPersonal.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            dgvPersonal.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            dgvPersonal.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230);
+            dgvPersonal.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dgvPersonal.EnableHeadersVisualStyles = false; // para que tome el color personalizado
+
+            dgvPersonal.DefaultCellStyle.BackColor = Color.White;
+            dgvPersonal.DefaultCellStyle.ForeColor = Color.Black;
+            dgvPersonal.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255); // filas alternas más claras
+
+            lblBusqueda.Text = "Busca el personal mediante:Nombre, Apellido, Telefono o Email";
             MostrarPersonal();
         }
 
@@ -251,6 +261,8 @@ namespace Vistas.Formularios
                 txtGestionPersonal_Apellido.Clear();
                 txtGestionPersonal_Telefono.Clear();
                 txtGestionPersonal_Email.Clear();
+                dgvPersonal.ClearSelection();
+
 
                 // Opcional: dejar el foco en el primer campo
                 txtGestionPersonal_Nombre.Focus();
@@ -281,6 +293,12 @@ namespace Vistas.Formularios
             {
                 MessageBox.Show($"Error en búsqueda: {ex.Message}", "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCrearCuenta_Click(object sender, EventArgs e)
+        {
+            frmCrearCuenta frm = new frmCrearCuenta();
+            frm.ShowDialog();
         }
     }
 }

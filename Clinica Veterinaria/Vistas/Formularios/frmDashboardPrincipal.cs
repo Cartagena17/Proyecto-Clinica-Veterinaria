@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
 using Modelos;
 using Modelos.Entidades;
+using System.Drawing;
+
 
 namespace Vistas.Formularios
 {
     public partial class frmDashboardPrincipal : Form
     {
-        
+       
 
 
 
@@ -55,15 +58,7 @@ namespace Vistas.Formularios
         //    }
         //}
 
-        private void btnDashboard_GestionPersonal_Click(object sender, EventArgs e)
-        {
-            AbrirForm(new frmGestionPersonal());
-        }
-
-        private void btnDashboard_GestionCitas_Click(object sender, EventArgs e)
-        {
-            AbrirForm(new frmAgendarCita());
-        }
+        
         #region
         private Form activarForm = null;
         private void AbrirForm(Form formularioPintar)
@@ -84,30 +79,7 @@ namespace Vistas.Formularios
         }
         #endregion
 
-        private void btnDashboard_GestionMedica_Click(object sender, EventArgs e)
-        {
-            AbrirForm(new frmAtencionMedica());
-        }
-
-        private void btnDashboard_GestionMascotas_Click(object sender, EventArgs e)
-        {
-            AbrirForm(new frmGestionMascotas());
-        }
-
-        private void btnDashboard_GestionPropietarios_Click(object sender, EventArgs e)
-        {
-            AbrirForm(new frmGestionPropietarios());
-        }
-
-
-        private void btnVolverDashboard_Click(object sender, EventArgs e)
-        {
-            frmDashboardPrincipal dashboard = new frmDashboardPrincipal();
-            dashboard.Show();
-
-
-
-        }
+       
 
 
 
@@ -118,27 +90,63 @@ namespace Vistas.Formularios
         private void frmDashboardPrincipal_load(object sender, PaintEventArgs e)
         {
 
-            MostrarCitasPendientes();
         }
 
-        private void MostrarCitasPendientes()
-        {
-            dgvCitasPendientes.DataSource = null;
-            dgvCitasPendientes.DataSource = Citas.CargarCitas();
-        }
 
-        private void btnMostrarCitasPendientes_Click(object sender, EventArgs e)
-        {
-            Citas.CargarCitas();
-            MostrarCitasPendientes();
-        }
-
+    
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
             Application.Exit();
         }
 
-        
+        private void frmDashboardPrincipal_Load(object sender, EventArgs e)
+        {
+            panel1.BackColor = Color.FromArgb(120, 0, 0, 0); // 120 = semi-transparente, negro
+
+            ////Icono Citas
+            //IconButton btnDashboard_GestionCitas = new IconButton();
+            //btnDashboard_GestionCitas.Text = "Gestión de Citas";
+            //btnDashboard_GestionCitas.IconChar = IconChar.CalendarCheck; // Ícono
+            //btnDashboard_GestionCitas.IconColor = Color.White;
+            //btnDashboard_GestionCitas.TextImageRelation = TextImageRelation.ImageBeforeText;
+            //btnDashboard_GestionCitas.FlatStyle = FlatStyle.Flat;
+            //btnDashboard_GestionCitas.ForeColor = Color.White;
+            //btnDashboard_GestionCitas.BackColor = Color.FromArgb(58, 124, 165);
+            //btnDashboard_GestionCitas.Dock = DockStyle.Top;   // igual que los botones originales
+            //btnDashboard_GestionCitas.Height = 65;           // tamaño similar al Designer
+            //btnDashboard_GestionCitas.Padding = new Padding(27, 0, 0, 0); // texto alineado
+            //btnDashboard_GestionCitas.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold);
+            //Icono Medicas
+        }
+
+        private void ibtnGestionCitas_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmAgendarCita());
+        }
+
+        private void ibtnGestionMedica_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmAtencionMedica());
+
+        }
+
+        private void ibtnGestionPropietarios_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmGestionPropietarios());
+
+        }
+
+        private void ibtnGestionMascotas_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmGestionMascotas());
+
+        }
+
+        private void ibtnGestionPersonal_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmGestionPersonal());
+
+        }
     }
 }

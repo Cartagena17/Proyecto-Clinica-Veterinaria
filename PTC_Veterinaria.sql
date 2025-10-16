@@ -3,6 +3,9 @@ go
 Use PTC_Veterinaria
 go
 
+
+
+
 --Nota agregar un primer empleado si no existe
 delete from personal
 select *from personal
@@ -205,7 +208,14 @@ drop view CargarPacientes
 
 --Segunda Vista que ejecutas
 create or alter view CargarCitas2 as
-SELECT CitaID AS '#',NombreProp,NombrePac,NombrePers,FechaCita,HoraCita,MotivoCita,NotasCita
+SELECT CitaID AS '#',
+NombreProp AS Propietario,
+NombrePac AS Paciente,
+NombrePers AS Personal,
+FechaCita AS Fecha,
+HoraCita AS Hora,
+MotivoCita AS Motivo,
+NotasCita AS Notas
 FROM Citas c
 INNER JOIN Pacientes p ON c.PacienteID = p.PacienteID
 INNER JOIN Propietarios pr ON c.PropietarioID = pr.PropietarioID
@@ -221,15 +231,15 @@ create or alter view CargarConsultasMedicas as
 SELECT 
     CM.ConsultaID AS #,
     C.CitaID AS CodigoCita,
-    P.NombrePac AS Nombre_Paciente,
-    PR.NombreProp AS Nombre_Propietario,
-    PE.NombrePers AS Nombre_Personal,
-    C.FechaCita AS Fecha_Consulta,
+    P.NombrePac AS Paciente,
+    PR.NombreProp AS Propietario,
+    PE.NombrePers AS Personal,
+    C.FechaCita AS Fecha,
     CM.Sintomas,
     CM.Diagnostico,
     CM.Tratamiento,
     CM.Observaciones,
-    CM.PesoActual AS Peso_Actual,
+    CM.PesoActual AS Peso,
     CM.Temperatura
 FROM ConsultasMedicas CM
 INNER JOIN Citas C ON CM.CitaID = C.CitaID
@@ -245,9 +255,9 @@ drop view CargarConsultasMedicas
 CREATE OR ALTER VIEW CargarPacientes AS
 SELECT 
     p.PacienteID AS '#',
-    p.NombrePac AS Nombre_Paciente,
-    pr.PropietarioID AS,                 -- 🔹 Lo agregamos para uso interno
-    pr.NombreProp AS Nombre_Propietario,
+    p.NombrePac AS Paciente,
+    pr.PropietarioID ,                 -- 🔹 Lo agregamos para uso interno
+    pr.NombreProp AS Propietario,
     p.EspeciePac AS Especie,
     p.RazaPac AS Raza,
     p.NacimientoPac AS Nacimiento,
@@ -258,23 +268,22 @@ FROM Pacientes p
 INNER JOIN Propietarios pr ON p.PropietarioID = pr.PropietarioID;
 
 
-
 --Siguiente Vista
-    create view CargarPropietarios AS
-    Select propietarioId AS '#',
+    create  or alter view CargarPropietarios AS
+    Select propietarioId AS #,
     nombreprop AS Nombre,
     TelefonoProp AS Telefono,
     direccionprop AS Dirección,
     Emailprop AS Correo_electrónico
     FROM Propietarios
 --Ver o eliminar vista
-select *from CargarPropietarios
+select #, Nombre, Telefono, Dirección, Correo_electrónico from CargarPropietarios
 drop view CargarPropietarios
 
 --creas siguiente vista
-   create view CargarPersonal AS
+   create or alter view CargarPersonal AS
     select 
-    personalid AS '#',
+    personalid AS #,
     nombrepers AS Nombre,
     apellidopers AS Apellido,
     Telefonopers AS Telefono,
@@ -320,7 +329,6 @@ ORDER BY
 /*Si vas a eliminar los registros de todas las tablas primero ejecutas esto*/
     EXEC sp_MSforeachtable "ALTER TABLE ? NOCHECK CONSTRAINT all"
 --Luego esto
-    delete from personal
     delete from propietarios
     delete from servicios
     delete from medicamentos
@@ -335,3 +343,19 @@ ORDER BY
     delete from consultasmedicas
 --Por ultimo esto
     EXEC sp_MSforeachtable "ALTER TABLE ? WITH CHECK CHECK CONSTRAINT all"
+
+CREATE OR ALTER VIEW CargarPersUsuarioNull AS
+SELECT 
+    P.PersonalID, 
+    P.NombrePers,
+    P.ApellidoPers,
+    P.NombrePers + ' ' + P.ApellidoPers AS NombreCompleto, 
+    P.EmailPers
+FROM Personal P
+WHERE P.PersonalID NOT IN (SELECT PersonalId FROM Usuarios);
+
+                    select *from CargarPersUsuarioNull
+
+
+
+

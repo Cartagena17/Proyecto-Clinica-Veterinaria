@@ -30,6 +30,7 @@
         {
             this.lblGestionPersonal = new System.Windows.Forms.Label();
             this.pnlGestionPersonal = new System.Windows.Forms.Panel();
+            this.btnCrearCuenta = new System.Windows.Forms.Button();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.btnLimpiarCampos = new System.Windows.Forms.Button();
@@ -63,6 +64,7 @@
             // pnlGestionPersonal
             // 
             this.pnlGestionPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
+            this.pnlGestionPersonal.Controls.Add(this.btnCrearCuenta);
             this.pnlGestionPersonal.Controls.Add(this.lblBusqueda);
             this.pnlGestionPersonal.Controls.Add(this.txtBusqueda);
             this.pnlGestionPersonal.Controls.Add(this.btnLimpiarCampos);
@@ -79,13 +81,26 @@
             this.pnlGestionPersonal.Controls.Add(this.lblGestionPersonal_Nombre);
             this.pnlGestionPersonal.Location = new System.Drawing.Point(87, 41);
             this.pnlGestionPersonal.Name = "pnlGestionPersonal";
-            this.pnlGestionPersonal.Size = new System.Drawing.Size(846, 335);
+            this.pnlGestionPersonal.Size = new System.Drawing.Size(846, 408);
             this.pnlGestionPersonal.TabIndex = 1;
+            // 
+            // btnCrearCuenta
+            // 
+            this.btnCrearCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
+            this.btnCrearCuenta.FlatAppearance.BorderSize = 0;
+            this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearCuenta.Location = new System.Drawing.Point(642, 220);
+            this.btnCrearCuenta.Name = "btnCrearCuenta";
+            this.btnCrearCuenta.Size = new System.Drawing.Size(201, 60);
+            this.btnCrearCuenta.TabIndex = 16;
+            this.btnCrearCuenta.Text = "Crear cuenta a un empleado";
+            this.btnCrearCuenta.UseVisualStyleBackColor = false;
+            this.btnCrearCuenta.Click += new System.EventHandler(this.btnCrearCuenta_Click);
             // 
             // lblBusqueda
             // 
             this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Location = new System.Drawing.Point(57, 134);
+            this.lblBusqueda.Location = new System.Drawing.Point(57, 330);
             this.lblBusqueda.Name = "lblBusqueda";
             this.lblBusqueda.Size = new System.Drawing.Size(65, 24);
             this.lblBusqueda.TabIndex = 15;
@@ -93,7 +108,7 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(61, 194);
+            this.txtBusqueda.Location = new System.Drawing.Point(61, 357);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.ShortcutsEnabled = false;
             this.txtBusqueda.Size = new System.Drawing.Size(531, 32);
@@ -105,7 +120,7 @@
             this.btnLimpiarCampos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnLimpiarCampos.FlatAppearance.BorderSize = 0;
             this.btnLimpiarCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarCampos.Location = new System.Drawing.Point(460, 232);
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(460, 220);
             this.btnLimpiarCampos.Name = "btnLimpiarCampos";
             this.btnLimpiarCampos.Size = new System.Drawing.Size(132, 60);
             this.btnLimpiarCampos.TabIndex = 13;
@@ -118,7 +133,7 @@
             this.btnActualizarInfoPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnActualizarInfoPersonal.FlatAppearance.BorderSize = 0;
             this.btnActualizarInfoPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarInfoPersonal.Location = new System.Drawing.Point(320, 232);
+            this.btnActualizarInfoPersonal.Location = new System.Drawing.Point(304, 220);
             this.btnActualizarInfoPersonal.Name = "btnActualizarInfoPersonal";
             this.btnActualizarInfoPersonal.Size = new System.Drawing.Size(141, 60);
             this.btnActualizarInfoPersonal.TabIndex = 12;
@@ -131,7 +146,7 @@
             this.btnEliminarPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnEliminarPersonal.FlatAppearance.BorderSize = 0;
             this.btnEliminarPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarPersonal.Location = new System.Drawing.Point(194, 232);
+            this.btnEliminarPersonal.Location = new System.Drawing.Point(168, 220);
             this.btnEliminarPersonal.Name = "btnEliminarPersonal";
             this.btnEliminarPersonal.Size = new System.Drawing.Size(129, 60);
             this.btnEliminarPersonal.TabIndex = 11;
@@ -144,7 +159,7 @@
             this.btnAgregarPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnAgregarPersonal.FlatAppearance.BorderSize = 0;
             this.btnAgregarPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarPersonal.Location = new System.Drawing.Point(61, 232);
+            this.btnAgregarPersonal.Location = new System.Drawing.Point(25, 220);
             this.btnAgregarPersonal.Name = "btnAgregarPersonal";
             this.btnAgregarPersonal.Size = new System.Drawing.Size(137, 60);
             this.btnAgregarPersonal.TabIndex = 10;
@@ -154,7 +169,7 @@
             // 
             // txtGestionPersonal_Email
             // 
-            this.txtGestionPersonal_Email.Location = new System.Drawing.Point(516, 86);
+            this.txtGestionPersonal_Email.Location = new System.Drawing.Point(553, 86);
             this.txtGestionPersonal_Email.Name = "txtGestionPersonal_Email";
             this.txtGestionPersonal_Email.ShortcutsEnabled = false;
             this.txtGestionPersonal_Email.Size = new System.Drawing.Size(256, 32);
@@ -162,7 +177,7 @@
             // 
             // txtGestionPersonal_Telefono
             // 
-            this.txtGestionPersonal_Telefono.Location = new System.Drawing.Point(516, 23);
+            this.txtGestionPersonal_Telefono.Location = new System.Drawing.Point(566, 31);
             this.txtGestionPersonal_Telefono.Name = "txtGestionPersonal_Telefono";
             this.txtGestionPersonal_Telefono.ShortcutsEnabled = false;
             this.txtGestionPersonal_Telefono.Size = new System.Drawing.Size(256, 32);
@@ -170,7 +185,7 @@
             // 
             // txtGestionPersonal_Apellido
             // 
-            this.txtGestionPersonal_Apellido.Location = new System.Drawing.Point(195, 86);
+            this.txtGestionPersonal_Apellido.Location = new System.Drawing.Point(226, 91);
             this.txtGestionPersonal_Apellido.Name = "txtGestionPersonal_Apellido";
             this.txtGestionPersonal_Apellido.ShortcutsEnabled = false;
             this.txtGestionPersonal_Apellido.Size = new System.Drawing.Size(194, 32);
@@ -178,7 +193,7 @@
             // 
             // txtGestionPersonal_Nombre
             // 
-            this.txtGestionPersonal_Nombre.Location = new System.Drawing.Point(195, 26);
+            this.txtGestionPersonal_Nombre.Location = new System.Drawing.Point(226, 23);
             this.txtGestionPersonal_Nombre.Name = "txtGestionPersonal_Nombre";
             this.txtGestionPersonal_Nombre.ShortcutsEnabled = false;
             this.txtGestionPersonal_Nombre.Size = new System.Drawing.Size(194, 32);
@@ -187,7 +202,7 @@
             // lblGestionPersonal_Email
             // 
             this.lblGestionPersonal_Email.AutoSize = true;
-            this.lblGestionPersonal_Email.Location = new System.Drawing.Point(432, 94);
+            this.lblGestionPersonal_Email.Location = new System.Drawing.Point(482, 94);
             this.lblGestionPersonal_Email.Name = "lblGestionPersonal_Email";
             this.lblGestionPersonal_Email.Size = new System.Drawing.Size(65, 24);
             this.lblGestionPersonal_Email.TabIndex = 4;
@@ -196,7 +211,7 @@
             // lblGestionPersonal_Telefono
             // 
             this.lblGestionPersonal_Telefono.AutoSize = true;
-            this.lblGestionPersonal_Telefono.Location = new System.Drawing.Point(432, 31);
+            this.lblGestionPersonal_Telefono.Location = new System.Drawing.Point(464, 39);
             this.lblGestionPersonal_Telefono.Name = "lblGestionPersonal_Telefono";
             this.lblGestionPersonal_Telefono.Size = new System.Drawing.Size(96, 24);
             this.lblGestionPersonal_Telefono.TabIndex = 3;
@@ -222,9 +237,13 @@
             // 
             // dgvPersonal
             // 
+            this.dgvPersonal.AllowUserToAddRows = false;
+            this.dgvPersonal.AllowUserToDeleteRows = false;
+            this.dgvPersonal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonal.Location = new System.Drawing.Point(72, 382);
+            this.dgvPersonal.Location = new System.Drawing.Point(87, 510);
             this.dgvPersonal.Name = "dgvPersonal";
+            this.dgvPersonal.ReadOnly = true;
             this.dgvPersonal.RowHeadersWidth = 51;
             this.dgvPersonal.RowTemplate.Height = 24;
             this.dgvPersonal.Size = new System.Drawing.Size(1092, 299);
@@ -270,5 +289,6 @@
         private System.Windows.Forms.DataGridView dgvPersonal;
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Button btnCrearCuenta;
     }
 }

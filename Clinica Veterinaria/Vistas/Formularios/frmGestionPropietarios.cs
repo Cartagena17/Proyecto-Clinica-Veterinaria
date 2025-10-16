@@ -54,6 +54,16 @@ namespace Vistas.Formularios
 
         private void frmGestionPropietarios_Load(object sender, EventArgs e)
         {
+            dgvPropietarios.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            dgvPropietarios.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            dgvPropietarios.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230);
+            dgvPropietarios.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dgvPropietarios.EnableHeadersVisualStyles = false; // para que tome el color personalizado
+
+            dgvPropietarios.DefaultCellStyle.BackColor = Color.White;
+            dgvPropietarios.DefaultCellStyle.ForeColor = Color.Black;
+            dgvPropietarios.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255); // filas alternas más claras
+
             MostarPropietarios();
         }
         private void MostarPropietarios()
@@ -158,6 +168,8 @@ namespace Vistas.Formularios
             txtGestionPropietario_Direccion.Clear();
             txtGestionPropietario_Email.Clear();
             txtGestionPropietario_Nombre.Focus();
+            dgvPropietarios.ClearSelection();
+
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -200,5 +212,6 @@ namespace Vistas.Formularios
 
             return true;
         }
+            
     }
 }

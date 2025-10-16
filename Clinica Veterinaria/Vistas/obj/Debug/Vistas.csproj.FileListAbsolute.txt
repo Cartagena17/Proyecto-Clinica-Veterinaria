@@ -86,3 +86,5 @@ C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\
 C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\Debug\Vistas.frmLogin.resources
 C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\Debug\Vistas.frmRecuperarContraseña.resources
 C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\Debug\Vistas.frmCrearCuenta.resources
+C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\XC\Desktop\Proyecto-Clinica-Veterinaria\Clinica Veterinaria\Vistas\obj\Debug\Vistas.Formularios.frmDashboardEmpleado.resources

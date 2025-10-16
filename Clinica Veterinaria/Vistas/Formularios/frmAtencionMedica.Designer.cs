@@ -286,20 +286,25 @@
             // 
             // dgvConsultasMedicas
             // 
+            this.dgvConsultasMedicas.AllowUserToAddRows = false;
+            this.dgvConsultasMedicas.AllowUserToDeleteRows = false;
+            this.dgvConsultasMedicas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvConsultasMedicas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultasMedicas.Location = new System.Drawing.Point(42, 407);
             this.dgvConsultasMedicas.Name = "dgvConsultasMedicas";
+            this.dgvConsultasMedicas.ReadOnly = true;
             this.dgvConsultasMedicas.RowHeadersWidth = 51;
             this.dgvConsultasMedicas.RowTemplate.Height = 24;
-            this.dgvConsultasMedicas.Size = new System.Drawing.Size(1170, 222);
+            this.dgvConsultasMedicas.Size = new System.Drawing.Size(1043, 222);
             this.dgvConsultasMedicas.TabIndex = 2;
+            this.dgvConsultasMedicas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultasMedicas_CellContentClick);
             this.dgvConsultasMedicas.DoubleClick += new System.EventHandler(this.dgvConsultasMedicas_DoubleClick);
             // 
             // frmAtencionMedica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1353, 676);
+            this.ClientSize = new System.Drawing.Size(1519, 676);
             this.Controls.Add(this.dgvConsultasMedicas);
             this.Controls.Add(this.pnlConsultaMedica);
             this.Controls.Add(this.lblConsultaMedica);

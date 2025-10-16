@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Modelos.Entidades
 {
@@ -16,6 +17,8 @@ namespace Modelos.Entidades
         private string apellidoPers;
         private string telefonoPers;
         private string emailPers;
+        public string NombreCompleto1 { get; set; }
+
 
 
         public string NombrePers { get => nombrePers; set => nombrePers = value; }
@@ -52,7 +55,7 @@ namespace Modelos.Entidades
         {
             SqlConnection conexion = Conexiondb.conectar();
 
-            string comando = "select *from Personal";
+            string comando = "select *from CargarPersonal";
 
             SqlDataAdapter ad = new SqlDataAdapter(comando, conexion);
 
@@ -97,7 +100,7 @@ namespace Modelos.Entidades
 
             cmd.Parameters.AddWithValue("@NombrePers", NombrePers);
             cmd.Parameters.AddWithValue("@TelefonoPers", TelefonoPers);
-            cmd.Parameters.AddWithValue("@ApellidoPers",ApellidoPers );
+            cmd.Parameters.AddWithValue("@ApellidoPers", ApellidoPers);
             cmd.Parameters.AddWithValue("@EmailPers", EmailPers);
             cmd.Parameters.AddWithValue("@personalID", PersonalID);
 
@@ -136,7 +139,7 @@ namespace Modelos.Entidades
                     {
                         PersonalID = reader.GetInt32(0),
                         NombrePers = reader.GetString(1),
-                        ApellidoPers=reader.GetString(2)
+                        ApellidoPers = reader.GetString(2)
 
                     });
                 }
@@ -156,9 +159,10 @@ namespace Modelos.Entidades
             {
                 using (SqlConnection con = Conexiondb.conectar())
                 {
-                    string query = "SELECT PersonalID, NombrePers, Apellidopers, Telefonopers, EmailPers " +
-                                   "FROM Personal " +
-                                   "WHERE NombrePers LIKE @valor OR ApellidoPers LIKE @valor OR TelefonoPers LIKE @valor OR EmailPers LIKE @valor";
+                    string query = "SELECT # , Nombre  , Apellido  , Telefono ,Correo_electrónico   FROM CargarPersonal WHERE Nombre LIKE @valor OR Apellido LIKE @valor OR Telefono LIKE @valor OR Correo_electrónico LIKE @valor" 
+
+
+;
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
@@ -175,6 +179,35 @@ namespace Modelos.Entidades
             }
 
             return dt;
+        }
+
+        public static List<Personal> ObtenerPersonalSinCuenta()
+        {
+            List<Personal> lista = new List<Personal>();
+
+            using (SqlConnection con = Conexiondb.conectar())
+            {
+                string query = @"SELECT personalId, NombrePers, ApellidoPers, NombreCompleto, EmailPers 
+                         FROM CargarPersUsuarioNull";
+
+                using (var command = new SqlCommand(query, con))
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        lista.Add(new Personal
+                        {
+                            PersonalID = Convert.ToInt32(reader["personalId"]),
+                            NombrePers = reader["NombrePers"].ToString(),
+                            ApellidoPers = reader["ApellidoPers"].ToString(),
+                            NombreCompleto1 = reader["NombreCompleto"].ToString(),
+                            EmailPers = reader["EmailPers"].ToString()
+                        });
+                    }
+                }
+            }
+
+            return lista;
         }
 
     }

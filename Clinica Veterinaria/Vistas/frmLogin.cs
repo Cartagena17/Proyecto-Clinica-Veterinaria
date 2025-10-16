@@ -42,10 +42,31 @@ namespace Vistas
 
                     MessageBox.Show($"¡Bienvenido(a) {usuarioAutenticado.NombreUsuario}!",
                                   "Inicio de Sesión Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    var frmMenu = new frmDashboardPrincipal();
-                    frmMenu.Show();
                     this.Hide();
+                    if (usuarioAutenticado.Rol == "Administrador")
+                    {
+                        using (frmDashboardPrincipal frmDashboard = new frmDashboardPrincipal())
+                        {
+                            frmDashboard.WindowState = FormWindowState.Maximized;
+                            frmDashboard.StartPosition = FormStartPosition.CenterScreen;
+                            frmDashboard.ShowDialog();
+                        }
+                    }
+                    else if (usuarioAutenticado.Rol == "Empleado")
+                    {
+                        using (frmDashboardEmpleado frmDashboard = new frmDashboardEmpleado())
+                        {
+                            frmDashboard.WindowState = FormWindowState.Maximized;
+                            frmDashboard.StartPosition = FormStartPosition.CenterScreen;
+                            frmDashboard.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El tipo de usuario no tiene un panel asignado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                    this.Close(); // cierra el login definitivamente
                 }
                 else
                 {

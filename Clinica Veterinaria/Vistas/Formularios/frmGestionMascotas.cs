@@ -27,7 +27,17 @@ namespace Vistas.Formularios
 
         private void frmGestionMascotas_Load(object sender, EventArgs e)
         {
-            lblBusqueda1.Text = "Busca las mascotas por\r\nNombre, Especie, Raza o Propietario:";
+            dgvMascotas.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            dgvMascotas.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            dgvMascotas.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230);
+            dgvMascotas.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dgvMascotas.EnableHeadersVisualStyles = false; // para que tome el color personalizado
+                
+            dgvMascotas.DefaultCellStyle.BackColor = Color.White;
+            dgvMascotas.DefaultCellStyle.ForeColor = Color.Black;
+            dgvMascotas.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255); // filas alternas más claras
+
+            label1.Text = "Busca las mascotas por Nombre, Especie, Raza o Propietario:";
             MostrarPacientes();
             CargarPropietariosEnComboBox();
             rbMacho.Checked = true;
@@ -176,6 +186,8 @@ namespace Vistas.Formularios
             cmbPropietario.Enabled = true;
             propietarioIDActual = 0;
             pacienteIDSeleccionado = 0;
+            dgvMascotas.ClearSelection();
+
 
             if (lblInfoPropietario != null)
                 lblInfoPropietario.Visible = false;
@@ -505,7 +517,7 @@ namespace Vistas.Formularios
                 }
 
                 // Cargar datos de la mascota
-                txtGestionMascota_Nombre.Text = row["Nombre_Paciente"].ToString();
+                txtGestionMascota_Nombre.Text = row["Paciente"].ToString();
                 txtGestionMascota_Especie.Text = row["Especie"].ToString();
                 txtGestionMascota_Raza.Text = row["Raza"].ToString();
                 dtpGestionMascota_Nacimiento.Value = Convert.ToDateTime(row["Nacimiento"]);

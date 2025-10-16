@@ -193,10 +193,10 @@ namespace Modelos.Entidades
 
             string comando = @"
               SELECT * FROM CargarPacientes
-    WHERE Nombre_Paciente LIKE @busqueda 
+    WHERE Paciente LIKE @busqueda 
        OR Especie LIKE @busqueda 
        OR Raza LIKE @busqueda 
-       OR Nombre_Propietario LIKE @busqueda";
+       OR Propietario LIKE @busqueda";
 
             SqlCommand cmd = new SqlCommand(comando, con);
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");

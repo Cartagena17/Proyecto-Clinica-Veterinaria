@@ -22,7 +22,17 @@ namespace Vistas.Formularios
 
         private void frmAgendarCita_Load(object sender, EventArgs e)
         {
-            lblBusquedaCitas1.Text = "Busca las Citas:";
+            dgvCitas.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            dgvCitas.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            dgvCitas.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230);
+            dgvCitas.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dgvCitas.EnableHeadersVisualStyles = false; // para que tome el color personalizado
+
+            dgvCitas.DefaultCellStyle.BackColor = Color.White;
+            dgvCitas.DefaultCellStyle.ForeColor = Color.Black;
+            dgvCitas.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255); // filas alternas más claras
+
+            label1.Text = "Busca las Citas:";
             MostrarCitas();
             CargarPersonalEnComboBox();
             CargarPropietariosEnComboBox();
@@ -211,6 +221,7 @@ namespace Vistas.Formularios
             dtpAgendarCita_Fecha.Value = DateTime.Now;
 
             txtBusquedaCitas.Clear();
+            dgvCitas.ClearSelection();
 
 
             DesbloquearComboBox();

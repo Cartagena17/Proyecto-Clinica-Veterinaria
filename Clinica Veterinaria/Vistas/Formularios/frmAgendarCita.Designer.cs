@@ -30,6 +30,7 @@
         {
             this.lblAgendarCitas = new System.Windows.Forms.Label();
             this.pnlAgendarCitas = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblBusquedaCitas1 = new System.Windows.Forms.Label();
             this.lblBusquedaCitas = new System.Windows.Forms.Label();
             this.txtBusquedaCitas = new System.Windows.Forms.TextBox();
@@ -70,6 +71,7 @@
             // pnlAgendarCitas
             // 
             this.pnlAgendarCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(183)))), ((int)(((byte)(198)))));
+            this.pnlAgendarCitas.Controls.Add(this.label1);
             this.pnlAgendarCitas.Controls.Add(this.lblBusquedaCitas1);
             this.pnlAgendarCitas.Controls.Add(this.lblBusquedaCitas);
             this.pnlAgendarCitas.Controls.Add(this.txtBusquedaCitas);
@@ -94,8 +96,17 @@
             this.pnlAgendarCitas.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlAgendarCitas.Location = new System.Drawing.Point(80, 93);
             this.pnlAgendarCitas.Name = "pnlAgendarCitas";
-            this.pnlAgendarCitas.Size = new System.Drawing.Size(1018, 389);
+            this.pnlAgendarCitas.Size = new System.Drawing.Size(1092, 473);
             this.pnlAgendarCitas.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 408);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 25);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "label1";
             // 
             // lblBusquedaCitas1
             // 
@@ -115,7 +126,7 @@
             // 
             // txtBusquedaCitas
             // 
-            this.txtBusquedaCitas.Location = new System.Drawing.Point(637, 249);
+            this.txtBusquedaCitas.Location = new System.Drawing.Point(14, 436);
             this.txtBusquedaCitas.Name = "txtBusquedaCitas";
             this.txtBusquedaCitas.ShortcutsEnabled = false;
             this.txtBusquedaCitas.Size = new System.Drawing.Size(378, 34);
@@ -127,7 +138,7 @@
             this.btnLimpiarCamposCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnLimpiarCamposCitas.FlatAppearance.BorderSize = 0;
             this.btnLimpiarCamposCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarCamposCitas.Location = new System.Drawing.Point(593, 305);
+            this.btnLimpiarCamposCitas.Location = new System.Drawing.Point(619, 305);
             this.btnLimpiarCamposCitas.Name = "btnLimpiarCamposCitas";
             this.btnLimpiarCamposCitas.Size = new System.Drawing.Size(189, 58);
             this.btnLimpiarCamposCitas.TabIndex = 34;
@@ -188,7 +199,7 @@
             this.btnEliminarCIta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnEliminarCIta.FlatAppearance.BorderSize = 0;
             this.btnEliminarCIta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarCIta.Location = new System.Drawing.Point(203, 305);
+            this.btnEliminarCIta.Location = new System.Drawing.Point(215, 305);
             this.btnEliminarCIta.Name = "btnEliminarCIta";
             this.btnEliminarCIta.Size = new System.Drawing.Size(189, 58);
             this.btnEliminarCIta.TabIndex = 27;
@@ -201,7 +212,7 @@
             this.btnActualizarCita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(164)))), ((int)(((byte)(186)))));
             this.btnActualizarCita.FlatAppearance.BorderSize = 0;
             this.btnActualizarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarCita.Location = new System.Drawing.Point(398, 305);
+            this.btnActualizarCita.Location = new System.Drawing.Point(422, 305);
             this.btnActualizarCita.Name = "btnActualizarCita";
             this.btnActualizarCita.Size = new System.Drawing.Size(189, 58);
             this.btnActualizarCita.TabIndex = 26;
@@ -304,9 +315,13 @@
             // 
             // dgvCitas
             // 
+            this.dgvCitas.AllowUserToAddRows = false;
+            this.dgvCitas.AllowUserToDeleteRows = false;
+            this.dgvCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCitas.Location = new System.Drawing.Point(48, 490);
+            this.dgvCitas.Location = new System.Drawing.Point(80, 572);
             this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.ReadOnly = true;
             this.dgvCitas.RowHeadersWidth = 51;
             this.dgvCitas.RowTemplate.Height = 24;
             this.dgvCitas.Size = new System.Drawing.Size(895, 261);
@@ -317,7 +332,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1110, 763);
+            this.ClientSize = new System.Drawing.Size(1261, 845);
             this.Controls.Add(this.dgvCitas);
             this.Controls.Add(this.pnlAgendarCitas);
             this.Controls.Add(this.lblAgendarCitas);
@@ -359,5 +374,6 @@
         private System.Windows.Forms.TextBox txtBusquedaCitas;
         private System.Windows.Forms.Label lblBusquedaCitas;
         private System.Windows.Forms.Label lblBusquedaCitas1;
+        private System.Windows.Forms.Label label1;
     }
 }
